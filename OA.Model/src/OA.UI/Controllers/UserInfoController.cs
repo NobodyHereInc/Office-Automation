@@ -19,8 +19,21 @@ namespace OA.UI.Controllers
         public IActionResult Index()
         {
             ViewData.Model = us.GetList(u => true);
-
             return View("index");
+        }
+
+        public IActionResult Add()
+        {         
+            return View("Add");
+        }
+
+        [HttpPost]
+        public IActionResult Add(UserInfo userInfo)
+        {
+            if (us.Add(userInfo))
+            {
+            }
+            return Redirect("Index");
         }
     }
 }

@@ -7,34 +7,34 @@ using System.Linq;
 using System.Linq.Expressions;
 using Microsoft.CSharp;
 using System.Data;
+using OA.IDAL;
 
 namespace OA.DAL
 {
-    public partial class UserInfoDal
+    public partial class UserInfoDal : BaseDal<UserInfo>, IUserInfoDal
     {
-        DbContext context = new OAContext();
-
-        //add
-        public int Add(UserInfo userInfo)
-        {
-            context.Set<UserInfo>().Add(userInfo);
-            return context.SaveChanges();
-        }
-
-        // modify
-        public int Edit(UserInfo userInfo)
-        {
-            context.Entry(userInfo).State = EntityState.Modified;
-            return context.SaveChanges();
-        }
-
         // delete
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public int Remove(int id)
         {
             UserInfo userInfo = context.Set<UserInfo>().Where(u => u.UserId.Equals(id)) as UserInfo;
             context.Set<UserInfo>().Remove(userInfo);
             return context.SaveChanges();
         }
+
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="ids"></param>
+        /// <returns></returns>
         public int Remove(int[] ids)
         {
             foreach (int id in ids)
@@ -45,30 +45,18 @@ namespace OA.DAL
 
             return context.SaveChanges();
         }
-        public int Remove(UserInfo userInfo)
-        {
-            context.Set<UserInfo>().Remove(userInfo);
 
-            return context.SaveChanges();
-        }
+        //// seach
 
-        // seach
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public UserInfo GetById(int id)
         {
             return context.Set<UserInfo>().Where(u => u.UserId.Equals(id)) as UserInfo;
-        }
-
-        public IQueryable<UserInfo> GetList(Expression<Func<UserInfo, bool>> whereLambda)
-        {
-            return context.Set<UserInfo>().Where(whereLambda);
-        }
-
-        public IQueryable<UserInfo> GetPageList<Tkey>(Expression<Func<UserInfo, bool>> whereLambda, Expression<Func<UserInfo, Tkey>> orderLambda, int pageIndex, int pageSize)
-        {
-            return context.Set<UserInfo>().Where(whereLambda)
-                .OrderByDescending(orderLambda)
-                .Skip((pageIndex - 1) * pageSize)
-                .Take(pageSize);
         }
     }
 }

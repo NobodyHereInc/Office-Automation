@@ -1,6 +1,26 @@
+#:D:\Co-op Project\OA.Model\OA.DalFactory\OA.DalFactory.xproj
+D:\Co-op Project\OA.Model\OA.DalFactory\OA.DalFactory.xproj|D:\Co-op Project\OA.Model\src\OA.DAL\OA.DAL.xproj
+D:\Co-op Project\OA.Model\OA.DalFactory\OA.DalFactory.xproj|D:\Co-op Project\OA.Model\src\OA.IDAL\OA.IDAL.xproj
+D:\Co-op Project\OA.Model\src\OA.DAL\OA.DAL.xproj|D:\Co-op Project\OA.Model\src\OA.IDAL\OA.IDAL.xproj
+D:\Co-op Project\OA.Model\src\OA.DAL\OA.DAL.xproj|D:\Co-op Project\OA.Model\src\OA.Model\OA.Model.xproj
+D:\Co-op Project\OA.Model\src\OA.IDAL\OA.IDAL.xproj|D:\Co-op Project\OA.Model\src\OA.Model\OA.Model.xproj
+#:D:\Co-op Project\OA.Model\src\OA.Service\OA.Service.xproj
+D:\Co-op Project\OA.Model\src\OA.Service\OA.Service.xproj|D:\Co-op Project\OA.Model\OA.DalFactory\OA.DalFactory.xproj
+D:\Co-op Project\OA.Model\src\OA.Service\OA.Service.xproj|D:\Co-op Project\OA.Model\src\OA.IDAL\OA.IDAL.xproj
+D:\Co-op Project\OA.Model\src\OA.Service\OA.Service.xproj|D:\Co-op Project\OA.Model\src\OA.Model\OA.Model.xproj
+D:\Co-op Project\OA.Model\OA.DalFactory\OA.DalFactory.xproj|D:\Co-op Project\OA.Model\src\OA.DAL\OA.DAL.xproj
+D:\Co-op Project\OA.Model\OA.DalFactory\OA.DalFactory.xproj|D:\Co-op Project\OA.Model\src\OA.IDAL\OA.IDAL.xproj
+D:\Co-op Project\OA.Model\src\OA.DAL\OA.DAL.xproj|D:\Co-op Project\OA.Model\src\OA.IDAL\OA.IDAL.xproj
+D:\Co-op Project\OA.Model\src\OA.DAL\OA.DAL.xproj|D:\Co-op Project\OA.Model\src\OA.Model\OA.Model.xproj
+D:\Co-op Project\OA.Model\src\OA.IDAL\OA.IDAL.xproj|D:\Co-op Project\OA.Model\src\OA.Model\OA.Model.xproj
 #:D:\Co-op Project\OA.Model\src\OA.UI\OA.UI.xproj
 D:\Co-op Project\OA.Model\src\OA.UI\OA.UI.xproj|D:\Co-op Project\OA.Model\src\OA.Model\OA.Model.xproj
 D:\Co-op Project\OA.Model\src\OA.UI\OA.UI.xproj|D:\Co-op Project\OA.Model\src\OA.Service\OA.Service.xproj
-D:\Co-op Project\OA.Model\src\OA.Service\OA.Service.xproj|D:\Co-op Project\OA.Model\src\OA.DAL\OA.DAL.xproj
+D:\Co-op Project\OA.Model\src\OA.Service\OA.Service.xproj|D:\Co-op Project\OA.Model\OA.DalFactory\OA.DalFactory.xproj
+D:\Co-op Project\OA.Model\src\OA.Service\OA.Service.xproj|D:\Co-op Project\OA.Model\src\OA.IDAL\OA.IDAL.xproj
 D:\Co-op Project\OA.Model\src\OA.Service\OA.Service.xproj|D:\Co-op Project\OA.Model\src\OA.Model\OA.Model.xproj
+D:\Co-op Project\OA.Model\OA.DalFactory\OA.DalFactory.xproj|D:\Co-op Project\OA.Model\src\OA.DAL\OA.DAL.xproj
+D:\Co-op Project\OA.Model\OA.DalFactory\OA.DalFactory.xproj|D:\Co-op Project\OA.Model\src\OA.IDAL\OA.IDAL.xproj
+D:\Co-op Project\OA.Model\src\OA.DAL\OA.DAL.xproj|D:\Co-op Project\OA.Model\src\OA.IDAL\OA.IDAL.xproj
 D:\Co-op Project\OA.Model\src\OA.DAL\OA.DAL.xproj|D:\Co-op Project\OA.Model\src\OA.Model\OA.Model.xproj
+D:\Co-op Project\OA.Model\src\OA.IDAL\OA.IDAL.xproj|D:\Co-op Project\OA.Model\src\OA.Model\OA.Model.xproj

@@ -14,7 +14,8 @@
           "Microsoft.EntityFrameworkCore.SqlServer.Design": "1.0.0",
           "System.Linq": "4.1.0",
           "NETStandard.Library": "1.6.0",
-          "OA.Model": "1.0.0"
+          "OA.Model": "1.0.0",
+          "OA.IDAL": "1.0.0"
         },
         "runtime": {
           "OA.DAL.dll": {}
@@ -1246,6 +1247,18 @@
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
       },
+      "OA.IDAL/1.0.0": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "1.0.0",
+          "Microsoft.EntityFrameworkCore.SqlServer": "1.0.0",
+          "Microsoft.EntityFrameworkCore.SqlServer.Design": "1.0.0",
+          "NETStandard.Library": "1.6.0",
+          "OA.Model": "1.0.0"
+        },
+        "runtime": {
+          "OA.IDAL.dll": {}
+        }
+      },
       "OA.Model/1.0.0": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "1.0.0",
@@ -1754,6 +1767,11 @@
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-Mk2mKmPi0nWaoiYeotq1dgeNK1fqWh61+EK+w4Wu8SWuTYLzpUnschb59bJtGywaPq7SmTuPf44wrXRwbIrukg=="
+    },
+    "OA.IDAL/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "OA.Model/1.0.0": {
       "type": "project",

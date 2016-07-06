@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETStandard,Version=v1.6/",
-    "signature": "ef7a0a5a3aa988d80d81d96f9db8eb59871f9aa6"
+    "signature": "1deeef3bcc3764250dfcd0dbc62c687567764189"
   },
   "compilationOptions": {},
   "targets": {
@@ -10,7 +10,8 @@
       "OA.Service/1.0.0": {
         "dependencies": {
           "NETStandard.Library": "1.6.0",
-          "OA.DAL": "1.0.0",
+          "OA.DalFactory": "1.0.0",
+          "OA.IDAL": "1.0.0",
           "OA.Model": "1.0.0"
         },
         "runtime": {
@@ -201,6 +202,48 @@
           "lib/netstandard1.0/Microsoft.Extensions.Primitives.dll": {}
         }
       },
+      "Microsoft.Framework.Configuration/1.0.0-beta8": {
+        "dependencies": {
+          "Microsoft.Framework.Configuration.Abstractions": "1.0.0-beta8",
+          "System.Collections": "4.0.11",
+          "System.Diagnostics.Debug": "4.0.11",
+          "System.IO": "4.1.0",
+          "System.IO.FileSystem": "4.0.1",
+          "System.Resources.ResourceManager": "4.0.1",
+          "System.Runtime.Extensions": "4.1.0",
+          "System.Runtime.InteropServices": "4.1.0"
+        },
+        "runtime": {
+          "lib/dnxcore50/Microsoft.Framework.Configuration.dll": {}
+        }
+      },
+      "Microsoft.Framework.Configuration.Abstractions/1.0.0-beta8": {
+        "dependencies": {
+          "System.Linq": "4.1.0"
+        },
+        "runtime": {
+          "lib/dnxcore50/Microsoft.Framework.Configuration.Abstractions.dll": {}
+        }
+      },
+      "Microsoft.Framework.Configuration.FileExtensions/1.0.0-beta8": {
+        "dependencies": {
+          "Microsoft.Framework.Configuration": "1.0.0-beta8"
+        },
+        "runtime": {
+          "lib/dotnet/Microsoft.Framework.Configuration.FileExtensions.dll": {}
+        }
+      },
+      "Microsoft.Framework.Configuration.Json/1.0.0-beta8": {
+        "dependencies": {
+          "Microsoft.Framework.Configuration": "1.0.0-beta8",
+          "Microsoft.Framework.Configuration.FileExtensions": "1.0.0-beta8",
+          "Newtonsoft.Json": "6.0.6",
+          "System.Dynamic.Runtime": "4.0.11"
+        },
+        "runtime": {
+          "lib/dnxcore50/Microsoft.Framework.Configuration.Json.dll": {}
+        }
+      },
       "Microsoft.NETCore.Platforms/1.0.1": {},
       "Microsoft.NETCore.Targets/1.0.1": {},
       "Microsoft.Win32.Primitives/4.0.1": {
@@ -256,6 +299,11 @@
           "System.Threading.Timer": "4.0.1",
           "System.Xml.ReaderWriter": "4.0.11",
           "System.Xml.XDocument": "4.0.11"
+        }
+      },
+      "Newtonsoft.Json/6.0.6": {
+        "runtime": {
+          "lib/portable-net45+wp80+win8+wpa81+aspnetcore50/Newtonsoft.Json.dll": {}
         }
       },
       "Remotion.Linq/2.1.1": {
@@ -1250,10 +1298,37 @@
           "Microsoft.EntityFrameworkCore.SqlServer.Design": "1.0.0",
           "System.Linq": "4.1.0",
           "NETStandard.Library": "1.6.0",
-          "OA.Model": "1.0.0"
+          "OA.Model": "1.0.0",
+          "OA.IDAL": "1.0.0"
         },
         "runtime": {
           "OA.DAL.dll": {}
+        }
+      },
+      "OA.DalFactory/1.0.0": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "1.0.0",
+          "Microsoft.EntityFrameworkCore.SqlServer": "1.0.0",
+          "Microsoft.EntityFrameworkCore.SqlServer.Design": "1.0.0",
+          "Microsoft.Framework.Configuration.Json": "1.0.0-beta8",
+          "NETStandard.Library": "1.6.0",
+          "OA.DAL": "1.0.0",
+          "OA.IDAL": "1.0.0"
+        },
+        "runtime": {
+          "OA.DalFactory.dll": {}
+        }
+      },
+      "OA.IDAL/1.0.0": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "1.0.0",
+          "Microsoft.EntityFrameworkCore.SqlServer": "1.0.0",
+          "Microsoft.EntityFrameworkCore.SqlServer.Design": "1.0.0",
+          "NETStandard.Library": "1.6.0",
+          "OA.Model": "1.0.0"
+        },
+        "runtime": {
+          "OA.IDAL.dll": {}
         }
       },
       "OA.Model/1.0.0": {
@@ -1345,6 +1420,26 @@
       "serviceable": true,
       "sha512": "sha512-3q2vzfKEDjL6JFkRpk5SFA3zarYsO6+ZYgoucNImrUMzDn0mFbEOL5p9oPoWiypwypbJVVjWTf557bXZ0YFLig=="
     },
+    "Microsoft.Framework.Configuration/1.0.0-beta8": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-M2Fg4gBigELMjFow/w44eGZe7VICY6naOe8R6jKbtsXpDTKFsfCuXxpZcUfIgI791hs7Ney88IjxZ3XudsgJeg=="
+    },
+    "Microsoft.Framework.Configuration.Abstractions/1.0.0-beta8": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-WH5zC6AkShx6VZzZT37tl0QPROkR6zdffACEIPiDyPyqyf+DtWN5Z6v1q9OD5q6CfAij18EwqWaF1eWtYBigNw=="
+    },
+    "Microsoft.Framework.Configuration.FileExtensions/1.0.0-beta8": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-+hsytl/Puj6Gc6U934Y7n3hfdkJG7lfvasIwY0RnAmsTSxJ6pF54A/mR3d/EwSHyUyMlgSnSHeoTXZ4u8RfJsA=="
+    },
+    "Microsoft.Framework.Configuration.Json/1.0.0-beta8": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-dfA9iuKWri9gVaAY7XEQMXP5C+PMalC+0vDhv9AUuawwuTeQm11JhOwXzdPu/FM4Bbwm33kHlVkLrHRW403XIA=="
+    },
     "Microsoft.NETCore.Platforms/1.0.1": {
       "type": "package",
       "serviceable": true,
@@ -1364,6 +1459,11 @@
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-ypsCvIdCZ4IoYASJHt6tF2fMo7N30NLgV1EbmC+snO490OMl9FvVxmumw14rhReWU3j3g7BYudG6YCrchwHJlA=="
+    },
+    "Newtonsoft.Json/6.0.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-w26uZNyCG5VeoKiEOJ4+9/o8koSofLKwHl7WLreIcp0U6r57L7WiRXmjp8MTKFw6dYNZ9AE0lw69WYbIhUsU9Q=="
     },
     "Remotion.Linq/2.1.1": {
       "type": "package",
@@ -1766,6 +1866,16 @@
       "sha512": "sha512-Mk2mKmPi0nWaoiYeotq1dgeNK1fqWh61+EK+w4Wu8SWuTYLzpUnschb59bJtGywaPq7SmTuPf44wrXRwbIrukg=="
     },
     "OA.DAL/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "OA.DalFactory/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "OA.IDAL/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

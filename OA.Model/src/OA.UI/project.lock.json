@@ -3,6 +3,9 @@
   "version": 2,
   "targets": {
     ".NETCoreApp,Version=v1.0": {
+      "jQuery/3.0.0.1": {
+        "type": "package"
+      },
       "Libuv/1.9.0": {
         "type": "package",
         "dependencies": {
@@ -1564,6 +1567,77 @@
         },
         "runtime": {
           "lib/netstandard1.0/Microsoft.Extensions.WebEncoders.dll": {}
+        }
+      },
+      "Microsoft.Framework.Configuration/1.0.0-beta8": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Framework.Configuration.Abstractions": "1.0.0-beta8",
+          "System.Collections": "4.0.10",
+          "System.Diagnostics.Debug": "4.0.10",
+          "System.Globalization": "4.0.10",
+          "System.Linq": "4.0.0",
+          "System.Reflection": "4.0.10",
+          "System.Resources.ResourceManager": "4.0.0",
+          "System.Runtime": "4.0.20",
+          "System.Runtime.Extensions": "4.0.10",
+          "System.Runtime.InteropServices": "4.0.20"
+        },
+        "compile": {
+          "lib/dotnet/Microsoft.Framework.Configuration.dll": {}
+        },
+        "runtime": {
+          "lib/dotnet/Microsoft.Framework.Configuration.dll": {}
+        }
+      },
+      "Microsoft.Framework.Configuration.Abstractions/1.0.0-beta8": {
+        "type": "package",
+        "dependencies": {
+          "System.Collections": "4.0.10",
+          "System.Resources.ResourceManager": "4.0.0",
+          "System.Runtime": "4.0.20"
+        },
+        "compile": {
+          "lib/dotnet/Microsoft.Framework.Configuration.Abstractions.dll": {}
+        },
+        "runtime": {
+          "lib/dotnet/Microsoft.Framework.Configuration.Abstractions.dll": {}
+        }
+      },
+      "Microsoft.Framework.Configuration.FileExtensions/1.0.0-beta8": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Framework.Configuration": "1.0.0-beta8"
+        },
+        "compile": {
+          "lib/dotnet/Microsoft.Framework.Configuration.FileExtensions.dll": {}
+        },
+        "runtime": {
+          "lib/dotnet/Microsoft.Framework.Configuration.FileExtensions.dll": {}
+        }
+      },
+      "Microsoft.Framework.Configuration.Json/1.0.0-beta8": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Framework.Configuration": "1.0.0-beta8",
+          "Microsoft.Framework.Configuration.FileExtensions": "1.0.0-beta8",
+          "Newtonsoft.Json": "6.0.6",
+          "System.Dynamic.Runtime": "4.0.10",
+          "System.IO": "4.0.10",
+          "System.IO.FileSystem": "4.0.0",
+          "System.IO.FileSystem.Primitives": "4.0.0"
+        },
+        "compile": {
+          "lib/dotnet/Microsoft.Framework.Configuration.Json.dll": {}
+        },
+        "runtime": {
+          "lib/dotnet/Microsoft.Framework.Configuration.Json.dll": {}
+        }
+      },
+      "Microsoft.jQuery.Unobtrusive.Ajax/3.2.3": {
+        "type": "package",
+        "dependencies": {
+          "jQuery": "1.8.0"
         }
       },
       "Microsoft.Net.Http.Headers/1.0.0": {
@@ -4183,6 +4257,7 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "1.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer.Design": "1.0.0",
           "NETStandard.Library": "1.6.0",
+          "OA.IDAL": "1.0.0",
           "OA.Model": "1.0.0",
           "System.Linq": "4.1.0"
         },
@@ -4191,6 +4266,43 @@
         },
         "runtime": {
           "netstandard1.6/OA.DAL.dll": {}
+        }
+      },
+      "OA.DalFactory/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v1.6",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "1.0.0",
+          "Microsoft.EntityFrameworkCore.SqlServer": "1.0.0",
+          "Microsoft.EntityFrameworkCore.SqlServer.Design": "1.0.0",
+          "Microsoft.Extensions.Options.ConfigurationExtensions": "1.0.0-rc2-final",
+          "Microsoft.Framework.Configuration.Json": "1.0.0-beta8",
+          "NETStandard.Library": "1.6.0",
+          "OA.DAL": "1.0.0",
+          "OA.IDAL": "1.0.0"
+        },
+        "compile": {
+          "netstandard1.6/OA.DalFactory.dll": {}
+        },
+        "runtime": {
+          "netstandard1.6/OA.DalFactory.dll": {}
+        }
+      },
+      "OA.IDAL/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v1.6",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "1.0.0",
+          "Microsoft.EntityFrameworkCore.SqlServer": "1.0.0",
+          "Microsoft.EntityFrameworkCore.SqlServer.Design": "1.0.0",
+          "NETStandard.Library": "1.6.0",
+          "OA.Model": "1.0.0"
+        },
+        "compile": {
+          "netstandard1.6/OA.IDAL.dll": {}
+        },
+        "runtime": {
+          "netstandard1.6/OA.IDAL.dll": {}
         }
       },
       "OA.Model/1.0.0": {
@@ -4214,7 +4326,8 @@
         "framework": ".NETStandard,Version=v1.6",
         "dependencies": {
           "NETStandard.Library": "1.6.0",
-          "OA.DAL": "1.0.0",
+          "OA.DalFactory": "1.0.0",
+          "OA.IDAL": "1.0.0",
           "OA.Model": "1.0.0"
         },
         "compile": {
@@ -4227,6 +4340,26 @@
     }
   },
   "libraries": {
+    "jQuery/3.0.0.1": {
+      "sha512": "rEJ9hNt5n7pa+dr46MuiLI3er9LuZGsXO3h0dEX7OW9/PtTPKL7p3H3GgD99+8PgfFKj+/8GP7Kwc6v/irf4Ew==",
+      "type": "package",
+      "path": "jQuery/3.0.0.1",
+      "files": [
+        "Content/Scripts/jquery-3.0.0-vsdoc.js",
+        "Content/Scripts/jquery-3.0.0.js",
+        "Content/Scripts/jquery-3.0.0.min.js",
+        "Content/Scripts/jquery-3.0.0.min.map",
+        "Content/Scripts/jquery-3.0.0.slim.js",
+        "Content/Scripts/jquery-3.0.0.slim.min.js",
+        "Content/Scripts/jquery-3.0.0.slim.min.map",
+        "Tools/common.ps1",
+        "Tools/install.ps1",
+        "Tools/jquery-3.0.0.intellisense.js",
+        "Tools/uninstall.ps1",
+        "jQuery.3.0.0.1.nupkg.sha512",
+        "jQuery.nuspec"
+      ]
+    },
     "Libuv/1.9.0": {
       "sha512": "9Q7AaqtQhS8JDSIvRBt6ODSLWDBI4c8YxNxyCQemWebBFUtBbc6M5Vi5Gz1ZyIUlTW3rZK9bIr5gnVyv0z7a2Q==",
       "type": "package",
@@ -5426,6 +5559,83 @@
         "Microsoft.Extensions.WebEncoders.nuspec",
         "lib/netstandard1.0/Microsoft.Extensions.WebEncoders.dll",
         "lib/netstandard1.0/Microsoft.Extensions.WebEncoders.xml"
+      ]
+    },
+    "Microsoft.Framework.Configuration/1.0.0-beta8": {
+      "sha512": "M2Fg4gBigELMjFow/w44eGZe7VICY6naOe8R6jKbtsXpDTKFsfCuXxpZcUfIgI791hs7Ney88IjxZ3XudsgJeg==",
+      "type": "package",
+      "path": "Microsoft.Framework.Configuration/1.0.0-beta8",
+      "files": [
+        "Microsoft.Framework.Configuration.1.0.0-beta8.nupkg.sha512",
+        "Microsoft.Framework.Configuration.nuspec",
+        "lib/dnx451/Microsoft.Framework.Configuration.dll",
+        "lib/dnx451/Microsoft.Framework.Configuration.xml",
+        "lib/dnxcore50/Microsoft.Framework.Configuration.dll",
+        "lib/dnxcore50/Microsoft.Framework.Configuration.xml",
+        "lib/dotnet/Microsoft.Framework.Configuration.dll",
+        "lib/dotnet/Microsoft.Framework.Configuration.xml",
+        "lib/net45/Microsoft.Framework.Configuration.dll",
+        "lib/net45/Microsoft.Framework.Configuration.xml"
+      ]
+    },
+    "Microsoft.Framework.Configuration.Abstractions/1.0.0-beta8": {
+      "sha512": "WH5zC6AkShx6VZzZT37tl0QPROkR6zdffACEIPiDyPyqyf+DtWN5Z6v1q9OD5q6CfAij18EwqWaF1eWtYBigNw==",
+      "type": "package",
+      "path": "Microsoft.Framework.Configuration.Abstractions/1.0.0-beta8",
+      "files": [
+        "Microsoft.Framework.Configuration.Abstractions.1.0.0-beta8.nupkg.sha512",
+        "Microsoft.Framework.Configuration.Abstractions.nuspec",
+        "lib/dnx451/Microsoft.Framework.Configuration.Abstractions.dll",
+        "lib/dnx451/Microsoft.Framework.Configuration.Abstractions.xml",
+        "lib/dnxcore50/Microsoft.Framework.Configuration.Abstractions.dll",
+        "lib/dnxcore50/Microsoft.Framework.Configuration.Abstractions.xml",
+        "lib/dotnet/Microsoft.Framework.Configuration.Abstractions.dll",
+        "lib/dotnet/Microsoft.Framework.Configuration.Abstractions.xml",
+        "lib/net45/Microsoft.Framework.Configuration.Abstractions.dll",
+        "lib/net45/Microsoft.Framework.Configuration.Abstractions.xml"
+      ]
+    },
+    "Microsoft.Framework.Configuration.FileExtensions/1.0.0-beta8": {
+      "sha512": "+hsytl/Puj6Gc6U934Y7n3hfdkJG7lfvasIwY0RnAmsTSxJ6pF54A/mR3d/EwSHyUyMlgSnSHeoTXZ4u8RfJsA==",
+      "type": "package",
+      "path": "Microsoft.Framework.Configuration.FileExtensions/1.0.0-beta8",
+      "files": [
+        "Microsoft.Framework.Configuration.FileExtensions.1.0.0-beta8.nupkg.sha512",
+        "Microsoft.Framework.Configuration.FileExtensions.nuspec",
+        "lib/dnx451/Microsoft.Framework.Configuration.FileExtensions.dll",
+        "lib/dnx451/Microsoft.Framework.Configuration.FileExtensions.xml",
+        "lib/dotnet/Microsoft.Framework.Configuration.FileExtensions.dll",
+        "lib/dotnet/Microsoft.Framework.Configuration.FileExtensions.xml",
+        "lib/net45/Microsoft.Framework.Configuration.FileExtensions.dll",
+        "lib/net45/Microsoft.Framework.Configuration.FileExtensions.xml"
+      ]
+    },
+    "Microsoft.Framework.Configuration.Json/1.0.0-beta8": {
+      "sha512": "dfA9iuKWri9gVaAY7XEQMXP5C+PMalC+0vDhv9AUuawwuTeQm11JhOwXzdPu/FM4Bbwm33kHlVkLrHRW403XIA==",
+      "type": "package",
+      "path": "Microsoft.Framework.Configuration.Json/1.0.0-beta8",
+      "files": [
+        "Microsoft.Framework.Configuration.Json.1.0.0-beta8.nupkg.sha512",
+        "Microsoft.Framework.Configuration.Json.nuspec",
+        "lib/dnx451/Microsoft.Framework.Configuration.Json.dll",
+        "lib/dnx451/Microsoft.Framework.Configuration.Json.xml",
+        "lib/dnxcore50/Microsoft.Framework.Configuration.Json.dll",
+        "lib/dnxcore50/Microsoft.Framework.Configuration.Json.xml",
+        "lib/dotnet/Microsoft.Framework.Configuration.Json.dll",
+        "lib/dotnet/Microsoft.Framework.Configuration.Json.xml",
+        "lib/net45/Microsoft.Framework.Configuration.Json.dll",
+        "lib/net45/Microsoft.Framework.Configuration.Json.xml"
+      ]
+    },
+    "Microsoft.jQuery.Unobtrusive.Ajax/3.2.3": {
+      "sha512": "bp8G1m66xaNE9RLm58qk7eXNDlH/yUBc/Dt8dMof/t0hBN3JpUQpPF7pavEVAauPCmcvM90pTrATG8nXbCi9yw==",
+      "type": "package",
+      "path": "Microsoft.jQuery.Unobtrusive.Ajax/3.2.3",
+      "files": [
+        "Content/Scripts/jquery.unobtrusive-ajax.js",
+        "Content/Scripts/jquery.unobtrusive-ajax.min.js",
+        "Microsoft.jQuery.Unobtrusive.Ajax.3.2.3.nupkg.sha512",
+        "Microsoft.jQuery.Unobtrusive.Ajax.nuspec"
       ]
     },
     "Microsoft.Net.Http.Headers/1.0.0": {
@@ -10655,6 +10865,16 @@
       "path": "../OA.DAL/project.json",
       "msbuildProject": "../OA.DAL/OA.DAL.xproj"
     },
+    "OA.DalFactory/1.0.0": {
+      "type": "project",
+      "path": "../../OA.DalFactory/project.json",
+      "msbuildProject": "../../OA.DalFactory/OA.DalFactory.xproj"
+    },
+    "OA.IDAL/1.0.0": {
+      "type": "project",
+      "path": "../OA.IDAL/project.json",
+      "msbuildProject": "../OA.IDAL/OA.IDAL.xproj"
+    },
     "OA.Model/1.0.0": {
       "type": "project",
       "path": "../OA.Model/project.json",
@@ -10687,8 +10907,10 @@
       "Microsoft.Extensions.Options.ConfigurationExtensions >= 1.0.0",
       "Microsoft.NETCore.App >= 1.0.0",
       "Microsoft.VisualStudio.Web.BrowserLink.Loader >= 14.0.0",
+      "Microsoft.jQuery.Unobtrusive.Ajax >= 3.2.3",
       "OA.Model >= 1.0.0-*",
-      "OA.Service >= 1.0.0-*"
+      "OA.Service >= 1.0.0-*",
+      "jQuery >= 3.0.0.1"
     ],
     ".NETCoreApp,Version=v1.0": []
   },

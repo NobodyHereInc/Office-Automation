@@ -12,8 +12,8 @@ namespace OA.Model
         [Key]
         public int UserId { get; set; }
         [Required]
-        [MinLength(2, ErrorMessage = "")]
-        [MaxLength(20, ErrorMessage ="")]
+        [MinLength(2, ErrorMessage = "The MinLength of Name must be two characters.")]
+        [MaxLength(20, ErrorMessage = "The MaxLength of Name must be 20 characters.")]
         public String UserName { get; set; }
         public String UserGender { get; set; }
         [Range(1, 100)]

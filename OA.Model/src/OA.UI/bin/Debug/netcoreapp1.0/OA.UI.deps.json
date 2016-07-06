@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v1.0",
-    "signature": "fd0d851adc7ca0edf2368f51e327ff51fe6f9d1a"
+    "signature": "184715bca2a0bc037e663fd6fe2de8ea6f4db342"
   },
   "compilationOptions": {
     "defines": [
@@ -35,7 +35,9 @@
           "Microsoft.EntityFrameworkCore.SqlServer.Design": "1.0.0",
           "OA.Model": "1.0.0",
           "Microsoft.EntityFrameworkCore.Tools": "1.0.0-preview2-final",
-          "OA.Service": "1.0.0"
+          "OA.Service": "1.0.0",
+          "Microsoft.jQuery.Unobtrusive.Ajax": "3.2.3",
+          "jQuery": "3.0.0.1"
         },
         "runtime": {
           "OA.UI.dll": {}
@@ -44,6 +46,7 @@
           "OA.UI.dll": {}
         }
       },
+      "jQuery/3.0.0.1": {},
       "Microsoft.ApplicationInsights/2.1.0": {
         "dependencies": {
           "System.Collections": "4.0.11",
@@ -1379,6 +1382,72 @@
           "lib/netstandard1.0/Microsoft.Extensions.WebEncoders.dll": {}
         }
       },
+      "Microsoft.Framework.Configuration/1.0.0-beta8": {
+        "dependencies": {
+          "Microsoft.Framework.Configuration.Abstractions": "1.0.0-beta8",
+          "System.Collections": "4.0.11",
+          "System.Diagnostics.Debug": "4.0.11",
+          "System.Globalization": "4.0.11",
+          "System.Linq": "4.1.0",
+          "System.Reflection": "4.1.0",
+          "System.Resources.ResourceManager": "4.0.1",
+          "System.Runtime": "4.1.0",
+          "System.Runtime.Extensions": "4.1.0",
+          "System.Runtime.InteropServices": "4.1.0"
+        },
+        "runtime": {
+          "lib/dotnet/Microsoft.Framework.Configuration.dll": {}
+        },
+        "compile": {
+          "lib/dotnet/Microsoft.Framework.Configuration.dll": {}
+        }
+      },
+      "Microsoft.Framework.Configuration.Abstractions/1.0.0-beta8": {
+        "dependencies": {
+          "System.Collections": "4.0.11",
+          "System.Resources.ResourceManager": "4.0.1",
+          "System.Runtime": "4.1.0"
+        },
+        "runtime": {
+          "lib/dotnet/Microsoft.Framework.Configuration.Abstractions.dll": {}
+        },
+        "compile": {
+          "lib/dotnet/Microsoft.Framework.Configuration.Abstractions.dll": {}
+        }
+      },
+      "Microsoft.Framework.Configuration.FileExtensions/1.0.0-beta8": {
+        "dependencies": {
+          "Microsoft.Framework.Configuration": "1.0.0-beta8"
+        },
+        "runtime": {
+          "lib/dotnet/Microsoft.Framework.Configuration.FileExtensions.dll": {}
+        },
+        "compile": {
+          "lib/dotnet/Microsoft.Framework.Configuration.FileExtensions.dll": {}
+        }
+      },
+      "Microsoft.Framework.Configuration.Json/1.0.0-beta8": {
+        "dependencies": {
+          "Microsoft.Framework.Configuration": "1.0.0-beta8",
+          "Microsoft.Framework.Configuration.FileExtensions": "1.0.0-beta8",
+          "Newtonsoft.Json": "9.0.1",
+          "System.Dynamic.Runtime": "4.0.11",
+          "System.IO": "4.1.0",
+          "System.IO.FileSystem": "4.0.1",
+          "System.IO.FileSystem.Primitives": "4.0.1"
+        },
+        "runtime": {
+          "lib/dotnet/Microsoft.Framework.Configuration.Json.dll": {}
+        },
+        "compile": {
+          "lib/dotnet/Microsoft.Framework.Configuration.Json.dll": {}
+        }
+      },
+      "Microsoft.jQuery.Unobtrusive.Ajax/3.2.3": {
+        "dependencies": {
+          "jQuery": "3.0.0.1"
+        }
+      },
       "Microsoft.Net.Http.Headers/1.0.0": {
         "dependencies": {
           "System.Buffers": "4.0.0",
@@ -1935,13 +2004,46 @@
           "Microsoft.EntityFrameworkCore.SqlServer.Design": "1.0.0",
           "System.Linq": "4.1.0",
           "NETStandard.Library": "1.6.0",
-          "OA.Model": "1.0.0"
+          "OA.Model": "1.0.0",
+          "OA.IDAL": "1.0.0"
         },
         "runtime": {
           "OA.DAL.dll": {}
         },
         "compile": {
           "OA.DAL.dll": {}
+        }
+      },
+      "OA.DalFactory/1.0.0": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "1.0.0",
+          "Microsoft.EntityFrameworkCore.SqlServer": "1.0.0",
+          "Microsoft.EntityFrameworkCore.SqlServer.Design": "1.0.0",
+          "Microsoft.Framework.Configuration.Json": "1.0.0-beta8",
+          "NETStandard.Library": "1.6.0",
+          "OA.DAL": "1.0.0",
+          "OA.IDAL": "1.0.0"
+        },
+        "runtime": {
+          "OA.DalFactory.dll": {}
+        },
+        "compile": {
+          "OA.DalFactory.dll": {}
+        }
+      },
+      "OA.IDAL/1.0.0": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "1.0.0",
+          "Microsoft.EntityFrameworkCore.SqlServer": "1.0.0",
+          "Microsoft.EntityFrameworkCore.SqlServer.Design": "1.0.0",
+          "NETStandard.Library": "1.6.0",
+          "OA.Model": "1.0.0"
+        },
+        "runtime": {
+          "OA.IDAL.dll": {}
+        },
+        "compile": {
+          "OA.IDAL.dll": {}
         }
       },
       "OA.Model/1.0.0": {
@@ -1961,7 +2063,8 @@
       "OA.Service/1.0.0": {
         "dependencies": {
           "NETStandard.Library": "1.6.0",
-          "OA.DAL": "1.0.0",
+          "OA.DalFactory": "1.0.0",
+          "OA.IDAL": "1.0.0",
           "OA.Model": "1.0.0"
         },
         "runtime": {
@@ -3611,6 +3714,11 @@
       "serviceable": false,
       "sha512": ""
     },
+    "jQuery/3.0.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-rEJ9hNt5n7pa+dr46MuiLI3er9LuZGsXO3h0dEX7OW9/PtTPKL7p3H3GgD99+8PgfFKj+/8GP7Kwc6v/irf4Ew=="
+    },
     "Microsoft.ApplicationInsights/2.1.0": {
       "type": "package",
       "serviceable": true,
@@ -4031,6 +4139,31 @@
       "serviceable": true,
       "sha512": "sha512-NSSIBREmHHiyoAFXV2LMA+a6RMZtTHxgUbHJGHRtnjmTKnRyticx5HAzNpy8VG9+HCCHenL9QD7zSA8jjgAi5A=="
     },
+    "Microsoft.Framework.Configuration/1.0.0-beta8": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-M2Fg4gBigELMjFow/w44eGZe7VICY6naOe8R6jKbtsXpDTKFsfCuXxpZcUfIgI791hs7Ney88IjxZ3XudsgJeg=="
+    },
+    "Microsoft.Framework.Configuration.Abstractions/1.0.0-beta8": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-WH5zC6AkShx6VZzZT37tl0QPROkR6zdffACEIPiDyPyqyf+DtWN5Z6v1q9OD5q6CfAij18EwqWaF1eWtYBigNw=="
+    },
+    "Microsoft.Framework.Configuration.FileExtensions/1.0.0-beta8": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-+hsytl/Puj6Gc6U934Y7n3hfdkJG7lfvasIwY0RnAmsTSxJ6pF54A/mR3d/EwSHyUyMlgSnSHeoTXZ4u8RfJsA=="
+    },
+    "Microsoft.Framework.Configuration.Json/1.0.0-beta8": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-dfA9iuKWri9gVaAY7XEQMXP5C+PMalC+0vDhv9AUuawwuTeQm11JhOwXzdPu/FM4Bbwm33kHlVkLrHRW403XIA=="
+    },
+    "Microsoft.jQuery.Unobtrusive.Ajax/3.2.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-bp8G1m66xaNE9RLm58qk7eXNDlH/yUBc/Dt8dMof/t0hBN3JpUQpPF7pavEVAauPCmcvM90pTrATG8nXbCi9yw=="
+    },
     "Microsoft.Net.Http.Headers/1.0.0": {
       "type": "package",
       "serviceable": true,
@@ -4197,6 +4330,16 @@
       "sha512": "sha512-TWZnuiJgPDAEEUfobD7njXvSVR2Toz+jvKWds6yL4oSztmKQfnWzucczjzA+6Dv1bktBdY71sZW1YN0X6m9chQ=="
     },
     "OA.DAL/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "OA.DalFactory/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "OA.IDAL/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

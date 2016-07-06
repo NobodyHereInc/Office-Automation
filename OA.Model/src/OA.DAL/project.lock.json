@@ -1812,6 +1812,23 @@
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
       },
+      "OA.IDAL/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v1.6",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "1.0.0",
+          "Microsoft.EntityFrameworkCore.SqlServer": "1.0.0",
+          "Microsoft.EntityFrameworkCore.SqlServer.Design": "1.0.0",
+          "NETStandard.Library": "1.6.0",
+          "OA.Model": "1.0.0"
+        },
+        "compile": {
+          "netstandard1.6/OA.IDAL.dll": {}
+        },
+        "runtime": {
+          "netstandard1.6/OA.IDAL.dll": {}
+        }
+      },
       "OA.Model/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v1.6",
@@ -5812,6 +5829,11 @@
         "ref/xamarinwatchos10/_._"
       ]
     },
+    "OA.IDAL/1.0.0": {
+      "type": "project",
+      "path": "../OA.IDAL/project.json",
+      "msbuildProject": "../OA.IDAL/OA.IDAL.xproj"
+    },
     "OA.Model/1.0.0": {
       "type": "project",
       "path": "../OA.Model/project.json",
@@ -5824,6 +5846,7 @@
       "Microsoft.EntityFrameworkCore.SqlServer >= 1.0.0",
       "Microsoft.EntityFrameworkCore.SqlServer.Design >= 1.0.0",
       "NETStandard.Library >= 1.6.0",
+      "OA.IDAL >= 1.0.0-*",
       "OA.Model >= 1.0.0-*",
       "System.Linq >= 4.1.0"
     ],

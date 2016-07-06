@@ -1,0 +1,37 @@
+﻿@model OA.Model.UserInfo
+@{ 
+    Layout = null;
+}
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Add</title>
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/jquery-unobtrusive-ajax/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="~/js/UserIndex.js"></script>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    <form asp-controller="UserInfo" asp-action="Add" method="post">
+        <div class="form-group">
+            <label asp-for="UserName" class="col-md-2 control-label">User Name:</label>
+            <div class="col-md-10">
+                <input class="form-control" asp-for="UserName" />
+                <span asp-validation-for="UserName" class="text-danger"></span>
+            </div>
+            <label asp-for="UserGender" class="col-md-2 control-label">User Gender：</label>
+            <div class="col-md-10">
+                <input type="radio" asp-for="UserGender" value="Male"/>Male
+                <input type="radio" asp-for="UserGender" value="Female"/>Female
+            </div>
+            <label asp-for="UserAge" class="col-md-2 control-label">User Age：</label>
+            <div class="col-md-10">         
+                <input type="number" asp-for="UserAge"/>
+            </div>
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Add New User" class="btn btn-default" />
+            </div>
+        </div>
+    </form>
+</body>
+</html>
