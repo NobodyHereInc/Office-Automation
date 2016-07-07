@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OA.IDAL
 {
-    public interface IBaseDal<T>
+    public interface IBaseDal<T> where T: class, new()
     {
         int Add(T t);
         int Edit(T t);
@@ -16,6 +16,6 @@ namespace OA.IDAL
         T GetById(int id);
 
         IQueryable<T> GetList(Expression<Func<T, bool>> whereLambda);
-        IQueryable<T> GetPageList<TKey>(Expression<Func<T, bool>> whereLambda, Expression<Func<T, TKey>> orderLambda, int pageSize, int pageIndex);
+        IQueryable<T> GetPageList<TKey>(Expression<Func<T, bool>> whereLambda, Expression<Func<T, TKey>> orderLambda, int pageSize, int pageIndex, out int totalCount, bool isAsc);
     }
 }
