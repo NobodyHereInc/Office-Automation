@@ -13,10 +13,13 @@
     <script src="~/lib/jquery/dist/jquery.js"></script>
     <script src="~/lib/jquery-easyui-1.4.5/jquery.easyui.min.js"></script>
     <script src="~/lib/jquery-easyui-1.4.5/locale/easyui-lang-en.js"></script>
+    <script src="~/lib/jquery-unobtrusive-ajax/jquery.unobtrusive-ajax.min.js"></script>
     <script src="~/js/datapattern.js"></script>
  
     <script>
         $(function () {
+            $('#addDiv').css("display", "none");
+            $('#editDiv').css("display", "none");
             loadData();
         });
 
@@ -43,8 +46,8 @@
                     { field: 'uPwd', title: 'PassWord', width: 120 },
                     { field: 'remark', title: 'Remark', width: 120 },
 					{
-					  field: 'subTime', title: 'Submit Time', width: 120, align: 'right'
-                      /*
+					    field: 'subTime', title: 'Submit Time', width: 120, align: 'right'
+                        /*
 					  formatter: function (value, row, index) {
 					    return (eval(value.replace(/\/Date\((\d+)\)\//gi, "new Date($1)"))).pattern("yyyy-M-d");
 					  }
@@ -63,14 +66,14 @@
                     text: 'Add User',
                     iconCls: 'icon-add',
                     handler: function () {
-                        //addInfo();
+                        addInfo();
                     }
                 }, {
                     id: 'btnEdit',
                     text: 'Edit User',
                     iconCls: 'icon-edit',
                     handler: function () {
-                        //editInfo();
+                        editInfo();
                     }
                 }, {
                     id: 'btnSetRole',
@@ -89,11 +92,100 @@
                 }],
             });
         }
-        //Modify Info.
+        //Modify User Info.
+        function editInfo()
+        {
+            var rows = $('#tt').datagrid('getSelections');
 
-        //Add Info.
+            if (rows.length != 1) {
+                $.messager.alert("Error Message", "Please select one user!", "error")
+                return;
+            }
 
-        //Delete Info.
+            // display editDiv div
+            $('#editDiv').css("display", "block");
+
+            // add data to edit form.
+            $("#txtName").val(rows[0].userName);
+            $("#txtuPwd").val(rows[0].uPwd);
+            $("#txtremark").val(rows[0].remark);
+            $("#txtId").val(rows[0].userId);
+            $("#txtSubTime").val(rows[0].subTime);
+            $("#txtDelFlag").val(rows[0].delFlag);
+            $("#txtSort").val(rows[0].sort);
+
+            // dialog for editForm (easyUI)
+            $('#editDiv').dialog({
+                title: "Edit User Information",
+                modal: true,
+                collapsible: true,
+                width: 300,
+                height: 200,
+                buttons: [{
+                    text: 'Ok',
+                    iconCls: 'icon-ok',
+                    handler: function () {
+                        //check input data !----------------
+
+                        $("#editForm").submit();//Submit form
+                    }
+                }, {
+                    text: 'Cancel',
+                    handler: function () {
+                        $('#editDiv').dialog('close');
+                        $("#editForm input").val("");
+                    }
+                }]
+            });
+        }
+
+        // After edit user
+        function afterEdit()
+        {
+            $('#editDiv').dialog('close');
+            $('#tt').datagrid('reload'); // reload info.
+            $("#editForm input").val(""); // clear input last data.
+        }
+
+        //Add User Info.
+        function addInfo()
+        {
+            // display form
+            $('#addDiv').css("display", "block");
+
+            // dialog for addForm (easyUI)
+            $('#addDiv').dialog({
+                title: "Add User Information",
+                modal: true,
+                collapsible: true,
+                width: 300,
+                height: 200,
+                buttons: [{
+                    text: 'Ok',
+                    iconCls: 'icon-ok',
+                    handler: function () {
+                        //check input data !----------------
+
+                        $("#addForm").submit();//Submit form
+                    }
+                }, {
+                    text: 'Cancel',
+                    handler: function () {
+                        $('#addDiv').dialog('close');
+                        $("#addForm input").val("");
+                    }
+                }]
+            });
+        }
+
+        // afterAdd
+        function afterAdd() {
+            $('#addDiv').dialog('close');
+            $('#tt').datagrid('reload'); // reload info.
+            $("#addForm input").val(""); // clear input last data.
+        }
+
+        //Delete User Info.
         function deleteInfo()
         {
             // get all seleted rows.
@@ -106,7 +198,7 @@
                 return;
             }
 
-            if ($.messager.confirm("Message", "Are you sure delete this?", function (r) {
+            if ($.messager.confirm("Message", "Are you sure you want to remove this user?", function (r) {
                 if (r) { // user click "OK"
                     // get what want to delete.
                     var strId = "";
@@ -121,6 +213,7 @@
                     $.post("/UserInfo/DeleteUserInfo", { "strId": strId }, function (data) {
                             if (data = "Ok") {
                                 $('#tt').datagrid("reload");
+                                $('#tt').datagrid("clearSelections");
                             }
                             else{
 
@@ -129,15 +222,66 @@
                 }
             }));
 
+
+
         }
     </script>
 </head>
 <body>
     <a asp-controller="UserInfo" asp-action="Add" class="navbar-brand">Add User</a>
-
+    <!----------------------------------- START Display User Infromation --------------------------->
     <div>
         <table id="tt" class="table-responsive col-md-2 col-md-8" title="" iconcls="icon-edit"></table>
     </div>
+    <!---------------------------------- END Display User Infromation ------------------------------>
 
+    <!---------------------------------- START Add User Information dialog ------------------------->
+    <div id="addDiv">
+        <form asp-controller="UserInfo" asp-action="AddUserInfo" data-ajax="true" data-ajax-method="POST" data-ajax-success="afterAdd" id="addForm" >
+            <table>
+                <tr>
+                    <td>User Name</td><td><input type="text" name="userName" /></td>
+                </tr>
+                <tr>
+                    <td>Pass Word</td><td><input type="password" name="uPwd" /></td>
+                </tr>
+                <tr>
+                <td>Remark</td><td><input type="text" name="remark" /></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <!---------------------------------- END Add User Information dialog --------------------------->
+
+    <!----------------------- START Update User Information -------------------------->
+    <div id="editDiv">
+        <form asp-controller="UserInfo" asp-action="EditUserInfo" data-ajax="true" data-ajax-method="POST" data-ajax-success="afterEdit" id="editForm" data-ajax-confirm="Are you sure you want update this user Information?">
+            <input type="hidden" name="userId" id="txtId" />
+            <input type="hidden" name="subTime" id="txtSubTime" />
+            <table>
+                <tr>
+                    <td>User Name</td>
+                    <td><input type="text" name="userName" id="txtName" /></td>
+                </tr>
+                <tr>
+                    <td>Pass Word</td>
+                    <td><input type="password" name="uPwd" id="txtuPwd" /></td>
+                </tr>
+                <tr>
+                    <td>Remark</td>
+                    <td><input type="text" name="remark" id="txtremark" /></td>
+                </tr>
+                <tr>
+                    <td>Status</td>
+                    <td><input type="text" name="DelFlag" id="txtDelFlag" /></td>
+                </tr>
+                <tr>
+                    <td>Sort</td>
+                    <td><input type="text" name="Sort" id="txtSort" /></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <!----------------------- END Update User Information ---------------------------->
 </body>
 </html>

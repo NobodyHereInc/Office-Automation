@@ -36,11 +36,19 @@ namespace OA.UI.Controllers
             short deleteType = (short)DeleteEnumType.Normal;
 
             // get total record.
-            var UserInfoList = us.GetPageList<int>(c => c.DelFlag == deleteType, c => c.UserId, pageIndex, pagesize, out total, true);
+            var UserInfoList = us.GetPageList<String>(c => c.DelFlag == deleteType, c => c.Sort, pageIndex, pagesize, out total, true);
 
             // select info.
             var temp = from u in UserInfoList
-                       select new { UserId = u.UserId, UserName = u.UserName, UPwd = u.UPwd, Remark = u.Remark, SubTime = u.SubTime };
+                       select new {
+                           UserId = u.UserId,
+                           UserName = u.UserName,
+                           UPwd = u.UPwd,
+                           Remark = u.Remark,
+                           SubTime = u.SubTime,
+                           Sort = u.Sort,
+                           DelFlag = u.DelFlag
+                       };
 
             // return Json.
             return Json(new {rows = temp, total = total});
@@ -71,20 +79,40 @@ namespace OA.UI.Controllers
         }
         #endregion
 
-
-        public IActionResult Add()
-        {         
-            return View("Add");
-        }
-
-        [HttpPost]
-        public IActionResult Add(UserInfo userInfo)
+        #region Add User Info
+        public IActionResult AddUserInfo(UserInfo user)
         {
-            if (us.Add(userInfo))
-            {
-            }
-            return Redirect("Index");
+            user.SubTime = DateTime.Now;
+            user.ModifiedOn = DateTime.Now;
+            user.Sort = "0";
+            user.DelFlag = 0;
+
+            us.Add(user);
+            return Content("ok");
+
         }
+        #endregion
+
+        #region Update User Information
+        public IActionResult EditUserInfo(UserInfo user)
+        {
+            // add new info.
+            user.ModifiedOn = DateTime.Now;
+
+            // save update to database.
+            if (us.Edit(user))
+            {
+                return Content("ok");
+            }
+            else
+            {
+                return Content("no");
+            }
+
+
+            
+        }
+        #endregion
 
         /// <summary>
         /// This Function is used to convert string array to int list.
