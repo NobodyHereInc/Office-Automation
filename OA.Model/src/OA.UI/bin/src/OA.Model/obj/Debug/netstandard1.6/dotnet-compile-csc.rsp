@@ -8,8 +8,8 @@
 -debug:full
 -nostdlib
 -nologo
-"D:\Co-op Project\OA.Model\src\OA.UI\bin\src\OA.Model\obj\Debug\netstandard1.6\dotnet-compile.assemblyinfo.cs"
--out:"D:\Co-op Project\OA.Model\src\OA.UI\bin\src\OA.Model\bin\Debug\netstandard1.6\OA.Model.dll"
+"D:\OA.Model\src\OA.UI\bin\src\OA.Model\obj\Debug\netstandard1.6\dotnet-compile.assemblyinfo.cs"
+-out:"D:\OA.Model\src\OA.UI\bin\src\OA.Model\bin\Debug\netstandard1.6\OA.Model.dll"
 -r:"C:\Users\owner\.nuget\packages\Microsoft.CSharp\4.0.1\ref\netstandard1.0\Microsoft.CSharp.dll"
 -r:"C:\Users\owner\.nuget\packages\Microsoft.EntityFrameworkCore\1.0.0\lib\netstandard1.3\Microsoft.EntityFrameworkCore.dll"
 -r:"C:\Users\owner\.nuget\packages\Microsoft.EntityFrameworkCore.Relational\1.0.0\lib\netstandard1.3\Microsoft.EntityFrameworkCore.Relational.dll"
@@ -79,6 +79,6 @@
 -r:"C:\Users\owner\.nuget\packages\System.Threading.Timer\4.0.1\ref\netstandard1.2\System.Threading.Timer.dll"
 -r:"C:\Users\owner\.nuget\packages\System.Xml.ReaderWriter\4.0.11\ref\netstandard1.3\System.Xml.ReaderWriter.dll"
 -r:"C:\Users\owner\.nuget\packages\System.Xml.XDocument\4.0.11\ref\netstandard1.3\System.Xml.XDocument.dll"
-"D:\Co-op Project\OA.Model\src\OA.Model\OAContext.cs"
-"D:\Co-op Project\OA.Model\src\OA.Model\UserInfo.cs"
-"D:\Co-op Project\OA.Model\src\OA.Model\Properties\AssemblyInfo.cs"
+"D:\OA.Model\src\OA.Model\OAContext.cs"
+"D:\OA.Model\src\OA.Model\UserInfo.cs"
+"D:\OA.Model\src\OA.Model\Properties\AssemblyInfo.cs"

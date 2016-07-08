@@ -1,5 +1,5 @@
---temp-output:D:\Co-op Project\OA.Model\src\OA.UI\bin\src\OA.UI\obj\Debug\netcoreapp1.0\
---out:D:\Co-op Project\OA.Model\src\OA.UI\bin\src\OA.UI\bin\Debug\netcoreapp1.0\OA.UI.dll
+--temp-output:D:\OA.Model\src\OA.UI\bin\src\OA.UI\obj\Debug\netcoreapp1.0\
+--out:D:\OA.Model\src\OA.UI\bin\src\OA.UI\bin\Debug\netcoreapp1.0\OA.UI.dll
 --define:DEBUG
 --define:TRACE
 --define:NETCOREAPP1_0
@@ -100,6 +100,10 @@
 --reference:C:\Users\owner\.nuget\packages\Microsoft.Extensions.PlatformAbstractions\1.0.0\lib\netstandard1.3\Microsoft.Extensions.PlatformAbstractions.dll
 --reference:C:\Users\owner\.nuget\packages\Microsoft.Extensions.Primitives\1.0.0\lib\netstandard1.0\Microsoft.Extensions.Primitives.dll
 --reference:C:\Users\owner\.nuget\packages\Microsoft.Extensions.WebEncoders\1.0.0\lib\netstandard1.0\Microsoft.Extensions.WebEncoders.dll
+--reference:C:\Users\owner\.nuget\packages\Microsoft.Framework.Configuration\1.0.0-beta8\lib\dotnet\Microsoft.Framework.Configuration.dll
+--reference:C:\Users\owner\.nuget\packages\Microsoft.Framework.Configuration.Abstractions\1.0.0-beta8\lib\dotnet\Microsoft.Framework.Configuration.Abstractions.dll
+--reference:C:\Users\owner\.nuget\packages\Microsoft.Framework.Configuration.FileExtensions\1.0.0-beta8\lib\dotnet\Microsoft.Framework.Configuration.FileExtensions.dll
+--reference:C:\Users\owner\.nuget\packages\Microsoft.Framework.Configuration.Json\1.0.0-beta8\lib\dotnet\Microsoft.Framework.Configuration.Json.dll
 --reference:C:\Users\owner\.nuget\packages\Microsoft.Net.Http.Headers\1.0.0\lib\netstandard1.1\Microsoft.Net.Http.Headers.dll
 --reference:C:\Users\owner\.nuget\packages\Microsoft.VisualBasic\10.0.1\ref\netstandard1.1\Microsoft.VisualBasic.dll
 --reference:C:\Users\owner\.nuget\packages\Microsoft.VisualStudio.Web.BrowserLink.Loader\14.0.0\lib\netstandard1.5\Microsoft.VisualStudio.Web.BrowserLink.Loader.dll
@@ -208,14 +212,18 @@
 --reference:C:\Users\owner\.nuget\packages\System.Threading.Timer\4.0.1\ref\netstandard1.2\System.Threading.Timer.dll
 --reference:C:\Users\owner\.nuget\packages\System.Xml.ReaderWriter\4.0.11\ref\netstandard1.3\System.Xml.ReaderWriter.dll
 --reference:C:\Users\owner\.nuget\packages\System.Xml.XDocument\4.0.11\ref\netstandard1.3\System.Xml.XDocument.dll
---reference:D:\Co-op Project\OA.Model\src\OA.UI\bin\src\OA.DAL\bin\Debug\netstandard1.6\OA.DAL.dll
---reference:D:\Co-op Project\OA.Model\src\OA.UI\bin\src\OA.Model\bin\Debug\netstandard1.6\OA.Model.dll
---resource:"D:\Co-op Project\OA.Model\src\OA.UI\bin\src\OA.UI\obj\Debug\netcoreapp1.0\OA.UIdotnet-compile.deps.json",OA.UI.deps.json
-D:\Co-op Project\OA.Model\src\OA.UI\Program.cs
-D:\Co-op Project\OA.Model\src\OA.UI\Startup.cs
-D:\Co-op Project\OA.Model\src\OA.UI\Controllers\HomeController.cs
-D:\Co-op Project\OA.Model\src\OA.UI\Migrations\20160705193021_initial.cs
-D:\Co-op Project\OA.Model\src\OA.UI\Migrations\20160705193021_initial.Designer.cs
-D:\Co-op Project\OA.Model\src\OA.UI\Migrations\20160705193251_initial2.cs
-D:\Co-op Project\OA.Model\src\OA.UI\Migrations\20160705193251_initial2.Designer.cs
-D:\Co-op Project\OA.Model\src\OA.UI\Migrations\OAContextModelSnapshot.cs
+--reference:D:\OA.Model\src\OA.UI\bin\src\OA.Common\bin\Debug\netstandard1.6\OA.Common.dll
+--reference:D:\OA.Model\src\OA.UI\bin\src\OA.DAL\bin\Debug\netstandard1.6\OA.DAL.dll
+--reference:D:\OA.Model\src\OA.UI\bin\OA.DalFactory\bin\Debug\netstandard1.6\OA.DalFactory.dll
+--reference:D:\OA.Model\src\OA.UI\bin\src\OA.IDAL\bin\Debug\netstandard1.6\OA.IDAL.dll
+--reference:D:\OA.Model\src\OA.UI\bin\src\OA.IService\bin\Debug\netstandard1.6\OA.IService.dll
+--reference:D:\OA.Model\src\OA.UI\bin\src\OA.Model\bin\Debug\netstandard1.6\OA.Model.dll
+--reference:D:\OA.Model\src\OA.UI\bin\src\OA.Service\bin\Debug\netstandard1.6\OA.Service.dll
+--resource:"D:\OA.Model\src\OA.UI\bin\src\OA.UI\obj\Debug\netcoreapp1.0\OA.UIdotnet-compile.deps.json",OA.UI.deps.json
+D:\OA.Model\src\OA.UI\Program.cs
+D:\OA.Model\src\OA.UI\Startup.cs
+D:\OA.Model\src\OA.UI\Controllers\HomeController.cs
+D:\OA.Model\src\OA.UI\Controllers\UserInfoController.cs
+D:\OA.Model\src\OA.UI\Migrations\20160708004008_MyFirstMigration.cs
+D:\OA.Model\src\OA.UI\Migrations\20160708004008_MyFirstMigration.Designer.cs
+D:\OA.Model\src\OA.UI\Migrations\OAContextModelSnapshot.cs

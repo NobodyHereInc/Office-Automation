@@ -9,7 +9,8 @@ namespace OA.DAL
 {
     public class ContextFactory
     {
-        static AsyncLocal<OAContext> _AsyncLocal = new AsyncLocal<OAContext>();
+        // CallContext can't find, so I use AsyncLocal
+        private static AsyncLocal<OAContext> _AsyncLocal = new AsyncLocal<OAContext>();
 
         public static DbContext GetContext()
         {

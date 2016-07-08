@@ -8,11 +8,11 @@ namespace OA.IDAL
 {
     public interface IBaseDal<T> where T: class, new()
     {
-        int Add(T t);
-        int Edit(T t);
-        int Remove(T t);
-        int Remove(int id);
-        int Remove(int[] ids);
+        bool Add(T t);
+        bool Edit(T t);
+        bool Remove(T t);
+        bool Remove(int id);
+        bool Remove(int[] ids);
         T GetById(int id);
 
         IQueryable<T> GetList(Expression<Func<T, bool>> whereLambda);

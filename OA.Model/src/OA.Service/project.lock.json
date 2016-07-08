@@ -1974,6 +1974,20 @@
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
       },
+      "OA.Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v1.6",
+        "dependencies": {
+          "Microsoft.Extensions.Options.ConfigurationExtensions": "1.0.0-rc2-final",
+          "NETStandard.Library": "1.6.0"
+        },
+        "compile": {
+          "netstandard1.6/OA.Common.dll": {}
+        },
+        "runtime": {
+          "netstandard1.6/OA.Common.dll": {}
+        }
+      },
       "OA.DAL/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v1.6",
@@ -2003,8 +2017,10 @@
           "Microsoft.Extensions.Options.ConfigurationExtensions": "1.0.0-rc2-final",
           "Microsoft.Framework.Configuration.Json": "1.0.0-beta8",
           "NETStandard.Library": "1.6.0",
+          "OA.Common": "1.0.0",
           "OA.DAL": "1.0.0",
-          "OA.IDAL": "1.0.0"
+          "OA.IDAL": "1.0.0",
+          "OA.Model": "1.0.0"
         },
         "compile": {
           "netstandard1.6/OA.DalFactory.dll": {}
@@ -2028,6 +2044,22 @@
         },
         "runtime": {
           "netstandard1.6/OA.IDAL.dll": {}
+        }
+      },
+      "OA.IService/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v1.6",
+        "dependencies": {
+          "NETStandard.Library": "1.6.0",
+          "OA.DalFactory": "1.0.0",
+          "OA.IDAL": "1.0.0",
+          "OA.Model": "1.0.0"
+        },
+        "compile": {
+          "netstandard1.6/OA.IService.dll": {}
+        },
+        "runtime": {
+          "netstandard1.6/OA.IService.dll": {}
         }
       },
       "OA.Model/1.0.0": {
@@ -6238,6 +6270,11 @@
         "ref/xamarinwatchos10/_._"
       ]
     },
+    "OA.Common/1.0.0": {
+      "type": "project",
+      "path": "../OA.Common/project.json",
+      "msbuildProject": "../OA.Common/OA.Common.xproj"
+    },
     "OA.DAL/1.0.0": {
       "type": "project",
       "path": "../OA.DAL/project.json",
@@ -6253,6 +6290,11 @@
       "path": "../OA.IDAL/project.json",
       "msbuildProject": "../OA.IDAL/OA.IDAL.xproj"
     },
+    "OA.IService/1.0.0": {
+      "type": "project",
+      "path": "../OA.IService/project.json",
+      "msbuildProject": "../OA.IService/OA.IService.xproj"
+    },
     "OA.Model/1.0.0": {
       "type": "project",
       "path": "../OA.Model/project.json",
@@ -6262,8 +6304,10 @@
   "projectFileDependencyGroups": {
     "": [
       "NETStandard.Library >= 1.6.0",
+      "OA.DAL >= 1.0.0-*",
       "OA.DalFactory >= 1.0.0-*",
       "OA.IDAL >= 1.0.0-*",
+      "OA.IService >= 1.0.0-*",
       "OA.Model >= 1.0.0-*"
     ],
     ".NETStandard,Version=v1.6": []

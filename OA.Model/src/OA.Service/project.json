@@ -3,8 +3,10 @@
 
   "dependencies": {
     "NETStandard.Library": "1.6.0",
+    "OA.DAL": "1.0.0-*",
     "OA.DalFactory": "1.0.0-*",
     "OA.IDAL": "1.0.0-*",
+    "OA.IService": "1.0.0-*",
     "OA.Model": "1.0.0-*"
   },
 

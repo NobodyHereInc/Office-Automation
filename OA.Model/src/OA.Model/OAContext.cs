@@ -7,7 +7,7 @@ using OA.Model;
 
 namespace OA.DAL
 {
-    public class OAContext :DbContext
+    public class OAContext : DbContext
     {
         public OAContext() : base()
         {

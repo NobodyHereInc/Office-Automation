@@ -4,41 +4,37 @@ using System.Linq;
 using System.Threading.Tasks;
 using OA.Model;
 using System.Linq.Expressions;
-using OA.IDAL;
-using OA.DalFactory;
+using OA.IService;
 
 namespace OA.Service
 {
-    public partial class UserInfoService
+    public class UserInfoService : BaseService<UserInfo>, IUserInfoService
     {
-        // UserInfoDal dal = new UserInfoDal();
-        private IUserInfoDal Idal = DalFactory1.GetUserInfo();
-        //rivate IUserInfoDal Ida2 = DalFactory1.GetUserInfo2();
-
-        // add
-        public bool Add(UserInfo userInfo)
+        #region Batch Remove
+        public bool DeleteEntities(List<int> list)
         {
-            return Idal.Add(userInfo) > 0; 
+            // get all record that want to delete.
+            var deleteList = this.DbSession.UserInforDal.GetList(u => list.Contains(u.UserId));
+
+            // if deleteList is not null.
+            if (deleteList != null)
+            {
+                // make deleteMark for each UserInfo.
+                foreach (var UserInfo in deleteList)
+                {
+                    this.DbSession.UserInforDal.Remove(UserInfo);
+                }
+            }
+
+            // calling DbSession.SaveChanges method. (change to update "deleteFlag")
+            return this.DbSession.SaveChanges();
         }
+        #endregion
 
-        // modify
-        public bool Edit(UserInfo userInfo)
+
+        public override void SetCurrentDal()
         {
-            return Idal.Edit(userInfo) > 0; 
-        }
-
-        // delete
-
-        // search
-
-        public UserInfo GetById(int id)
-        {
-            return Idal.GetById(id);
-        }
-
-        public IQueryable<UserInfo> GetList(Expression<Func<UserInfo, bool>> whereLambda)
-        {
-            return Idal.GetList(whereLambda);
+            CurrentDal = this.DbSession.UserInforDal;
         }
     }
 }

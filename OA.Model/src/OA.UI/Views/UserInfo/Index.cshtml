@@ -8,30 +8,136 @@
 <head>
     <title></title>
     <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/lib/jquery-easyui-1.4.5/themes/bootstrap/easyui.css" rel="stylesheet" />
+    <link href="~/lib/jquery-easyui-1.4.5/themes/icon.css" rel="stylesheet" />
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/jquery-easyui-1.4.5/jquery.easyui.min.js"></script>
+    <script src="~/lib/jquery-easyui-1.4.5/locale/easyui-lang-en.js"></script>
+    <script src="~/js/datapattern.js"></script>
+ 
+    <script>
+        $(function () {
+            loadData();
+        });
+
+        function loadData() {
+            $('#tt').datagrid({
+                url: '/UserInfo/GetUserInfo',
+                title: 'User Info Table',
+                width: 700,
+                height: 400,
+                fitColumns: true,
+                nowrap: false,
+                idField: 'userId',
+                loadMsg: 'Loading User Information...', // Loading message.
+                pagination: true, // whether speprate page.
+                singleSelect: false, // whether Select a single row.
+                pageSize: 5, // Page Size
+                pageNumber: 1, // Start Page
+                pageList: [5, 10, 15],
+                queryParams: {}, // send parameters to back-end.
+                columns: [[
+                    { field: 'ck', checkbox: true, align: 'left', width: 50 },
+					{ field: 'userId', title: 'ID', width: 80 },
+					{ field: 'userName', title: 'User Name', width: 120 },
+                    { field: 'uPwd', title: 'PassWord', width: 120 },
+                    { field: 'remark', title: 'Remark', width: 120 },
+					{
+					  field: 'subTime', title: 'Submit Time', width: 120, align: 'right'
+                      /*
+					  formatter: function (value, row, index) {
+					    return (eval(value.replace(/\/Date\((\d+)\)\//gi, "new Date($1)"))).pattern("yyyy-M-d");
+					  }
+                      */
+					}
+                ]],
+                toolbar: [{
+                    id: 'btnDelete',
+                    text: 'Delete',
+                    iconCls: 'icon-remove',
+                    handler: function () {
+                        deleteInfo();
+                    }
+                }, {
+                    id: 'btnAdd',
+                    text: 'Add User',
+                    iconCls: 'icon-add',
+                    handler: function () {
+                        //addInfo();
+                    }
+                }, {
+                    id: 'btnEdit',
+                    text: 'Edit User',
+                    iconCls: 'icon-edit',
+                    handler: function () {
+                        //editInfo();
+                    }
+                }, {
+                    id: 'btnSetRole',
+                    text: 'Set Role For User',
+                    iconCls: 'icon-edit',
+                    handler: function () {
+                        //setUserRole();
+                    }
+                }, {
+                    id: 'btnSetAction',
+                    text: 'Set For User',
+                    iconCls: 'icon-edit',
+                    handler: function () {
+                        //setUserAction();
+                    }
+                }],
+            });
+        }
+        //Modify Info.
+
+        //Add Info.
+
+        //Delete Info.
+        function deleteInfo()
+        {
+            // get all seleted rows.
+            var rows = $('#tt').datagrid('getSelections');
+    
+            //
+            if (!rows || rows.length == 0) {
+                // alart error message
+                $.messager.alert("Error Message", "Please select item to delete!", "error");
+                return;
+            }
+
+            if ($.messager.confirm("Message", "Are you sure delete this?", function (r) {
+                if (r) { // user click "OK"
+                    // get what want to delete.
+                    var strId = "";
+                    for (var i = 0; i < rows.length; i++) {
+                        strId = strId + rows[i].userId + ","
+                    }
+
+                    // delete last ","
+                    strId = strId.substr(0, strId.length - 1);
+
+                    // request to server-side (post method)
+                    $.post("/UserInfo/DeleteUserInfo", { "strId": strId }, function (data) {
+                            if (data = "Ok") {
+                                $('#tt').datagrid("reload");
+                            }
+                            else{
+
+                            }
+                    });
+                }
+            }));
+
+        }
+    </script>
 </head>
 <body>
     <a asp-controller="UserInfo" asp-action="Add" class="navbar-brand">Add User</a>
 
-    <div class="container">
-        <div class="table-responsive">
-            <table class="table table-hover">
-                <thead>
-                    <th>User ID</th>
-                    <th>User Name</th>
-                    <th>User Gender</th>
-                    <th>User Age</th>
-                </thead>
-                @foreach (var item in Model)
-                {
-                    <tr>
-                        <td>@item.UserId</td>
-                        <td>@item.UserName</td>
-                        <td>@item.UserGender</td>
-                        <td>@item.UserAge</td>
-                    </tr>
-                }
-            </table>
-        </div>
+    <div>
+        <table id="tt" class="table-responsive col-md-2 col-md-8" title="" iconcls="icon-edit"></table>
     </div>
+
 </body>
 </html>

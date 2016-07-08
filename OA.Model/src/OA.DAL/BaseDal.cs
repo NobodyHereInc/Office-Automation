@@ -21,21 +21,23 @@ namespace OA.DAL
         /// </summary>
         /// <param name="Entity"> new entity. </param>
         /// <returns> affect row. </returns>
-        public int Add(T Entity)
+        public bool Add(T Entity)
         {
             context.Set<T>().Add(Entity);
-            return context.SaveChanges();
+            //return context.SaveChanges();
+            return true;
         }
 
         /// <summary>
-        /// This function is used to modify info od data in database.
+        /// This function is used to modify info modify data in database.
         /// </summary>
         /// <param name="Entity"> Entity need to be updated from database. </param>
         /// <returns> affect row. </returns>
-        public int Edit(T Entity)
+        public bool Edit(T Entity)
         {
             context.Entry(Entity).State = EntityState.Modified;
-            return context.SaveChanges();
+            //return context.SaveChanges();
+            return true;
         }
 
 
@@ -66,11 +68,13 @@ namespace OA.DAL
         /// </summary>
         /// <param name="Entity"> Entity need to be deleted from database. </param>
         /// <returns> affect row. </returns>
-        public int Remove(T Entity)
+        public bool Remove(T Entity)
         {
-            context.Set<T>().Remove(Entity);
+            context.Entry<T>(Entity).State = EntityState.Deleted;
+            //context.Set<T>().Remove(Entity);
 
-            return context.SaveChanges();
+            //return context.SaveChanges();
+            return true;
         }
 
         // seach

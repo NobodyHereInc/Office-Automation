@@ -11,20 +11,21 @@ using OA.IDAL;
 
 namespace OA.DAL
 {
+    /*
+     * Class Description: 
+     */
     public partial class UserInfoDal : BaseDal<UserInfo>, IUserInfoDal
     {
-        // delete
-
         /// <summary>
-        /// 
+        /// This function is used to delete data from database.
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="id">id of Entity</param>
         /// <returns></returns>
-        public int Remove(int id)
+        public bool Remove(int id)
         {
             UserInfo userInfo = context.Set<UserInfo>().Where(u => u.UserId.Equals(id)) as UserInfo;
             context.Set<UserInfo>().Remove(userInfo);
-            return context.SaveChanges();
+            return true;
         }
 
 
@@ -35,7 +36,7 @@ namespace OA.DAL
         /// </summary>
         /// <param name="ids"></param>
         /// <returns></returns>
-        public int Remove(int[] ids)
+        public bool Remove(int[] ids)
         {
             foreach (int id in ids)
             {
@@ -43,7 +44,7 @@ namespace OA.DAL
                 context.Set<UserInfo>().Remove(userInfo);
             }
 
-            return context.SaveChanges();
+            return true;
         }
 
         //// seach

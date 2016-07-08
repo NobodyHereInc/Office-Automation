@@ -21,13 +21,20 @@ namespace OA.UI.Migrations
                     b.Property<int>("UserId")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int>("UserAge");
+                    b.Property<short>("DelFlag");
 
-                    b.Property<string>("UserGender");
+                    b.Property<DateTime>("ModifiedOn");
+
+                    b.Property<string>("Remark");
+
+                    b.Property<string>("Sort");
+
+                    b.Property<DateTime>("SubTime");
+
+                    b.Property<string>("UPwd");
 
                     b.Property<string>("UserName")
-                        .IsRequired()
-                        .HasAnnotation("MaxLength", 20);
+                        .IsRequired();
 
                     b.HasKey("UserId");
 

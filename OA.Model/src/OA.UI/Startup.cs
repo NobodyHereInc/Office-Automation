@@ -8,6 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using OA.DAL;
+using OA.Common;
 using Microsoft.EntityFrameworkCore;
 
 namespace OA.UI
@@ -35,8 +36,13 @@ namespace OA.UI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // add Dbcontext
             var connectiongString = "Data Source=DESKTOP-F46IJD2;Initial Catalog=OA_DB;Integrated Security=True;Connect Timeout=15;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
             services.AddDbContext<OAContext>(options => options.UseSqlServer(connectiongString, b => b.MigrationsAssembly("OA.UI")));
+
+            // add configuration.
+            services.AddOptions();
+            services.Configure<ReflectUserInfo>(Configuration.GetSection("UserInfoDal"));
 
             // Add framework services.
             services.AddApplicationInsightsTelemetry(Configuration);

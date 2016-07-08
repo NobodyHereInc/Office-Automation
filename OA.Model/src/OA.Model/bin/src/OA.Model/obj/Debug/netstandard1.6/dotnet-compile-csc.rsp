@@ -79,5 +79,6 @@
 -r:"C:\Users\owner\.nuget\packages\System.Threading.Timer\4.0.1\ref\netstandard1.2\System.Threading.Timer.dll"
 -r:"C:\Users\owner\.nuget\packages\System.Xml.ReaderWriter\4.0.11\ref\netstandard1.3\System.Xml.ReaderWriter.dll"
 -r:"C:\Users\owner\.nuget\packages\System.Xml.XDocument\4.0.11\ref\netstandard1.3\System.Xml.XDocument.dll"
+"D:\Co-op Project\OA.Model\src\OA.Model\OAContext.cs"
 "D:\Co-op Project\OA.Model\src\OA.Model\UserInfo.cs"
 "D:\Co-op Project\OA.Model\src\OA.Model\Properties\AssemblyInfo.cs"
