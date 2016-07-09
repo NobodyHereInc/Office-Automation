@@ -83,3 +83,5 @@
 "D:\Co-op Project\OA.Model\src\OA.Model\UserInfo.cs"
 "D:\Co-op Project\OA.Model\src\OA.Model\Enum\DeleteEnumType.cs"
 "D:\Co-op Project\OA.Model\src\OA.Model\Properties\AssemblyInfo.cs"
+"D:\Co-op Project\OA.Model\src\OA.Model\SearchParams\BaseParam.cs"
+"D:\Co-op Project\OA.Model\src\OA.Model\SearchParams\UserInfoFilter.cs"

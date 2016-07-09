@@ -21,9 +21,16 @@
             $('#addDiv').css("display", "none");
             $('#editDiv').css("display", "none");
             loadData();
+            $('#btnSerach').click(function () {
+                var pars = {
+                    name: $("#txtUName").val(),
+                    remark: $("#txtURemark").val()
+                }
+                loadData(pars);
+            });
         });
 
-        function loadData() {
+        function loadData(pars) {
             $('#tt').datagrid({
                 url: '/UserInfo/GetUserInfo',
                 title: 'User Info Table',
@@ -35,10 +42,10 @@
                 loadMsg: 'Loading User Information...', // Loading message.
                 pagination: true, // whether speprate page.
                 singleSelect: false, // whether Select a single row.
-                pageSize: 5, // Page Size
+                pageSize: 10, // Page Size
                 pageNumber: 1, // Start Page
-                pageList: [5, 10, 15],
-                queryParams: {}, // send parameters to back-end.
+                pageList: [10, 15, 20],
+                queryParams: pars, // send parameters to back-end.
                 columns: [[
                     { field: 'ck', checkbox: true, align: 'left', width: 50 },
 					{ field: 'userId', title: 'ID', width: 80 },
@@ -228,8 +235,8 @@
     </script>
 </head>
 <body>
-    <a asp-controller="UserInfo" asp-action="Add" class="navbar-brand">Add User</a>
-    <!----------------------------------- START Display User Infromation --------------------------->
+    User Name:<input type="text" id="txtUName" />&nbsp;&nbsp;Remark:<input type="text" id="txtURemark" /><input type="button" id="btnSerach" value="Search" />
+    <!---------------------------------- START Display User Infromation --------------------------->
     <div>
         <table id="tt" class="table-responsive col-md-2 col-md-8" title="" iconcls="icon-edit"></table>
     </div>
@@ -260,23 +267,23 @@
             <input type="hidden" name="subTime" id="txtSubTime" />
             <table>
                 <tr>
-                    <td>User Name</td>
+                    <td>User Name:</td>
                     <td><input type="text" name="userName" id="txtName" /></td>
                 </tr>
                 <tr>
-                    <td>Pass Word</td>
+                    <td>Pass Word:</td>
                     <td><input type="password" name="uPwd" id="txtuPwd" /></td>
                 </tr>
                 <tr>
-                    <td>Remark</td>
+                    <td>Remark:</td>
                     <td><input type="text" name="remark" id="txtremark" /></td>
                 </tr>
                 <tr>
-                    <td>Status</td>
+                    <td>Status:</td>
                     <td><input type="text" name="DelFlag" id="txtDelFlag" /></td>
                 </tr>
                 <tr>
-                    <td>Sort</td>
+                    <td>Sort:</td>
                     <td><input type="text" name="Sort" id="txtSort" /></td>
                 </tr>
             </table>

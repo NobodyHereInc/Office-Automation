@@ -9,6 +9,7 @@ using OA.IService;
 using OA.Service;
 using OA.Model.Enum;
 using Microsoft.AspNetCore.Mvc.Formatters.Json;
+using OA.Model.SearchParams;
 
 // For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -29,29 +30,46 @@ namespace OA.UI.Controllers
         public IActionResult GetUserInfo()
         {
             int pageIndex = int.Parse(Request.Form["page"]); // page index.
-            int pagesize = int.Parse(Request.Form["rows"]); // page size.
-            int total; // total record.
+            var pagesize = int.Parse(Request.Form["rows"]); // page size.
+            int total = 0; // total record.
 
-            // delete enum.
-            short deleteType = (short)DeleteEnumType.Normal;
+            String name = Request.Form["name"]; // get username for search.
+            String remark = Request.Form["remark"]; // get remark for search.
 
-            // get total record.
-            var UserInfoList = us.GetPageList<String>(c => c.DelFlag == deleteType, c => c.Sort, pageIndex, pagesize, out total, true);
+            // fill search filter.
+            UserInfoFilter userInfoFilter = new UserInfoFilter()
+            {
+                Uname = name,
+                PageIndex = pageIndex,
+                PageSize = pagesize,
+                TotalCount = total,
+                Uremark = remark
+            };
 
-            // select info.
-            var temp = from u in UserInfoList
+            #region Old Version
+            ////delete enum.
+            //short deleteType = (short)DeleteEnumType.Normal;
+            ////get total record.
+            //var UserInfoList = us.GetPageList<String>(c => c.DelFlag == deleteType, c => c.Sort, pageIndex, pagesize, out total, true);
+            #endregion
+
+        // new version for search User info.
+        var UserInfoList = us.LoadSearchUserInfo(userInfoFilter);
+
+        // select info.
+        var temp = from u in UserInfoList
                        select new {
                            UserId = u.UserId,
                            UserName = u.UserName,
-                           UPwd = u.UPwd,
+                           UPwd = u.UPwd, 
                            Remark = u.Remark,
                            SubTime = u.SubTime,
                            Sort = u.Sort,
                            DelFlag = u.DelFlag
-                       };
+                       }; 
 
             // return Json.
-            return Json(new {rows = temp, total = total});
+            return Json(new {rows = temp, total = userInfoFilter.TotalCount});
         }
         #endregion
 

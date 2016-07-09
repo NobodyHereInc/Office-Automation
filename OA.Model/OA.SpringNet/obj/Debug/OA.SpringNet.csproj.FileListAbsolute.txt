@@ -1,0 +1,13 @@
+D:\Co-op Project\OA.Model\OA.SpringNet\bin\Debug\OA.SpringNet.exe.config
+D:\Co-op Project\OA.Model\OA.SpringNet\bin\Debug\OA.SpringNet.exe
+D:\Co-op Project\OA.Model\OA.SpringNet\bin\Debug\OA.SpringNet.pdb
+D:\Co-op Project\OA.Model\OA.SpringNet\bin\Debug\Spring.Core.dll
+D:\Co-op Project\OA.Model\OA.SpringNet\bin\Debug\Spring.Core.pdb
+D:\Co-op Project\OA.Model\OA.SpringNet\bin\Debug\Spring.Core.xml
+D:\Co-op Project\OA.Model\OA.SpringNet\obj\Debug\OA.SpringNet.csprojResolveAssemblyReference.cache
+D:\Co-op Project\OA.Model\OA.SpringNet\obj\Debug\OA.SpringNet.Form1.resources
+D:\Co-op Project\OA.Model\OA.SpringNet\obj\Debug\OA.SpringNet.Properties.Resources.resources
+D:\Co-op Project\OA.Model\OA.SpringNet\obj\Debug\OA.SpringNet.csproj.GenerateResource.Cache
+D:\Co-op Project\OA.Model\OA.SpringNet\obj\Debug\OA.SpringNet.exe
+D:\Co-op Project\OA.Model\OA.SpringNet\obj\Debug\OA.SpringNet.pdb
+D:\Co-op Project\OA.Model\OA.SpringNet\bin\Debug\Common.Logging.dll

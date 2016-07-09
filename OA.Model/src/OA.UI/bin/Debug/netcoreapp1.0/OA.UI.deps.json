@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v1.0",
-    "signature": "184715bca2a0bc037e663fd6fe2de8ea6f4db342"
+    "signature": "fc944986e6acc94768aa1288c1108382a50245b0"
   },
   "compilationOptions": {
     "defines": [
@@ -40,13 +40,28 @@
           "jQuery": "3.0.0.1",
           "OA.Common": "1.0.0",
           "OA.IService": "1.0.0",
-          "Microsoft.AspNetCore.Mvc.Formatters.Json": "1.0.0"
+          "Microsoft.AspNetCore.Mvc.Formatters.Json": "1.0.0",
+          "BundlerMinifier.Core": "2.1.258",
+          "System.Net.Mail": "1.0.0-rtm-00002"
         },
         "runtime": {
           "OA.UI.dll": {}
         },
         "compile": {
           "OA.UI.dll": {}
+        }
+      },
+      "BundlerMinifier.Core/2.1.258": {
+        "dependencies": {
+          "Microsoft.NETCore.App": "1.0.0",
+          "NUglify": "1.5.1",
+          "Newtonsoft.Json": "9.0.1"
+        },
+        "runtime": {
+          "lib/netcoreapp1.0/dotnet-bundle.dll": {}
+        },
+        "compile": {
+          "lib/netcoreapp1.0/dotnet-bundle.dll": {}
         }
       },
       "jQuery/3.0.0.1": {},
@@ -1713,6 +1728,18 @@
           "lib/netstandard1.0/NuGet.Versioning.dll": {}
         }
       },
+      "NUglify/1.5.1": {
+        "dependencies": {
+          "NETStandard.Library": "1.6.0",
+          "System.Security.Cryptography.Algorithms": "4.2.0"
+        },
+        "runtime": {
+          "lib/netstandard1.3/NUglify.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.3/NUglify.dll": {}
+        }
+      },
       "Remotion.Linq/2.1.1": {
         "dependencies": {
           "System.Collections": "4.0.11",
@@ -1784,6 +1811,9 @@
         },
         "runtime": {
           "lib/netstandard1.3/System.Collections.Specialized.dll": {}
+        },
+        "compile": {
+          "ref/netstandard1.3/System.Collections.Specialized.dll": {}
         }
       },
       "System.ComponentModel.Primitives/4.1.0": {
@@ -1955,6 +1985,31 @@
             "rid": "win",
             "assetType": "runtime"
           }
+        }
+      },
+      "System.Net.Mail/1.0.0-rtm-00002": {
+        "dependencies": {
+          "Newtonsoft.Json": "9.0.1",
+          "System.Collections": "4.0.11",
+          "System.Collections.Specialized": "4.0.1",
+          "System.Data.Common": "4.1.0",
+          "System.Diagnostics.Debug": "4.0.11",
+          "System.Globalization": "4.0.11",
+          "System.Globalization.Extensions": "4.0.1",
+          "System.IO.FileSystem": "4.0.1",
+          "System.Net.Primitives": "4.0.11",
+          "System.Runtime": "4.1.0",
+          "System.Runtime.Extensions": "4.1.0",
+          "System.Text.Encoding.Extensions": "4.0.11",
+          "System.Threading": "4.0.11",
+          "System.Threading.Thread": "4.0.0",
+          "System.Threading.ThreadPool": "4.0.10"
+        },
+        "runtime": {
+          "lib/netstandard1.3/System.Net.Mail.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.3/System.Net.Mail.dll": {}
         }
       },
       "System.Net.WebSockets/4.0.0": {
@@ -3748,6 +3803,11 @@
       "serviceable": false,
       "sha512": ""
     },
+    "BundlerMinifier.Core/2.1.258": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-dHTcSnKRM2Dvk1s2eCLU8U1WCxLlfk4y0GQlBUFaHaLt1NN1JhxJeDhhVo6jqKhHZsBaY7Cz04UYuKrKSwItZQ=="
+    },
     "jQuery/3.0.0.1": {
       "type": "package",
       "serviceable": true,
@@ -4283,6 +4343,11 @@
       "serviceable": true,
       "sha512": "sha512-Stok+SI5lWxOkTgZZM7jT4xuAZogm5+j85mKJeHSXb8o0OAbB+qDX9jkdM2wIEnjoR8R29J0nQYwk2Kl2lWFpA=="
     },
+    "NUglify/1.5.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-iYV/OtSs+HgyE/RilY7UvGXYec6r0OJenWlPIdX/IivedVpSSdzxvPvUIyWpiV/6ad7VjantH0/6oaOhAZbaoQ=="
+    },
     "Remotion.Linq/2.1.1": {
       "type": "package",
       "serviceable": true,
@@ -4347,6 +4412,11 @@
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-L9QVhk8hIEix5KNA0kW58Ha+Y1dNGqqqIhAaJkhcGCWeQzUmN0njzI7SG/XAazpMecboOdFFlH3pH/qbwXLJAg=="
+    },
+    "System.Net.Mail/1.0.0-rtm-00002": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-6OynwcCzHtBDDF2H7WvzXvbD8yldel7KQWhQtr7jBPrszH16hHkg6IDsSZNWgSofI4Jk1szMZvtUG9l6B5aWow=="
     },
     "System.Net.WebSockets/4.0.0": {
       "type": "package",
