@@ -32,7 +32,7 @@ namespace OA.UI.Controllers
 
         public IActionResult Error()
         {
-            return View();
+            return View("Error");
         }
     }
 }
