@@ -17,7 +17,7 @@ namespace OA.UI.Controllers
 {
     public class UserInfoController : Controller
     {
-        IUserInfoService us = new UserInfoService();
+        private IUserInfoService us = new UserInfoService();
 
         // GET: /<controller>/
         public IActionResult Index()
@@ -125,13 +125,24 @@ namespace OA.UI.Controllers
             else
             {
                 return Content("no");
-            }
-
-
-            
+            }       
         }
         #endregion
 
+        #region ShowEditUserInfo
+        public IActionResult ShowEditUserInfo(int id)
+        {
+            UserInfo userInfo = us.GetList(u => u.UserId == id).FirstOrDefault();
+            //UserInfo userInfo = us.GetById(id);
+
+            ViewData.Model = userInfo;
+
+            return View("ShowEditUserInfo");
+        }
+
+        #endregion
+
+        #region Tool Functions
         /// <summary>
         /// This Function is used to convert string array to int list.
         /// </summary>
@@ -151,5 +162,7 @@ namespace OA.UI.Controllers
             // return  int list.
             return result;
         }
+        #endregion
+
     }
 }

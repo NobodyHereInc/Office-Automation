@@ -112,34 +112,32 @@
             // display editDiv div
             $('#editDiv').css("display", "block");
 
-            // add data to edit form.
-            $("#txtName").val(rows[0].userName);
-            $("#txtuPwd").val(rows[0].uPwd);
-            $("#txtremark").val(rows[0].remark);
-            $("#txtId").val(rows[0].userId);
-            $("#txtSubTime").val(rows[0].subTime);
-            $("#txtDelFlag").val(rows[0].delFlag);
-            $("#txtSort").val(rows[0].sort);
+            //
+            $("#editFrame").attr("src", "/UserInfo/ShowEditUserInfo/?id=" + rows[0].userId)
 
             // dialog for editForm (easyUI)
             $('#editDiv').dialog({
                 title: "Edit User Information",
                 modal: true,
                 collapsible: true,
-                width: 300,
-                height: 200,
+                width: 400,
+                height: 500,
                 buttons: [{
                     text: 'Ok',
                     iconCls: 'icon-ok',
                     handler: function () {
                         //check input data !----------------
 
-                        $("#editForm").submit();//Submit form
+                        //get child window object.
+                        var chilidWindow = $("#editFrame")[0].contentWindow;
+                        // use child window function called "subEditFrom".
+                        chilidWindow.subEditForm();
                     }
                 }, {
                     text: 'Cancel',
                     handler: function () {
                         $('#editDiv').dialog('close');
+                        $('#tt').datagrid('reload'); // reload info.
                         $("#editForm input").val("");
                     }
                 }]
@@ -179,6 +177,7 @@
                     text: 'Cancel',
                     handler: function () {
                         $('#addDiv').dialog('close');
+                        $('#tt').datagrid('reload'); // reload info.
                         $("#addForm input").val("");
                     }
                 }]
@@ -235,7 +234,8 @@
     </script>
 </head>
 <body>
-    User Name:<input type="text" id="txtUName" />&nbsp;&nbsp;Remark:<input type="text" id="txtURemark" /><input type="button" id="btnSerach" value="Search" />
+    <!----- class="form-control col-sm-10" ----->
+    User Name:<input type="text" id="txtUName" />&nbsp;&nbsp;Remark:<input type="text" id="txtURemark" /><button id="btnSerach" class="btn btn-info btn-md">Search</button>
     <!---------------------------------- START Display User Infromation --------------------------->
     <div>
         <table id="tt" class="table-responsive col-md-2 col-md-8" title="" iconcls="icon-edit"></table>
@@ -262,7 +262,7 @@
 
     <!----------------------- START Update User Information -------------------------->
     <div id="editDiv">
-        <form asp-controller="UserInfo" asp-action="EditUserInfo" data-ajax="true" data-ajax-method="POST" data-ajax-success="afterEdit" id="editForm" data-ajax-confirm="Are you sure you want update this user Information?">
+            @*<form asp-controller="UserInfo" asp-action="EditUserInfo" data-ajax="true" data-ajax-method="POST" data-ajax-success="afterEdit" id="editForm" data-ajax-confirm="Are you sure you want update this user Information?">
             <input type="hidden" name="userId" id="txtId" />
             <input type="hidden" name="subTime" id="txtSubTime" />
             <table>
@@ -287,7 +287,9 @@
                     <td><input type="text" name="Sort" id="txtSort" /></td>
                 </tr>
             </table>
-        </form>
+        </form>*@
+
+        <iframe id="editFrame" frameborder="0" scrolling="no" width="100%" height="100%"></iframe>
     </div>
     <!----------------------- END Update User Information ---------------------------->
 </body>
