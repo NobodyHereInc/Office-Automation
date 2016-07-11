@@ -7958,3 +7958,616 @@ System.DivideByZeroException: Attempted to divide by zero.
 2016-07-10 18:18:38.900 -04:00 [Debug] Request did not match any routes.
 2016-07-10 18:18:38.903 -04:00 [Information] Request finished in 7.6203ms 404 
 2016-07-10 18:18:38.905 -04:00 [Debug] Connection id ""0HKT9204GCLQL"" completed keep alive response.
+2016-07-10 19:17:13.846 -04:00 [Information] User profile is available. Using '"C:\Users\owner\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2016-07-10 19:17:13.997 -04:00 [Debug] Hosting starting
+2016-07-10 19:17:14.178 -04:00 [Debug] Hosting started
+2016-07-10 19:17:14.414 -04:00 [Debug] Connection id ""0HKT931A125E6"" started.
+2016-07-10 19:17:14.414 -04:00 [Debug] Connection id ""0HKT931A125E7"" started.
+2016-07-10 19:17:14.545 -04:00 [Information] Request starting HTTP/1.1 GET http://localhost:55839/  
+2016-07-10 19:17:14.545 -04:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:55839/  0
+2016-07-10 19:17:14.619 -04:00 [Information] Request finished in 98.1752ms 200 
+2016-07-10 19:17:14.670 -04:00 [Debug] The request path "/" does not match a supported file type
+2016-07-10 19:17:14.671 -04:00 [Debug] Connection id ""0HKT931A125E7"" completed keep alive response.
+2016-07-10 19:17:14.711 -04:00 [Debug] Reading data from file '"C:\Users\owner\AppData\Local\ASP.NET\DataProtection-Keys\key-cb9f45e1-4ed9-48c0-bff0-6e92031944f4.xml"'.
+2016-07-10 19:17:14.721 -04:00 [Debug] Found key {cb9f45e1-4ed9-48c0-bff0-6e92031944f4}.
+2016-07-10 19:17:14.736 -04:00 [Debug] Considering key {cb9f45e1-4ed9-48c0-bff0-6e92031944f4} with expiration date 2016-10-04 12:23:19Z as default key.
+2016-07-10 19:17:14.745 -04:00 [Debug] Decrypting secret element using Windows DPAPI.
+2016-07-10 19:17:14.756 -04:00 [Debug] Opening CNG algorithm '"AES"' from provider 'null' with chaining mode CBC.
+2016-07-10 19:17:14.763 -04:00 [Debug] Opening CNG algorithm '"SHA256"' from provider 'null' with HMAC.
+2016-07-10 19:17:14.774 -04:00 [Debug] Using key {cb9f45e1-4ed9-48c0-bff0-6e92031944f4} as the default key.
+2016-07-10 19:17:14.949 -04:00 [Debug] Request successfully matched the route with name '"default"' and template '"{controller=Login}/{action=Index}/{id?}"'.
+2016-07-10 19:17:15.034 -04:00 [Debug] Executing action "OA.UI.Controllers.LoginController.Index (OA.UI)"
+2016-07-10 19:17:15.199 -04:00 [Information] Executing action method "OA.UI.Controllers.LoginController.Index (OA.UI)" with arguments (null) - ModelState is Valid
+2016-07-10 19:17:15.207 -04:00 [Debug] Executed action method "OA.UI.Controllers.LoginController.Index (OA.UI)", returned result "Microsoft.AspNetCore.Mvc.ViewResult".
+2016-07-10 19:17:15.322 -04:00 [Debug] View lookup cache miss for view '"Index"' in controller '"Login"'.
+2016-07-10 19:17:15.343 -04:00 [Debug] Code generation for the Razor file at '"/Views/Login/Index.cshtml"' started.
+2016-07-10 19:17:15.786 -04:00 [Debug] Code generation for the Razor file at '"/Views/Login/Index.cshtml"' completed in 439.7876ms.
+2016-07-10 19:17:15.800 -04:00 [Debug] Compilation of the generated code for the Razor file at '"/Views/Login/Index.cshtml"' started.
+2016-07-10 19:17:17.091 -04:00 [Debug] Compilation of the generated code for the Razor file at '"/Views/Login/Index.cshtml"' completed in 1291.3541ms.
+2016-07-10 19:17:17.095 -04:00 [Debug] Code generation for the Razor file at '"/Views/_ViewStart.cshtml"' started.
+2016-07-10 19:17:17.100 -04:00 [Debug] Code generation for the Razor file at '"/Views/_ViewStart.cshtml"' completed in 5.1061ms.
+2016-07-10 19:17:17.101 -04:00 [Debug] Compilation of the generated code for the Razor file at '"/Views/_ViewStart.cshtml"' started.
+2016-07-10 19:17:17.148 -04:00 [Debug] Compilation of the generated code for the Razor file at '"/Views/_ViewStart.cshtml"' completed in 46.9124ms.
+2016-07-10 19:17:17.155 -04:00 [Debug] The view '"Index"' was found.
+2016-07-10 19:17:17.156 -04:00 [Information] Executing ViewResult, running view at path "/Views/Login/Index.cshtml".
+2016-07-10 19:17:17.346 -04:00 [Debug] An antiforgery cookie token was reused.
+2016-07-10 19:17:18.545 -04:00 [Information] Executed action "OA.UI.Controllers.LoginController.Index (OA.UI)" in 3509.6401ms
+2016-07-10 19:17:18.639 -04:00 [Information] Request finished in 4126.2783ms 200 text/html; charset=utf-8
+2016-07-10 19:17:18.644 -04:00 [Debug] Connection id ""0HKT931A125E6"" completed keep alive response.
+2016-07-10 19:17:34.342 -04:00 [Information] Request starting HTTP/1.1 POST http://localhost:55839/Login/CheckLogin application/x-www-form-urlencoded; charset=UTF-8 268
+2016-07-10 19:17:34.345 -04:00 [Information] Request starting HTTP/1.1 POST http://localhost:55839/Login/CheckLogin application/x-www-form-urlencoded; charset=UTF-8 268
+2016-07-10 19:17:34.348 -04:00 [Debug] "POST" requests are not supported
+2016-07-10 19:17:34.348 -04:00 [Debug] "POST" requests are not supported
+2016-07-10 19:17:34.348 -04:00 [Debug] Request successfully matched the route with name '"default"' and template '"{controller=Login}/{action=Index}/{id?}"'.
+2016-07-10 19:17:34.348 -04:00 [Debug] Request successfully matched the route with name '"default"' and template '"{controller=Login}/{action=Index}/{id?}"'.
+2016-07-10 19:17:34.349 -04:00 [Debug] Executing action "OA.UI.Controllers.LoginController.CheckLogin (OA.UI)"
+2016-07-10 19:17:34.349 -04:00 [Debug] Executing action "OA.UI.Controllers.LoginController.CheckLogin (OA.UI)"
+2016-07-10 19:17:34.350 -04:00 [Information] Executing action method "OA.UI.Controllers.LoginController.CheckLogin (OA.UI)" with arguments (null) - ModelState is Valid
+2016-07-10 19:17:34.350 -04:00 [Information] Executing action method "OA.UI.Controllers.LoginController.CheckLogin (OA.UI)" with arguments (null) - ModelState is Valid
+2016-07-10 19:17:34.403 -04:00 [Debug] Executed action method "OA.UI.Controllers.LoginController.CheckLogin (OA.UI)", returned result "Microsoft.AspNetCore.Mvc.ContentResult".
+2016-07-10 19:17:34.403 -04:00 [Debug] Executed action method "OA.UI.Controllers.LoginController.CheckLogin (OA.UI)", returned result "Microsoft.AspNetCore.Mvc.ContentResult".
+2016-07-10 19:17:34.404 -04:00 [Information] Executing ContentResult with HTTP Response ContentType of "text/plain; charset=utf-8"
+2016-07-10 19:17:34.404 -04:00 [Information] Executing ContentResult with HTTP Response ContentType of "text/plain; charset=utf-8"
+2016-07-10 19:17:34.433 -04:00 [Information] Executed action "OA.UI.Controllers.LoginController.CheckLogin (OA.UI)" in 83.3738ms
+2016-07-10 19:17:34.433 -04:00 [Information] Executed action "OA.UI.Controllers.LoginController.CheckLogin (OA.UI)" in 83.3209ms
+2016-07-10 19:17:34.463 -04:00 [Information] Request finished in 118.1863ms 200 text/plain; charset=utf-8
+2016-07-10 19:17:34.468 -04:00 [Information] Request finished in 125.7106ms 200 text/plain; charset=utf-8
+2016-07-10 19:17:34.519 -04:00 [Debug] Connection id ""0HKT931A125E6"" completed keep alive response.
+2016-07-10 19:17:34.519 -04:00 [Debug] Connection id ""0HKT931A125E7"" completed keep alive response.
+2016-07-10 19:17:41.762 -04:00 [Information] Request starting HTTP/1.1 POST http://localhost:55839/Login/CheckLogin application/x-www-form-urlencoded; charset=UTF-8 268
+2016-07-10 19:17:41.765 -04:00 [Information] Request starting HTTP/1.1 POST http://localhost:55839/Login/CheckLogin application/x-www-form-urlencoded; charset=UTF-8 268
+2016-07-10 19:17:41.768 -04:00 [Debug] "POST" requests are not supported
+2016-07-10 19:17:41.769 -04:00 [Debug] Request successfully matched the route with name '"default"' and template '"{controller=Login}/{action=Index}/{id?}"'.
+2016-07-10 19:17:41.769 -04:00 [Debug] "POST" requests are not supported
+2016-07-10 19:17:41.769 -04:00 [Debug] Executing action "OA.UI.Controllers.LoginController.CheckLogin (OA.UI)"
+2016-07-10 19:17:41.769 -04:00 [Debug] Request successfully matched the route with name '"default"' and template '"{controller=Login}/{action=Index}/{id?}"'.
+2016-07-10 19:17:41.769 -04:00 [Information] Executing action method "OA.UI.Controllers.LoginController.CheckLogin (OA.UI)" with arguments (null) - ModelState is Valid
+2016-07-10 19:17:41.769 -04:00 [Debug] Executing action "OA.UI.Controllers.LoginController.CheckLogin (OA.UI)"
+2016-07-10 19:17:41.770 -04:00 [Information] Executing action method "OA.UI.Controllers.LoginController.CheckLogin (OA.UI)" with arguments (null) - ModelState is Valid
+2016-07-10 19:17:41.774 -04:00 [Debug] Executed action method "OA.UI.Controllers.LoginController.CheckLogin (OA.UI)", returned result "Microsoft.AspNetCore.Mvc.ContentResult".
+2016-07-10 19:17:41.775 -04:00 [Debug] Executed action method "OA.UI.Controllers.LoginController.CheckLogin (OA.UI)", returned result "Microsoft.AspNetCore.Mvc.ContentResult".
+2016-07-10 19:17:41.775 -04:00 [Information] Executing ContentResult with HTTP Response ContentType of "text/plain; charset=utf-8"
+2016-07-10 19:17:41.775 -04:00 [Information] Executing ContentResult with HTTP Response ContentType of "text/plain; charset=utf-8"
+2016-07-10 19:17:41.799 -04:00 [Information] Executed action "OA.UI.Controllers.LoginController.CheckLogin (OA.UI)" in 29.6995ms
+2016-07-10 19:17:41.800 -04:00 [Information] Executed action "OA.UI.Controllers.LoginController.CheckLogin (OA.UI)" in 30.8977ms
+2016-07-10 19:17:41.809 -04:00 [Information] Request finished in 45.4135ms 200 text/plain; charset=utf-8
+2016-07-10 19:17:41.809 -04:00 [Information] Request finished in 44.1378ms 200 text/plain; charset=utf-8
+2016-07-10 19:17:41.811 -04:00 [Debug] Connection id ""0HKT931A125E7"" completed keep alive response.
+2016-07-10 19:17:41.813 -04:00 [Debug] Connection id ""0HKT931A125E6"" completed keep alive response.
+2016-07-10 19:18:01.876 -04:00 [Information] Request starting HTTP/1.1 POST http://localhost:55839/Login/CheckLogin application/x-www-form-urlencoded; charset=UTF-8 1242
+2016-07-10 19:18:01.879 -04:00 [Information] Request starting HTTP/1.1 POST http://localhost:55839/Login/CheckLogin application/x-www-form-urlencoded; charset=UTF-8 1242
+2016-07-10 19:18:01.882 -04:00 [Debug] "POST" requests are not supported
+2016-07-10 19:18:01.882 -04:00 [Debug] Request successfully matched the route with name '"default"' and template '"{controller=Login}/{action=Index}/{id?}"'.
+2016-07-10 19:18:01.882 -04:00 [Debug] "POST" requests are not supported
+2016-07-10 19:18:01.882 -04:00 [Debug] Executing action "OA.UI.Controllers.LoginController.CheckLogin (OA.UI)"
+2016-07-10 19:18:01.882 -04:00 [Debug] Request successfully matched the route with name '"default"' and template '"{controller=Login}/{action=Index}/{id?}"'.
+2016-07-10 19:18:01.882 -04:00 [Information] Executing action method "OA.UI.Controllers.LoginController.CheckLogin (OA.UI)" with arguments (null) - ModelState is Valid
+2016-07-10 19:18:01.882 -04:00 [Debug] Executing action "OA.UI.Controllers.LoginController.CheckLogin (OA.UI)"
+2016-07-10 19:18:01.883 -04:00 [Information] Executing action method "OA.UI.Controllers.LoginController.CheckLogin (OA.UI)" with arguments (null) - ModelState is Valid
+2016-07-10 19:18:03.043 -04:00 [Warning] Accessing expired session, Key:"30337a69-6a85-3aca-9fbf-22dbbc677eba"
+2016-07-10 19:18:03.043 -04:00 [Warning] Accessing expired session, Key:"30337a69-6a85-3aca-9fbf-22dbbc677eba"
+2016-07-10 19:18:03.049 -04:00 [Debug] Executed action method "OA.UI.Controllers.LoginController.CheckLogin (OA.UI)", returned result "Microsoft.AspNetCore.Mvc.ContentResult".
+2016-07-10 19:18:03.049 -04:00 [Debug] Executed action method "OA.UI.Controllers.LoginController.CheckLogin (OA.UI)", returned result "Microsoft.AspNetCore.Mvc.ContentResult".
+2016-07-10 19:18:03.049 -04:00 [Information] Executing ContentResult with HTTP Response ContentType of "text/plain; charset=utf-8"
+2016-07-10 19:18:03.049 -04:00 [Information] Executing ContentResult with HTTP Response ContentType of "text/plain; charset=utf-8"
+2016-07-10 19:18:03.073 -04:00 [Information] Executed action "OA.UI.Controllers.LoginController.CheckLogin (OA.UI)" in 1190.3427ms
+2016-07-10 19:18:03.073 -04:00 [Information] Executed action "OA.UI.Controllers.LoginController.CheckLogin (OA.UI)" in 1190.2704ms
+2016-07-10 19:18:03.099 -04:00 [Information] Session started; Key:"30337a69-6a85-3aca-9fbf-22dbbc677eba", Id:"40b28b43-9326-a1ff-50e1-b3bbf3ff2708"
+2016-07-10 19:18:03.099 -04:00 [Information] Session started; Key:"30337a69-6a85-3aca-9fbf-22dbbc677eba", Id:"a3fed349-e57f-9f84-5510-ab29d369b5b7"
+2016-07-10 19:18:03.112 -04:00 [Debug] Session stored; Key:"30337a69-6a85-3aca-9fbf-22dbbc677eba", Id:"a3fed349-e57f-9f84-5510-ab29d369b5b7", Count:1
+2016-07-10 19:18:03.112 -04:00 [Debug] Session stored; Key:"30337a69-6a85-3aca-9fbf-22dbbc677eba", Id:"40b28b43-9326-a1ff-50e1-b3bbf3ff2708", Count:1
+2016-07-10 19:18:03.137 -04:00 [Information] Request finished in 1260.7763ms 200 text/plain; charset=utf-8
+2016-07-10 19:18:03.139 -04:00 [Information] Request finished in 1260.3019ms 200 text/plain; charset=utf-8
+2016-07-10 19:18:03.143 -04:00 [Debug] Connection id ""0HKT931A125E7"" completed keep alive response.
+2016-07-10 19:18:03.145 -04:00 [Debug] Connection id ""0HKT931A125E6"" completed keep alive response.
+2016-07-10 19:18:03.160 -04:00 [Information] Request starting HTTP/1.1 GET http://localhost:55839/Home/error  
+2016-07-10 19:18:03.164 -04:00 [Debug] The request path "/Home/error" does not match a supported file type
+2016-07-10 19:18:03.164 -04:00 [Debug] Request successfully matched the route with name '"default"' and template '"{controller=Login}/{action=Index}/{id?}"'.
+2016-07-10 19:18:03.165 -04:00 [Debug] Executing action "OA.UI.Controllers.HomeController.Error (OA.UI)"
+2016-07-10 19:18:03.169 -04:00 [Debug] Session loaded; Key:"30337a69-6a85-3aca-9fbf-22dbbc677eba", Id:"a3fed349-e57f-9f84-5510-ab29d369b5b7", Count:1
+2016-07-10 19:18:03.183 -04:00 [Information] Executing action method "OA.UI.Controllers.HomeController.Error (OA.UI)" with arguments (null) - ModelState is Valid
+2016-07-10 19:18:03.187 -04:00 [Debug] Executed action method "OA.UI.Controllers.HomeController.Error (OA.UI)", returned result "Microsoft.AspNetCore.Mvc.ViewResult".
+2016-07-10 19:18:03.187 -04:00 [Debug] View lookup cache miss for view '"Error"' in controller '"Home"'.
+2016-07-10 19:18:03.191 -04:00 [Debug] Code generation for the Razor file at '"/Views/Home/Error.cshtml"' started.
+2016-07-10 19:18:03.196 -04:00 [Debug] Code generation for the Razor file at '"/Views/Home/Error.cshtml"' completed in 5.2641ms.
+2016-07-10 19:18:03.196 -04:00 [Debug] Compilation of the generated code for the Razor file at '"/Views/Home/Error.cshtml"' started.
+2016-07-10 19:18:03.250 -04:00 [Debug] Compilation of the generated code for the Razor file at '"/Views/Home/Error.cshtml"' completed in 53.7406ms.
+2016-07-10 19:18:03.251 -04:00 [Debug] The view '"Error"' was found.
+2016-07-10 19:18:03.251 -04:00 [Information] Executing ViewResult, running view at path "/Views/Home/Error.cshtml".
+2016-07-10 19:18:03.259 -04:00 [Debug] View lookup cache miss for view '"_Layout"' in controller '"Home"'.
+2016-07-10 19:18:03.260 -04:00 [Debug] Code generation for the Razor file at '"/Views/Shared/_Layout.cshtml"' started.
+2016-07-10 19:18:03.337 -04:00 [Debug] Code generation for the Razor file at '"/Views/Shared/_Layout.cshtml"' completed in 77.967ms.
+2016-07-10 19:18:03.338 -04:00 [Debug] Compilation of the generated code for the Razor file at '"/Views/Shared/_Layout.cshtml"' started.
+2016-07-10 19:18:03.443 -04:00 [Debug] Compilation of the generated code for the Razor file at '"/Views/Shared/_Layout.cshtml"' completed in 104.8794ms.
+2016-07-10 19:18:04.512 -04:00 [Information] Executed action "OA.UI.Controllers.HomeController.Error (OA.UI)" in 1347.0535ms
+2016-07-10 19:18:04.519 -04:00 [Information] Request finished in 1358.3396ms 200 text/html; charset=utf-8
+2016-07-10 19:18:04.522 -04:00 [Debug] Connection id ""0HKT931A125E7"" completed keep alive response.
+2016-07-10 19:18:04.706 -04:00 [Information] Request starting HTTP/1.1 GET http://localhost:55839/css/site.css  
+2016-07-10 19:18:04.709 -04:00 [Debug] Connection id ""0HKT931A125E8"" started.
+2016-07-10 19:18:04.709 -04:00 [Information] Request starting HTTP/1.1 GET http://localhost:55839/lib/bootstrap/dist/js/bootstrap.js  
+2016-07-10 19:18:04.711 -04:00 [Information] Request starting HTTP/1.1 GET http://localhost:55839/js/site.js?v=EWaMeWsJBYWmL2g_KkgXZQ5nPe-a3Ichp0LEgzXczKo  
+2016-07-10 19:18:04.736 -04:00 [Information] The file "/lib/bootstrap/dist/js/bootstrap.js" was not modified
+2016-07-10 19:18:04.736 -04:00 [Information] The file "/css/site.css" was not modified
+2016-07-10 19:18:04.736 -04:00 [Information] The file "/js/site.js" was not modified
+2016-07-10 19:18:04.770 -04:00 [Debug] Handled. Status code: 304 File: "/css/site.css"
+2016-07-10 19:18:04.770 -04:00 [Debug] Handled. Status code: 304 File: "/js/site.js"
+2016-07-10 19:18:04.770 -04:00 [Debug] Handled. Status code: 304 File: "/lib/bootstrap/dist/js/bootstrap.js"
+2016-07-10 19:18:04.798 -04:00 [Information] Request finished in 90.8693ms 304 text/css
+2016-07-10 19:18:04.798 -04:00 [Information] Request finished in 88.9853ms 304 application/javascript
+2016-07-10 19:18:04.801 -04:00 [Information] Request finished in 90.2313ms 304 application/javascript
+2016-07-10 19:18:04.825 -04:00 [Debug] Connection id ""0HKT931A125E6"" completed keep alive response.
+2016-07-10 19:18:04.846 -04:00 [Debug] Connection id ""0HKT931A125E7"" completed keep alive response.
+2016-07-10 19:18:04.868 -04:00 [Debug] Connection id ""0HKT931A125E8"" completed keep alive response.
+2016-07-10 19:18:19.081 -04:00 [Debug] Connection id ""0HKT931A125E8"" received FIN.
+2016-07-10 19:18:50.598 -04:00 [Information] User profile is available. Using '"C:\Users\owner\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2016-07-10 19:18:50.756 -04:00 [Debug] Hosting starting
+2016-07-10 19:18:50.950 -04:00 [Debug] Hosting started
+2016-07-10 19:18:51.028 -04:00 [Debug] Connection id ""0HKT9326QDSJN"" started.
+2016-07-10 19:18:51.028 -04:00 [Debug] Connection id ""0HKT9326QDSJO"" started.
+2016-07-10 19:18:51.160 -04:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:55839/  0
+2016-07-10 19:18:51.160 -04:00 [Information] Request starting HTTP/1.1 GET http://localhost:55839/  
+2016-07-10 19:18:51.257 -04:00 [Information] Request finished in 121.5372ms 200 
+2016-07-10 19:18:51.305 -04:00 [Debug] The request path "/" does not match a supported file type
+2016-07-10 19:18:51.318 -04:00 [Debug] Connection id ""0HKT9326QDSJO"" completed keep alive response.
+2016-07-10 19:18:51.349 -04:00 [Debug] Reading data from file '"C:\Users\owner\AppData\Local\ASP.NET\DataProtection-Keys\key-cb9f45e1-4ed9-48c0-bff0-6e92031944f4.xml"'.
+2016-07-10 19:18:51.358 -04:00 [Debug] Found key {cb9f45e1-4ed9-48c0-bff0-6e92031944f4}.
+2016-07-10 19:18:51.370 -04:00 [Debug] Considering key {cb9f45e1-4ed9-48c0-bff0-6e92031944f4} with expiration date 2016-10-04 12:23:19Z as default key.
+2016-07-10 19:18:51.381 -04:00 [Debug] Decrypting secret element using Windows DPAPI.
+2016-07-10 19:18:51.394 -04:00 [Debug] Opening CNG algorithm '"AES"' from provider 'null' with chaining mode CBC.
+2016-07-10 19:18:51.404 -04:00 [Debug] Opening CNG algorithm '"SHA256"' from provider 'null' with HMAC.
+2016-07-10 19:18:51.415 -04:00 [Debug] Using key {cb9f45e1-4ed9-48c0-bff0-6e92031944f4} as the default key.
+2016-07-10 19:18:51.604 -04:00 [Debug] Request successfully matched the route with name '"default"' and template '"{controller=Login}/{action=Index}/{id?}"'.
+2016-07-10 19:18:51.682 -04:00 [Debug] Executing action "OA.UI.Controllers.LoginController.Index (OA.UI)"
+2016-07-10 19:18:51.864 -04:00 [Information] Executing action method "OA.UI.Controllers.LoginController.Index (OA.UI)" with arguments (null) - ModelState is Valid
+2016-07-10 19:18:51.873 -04:00 [Debug] Executed action method "OA.UI.Controllers.LoginController.Index (OA.UI)", returned result "Microsoft.AspNetCore.Mvc.ViewResult".
+2016-07-10 19:18:51.986 -04:00 [Debug] View lookup cache miss for view '"Index"' in controller '"Login"'.
+2016-07-10 19:18:52.005 -04:00 [Debug] Code generation for the Razor file at '"/Views/Login/Index.cshtml"' started.
+2016-07-10 19:18:52.446 -04:00 [Debug] Code generation for the Razor file at '"/Views/Login/Index.cshtml"' completed in 439.4214ms.
+2016-07-10 19:18:52.463 -04:00 [Debug] Compilation of the generated code for the Razor file at '"/Views/Login/Index.cshtml"' started.
+2016-07-10 19:18:53.719 -04:00 [Debug] Compilation of the generated code for the Razor file at '"/Views/Login/Index.cshtml"' completed in 1256.1766ms.
+2016-07-10 19:18:53.724 -04:00 [Debug] Code generation for the Razor file at '"/Views/_ViewStart.cshtml"' started.
+2016-07-10 19:18:53.730 -04:00 [Debug] Code generation for the Razor file at '"/Views/_ViewStart.cshtml"' completed in 5.6655ms.
+2016-07-10 19:18:53.730 -04:00 [Debug] Compilation of the generated code for the Razor file at '"/Views/_ViewStart.cshtml"' started.
+2016-07-10 19:18:53.796 -04:00 [Debug] Compilation of the generated code for the Razor file at '"/Views/_ViewStart.cshtml"' completed in 64.7553ms.
+2016-07-10 19:18:53.802 -04:00 [Debug] The view '"Index"' was found.
+2016-07-10 19:18:53.803 -04:00 [Information] Executing ViewResult, running view at path "/Views/Login/Index.cshtml".
+2016-07-10 19:18:54.002 -04:00 [Debug] An antiforgery cookie token was reused.
+2016-07-10 19:18:55.210 -04:00 [Information] Executed action "OA.UI.Controllers.LoginController.Index (OA.UI)" in 3527.0627ms
+2016-07-10 19:18:55.283 -04:00 [Information] Request finished in 4156.7103ms 200 text/html; charset=utf-8
+2016-07-10 19:18:55.287 -04:00 [Debug] Connection id ""0HKT9326QDSJN"" completed keep alive response.
+2016-07-10 19:19:11.930 -04:00 [Information] Request starting HTTP/1.1 POST http://localhost:55839/Login/CheckLogin application/x-www-form-urlencoded; charset=UTF-8 1264
+2016-07-10 19:19:11.935 -04:00 [Debug] "POST" requests are not supported
+2016-07-10 19:19:11.935 -04:00 [Debug] Request successfully matched the route with name '"default"' and template '"{controller=Login}/{action=Index}/{id?}"'.
+2016-07-10 19:19:11.936 -04:00 [Debug] Executing action "OA.UI.Controllers.LoginController.CheckLogin (OA.UI)"
+2016-07-10 19:19:11.937 -04:00 [Information] Executing action method "OA.UI.Controllers.LoginController.CheckLogin (OA.UI)" with arguments (null) - ModelState is Valid
+2016-07-10 19:19:11.942 -04:00 [Information] Request starting HTTP/1.1 POST http://localhost:55839/Login/CheckLogin application/x-www-form-urlencoded; charset=UTF-8 1264
+2016-07-10 19:19:11.950 -04:00 [Debug] "POST" requests are not supported
+2016-07-10 19:19:11.950 -04:00 [Debug] Request successfully matched the route with name '"default"' and template '"{controller=Login}/{action=Index}/{id?}"'.
+2016-07-10 19:19:11.950 -04:00 [Debug] Executing action "OA.UI.Controllers.LoginController.CheckLogin (OA.UI)"
+2016-07-10 19:19:11.951 -04:00 [Information] Executing action method "OA.UI.Controllers.LoginController.CheckLogin (OA.UI)" with arguments (null) - ModelState is Valid
+2016-07-10 19:19:13.106 -04:00 [Warning] Accessing expired session, Key:"30337a69-6a85-3aca-9fbf-22dbbc677eba"
+2016-07-10 19:19:13.106 -04:00 [Warning] Accessing expired session, Key:"30337a69-6a85-3aca-9fbf-22dbbc677eba"
+2016-07-10 19:19:13.137 -04:00 [Debug] Executed action method "OA.UI.Controllers.LoginController.CheckLogin (OA.UI)", returned result "Microsoft.AspNetCore.Mvc.ContentResult".
+2016-07-10 19:19:13.137 -04:00 [Debug] Executed action method "OA.UI.Controllers.LoginController.CheckLogin (OA.UI)", returned result "Microsoft.AspNetCore.Mvc.ContentResult".
+2016-07-10 19:19:13.138 -04:00 [Information] Executing ContentResult with HTTP Response ContentType of "text/plain; charset=utf-8"
+2016-07-10 19:19:13.138 -04:00 [Information] Executing ContentResult with HTTP Response ContentType of "text/plain; charset=utf-8"
+2016-07-10 19:19:13.145 -04:00 [Information] Executed action "OA.UI.Controllers.LoginController.CheckLogin (OA.UI)" in 1208.7625ms
+2016-07-10 19:19:13.145 -04:00 [Information] Executed action "OA.UI.Controllers.LoginController.CheckLogin (OA.UI)" in 1194.607ms
+2016-07-10 19:19:13.171 -04:00 [Information] Session started; Key:"30337a69-6a85-3aca-9fbf-22dbbc677eba", Id:"350a28a8-2c17-3d4d-772f-87bb54aaa405"
+2016-07-10 19:19:13.171 -04:00 [Information] Session started; Key:"30337a69-6a85-3aca-9fbf-22dbbc677eba", Id:"5c6f0b8e-98fe-0178-7e66-0b6acfeb989c"
+2016-07-10 19:19:13.206 -04:00 [Debug] Session stored; Key:"30337a69-6a85-3aca-9fbf-22dbbc677eba", Id:"350a28a8-2c17-3d4d-772f-87bb54aaa405", Count:1
+2016-07-10 19:19:13.206 -04:00 [Debug] Session stored; Key:"30337a69-6a85-3aca-9fbf-22dbbc677eba", Id:"5c6f0b8e-98fe-0178-7e66-0b6acfeb989c", Count:1
+2016-07-10 19:19:13.233 -04:00 [Information] Request finished in 1291.3178ms 200 text/plain; charset=utf-8
+2016-07-10 19:19:13.257 -04:00 [Information] Request finished in 1326.0896ms 200 text/plain; charset=utf-8
+2016-07-10 19:19:13.260 -04:00 [Debug] Connection id ""0HKT9326QDSJN"" completed keep alive response.
+2016-07-10 19:19:13.262 -04:00 [Debug] Connection id ""0HKT9326QDSJO"" completed keep alive response.
+2016-07-10 19:19:13.274 -04:00 [Information] Request starting HTTP/1.1 GET http://localhost:55839/Home/error  
+2016-07-10 19:19:13.278 -04:00 [Debug] The request path "/Home/error" does not match a supported file type
+2016-07-10 19:19:13.278 -04:00 [Debug] Request successfully matched the route with name '"default"' and template '"{controller=Login}/{action=Index}/{id?}"'.
+2016-07-10 19:19:13.279 -04:00 [Debug] Executing action "OA.UI.Controllers.HomeController.Error (OA.UI)"
+2016-07-10 19:19:13.282 -04:00 [Debug] Session loaded; Key:"30337a69-6a85-3aca-9fbf-22dbbc677eba", Id:"350a28a8-2c17-3d4d-772f-87bb54aaa405", Count:1
+2016-07-10 19:19:13.298 -04:00 [Information] Executing action method "OA.UI.Controllers.HomeController.Error (OA.UI)" with arguments (null) - ModelState is Valid
+2016-07-10 19:19:13.301 -04:00 [Debug] Executed action method "OA.UI.Controllers.HomeController.Error (OA.UI)", returned result "Microsoft.AspNetCore.Mvc.ViewResult".
+2016-07-10 19:19:13.301 -04:00 [Debug] View lookup cache miss for view '"Error"' in controller '"Home"'.
+2016-07-10 19:19:13.302 -04:00 [Debug] Code generation for the Razor file at '"/Views/Home/Error.cshtml"' started.
+2016-07-10 19:19:13.330 -04:00 [Debug] Code generation for the Razor file at '"/Views/Home/Error.cshtml"' completed in 27.7783ms.
+2016-07-10 19:19:13.330 -04:00 [Debug] Compilation of the generated code for the Razor file at '"/Views/Home/Error.cshtml"' started.
+2016-07-10 19:19:13.373 -04:00 [Debug] Compilation of the generated code for the Razor file at '"/Views/Home/Error.cshtml"' completed in 42.6911ms.
+2016-07-10 19:19:13.374 -04:00 [Debug] The view '"Error"' was found.
+2016-07-10 19:19:13.374 -04:00 [Information] Executing ViewResult, running view at path "/Views/Home/Error.cshtml".
+2016-07-10 19:19:13.384 -04:00 [Debug] View lookup cache miss for view '"_Layout"' in controller '"Home"'.
+2016-07-10 19:19:13.384 -04:00 [Debug] Code generation for the Razor file at '"/Views/Shared/_Layout.cshtml"' started.
+2016-07-10 19:19:13.443 -04:00 [Debug] Code generation for the Razor file at '"/Views/Shared/_Layout.cshtml"' completed in 57.8516ms.
+2016-07-10 19:19:13.443 -04:00 [Debug] Compilation of the generated code for the Razor file at '"/Views/Shared/_Layout.cshtml"' started.
+2016-07-10 19:19:13.542 -04:00 [Debug] Compilation of the generated code for the Razor file at '"/Views/Shared/_Layout.cshtml"' completed in 98.7599ms.
+2016-07-10 19:19:14.618 -04:00 [Information] Executed action "OA.UI.Controllers.HomeController.Error (OA.UI)" in 1338.7758ms
+2016-07-10 19:19:14.623 -04:00 [Information] Request finished in 1348.725ms 200 text/html; charset=utf-8
+2016-07-10 19:19:14.625 -04:00 [Debug] Connection id ""0HKT9326QDSJN"" completed keep alive response.
+2016-07-10 19:21:06.848 -04:00 [Information] User profile is available. Using '"C:\Users\owner\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2016-07-10 19:21:07.021 -04:00 [Debug] Hosting starting
+2016-07-10 19:21:07.203 -04:00 [Debug] Hosting started
+2016-07-10 19:21:07.282 -04:00 [Debug] Connection id ""0HKT933FDS4CL"" started.
+2016-07-10 19:21:07.282 -04:00 [Debug] Connection id ""0HKT933FDS4CM"" started.
+2016-07-10 19:21:07.404 -04:00 [Information] Request starting HTTP/1.1 GET http://localhost:55839/  
+2016-07-10 19:21:07.404 -04:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:55839/  0
+2016-07-10 19:21:07.499 -04:00 [Information] Request finished in 116.3196ms 200 
+2016-07-10 19:21:07.554 -04:00 [Debug] The request path "/" does not match a supported file type
+2016-07-10 19:21:07.565 -04:00 [Debug] Connection id ""0HKT933FDS4CM"" completed keep alive response.
+2016-07-10 19:21:07.594 -04:00 [Debug] Reading data from file '"C:\Users\owner\AppData\Local\ASP.NET\DataProtection-Keys\key-cb9f45e1-4ed9-48c0-bff0-6e92031944f4.xml"'.
+2016-07-10 19:21:07.602 -04:00 [Debug] Found key {cb9f45e1-4ed9-48c0-bff0-6e92031944f4}.
+2016-07-10 19:21:07.617 -04:00 [Debug] Considering key {cb9f45e1-4ed9-48c0-bff0-6e92031944f4} with expiration date 2016-10-04 12:23:19Z as default key.
+2016-07-10 19:21:07.628 -04:00 [Debug] Decrypting secret element using Windows DPAPI.
+2016-07-10 19:21:07.639 -04:00 [Debug] Opening CNG algorithm '"AES"' from provider 'null' with chaining mode CBC.
+2016-07-10 19:21:07.647 -04:00 [Debug] Opening CNG algorithm '"SHA256"' from provider 'null' with HMAC.
+2016-07-10 19:21:07.657 -04:00 [Debug] Using key {cb9f45e1-4ed9-48c0-bff0-6e92031944f4} as the default key.
+2016-07-10 19:21:07.834 -04:00 [Debug] Request successfully matched the route with name '"default"' and template '"{controller=Login}/{action=Index}/{id?}"'.
+2016-07-10 19:21:07.914 -04:00 [Debug] Executing action "OA.UI.Controllers.LoginController.Index (OA.UI)"
+2016-07-10 19:21:08.089 -04:00 [Information] Executing action method "OA.UI.Controllers.LoginController.Index (OA.UI)" with arguments (null) - ModelState is Valid
+2016-07-10 19:21:08.098 -04:00 [Debug] Executed action method "OA.UI.Controllers.LoginController.Index (OA.UI)", returned result "Microsoft.AspNetCore.Mvc.ViewResult".
+2016-07-10 19:21:08.218 -04:00 [Debug] View lookup cache miss for view '"Index"' in controller '"Login"'.
+2016-07-10 19:21:08.236 -04:00 [Debug] Code generation for the Razor file at '"/Views/Login/Index.cshtml"' started.
+2016-07-10 19:21:08.679 -04:00 [Debug] Code generation for the Razor file at '"/Views/Login/Index.cshtml"' completed in 441.1426ms.
+2016-07-10 19:21:08.693 -04:00 [Debug] Compilation of the generated code for the Razor file at '"/Views/Login/Index.cshtml"' started.
+2016-07-10 19:21:10.015 -04:00 [Debug] Compilation of the generated code for the Razor file at '"/Views/Login/Index.cshtml"' completed in 1321.2591ms.
+2016-07-10 19:21:10.020 -04:00 [Debug] Code generation for the Razor file at '"/Views/_ViewStart.cshtml"' started.
+2016-07-10 19:21:10.028 -04:00 [Debug] Code generation for the Razor file at '"/Views/_ViewStart.cshtml"' completed in 7.5851ms.
+2016-07-10 19:21:10.028 -04:00 [Debug] Compilation of the generated code for the Razor file at '"/Views/_ViewStart.cshtml"' started.
+2016-07-10 19:21:10.085 -04:00 [Debug] Compilation of the generated code for the Razor file at '"/Views/_ViewStart.cshtml"' completed in 56.7775ms.
+2016-07-10 19:21:10.092 -04:00 [Debug] The view '"Index"' was found.
+2016-07-10 19:21:10.094 -04:00 [Information] Executing ViewResult, running view at path "/Views/Login/Index.cshtml".
+2016-07-10 19:21:10.313 -04:00 [Debug] An antiforgery cookie token was reused.
+2016-07-10 19:21:11.495 -04:00 [Information] Executed action "OA.UI.Controllers.LoginController.Index (OA.UI)" in 3579.4514ms
+2016-07-10 19:21:11.560 -04:00 [Information] Request finished in 4186.1389ms 200 text/html; charset=utf-8
+2016-07-10 19:21:11.565 -04:00 [Debug] Connection id ""0HKT933FDS4CL"" completed keep alive response.
+2016-07-10 19:21:29.029 -04:00 [Information] Request starting HTTP/1.1 POST http://localhost:55839/Login/CheckLogin application/x-www-form-urlencoded; charset=UTF-8 268
+2016-07-10 19:21:29.033 -04:00 [Debug] "POST" requests are not supported
+2016-07-10 19:21:29.034 -04:00 [Debug] Request successfully matched the route with name '"default"' and template '"{controller=Login}/{action=Index}/{id?}"'.
+2016-07-10 19:21:29.034 -04:00 [Information] Request starting HTTP/1.1 POST http://localhost:55839/Login/CheckLogin application/x-www-form-urlencoded; charset=UTF-8 268
+2016-07-10 19:21:29.038 -04:00 [Debug] "POST" requests are not supported
+2016-07-10 19:21:29.038 -04:00 [Debug] Request successfully matched the route with name '"default"' and template '"{controller=Login}/{action=Index}/{id?}"'.
+2016-07-10 19:21:29.038 -04:00 [Debug] Executing action "OA.UI.Controllers.LoginController.CheckLogin (OA.UI)"
+2016-07-10 19:21:29.038 -04:00 [Debug] Executing action "OA.UI.Controllers.LoginController.CheckLogin (OA.UI)"
+2016-07-10 19:21:29.038 -04:00 [Information] Executing action method "OA.UI.Controllers.LoginController.CheckLogin (OA.UI)" with arguments (null) - ModelState is Valid
+2016-07-10 19:21:29.038 -04:00 [Information] Executing action method "OA.UI.Controllers.LoginController.CheckLogin (OA.UI)" with arguments (null) - ModelState is Valid
+2016-07-10 19:21:29.086 -04:00 [Debug] Executed action method "OA.UI.Controllers.LoginController.CheckLogin (OA.UI)", returned result "Microsoft.AspNetCore.Mvc.ContentResult".
+2016-07-10 19:21:29.086 -04:00 [Debug] Executed action method "OA.UI.Controllers.LoginController.CheckLogin (OA.UI)", returned result "Microsoft.AspNetCore.Mvc.ContentResult".
+2016-07-10 19:21:29.088 -04:00 [Information] Executing ContentResult with HTTP Response ContentType of "text/plain; charset=utf-8"
+2016-07-10 19:21:29.088 -04:00 [Information] Executing ContentResult with HTTP Response ContentType of "text/plain; charset=utf-8"
+2016-07-10 19:21:29.094 -04:00 [Information] Executed action "OA.UI.Controllers.LoginController.CheckLogin (OA.UI)" in 55.6855ms
+2016-07-10 19:21:29.094 -04:00 [Information] Executed action "OA.UI.Controllers.LoginController.CheckLogin (OA.UI)" in 55.6397ms
+2016-07-10 19:21:29.123 -04:00 [Information] Request finished in 89.5083ms 200 text/plain; charset=utf-8
+2016-07-10 19:21:29.123 -04:00 [Information] Request finished in 94.7702ms 200 text/plain; charset=utf-8
+2016-07-10 19:21:29.148 -04:00 [Debug] Connection id ""0HKT933FDS4CL"" completed keep alive response.
+2016-07-10 19:21:29.148 -04:00 [Debug] Connection id ""0HKT933FDS4CM"" completed keep alive response.
+2016-07-10 19:21:39.440 -04:00 [Information] Request starting HTTP/1.1 POST http://localhost:55839/Login/CheckLogin application/x-www-form-urlencoded; charset=UTF-8 1242
+2016-07-10 19:21:39.442 -04:00 [Information] Request starting HTTP/1.1 POST http://localhost:55839/Login/CheckLogin application/x-www-form-urlencoded; charset=UTF-8 1242
+2016-07-10 19:21:39.466 -04:00 [Debug] "POST" requests are not supported
+2016-07-10 19:21:39.466 -04:00 [Debug] "POST" requests are not supported
+2016-07-10 19:21:39.466 -04:00 [Debug] Request successfully matched the route with name '"default"' and template '"{controller=Login}/{action=Index}/{id?}"'.
+2016-07-10 19:21:39.466 -04:00 [Debug] Request successfully matched the route with name '"default"' and template '"{controller=Login}/{action=Index}/{id?}"'.
+2016-07-10 19:21:39.466 -04:00 [Debug] Executing action "OA.UI.Controllers.LoginController.CheckLogin (OA.UI)"
+2016-07-10 19:21:39.466 -04:00 [Debug] Executing action "OA.UI.Controllers.LoginController.CheckLogin (OA.UI)"
+2016-07-10 19:21:39.466 -04:00 [Information] Executing action method "OA.UI.Controllers.LoginController.CheckLogin (OA.UI)" with arguments (null) - ModelState is Valid
+2016-07-10 19:21:39.466 -04:00 [Information] Executing action method "OA.UI.Controllers.LoginController.CheckLogin (OA.UI)" with arguments (null) - ModelState is Valid
+2016-07-10 19:21:40.598 -04:00 [Warning] Accessing expired session, Key:"30337a69-6a85-3aca-9fbf-22dbbc677eba"
+2016-07-10 19:21:40.598 -04:00 [Warning] Accessing expired session, Key:"30337a69-6a85-3aca-9fbf-22dbbc677eba"
+2016-07-10 19:21:40.625 -04:00 [Debug] Executed action method "OA.UI.Controllers.LoginController.CheckLogin (OA.UI)", returned result "Microsoft.AspNetCore.Mvc.ContentResult".
+2016-07-10 19:21:40.625 -04:00 [Debug] Executed action method "OA.UI.Controllers.LoginController.CheckLogin (OA.UI)", returned result "Microsoft.AspNetCore.Mvc.ContentResult".
+2016-07-10 19:21:40.626 -04:00 [Information] Executing ContentResult with HTTP Response ContentType of "text/plain; charset=utf-8"
+2016-07-10 19:21:40.626 -04:00 [Information] Executing ContentResult with HTTP Response ContentType of "text/plain; charset=utf-8"
+2016-07-10 19:21:40.630 -04:00 [Information] Executed action "OA.UI.Controllers.LoginController.CheckLogin (OA.UI)" in 1163.4916ms
+2016-07-10 19:21:40.631 -04:00 [Information] Executed action "OA.UI.Controllers.LoginController.CheckLogin (OA.UI)" in 1164.6175ms
+2016-07-10 19:21:40.656 -04:00 [Information] Session started; Key:"30337a69-6a85-3aca-9fbf-22dbbc677eba", Id:"eb23a322-d7d1-d478-f4e0-6dc3f7746461"
+2016-07-10 19:21:40.656 -04:00 [Information] Session started; Key:"30337a69-6a85-3aca-9fbf-22dbbc677eba", Id:"d84b5244-79bf-fc7b-6d21-4d47b8c20285"
+2016-07-10 19:21:40.689 -04:00 [Debug] Session stored; Key:"30337a69-6a85-3aca-9fbf-22dbbc677eba", Id:"d84b5244-79bf-fc7b-6d21-4d47b8c20285", Count:1
+2016-07-10 19:21:40.689 -04:00 [Debug] Session stored; Key:"30337a69-6a85-3aca-9fbf-22dbbc677eba", Id:"eb23a322-d7d1-d478-f4e0-6dc3f7746461", Count:1
+2016-07-10 19:21:40.714 -04:00 [Information] Request finished in 1271.3593ms 200 text/plain; charset=utf-8
+2016-07-10 19:21:40.714 -04:00 [Information] Request finished in 1272.4307ms 200 text/plain; charset=utf-8
+2016-07-10 19:21:40.738 -04:00 [Debug] Connection id ""0HKT933FDS4CL"" completed keep alive response.
+2016-07-10 19:21:40.740 -04:00 [Debug] Connection id ""0HKT933FDS4CM"" completed keep alive response.
+2016-07-10 19:21:40.754 -04:00 [Information] Request starting HTTP/1.1 GET http://localhost:55839/Home/error  
+2016-07-10 19:21:40.758 -04:00 [Debug] The request path "/Home/error" does not match a supported file type
+2016-07-10 19:21:40.758 -04:00 [Debug] Request successfully matched the route with name '"default"' and template '"{controller=Login}/{action=Index}/{id?}"'.
+2016-07-10 19:21:40.759 -04:00 [Debug] Executing action "OA.UI.Controllers.HomeController.Error (OA.UI)"
+2016-07-10 19:21:44.512 -04:00 [Debug] Session loaded; Key:"30337a69-6a85-3aca-9fbf-22dbbc677eba", Id:"eb23a322-d7d1-d478-f4e0-6dc3f7746461", Count:1
+2016-07-10 19:22:08.664 -04:00 [Information] Executing action method "OA.UI.Controllers.HomeController.Error (OA.UI)" with arguments (null) - ModelState is Valid
+2016-07-10 19:22:10.106 -04:00 [Debug] Executed action method "OA.UI.Controllers.HomeController.Error (OA.UI)", returned result "Microsoft.AspNetCore.Mvc.ViewResult".
+2016-07-10 19:22:10.106 -04:00 [Debug] View lookup cache miss for view '"Error"' in controller '"Home"'.
+2016-07-10 19:22:10.107 -04:00 [Debug] Code generation for the Razor file at '"/Views/Home/Error.cshtml"' started.
+2016-07-10 19:22:10.124 -04:00 [Debug] Code generation for the Razor file at '"/Views/Home/Error.cshtml"' completed in 15.0988ms.
+2016-07-10 19:22:10.124 -04:00 [Debug] Compilation of the generated code for the Razor file at '"/Views/Home/Error.cshtml"' started.
+2016-07-10 19:22:10.167 -04:00 [Debug] Compilation of the generated code for the Razor file at '"/Views/Home/Error.cshtml"' completed in 42.5781ms.
+2016-07-10 19:22:10.207 -04:00 [Debug] The view '"Error"' was found.
+2016-07-10 19:22:10.207 -04:00 [Information] Executing ViewResult, running view at path "/Views/Home/Error.cshtml".
+2016-07-10 19:22:10.235 -04:00 [Debug] View lookup cache miss for view '"_Layout"' in controller '"Home"'.
+2016-07-10 19:22:10.235 -04:00 [Debug] Code generation for the Razor file at '"/Views/Shared/_Layout.cshtml"' started.
+2016-07-10 19:22:10.274 -04:00 [Debug] Code generation for the Razor file at '"/Views/Shared/_Layout.cshtml"' completed in 38.4608ms.
+2016-07-10 19:22:10.275 -04:00 [Debug] Compilation of the generated code for the Razor file at '"/Views/Shared/_Layout.cshtml"' started.
+2016-07-10 19:22:10.409 -04:00 [Debug] Compilation of the generated code for the Razor file at '"/Views/Shared/_Layout.cshtml"' completed in 134.6908ms.
+2016-07-10 19:22:11.469 -04:00 [Information] Executed action "OA.UI.Controllers.HomeController.Error (OA.UI)" in 30710.288ms
+2016-07-10 19:22:11.479 -04:00 [Information] Request finished in 30725.7294ms 200 text/html; charset=utf-8
+2016-07-10 19:22:11.483 -04:00 [Debug] Connection id ""0HKT933FDS4CL"" completed keep alive response.
+2016-07-10 19:22:11.487 -04:00 [Debug] Connection id ""0HKT933FDS4CL"" received FIN.
+2016-07-10 19:22:11.488 -04:00 [Debug] Connection id ""0HKT933FDS4CL"" disconnecting.
+2016-07-10 19:22:11.489 -04:00 [Debug] Connection id ""0HKT933FDS4CL"" sending FIN.
+2016-07-10 19:22:11.499 -04:00 [Debug] Connection id ""0HKT933FDS4CL"" sent FIN with status "0".
+2016-07-10 19:22:11.505 -04:00 [Debug] Connection id ""0HKT933FDS4CL"" stopped.
+2016-07-10 19:22:34.134 -04:00 [Debug] Connection id ""0HKT933FDS4CM"" received FIN.
+2016-07-10 19:22:34.134 -04:00 [Debug] Connection id ""0HKT933FDS4CM"" disconnecting.
+2016-07-10 19:22:34.135 -04:00 [Debug] Connection id ""0HKT933FDS4CM"" sending FIN.
+2016-07-10 19:22:34.135 -04:00 [Debug] Connection id ""0HKT933FDS4CN"" started.
+2016-07-10 19:22:34.135 -04:00 [Debug] Connection id ""0HKT933FDS4CM"" sent FIN with status "0".
+2016-07-10 19:22:34.135 -04:00 [Debug] Connection id ""0HKT933FDS4CM"" stopped.
+2016-07-10 19:22:34.140 -04:00 [Information] Request starting HTTP/1.1 GET http://localhost:55839/Home/error  
+2016-07-10 19:22:34.143 -04:00 [Debug] The request path "/Home/error" does not match a supported file type
+2016-07-10 19:22:34.143 -04:00 [Debug] Request successfully matched the route with name '"default"' and template '"{controller=Login}/{action=Index}/{id?}"'.
+2016-07-10 19:22:34.143 -04:00 [Debug] Executing action "OA.UI.Controllers.HomeController.Error (OA.UI)"
+2016-07-10 19:22:57.208 -04:00 [Information] User profile is available. Using '"C:\Users\owner\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2016-07-10 19:22:57.368 -04:00 [Debug] Hosting starting
+2016-07-10 19:22:57.566 -04:00 [Debug] Hosting started
+2016-07-10 19:22:57.695 -04:00 [Debug] Connection id ""0HKT934GARMC4"" started.
+2016-07-10 19:22:57.695 -04:00 [Debug] Connection id ""0HKT934GARMC5"" started.
+2016-07-10 19:22:57.817 -04:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:55839/  0
+2016-07-10 19:22:57.817 -04:00 [Information] Request starting HTTP/1.1 GET http://localhost:55839/  
+2016-07-10 19:22:57.913 -04:00 [Information] Request finished in 120.2971ms 200 
+2016-07-10 19:22:57.968 -04:00 [Debug] The request path "/" does not match a supported file type
+2016-07-10 19:22:57.980 -04:00 [Debug] Connection id ""0HKT934GARMC4"" completed keep alive response.
+2016-07-10 19:22:58.008 -04:00 [Debug] Reading data from file '"C:\Users\owner\AppData\Local\ASP.NET\DataProtection-Keys\key-cb9f45e1-4ed9-48c0-bff0-6e92031944f4.xml"'.
+2016-07-10 19:22:58.016 -04:00 [Debug] Found key {cb9f45e1-4ed9-48c0-bff0-6e92031944f4}.
+2016-07-10 19:22:58.030 -04:00 [Debug] Considering key {cb9f45e1-4ed9-48c0-bff0-6e92031944f4} with expiration date 2016-10-04 12:23:19Z as default key.
+2016-07-10 19:22:58.040 -04:00 [Debug] Decrypting secret element using Windows DPAPI.
+2016-07-10 19:22:58.051 -04:00 [Debug] Opening CNG algorithm '"AES"' from provider 'null' with chaining mode CBC.
+2016-07-10 19:22:58.058 -04:00 [Debug] Opening CNG algorithm '"SHA256"' from provider 'null' with HMAC.
+2016-07-10 19:22:58.068 -04:00 [Debug] Using key {cb9f45e1-4ed9-48c0-bff0-6e92031944f4} as the default key.
+2016-07-10 19:22:58.258 -04:00 [Debug] Request successfully matched the route with name '"default"' and template '"{controller=Login}/{action=Index}/{id?}"'.
+2016-07-10 19:22:58.336 -04:00 [Debug] Executing action "OA.UI.Controllers.LoginController.Index (OA.UI)"
+2016-07-10 19:22:58.508 -04:00 [Information] Executing action method "OA.UI.Controllers.LoginController.Index (OA.UI)" with arguments (null) - ModelState is Valid
+2016-07-10 19:22:58.516 -04:00 [Debug] Executed action method "OA.UI.Controllers.LoginController.Index (OA.UI)", returned result "Microsoft.AspNetCore.Mvc.ViewResult".
+2016-07-10 19:22:58.631 -04:00 [Debug] View lookup cache miss for view '"Index"' in controller '"Login"'.
+2016-07-10 19:22:58.649 -04:00 [Debug] Code generation for the Razor file at '"/Views/Login/Index.cshtml"' started.
+2016-07-10 19:22:59.120 -04:00 [Debug] Code generation for the Razor file at '"/Views/Login/Index.cshtml"' completed in 467.1618ms.
+2016-07-10 19:22:59.133 -04:00 [Debug] Compilation of the generated code for the Razor file at '"/Views/Login/Index.cshtml"' started.
+2016-07-10 19:23:00.435 -04:00 [Debug] Compilation of the generated code for the Razor file at '"/Views/Login/Index.cshtml"' completed in 1301.3784ms.
+2016-07-10 19:23:00.442 -04:00 [Debug] Code generation for the Razor file at '"/Views/_ViewStart.cshtml"' started.
+2016-07-10 19:23:00.449 -04:00 [Debug] Code generation for the Razor file at '"/Views/_ViewStart.cshtml"' completed in 7.2786ms.
+2016-07-10 19:23:00.449 -04:00 [Debug] Compilation of the generated code for the Razor file at '"/Views/_ViewStart.cshtml"' started.
+2016-07-10 19:23:00.501 -04:00 [Debug] Compilation of the generated code for the Razor file at '"/Views/_ViewStart.cshtml"' completed in 52.2327ms.
+2016-07-10 19:23:00.508 -04:00 [Debug] The view '"Index"' was found.
+2016-07-10 19:23:00.510 -04:00 [Information] Executing ViewResult, running view at path "/Views/Login/Index.cshtml".
+2016-07-10 19:23:00.716 -04:00 [Debug] An antiforgery cookie token was reused.
+2016-07-10 19:23:01.882 -04:00 [Information] Executed action "OA.UI.Controllers.LoginController.Index (OA.UI)" in 3544.7381ms
+2016-07-10 19:23:01.945 -04:00 [Information] Request finished in 4158.9914ms 200 text/html; charset=utf-8
+2016-07-10 19:23:01.951 -04:00 [Debug] Connection id ""0HKT934GARMC5"" completed keep alive response.
+2016-07-10 19:24:19.734 -04:00 [Debug] Connection id ""0HKT934GARMC6"" started.
+2016-07-10 19:24:19.736 -04:00 [Debug] Connection id ""0HKT934GARMC5"" received FIN.
+2016-07-10 19:24:19.758 -04:00 [Debug] Connection id ""0HKT934GARMC7"" started.
+2016-07-10 19:24:19.758 -04:00 [Information] Request starting HTTP/1.1 POST http://localhost:55839/Login/CheckLogin application/x-www-form-urlencoded; charset=UTF-8 1264
+2016-07-10 19:24:19.758 -04:00 [Debug] Connection id ""0HKT934GARMC4"" received FIN.
+2016-07-10 19:24:19.769 -04:00 [Information] Request starting HTTP/1.1 POST http://localhost:55839/Login/CheckLogin application/x-www-form-urlencoded; charset=UTF-8 1264
+2016-07-10 19:24:19.775 -04:00 [Debug] "POST" requests are not supported
+2016-07-10 19:24:19.776 -04:00 [Debug] Request successfully matched the route with name '"default"' and template '"{controller=Login}/{action=Index}/{id?}"'.
+2016-07-10 19:24:19.777 -04:00 [Debug] Connection id ""0HKT934GARMC4"" disconnecting.
+2016-07-10 19:24:19.777 -04:00 [Debug] Connection id ""0HKT934GARMC5"" disconnecting.
+2016-07-10 19:24:19.776 -04:00 [Debug] "POST" requests are not supported
+2016-07-10 19:24:19.777 -04:00 [Debug] Request successfully matched the route with name '"default"' and template '"{controller=Login}/{action=Index}/{id?}"'.
+2016-07-10 19:24:19.777 -04:00 [Debug] Connection id ""0HKT934GARMC5"" sending FIN.
+2016-07-10 19:24:19.777 -04:00 [Debug] Connection id ""0HKT934GARMC4"" sending FIN.
+2016-07-10 19:24:19.778 -04:00 [Debug] Executing action "OA.UI.Controllers.LoginController.CheckLogin (OA.UI)"
+2016-07-10 19:24:19.778 -04:00 [Debug] Executing action "OA.UI.Controllers.LoginController.CheckLogin (OA.UI)"
+2016-07-10 19:24:19.779 -04:00 [Information] Executing action method "OA.UI.Controllers.LoginController.CheckLogin (OA.UI)" with arguments (null) - ModelState is Valid
+2016-07-10 19:24:19.779 -04:00 [Information] Executing action method "OA.UI.Controllers.LoginController.CheckLogin (OA.UI)" with arguments (null) - ModelState is Valid
+2016-07-10 19:24:19.798 -04:00 [Debug] Connection id ""0HKT934GARMC4"" sent FIN with status "0".
+2016-07-10 19:24:19.798 -04:00 [Debug] Connection id ""0HKT934GARMC5"" sent FIN with status "0".
+2016-07-10 19:24:19.801 -04:00 [Debug] Connection id ""0HKT934GARMC5"" stopped.
+2016-07-10 19:24:19.801 -04:00 [Debug] Connection id ""0HKT934GARMC4"" stopped.
+2016-07-10 19:24:21.043 -04:00 [Warning] Accessing expired session, Key:"30337a69-6a85-3aca-9fbf-22dbbc677eba"
+2016-07-10 19:24:21.043 -04:00 [Warning] Accessing expired session, Key:"30337a69-6a85-3aca-9fbf-22dbbc677eba"
+2016-07-10 19:24:21.074 -04:00 [Debug] Executed action method "OA.UI.Controllers.LoginController.CheckLogin (OA.UI)", returned result "Microsoft.AspNetCore.Mvc.ContentResult".
+2016-07-10 19:24:21.074 -04:00 [Debug] Executed action method "OA.UI.Controllers.LoginController.CheckLogin (OA.UI)", returned result "Microsoft.AspNetCore.Mvc.ContentResult".
+2016-07-10 19:24:21.075 -04:00 [Information] Executing ContentResult with HTTP Response ContentType of "text/plain; charset=utf-8"
+2016-07-10 19:24:21.075 -04:00 [Information] Executing ContentResult with HTTP Response ContentType of "text/plain; charset=utf-8"
+2016-07-10 19:24:21.101 -04:00 [Information] Executed action "OA.UI.Controllers.LoginController.CheckLogin (OA.UI)" in 1323.494ms
+2016-07-10 19:24:21.125 -04:00 [Information] Executed action "OA.UI.Controllers.LoginController.CheckLogin (OA.UI)" in 1347.1614ms
+2016-07-10 19:24:21.149 -04:00 [Information] Session started; Key:"30337a69-6a85-3aca-9fbf-22dbbc677eba", Id:"428789ad-2cbe-cb83-5aa9-00c0f7cc4741"
+2016-07-10 19:24:21.149 -04:00 [Information] Session started; Key:"30337a69-6a85-3aca-9fbf-22dbbc677eba", Id:"01cec77a-e003-a846-1bd8-b7a2d78f3da6"
+2016-07-10 19:24:21.181 -04:00 [Debug] Session stored; Key:"30337a69-6a85-3aca-9fbf-22dbbc677eba", Id:"01cec77a-e003-a846-1bd8-b7a2d78f3da6", Count:1
+2016-07-10 19:24:21.181 -04:00 [Debug] Session stored; Key:"30337a69-6a85-3aca-9fbf-22dbbc677eba", Id:"428789ad-2cbe-cb83-5aa9-00c0f7cc4741", Count:1
+2016-07-10 19:24:21.205 -04:00 [Information] Request finished in 1436.285ms 200 text/plain; charset=utf-8
+2016-07-10 19:24:21.206 -04:00 [Information] Request finished in 1448.2549ms 200 text/plain; charset=utf-8
+2016-07-10 19:24:21.230 -04:00 [Debug] Connection id ""0HKT934GARMC7"" completed keep alive response.
+2016-07-10 19:24:21.232 -04:00 [Debug] Connection id ""0HKT934GARMC6"" completed keep alive response.
+2016-07-10 19:24:21.244 -04:00 [Information] Request starting HTTP/1.1 GET http://localhost:55839/Home/error  
+2016-07-10 19:24:21.247 -04:00 [Debug] The request path "/Home/error" does not match a supported file type
+2016-07-10 19:24:21.247 -04:00 [Debug] Request successfully matched the route with name '"default"' and template '"{controller=Login}/{action=Index}/{id?}"'.
+2016-07-10 19:24:21.248 -04:00 [Debug] Executing action "OA.UI.Controllers.HomeController.Error (OA.UI)"
+2016-07-10 19:24:24.001 -04:00 [Debug] Session loaded; Key:"30337a69-6a85-3aca-9fbf-22dbbc677eba", Id:"428789ad-2cbe-cb83-5aa9-00c0f7cc4741", Count:1
+2016-07-10 19:25:43.499 -04:00 [Debug] Connection id ""0HKT934GARMC6"" received FIN.
+2016-07-10 19:25:45.182 -04:00 [Debug] Connection id ""0HKT934GARMC6"" disconnecting.
+2016-07-10 19:25:45.184 -04:00 [Debug] Connection id ""0HKT934GARMC6"" sending FIN.
+2016-07-10 19:25:45.200 -04:00 [Debug] Connection id ""0HKT934GARMC6"" sent FIN with status "0".
+2016-07-10 19:25:45.223 -04:00 [Debug] Connection id ""0HKT934GARMC6"" stopped.
+2016-07-10 19:26:12.481 -04:00 [Information] Executing action method "OA.UI.Controllers.HomeController.Error (OA.UI)" with arguments (null) - ModelState is Valid
+2016-07-10 19:27:57.517 -04:00 [Information] User profile is available. Using '"C:\Users\owner\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2016-07-10 19:27:57.680 -04:00 [Debug] Hosting starting
+2016-07-10 19:27:57.887 -04:00 [Debug] Hosting started
+2016-07-10 19:27:57.942 -04:00 [Debug] Connection id ""0HKT9379Q6SH0"" started.
+2016-07-10 19:27:57.942 -04:00 [Debug] Connection id ""0HKT9379Q6SH1"" started.
+2016-07-10 19:27:58.071 -04:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:55839/  0
+2016-07-10 19:27:58.071 -04:00 [Information] Request starting HTTP/1.1 GET http://localhost:55839/  
+2016-07-10 19:27:58.150 -04:00 [Information] Request finished in 102.6303ms 200 
+2016-07-10 19:27:58.206 -04:00 [Debug] The request path "/" does not match a supported file type
+2016-07-10 19:27:58.225 -04:00 [Debug] Connection id ""0HKT9379Q6SH1"" completed keep alive response.
+2016-07-10 19:27:58.253 -04:00 [Debug] Reading data from file '"C:\Users\owner\AppData\Local\ASP.NET\DataProtection-Keys\key-cb9f45e1-4ed9-48c0-bff0-6e92031944f4.xml"'.
+2016-07-10 19:27:58.262 -04:00 [Debug] Found key {cb9f45e1-4ed9-48c0-bff0-6e92031944f4}.
+2016-07-10 19:27:58.277 -04:00 [Debug] Considering key {cb9f45e1-4ed9-48c0-bff0-6e92031944f4} with expiration date 2016-10-04 12:23:19Z as default key.
+2016-07-10 19:27:58.290 -04:00 [Debug] Decrypting secret element using Windows DPAPI.
+2016-07-10 19:27:58.304 -04:00 [Debug] Opening CNG algorithm '"AES"' from provider 'null' with chaining mode CBC.
+2016-07-10 19:27:58.312 -04:00 [Debug] Opening CNG algorithm '"SHA256"' from provider 'null' with HMAC.
+2016-07-10 19:27:58.322 -04:00 [Debug] Using key {cb9f45e1-4ed9-48c0-bff0-6e92031944f4} as the default key.
+2016-07-10 19:27:58.492 -04:00 [Debug] Request successfully matched the route with name '"default"' and template '"{controller=Login}/{action=Index}/{id?}"'.
+2016-07-10 19:27:58.572 -04:00 [Debug] Executing action "OA.UI.Controllers.LoginController.Index (OA.UI)"
+2016-07-10 19:27:58.786 -04:00 [Information] Executing action method "OA.UI.Controllers.LoginController.Index (OA.UI)" with arguments (null) - ModelState is Valid
+2016-07-10 19:27:58.798 -04:00 [Debug] Executed action method "OA.UI.Controllers.LoginController.Index (OA.UI)", returned result "Microsoft.AspNetCore.Mvc.ViewResult".
+2016-07-10 19:27:58.926 -04:00 [Debug] View lookup cache miss for view '"Index"' in controller '"Login"'.
+2016-07-10 19:27:58.947 -04:00 [Debug] Code generation for the Razor file at '"/Views/Login/Index.cshtml"' started.
+2016-07-10 19:27:59.486 -04:00 [Debug] Code generation for the Razor file at '"/Views/Login/Index.cshtml"' completed in 534.945ms.
+2016-07-10 19:27:59.502 -04:00 [Debug] Compilation of the generated code for the Razor file at '"/Views/Login/Index.cshtml"' started.
+2016-07-10 19:28:00.907 -04:00 [Debug] Compilation of the generated code for the Razor file at '"/Views/Login/Index.cshtml"' completed in 1404.9771ms.
+2016-07-10 19:28:00.914 -04:00 [Debug] Code generation for the Razor file at '"/Views/_ViewStart.cshtml"' started.
+2016-07-10 19:28:00.919 -04:00 [Debug] Code generation for the Razor file at '"/Views/_ViewStart.cshtml"' completed in 5.4822ms.
+2016-07-10 19:28:00.920 -04:00 [Debug] Compilation of the generated code for the Razor file at '"/Views/_ViewStart.cshtml"' started.
+2016-07-10 19:28:00.986 -04:00 [Debug] Compilation of the generated code for the Razor file at '"/Views/_ViewStart.cshtml"' completed in 66.3676ms.
+2016-07-10 19:28:00.997 -04:00 [Debug] The view '"Index"' was found.
+2016-07-10 19:28:00.998 -04:00 [Information] Executing ViewResult, running view at path "/Views/Login/Index.cshtml".
+2016-07-10 19:28:01.221 -04:00 [Debug] An antiforgery cookie token was reused.
+2016-07-10 19:28:02.405 -04:00 [Information] Executed action "OA.UI.Controllers.LoginController.Index (OA.UI)" in 3830.9344ms
+2016-07-10 19:28:02.468 -04:00 [Information] Request finished in 4431.6094ms 200 text/html; charset=utf-8
+2016-07-10 19:28:02.474 -04:00 [Debug] Connection id ""0HKT9379Q6SH0"" completed keep alive response.
+2016-07-10 19:28:22.562 -04:00 [Information] Request starting HTTP/1.1 POST http://localhost:55839/Login/CheckLogin application/x-www-form-urlencoded; charset=UTF-8 1264
+2016-07-10 19:28:22.565 -04:00 [Debug] "POST" requests are not supported
+2016-07-10 19:28:22.565 -04:00 [Debug] Request successfully matched the route with name '"default"' and template '"{controller=Login}/{action=Index}/{id?}"'.
+2016-07-10 19:28:22.570 -04:00 [Debug] Executing action "OA.UI.Controllers.LoginController.CheckLogin (OA.UI)"
+2016-07-10 19:28:22.571 -04:00 [Information] Executing action method "OA.UI.Controllers.LoginController.CheckLogin (OA.UI)" with arguments (null) - ModelState is Valid
+2016-07-10 19:28:22.586 -04:00 [Information] Request starting HTTP/1.1 POST http://localhost:55839/Login/CheckLogin application/x-www-form-urlencoded; charset=UTF-8 1264
+2016-07-10 19:28:22.588 -04:00 [Debug] "POST" requests are not supported
+2016-07-10 19:28:22.589 -04:00 [Debug] Request successfully matched the route with name '"default"' and template '"{controller=Login}/{action=Index}/{id?}"'.
+2016-07-10 19:28:22.589 -04:00 [Debug] Executing action "OA.UI.Controllers.LoginController.CheckLogin (OA.UI)"
+2016-07-10 19:28:22.589 -04:00 [Information] Executing action method "OA.UI.Controllers.LoginController.CheckLogin (OA.UI)" with arguments (null) - ModelState is Valid
+2016-07-10 19:28:23.852 -04:00 [Warning] Accessing expired session, Key:"30337a69-6a85-3aca-9fbf-22dbbc677eba"
+2016-07-10 19:28:23.852 -04:00 [Warning] Accessing expired session, Key:"30337a69-6a85-3aca-9fbf-22dbbc677eba"
+2016-07-10 19:28:23.862 -04:00 [Debug] Executed action method "OA.UI.Controllers.LoginController.CheckLogin (OA.UI)", returned result "Microsoft.AspNetCore.Mvc.ContentResult".
+2016-07-10 19:28:23.862 -04:00 [Debug] Executed action method "OA.UI.Controllers.LoginController.CheckLogin (OA.UI)", returned result "Microsoft.AspNetCore.Mvc.ContentResult".
+2016-07-10 19:28:23.864 -04:00 [Information] Executing ContentResult with HTTP Response ContentType of "text/plain; charset=utf-8"
+2016-07-10 19:28:23.864 -04:00 [Information] Executing ContentResult with HTTP Response ContentType of "text/plain; charset=utf-8"
+2016-07-10 19:28:23.868 -04:00 [Information] Executed action "OA.UI.Controllers.LoginController.CheckLogin (OA.UI)" in 1298.5865ms
+2016-07-10 19:28:23.868 -04:00 [Information] Executed action "OA.UI.Controllers.LoginController.CheckLogin (OA.UI)" in 1279.6544ms
+2016-07-10 19:28:23.874 -04:00 [Information] Session started; Key:"30337a69-6a85-3aca-9fbf-22dbbc677eba", Id:"05b4a304-7061-8ef5-4f7f-121a6286b2b9"
+2016-07-10 19:28:23.874 -04:00 [Information] Session started; Key:"30337a69-6a85-3aca-9fbf-22dbbc677eba", Id:"0e55ed57-7e3a-2f33-17fd-e26e3c549726"
+2016-07-10 19:28:23.885 -04:00 [Debug] Session stored; Key:"30337a69-6a85-3aca-9fbf-22dbbc677eba", Id:"0e55ed57-7e3a-2f33-17fd-e26e3c549726", Count:1
+2016-07-10 19:28:23.885 -04:00 [Debug] Session stored; Key:"30337a69-6a85-3aca-9fbf-22dbbc677eba", Id:"05b4a304-7061-8ef5-4f7f-121a6286b2b9", Count:1
+2016-07-10 19:28:23.909 -04:00 [Information] Request finished in 1347.7129ms 200 text/plain; charset=utf-8
+2016-07-10 19:28:23.909 -04:00 [Information] Request finished in 1327.989ms 200 text/plain; charset=utf-8
+2016-07-10 19:28:23.913 -04:00 [Debug] Connection id ""0HKT9379Q6SH1"" completed keep alive response.
+2016-07-10 19:28:23.913 -04:00 [Debug] Connection id ""0HKT9379Q6SH0"" completed keep alive response.
+2016-07-10 19:28:23.929 -04:00 [Information] Request starting HTTP/1.1 GET http://localhost:55839/Home/Index  
+2016-07-10 19:28:23.932 -04:00 [Debug] The request path "/Home/Index" does not match a supported file type
+2016-07-10 19:28:23.932 -04:00 [Debug] Request successfully matched the route with name '"default"' and template '"{controller=Login}/{action=Index}/{id?}"'.
+2016-07-10 19:28:23.933 -04:00 [Debug] Executing action "OA.UI.Controllers.HomeController.Index (OA.UI)"
+2016-07-10 19:28:28.382 -04:00 [Debug] Session loaded; Key:"30337a69-6a85-3aca-9fbf-22dbbc677eba", Id:"05b4a304-7061-8ef5-4f7f-121a6286b2b9", Count:1
+2016-07-10 19:28:28.396 -04:00 [Information] Executing action method "OA.UI.Controllers.HomeController.Index (OA.UI)" with arguments (null) - ModelState is Valid
+2016-07-10 19:28:28.400 -04:00 [Debug] Executed action method "OA.UI.Controllers.HomeController.Index (OA.UI)", returned result "Microsoft.AspNetCore.Mvc.ViewResult".
+2016-07-10 19:28:28.400 -04:00 [Debug] View lookup cache miss for view '"Index"' in controller '"Home"'.
+2016-07-10 19:28:28.400 -04:00 [Debug] Code generation for the Razor file at '"/Views/Home/Index.cshtml"' started.
+2016-07-10 19:28:28.444 -04:00 [Debug] Code generation for the Razor file at '"/Views/Home/Index.cshtml"' completed in 44.0663ms.
+2016-07-10 19:28:28.444 -04:00 [Debug] Compilation of the generated code for the Razor file at '"/Views/Home/Index.cshtml"' started.
+2016-07-10 19:28:28.490 -04:00 [Debug] Compilation of the generated code for the Razor file at '"/Views/Home/Index.cshtml"' completed in 45.7264ms.
+2016-07-10 19:28:28.491 -04:00 [Debug] The view '"Index"' was found.
+2016-07-10 19:28:28.491 -04:00 [Information] Executing ViewResult, running view at path "/Views/Home/Index.cshtml".
+2016-07-10 19:28:29.506 -04:00 [Information] Executed action "OA.UI.Controllers.HomeController.Index (OA.UI)" in 5573.3833ms
+2016-07-10 19:28:29.513 -04:00 [Information] Request finished in 5583.9544ms 200 text/html; charset=utf-8
+2016-07-10 19:28:29.515 -04:00 [Debug] Connection id ""0HKT9379Q6SH1"" completed keep alive response.
+2016-07-10 19:29:40.216 -04:00 [Information] User profile is available. Using '"C:\Users\owner\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2016-07-10 19:29:40.387 -04:00 [Debug] Hosting starting
+2016-07-10 19:29:40.580 -04:00 [Debug] Hosting started
+2016-07-10 19:29:40.623 -04:00 [Debug] Connection id ""0HKT9388DF6AO"" started.
+2016-07-10 19:29:40.623 -04:00 [Debug] Connection id ""0HKT9388DF6AN"" started.
+2016-07-10 19:29:40.741 -04:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:55839/  0
+2016-07-10 19:29:40.741 -04:00 [Information] Request starting HTTP/1.1 GET http://localhost:55839/  
+2016-07-10 19:29:40.812 -04:00 [Information] Request finished in 93.5877ms 200 
+2016-07-10 19:29:40.861 -04:00 [Debug] The request path "/" does not match a supported file type
+2016-07-10 19:29:40.873 -04:00 [Debug] Connection id ""0HKT9388DF6AO"" completed keep alive response.
+2016-07-10 19:29:40.903 -04:00 [Debug] Reading data from file '"C:\Users\owner\AppData\Local\ASP.NET\DataProtection-Keys\key-cb9f45e1-4ed9-48c0-bff0-6e92031944f4.xml"'.
+2016-07-10 19:29:40.911 -04:00 [Debug] Found key {cb9f45e1-4ed9-48c0-bff0-6e92031944f4}.
+2016-07-10 19:29:40.928 -04:00 [Debug] Considering key {cb9f45e1-4ed9-48c0-bff0-6e92031944f4} with expiration date 2016-10-04 12:23:19Z as default key.
+2016-07-10 19:29:40.939 -04:00 [Debug] Decrypting secret element using Windows DPAPI.
+2016-07-10 19:29:40.950 -04:00 [Debug] Opening CNG algorithm '"AES"' from provider 'null' with chaining mode CBC.
+2016-07-10 19:29:40.958 -04:00 [Debug] Opening CNG algorithm '"SHA256"' from provider 'null' with HMAC.
+2016-07-10 19:29:40.970 -04:00 [Debug] Using key {cb9f45e1-4ed9-48c0-bff0-6e92031944f4} as the default key.
+2016-07-10 19:29:41.146 -04:00 [Debug] Request successfully matched the route with name '"default"' and template '"{controller=Login}/{action=Index}/{id?}"'.
+2016-07-10 19:29:41.226 -04:00 [Debug] Executing action "OA.UI.Controllers.LoginController.Index (OA.UI)"
+2016-07-10 19:29:41.399 -04:00 [Information] Executing action method "OA.UI.Controllers.LoginController.Index (OA.UI)" with arguments (null) - ModelState is Valid
+2016-07-10 19:29:41.407 -04:00 [Debug] Executed action method "OA.UI.Controllers.LoginController.Index (OA.UI)", returned result "Microsoft.AspNetCore.Mvc.ViewResult".
+2016-07-10 19:29:41.525 -04:00 [Debug] View lookup cache miss for view '"Index"' in controller '"Login"'.
+2016-07-10 19:29:41.547 -04:00 [Debug] Code generation for the Razor file at '"/Views/Login/Index.cshtml"' started.
+2016-07-10 19:29:41.999 -04:00 [Debug] Code generation for the Razor file at '"/Views/Login/Index.cshtml"' completed in 448.9321ms.
+2016-07-10 19:29:42.013 -04:00 [Debug] Compilation of the generated code for the Razor file at '"/Views/Login/Index.cshtml"' started.
+2016-07-10 19:29:43.290 -04:00 [Debug] Compilation of the generated code for the Razor file at '"/Views/Login/Index.cshtml"' completed in 1277.5858ms.
+2016-07-10 19:29:43.296 -04:00 [Debug] Code generation for the Razor file at '"/Views/_ViewStart.cshtml"' started.
+2016-07-10 19:29:43.303 -04:00 [Debug] Code generation for the Razor file at '"/Views/_ViewStart.cshtml"' completed in 6.7753ms.
+2016-07-10 19:29:43.303 -04:00 [Debug] Compilation of the generated code for the Razor file at '"/Views/_ViewStart.cshtml"' started.
+2016-07-10 19:29:43.359 -04:00 [Debug] Compilation of the generated code for the Razor file at '"/Views/_ViewStart.cshtml"' completed in 55.4789ms.
+2016-07-10 19:29:43.372 -04:00 [Debug] The view '"Index"' was found.
+2016-07-10 19:29:43.376 -04:00 [Information] Executing ViewResult, running view at path "/Views/Login/Index.cshtml".
+2016-07-10 19:29:43.587 -04:00 [Debug] An antiforgery cookie token was reused.
+2016-07-10 19:29:44.763 -04:00 [Information] Executed action "OA.UI.Controllers.LoginController.Index (OA.UI)" in 3536.3447ms
+2016-07-10 19:29:44.833 -04:00 [Information] Request finished in 4124.1055ms 200 text/html; charset=utf-8
+2016-07-10 19:29:44.838 -04:00 [Debug] Connection id ""0HKT9388DF6AN"" completed keep alive response.
+2016-07-10 19:29:48.059 -04:00 [Information] Request starting HTTP/1.1 GET http://localhost:55839/login/index  
+2016-07-10 19:29:48.064 -04:00 [Debug] The request path "/login/index" does not match a supported file type
+2016-07-10 19:29:48.064 -04:00 [Debug] Request successfully matched the route with name '"default"' and template '"{controller=Login}/{action=Index}/{id?}"'.
+2016-07-10 19:29:48.065 -04:00 [Debug] Executing action "OA.UI.Controllers.LoginController.Index (OA.UI)"
+2016-07-10 19:29:48.065 -04:00 [Information] Executing action method "OA.UI.Controllers.LoginController.Index (OA.UI)" with arguments (null) - ModelState is Valid
+2016-07-10 19:29:48.068 -04:00 [Debug] Executed action method "OA.UI.Controllers.LoginController.Index (OA.UI)", returned result "Microsoft.AspNetCore.Mvc.ViewResult".
+2016-07-10 19:29:48.070 -04:00 [Debug] View lookup cache hit for view '"Index"' in controller '"Login"'.
+2016-07-10 19:29:48.070 -04:00 [Debug] The view '"Index"' was found.
+2016-07-10 19:29:48.070 -04:00 [Information] Executing ViewResult, running view at path "/Views/Login/Index.cshtml".
+2016-07-10 19:29:48.074 -04:00 [Debug] An antiforgery cookie token was reused.
+2016-07-10 19:29:49.080 -04:00 [Information] Executed action "OA.UI.Controllers.LoginController.Index (OA.UI)" in 1014.3585ms
+2016-07-10 19:29:49.088 -04:00 [Information] Request finished in 1028.6348ms 200 text/html; charset=utf-8
+2016-07-10 19:29:49.092 -04:00 [Debug] Connection id ""0HKT9388DF6AO"" completed keep alive response.
+2016-07-10 19:29:53.465 -04:00 [Information] Request starting HTTP/1.1 GET http://localhost:55839/home/index  
+2016-07-10 19:29:53.468 -04:00 [Debug] The request path "/home/index" does not match a supported file type
+2016-07-10 19:29:53.468 -04:00 [Debug] Request successfully matched the route with name '"default"' and template '"{controller=Login}/{action=Index}/{id?}"'.
+2016-07-10 19:29:53.469 -04:00 [Debug] Executing action "OA.UI.Controllers.HomeController.Index (OA.UI)"
+2016-07-10 19:29:53.483 -04:00 [Warning] Accessing expired session, Key:"30337a69-6a85-3aca-9fbf-22dbbc677eba"
+2016-07-10 19:29:53.487 -04:00 [Information] Executing action method "OA.UI.Controllers.HomeController.Index (OA.UI)" with arguments (null) - ModelState is Valid
+2016-07-10 19:29:53.489 -04:00 [Debug] Executed action method "OA.UI.Controllers.HomeController.Index (OA.UI)", returned result "Microsoft.AspNetCore.Mvc.ViewResult".
+2016-07-10 19:29:53.489 -04:00 [Debug] View lookup cache miss for view '"Index"' in controller '"Home"'.
+2016-07-10 19:29:53.490 -04:00 [Debug] Code generation for the Razor file at '"/Views/Home/Index.cshtml"' started.
+2016-07-10 19:29:53.512 -04:00 [Debug] Code generation for the Razor file at '"/Views/Home/Index.cshtml"' completed in 22.1771ms.
+2016-07-10 19:29:53.512 -04:00 [Debug] Compilation of the generated code for the Razor file at '"/Views/Home/Index.cshtml"' started.
+2016-07-10 19:29:53.569 -04:00 [Debug] Compilation of the generated code for the Razor file at '"/Views/Home/Index.cshtml"' completed in 56.8979ms.
+2016-07-10 19:29:53.570 -04:00 [Debug] The view '"Index"' was found.
+2016-07-10 19:29:53.570 -04:00 [Information] Executing ViewResult, running view at path "/Views/Home/Index.cshtml".
+2016-07-10 19:29:53.576 -04:00 [Information] Executed action "OA.UI.Controllers.HomeController.Index (OA.UI)" in 108.0837ms
+2016-07-10 19:29:53.582 -04:00 [Information] Request finished in 117.2037ms 302 text/html; charset=utf-8
+2016-07-10 19:29:53.584 -04:00 [Debug] Connection id ""0HKT9388DF6AN"" completed keep alive response.
+2016-07-10 19:29:53.597 -04:00 [Information] Request starting HTTP/1.1 GET http://localhost:55839/Login/Index/  
+2016-07-10 19:29:53.599 -04:00 [Debug] The request path "/Login/Index/" does not match a supported file type
+2016-07-10 19:29:53.600 -04:00 [Debug] Request successfully matched the route with name '"default"' and template '"{controller=Login}/{action=Index}/{id?}"'.
+2016-07-10 19:29:53.600 -04:00 [Debug] Executing action "OA.UI.Controllers.LoginController.Index (OA.UI)"
+2016-07-10 19:29:53.600 -04:00 [Information] Executing action method "OA.UI.Controllers.LoginController.Index (OA.UI)" with arguments (null) - ModelState is Valid
+2016-07-10 19:29:53.603 -04:00 [Debug] Executed action method "OA.UI.Controllers.LoginController.Index (OA.UI)", returned result "Microsoft.AspNetCore.Mvc.ViewResult".
+2016-07-10 19:29:53.603 -04:00 [Debug] View lookup cache hit for view '"Index"' in controller '"Login"'.
+2016-07-10 19:29:53.603 -04:00 [Debug] The view '"Index"' was found.
+2016-07-10 19:29:53.603 -04:00 [Information] Executing ViewResult, running view at path "/Views/Login/Index.cshtml".
+2016-07-10 19:29:53.606 -04:00 [Debug] An antiforgery cookie token was reused.
+2016-07-10 19:29:53.606 -04:00 [Information] Executed action "OA.UI.Controllers.LoginController.Index (OA.UI)" in 6.2688ms
+2016-07-10 19:29:53.611 -04:00 [Information] Request finished in 14.3162ms 200 text/html; charset=utf-8
+2016-07-10 19:29:53.615 -04:00 [Debug] Connection id ""0HKT9388DF6AO"" completed keep alive response.
+2016-07-10 19:30:08.406 -04:00 [Information] Request starting HTTP/1.1 GET http://localhost:55839/home/index  
+2016-07-10 19:30:08.409 -04:00 [Debug] The request path "/home/index" does not match a supported file type
+2016-07-10 19:30:08.409 -04:00 [Debug] Request successfully matched the route with name '"default"' and template '"{controller=Login}/{action=Index}/{id?}"'.
+2016-07-10 19:30:08.409 -04:00 [Debug] Executing action "OA.UI.Controllers.HomeController.Index (OA.UI)"
+2016-07-10 19:30:08.410 -04:00 [Warning] Accessing expired session, Key:"30337a69-6a85-3aca-9fbf-22dbbc677eba"
+2016-07-10 19:30:08.412 -04:00 [Information] Executing action method "OA.UI.Controllers.HomeController.Index (OA.UI)" with arguments (null) - ModelState is Valid
+2016-07-10 19:30:08.414 -04:00 [Debug] Executed action method "OA.UI.Controllers.HomeController.Index (OA.UI)", returned result "Microsoft.AspNetCore.Mvc.ViewResult".
+2016-07-10 19:30:08.415 -04:00 [Debug] View lookup cache hit for view '"Index"' in controller '"Home"'.
+2016-07-10 19:30:08.415 -04:00 [Debug] The view '"Index"' was found.
+2016-07-10 19:30:08.415 -04:00 [Information] Executing ViewResult, running view at path "/Views/Home/Index.cshtml".
+2016-07-10 19:30:08.418 -04:00 [Information] Executed action "OA.UI.Controllers.HomeController.Index (OA.UI)" in 8.4693ms
+2016-07-10 19:30:08.424 -04:00 [Information] Request finished in 18.5461ms 302 text/html; charset=utf-8
+2016-07-10 19:30:08.427 -04:00 [Debug] Connection id ""0HKT9388DF6AN"" completed keep alive response.
+2016-07-10 19:30:08.433 -04:00 [Information] Request starting HTTP/1.1 GET http://localhost:55839/Login/Index/  
+2016-07-10 19:30:08.436 -04:00 [Debug] The request path "/Login/Index/" does not match a supported file type
+2016-07-10 19:30:08.436 -04:00 [Debug] Request successfully matched the route with name '"default"' and template '"{controller=Login}/{action=Index}/{id?}"'.
+2016-07-10 19:30:08.436 -04:00 [Debug] Executing action "OA.UI.Controllers.LoginController.Index (OA.UI)"
+2016-07-10 19:30:08.437 -04:00 [Information] Executing action method "OA.UI.Controllers.LoginController.Index (OA.UI)" with arguments (null) - ModelState is Valid
+2016-07-10 19:30:08.439 -04:00 [Debug] Executed action method "OA.UI.Controllers.LoginController.Index (OA.UI)", returned result "Microsoft.AspNetCore.Mvc.ViewResult".
+2016-07-10 19:30:08.439 -04:00 [Debug] View lookup cache hit for view '"Index"' in controller '"Login"'.
+2016-07-10 19:30:08.439 -04:00 [Debug] The view '"Index"' was found.
+2016-07-10 19:30:08.439 -04:00 [Information] Executing ViewResult, running view at path "/Views/Login/Index.cshtml".
+2016-07-10 19:30:08.441 -04:00 [Debug] An antiforgery cookie token was reused.
+2016-07-10 19:30:08.442 -04:00 [Information] Executed action "OA.UI.Controllers.LoginController.Index (OA.UI)" in 5.2523ms
+2016-07-10 19:30:08.446 -04:00 [Information] Request finished in 13.1121ms 200 text/html; charset=utf-8
+2016-07-10 19:30:08.448 -04:00 [Debug] Connection id ""0HKT9388DF6AO"" completed keep alive response.

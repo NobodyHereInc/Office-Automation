@@ -9,10 +9,15 @@ using OA.Model;
 
 namespace OA.UI.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
         public IActionResult Index()
         {
+            if (userInfo != null)
+            {
+                ViewData["UserName"] = userInfo.UserName;
+            }
+            
             return View();
         }
 

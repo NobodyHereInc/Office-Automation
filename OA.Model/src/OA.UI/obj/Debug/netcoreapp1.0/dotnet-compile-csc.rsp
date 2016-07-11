@@ -234,6 +234,7 @@
 -resource:"D:\Co-op Project\OA.Model\src\OA.UI\obj\Debug\netcoreapp1.0\OA.UIdotnet-compile.deps.json",OA.UI.deps.json
 "D:\Co-op Project\OA.Model\src\OA.UI\Program.cs"
 "D:\Co-op Project\OA.Model\src\OA.UI\Startup.cs"
+"D:\Co-op Project\OA.Model\src\OA.UI\Controllers\BaseController.cs"
 "D:\Co-op Project\OA.Model\src\OA.UI\Controllers\HomeController.cs"
 "D:\Co-op Project\OA.Model\src\OA.UI\Controllers\LoginController.cs"
 "D:\Co-op Project\OA.Model\src\OA.UI\Controllers\TestController.cs"
