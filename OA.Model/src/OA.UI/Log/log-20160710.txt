@@ -8571,3 +8571,49 @@ System.DivideByZeroException: Attempted to divide by zero.
 2016-07-10 19:30:08.442 -04:00 [Information] Executed action "OA.UI.Controllers.LoginController.Index (OA.UI)" in 5.2523ms
 2016-07-10 19:30:08.446 -04:00 [Information] Request finished in 13.1121ms 200 text/html; charset=utf-8
 2016-07-10 19:30:08.448 -04:00 [Debug] Connection id ""0HKT9388DF6AO"" completed keep alive response.
+2016-07-10 22:47:00.338 -04:00 [Information] User profile is available. Using '"C:\Users\owner\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2016-07-10 22:47:00.495 -04:00 [Debug] Hosting starting
+2016-07-10 22:47:00.663 -04:00 [Debug] Hosting started
+2016-07-10 22:47:00.771 -04:00 [Debug] Connection id ""0HKT96MH1RTMO"" started.
+2016-07-10 22:47:00.771 -04:00 [Debug] Connection id ""0HKT96MH1RTMP"" started.
+2016-07-10 22:47:00.907 -04:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:55839/  0
+2016-07-10 22:47:00.907 -04:00 [Information] Request starting HTTP/1.1 GET http://localhost:55839/  
+2016-07-10 22:47:01.011 -04:00 [Information] Request finished in 126.2529ms 200 
+2016-07-10 22:47:01.063 -04:00 [Debug] The request path "/" does not match a supported file type
+2016-07-10 22:47:01.079 -04:00 [Debug] Connection id ""0HKT96MH1RTMP"" completed keep alive response.
+2016-07-10 22:47:01.105 -04:00 [Debug] Reading data from file '"C:\Users\owner\AppData\Local\ASP.NET\DataProtection-Keys\key-cb9f45e1-4ed9-48c0-bff0-6e92031944f4.xml"'.
+2016-07-10 22:47:01.118 -04:00 [Debug] Found key {cb9f45e1-4ed9-48c0-bff0-6e92031944f4}.
+2016-07-10 22:47:01.136 -04:00 [Debug] Considering key {cb9f45e1-4ed9-48c0-bff0-6e92031944f4} with expiration date 2016-10-04 12:23:19Z as default key.
+2016-07-10 22:47:01.145 -04:00 [Debug] Decrypting secret element using Windows DPAPI.
+2016-07-10 22:47:01.155 -04:00 [Debug] Opening CNG algorithm '"AES"' from provider 'null' with chaining mode CBC.
+2016-07-10 22:47:01.163 -04:00 [Debug] Opening CNG algorithm '"SHA256"' from provider 'null' with HMAC.
+2016-07-10 22:47:01.173 -04:00 [Debug] Using key {cb9f45e1-4ed9-48c0-bff0-6e92031944f4} as the default key.
+2016-07-10 22:47:01.356 -04:00 [Debug] Request successfully matched the route with name '"default"' and template '"{controller=Login}/{action=Index}/{id?}"'.
+2016-07-10 22:47:01.432 -04:00 [Debug] Executing action "OA.UI.Controllers.LoginController.Index (OA.UI)"
+2016-07-10 22:47:01.616 -04:00 [Information] Executing action method "OA.UI.Controllers.LoginController.Index (OA.UI)" with arguments (null) - ModelState is Valid
+2016-07-10 22:47:01.625 -04:00 [Debug] Executed action method "OA.UI.Controllers.LoginController.Index (OA.UI)", returned result "Microsoft.AspNetCore.Mvc.ViewResult".
+2016-07-10 22:47:01.844 -04:00 [Debug] View lookup cache miss for view '"Index"' in controller '"Login"'.
+2016-07-10 22:47:01.876 -04:00 [Debug] Code generation for the Razor file at '"/Views/Login/Index.cshtml"' started.
+2016-07-10 22:47:02.314 -04:00 [Debug] Code generation for the Razor file at '"/Views/Login/Index.cshtml"' completed in 436.0654ms.
+2016-07-10 22:47:02.337 -04:00 [Debug] Compilation of the generated code for the Razor file at '"/Views/Login/Index.cshtml"' started.
+2016-07-10 22:47:03.746 -04:00 [Debug] Compilation of the generated code for the Razor file at '"/Views/Login/Index.cshtml"' completed in 1408.737ms.
+2016-07-10 22:47:03.751 -04:00 [Debug] Code generation for the Razor file at '"/Views/_ViewStart.cshtml"' started.
+2016-07-10 22:47:03.757 -04:00 [Debug] Code generation for the Razor file at '"/Views/_ViewStart.cshtml"' completed in 5.3846ms.
+2016-07-10 22:47:03.757 -04:00 [Debug] Compilation of the generated code for the Razor file at '"/Views/_ViewStart.cshtml"' started.
+2016-07-10 22:47:03.802 -04:00 [Debug] Compilation of the generated code for the Razor file at '"/Views/_ViewStart.cshtml"' completed in 44.9066ms.
+2016-07-10 22:47:03.808 -04:00 [Debug] The view '"Index"' was found.
+2016-07-10 22:47:03.809 -04:00 [Information] Executing ViewResult, running view at path "/Views/Login/Index.cshtml".
+2016-07-10 22:47:04.004 -04:00 [Debug] A new antiforgery cookie token was created.
+2016-07-10 22:47:05.176 -04:00 [Information] Executed action "OA.UI.Controllers.LoginController.Index (OA.UI)" in 3743.4264ms
+2016-07-10 22:47:05.252 -04:00 [Information] Request finished in 4375.3871ms 200 text/html; charset=utf-8
+2016-07-10 22:47:05.256 -04:00 [Debug] Connection id ""0HKT96MH1RTMO"" completed keep alive response.
+2016-07-10 22:48:50.741 -04:00 [Debug] Connection id ""0HKT96MH1RTMO"" received FIN.
+2016-07-10 22:48:50.741 -04:00 [Debug] Connection id ""0HKT96MH1RTMP"" received FIN.
+2016-07-10 22:48:50.757 -04:00 [Debug] Connection id ""0HKT96MH1RTMO"" disconnecting.
+2016-07-10 22:48:50.757 -04:00 [Debug] Connection id ""0HKT96MH1RTMP"" disconnecting.
+2016-07-10 22:48:50.757 -04:00 [Debug] Connection id ""0HKT96MH1RTMO"" sending FIN.
+2016-07-10 22:48:50.757 -04:00 [Debug] Connection id ""0HKT96MH1RTMP"" sending FIN.
+2016-07-10 22:48:50.772 -04:00 [Debug] Connection id ""0HKT96MH1RTMP"" sent FIN with status "0".
+2016-07-10 22:48:50.772 -04:00 [Debug] Connection id ""0HKT96MH1RTMO"" sent FIN with status "0".
+2016-07-10 22:48:50.772 -04:00 [Debug] Connection id ""0HKT96MH1RTMP"" stopped.
+2016-07-10 22:48:50.772 -04:00 [Debug] Connection id ""0HKT96MH1RTMO"" stopped.

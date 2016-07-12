@@ -22,7 +22,7 @@ namespace OA.DAL
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Data Source=DESKTOP-F46IJD2;Initial Catalog=OA_DB;Integrated Security=True;Connect Timeout=15;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+            optionsBuilder.UseSqlServer(@"Data Source=.;Initial Catalog=OA_DB;Integrated Security=True;Connect Timeout=15;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
         }
 
         public DbSet<UserInfo> UserInfo { get; set; }

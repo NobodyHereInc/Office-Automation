@@ -1,17 +1,50 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using OA.Model;
-using System.Linq.Expressions;
 using OA.IService;
 using OA.Model.SearchParams;
+using MailKit.Net.Smtp;
+using MimeKit;
 
 namespace OA.Service
 {
     public class UserInfoService : BaseService<UserInfo>, IUserInfoService
     {
+        #region Find User Pwd
+        /// <summary>
+        /// This function is used to find user Password.
+        /// </summary>
+        /// <param name="userInfo"></param>
+        public void FindUserPwd(UserInfo userInfo)
+        {
+
+            var message = new MimeMessage();
+
+            message.From.Add(new MailboxAddress("walter", "walter1214@126.com"));
+            message.To.Add(new MailboxAddress("EVA No1 真治", "527768601@qq.com"));
+            message.Subject = "How you doin'?";
+            message.Body = new TextPart("plain") { Text = @"Hey" };
+
+            using (var client = new SmtpClient())
+            {
+                client.Connect("smtp.126.com");
+
+                ////Note: only needed if the SMTP server requires authentication
+                client.Authenticate("walter1214@126.com", "mlc883019");
+
+                client.Send(message);
+                client.Disconnect(true);
+            }
+        }
+        #endregion
+
         #region Batch Remove
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="list"></param>
+        /// <returns></returns>
         public bool DeleteEntities(List<int> list)
         {
             // get all record that want to delete.
@@ -62,6 +95,8 @@ namespace OA.Service
             return temp.OrderBy<UserInfo, String>(u => u.Sort).Skip<UserInfo>((filter.PageIndex - 1) * filter.PageSize).Take<UserInfo>(filter.PageSize);
         }
         #endregion
+
+
 
         /// <summary>
         /// Constructor.

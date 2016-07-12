@@ -22,5 +22,11 @@ namespace OA.IService
         /// <param name="filter"></param>
         /// <returns></returns>
         IQueryable<UserInfo> LoadSearchUserInfo(UserInfoFilter filter);
+
+        /// <summary>
+        /// find user passWord
+        /// </summary>
+        /// <param name="userInfo"></param>
+        void FindUserPwd(UserInfo userInfo);
     }
 }
