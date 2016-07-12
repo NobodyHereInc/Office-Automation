@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.Mvc;
 using OA.IService;
 using OA.Service;
 using Microsoft.AspNetCore.Http;
-using System.Security.Cryptography.X509Certificates;
 
 // For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -138,13 +137,6 @@ namespace OA.UI.Controllers
         #endregion
 
         #region Tool Functions
-        ///// <summary>
-        ///// 
-        ///// </summary>
-        ///// <returns></returns>
-        //private async Task<bool> IsCaptchaVerified(String value)
-        //{   
-        //}
         #endregion
     }
 

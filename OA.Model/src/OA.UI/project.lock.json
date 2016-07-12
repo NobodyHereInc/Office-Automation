@@ -11730,7 +11730,6 @@
       "Microsoft.VisualStudio.Web.BrowserLink.Loader >= 14.0.0",
       "Microsoft.jQuery.Unobtrusive.Ajax >= 3.2.3",
       "OA.Common >= 1.0.0-*",
-      "OA.IService >= 1.0.0-*",
       "OA.Model >= 1.0.0-*",
       "OA.Service >= 1.0.0-*",
       "PaulMiami.AspNetCore.Mvc.Recaptcha >= 1.0.2",

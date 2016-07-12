@@ -1,0 +1,97 @@
+﻿@{ 
+    Layout = null;
+}
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Home Page</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/lib/jquery-easyui-1.4.5/themes/bootstrap/easyui.css" rel="stylesheet" />
+    <link href="~/lib/jquery-easyui-1.4.5/themes/icon.css" rel="stylesheet" />
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/jquery-easyui-1.4.5/jquery.easyui.min.js"></script>
+    <script src="~/lib/jquery-easyui-1.4.5/locale/easyui-lang-en.js"></script>
+    <script src="~/lib/jquery-unobtrusive-ajax/jquery.unobtrusive-ajax.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            bindEvent();
+        });
+
+        function bindEvent() {
+            $(".detailLink123").click(function () {
+                var title = $(this).text();
+                var url = $(this).attr("url");
+                var isExt = $('#tt').tabs('exists', title);// check title whether exist.
+                if (isExt) {
+                    $('#tt').tabs('select', title); //if tabs is select.
+                    return;
+                }
+                $('#tt').tabs('add', { // add new tabs.
+                    title: title,
+                    content: createContent(url),
+                    closable: true
+                });
+            });
+        }
+
+        function createContent(url) {
+            var strHtml = '<iframe src="' + url + '" scrolling="no" frameborder="0" width="100%" height="100%"></iframe>';
+            return strHtml;
+        }
+    </script>
+    <style type="text/css">
+        .txt {
+            font-size: 16px;
+            font-weight: bolder;
+            float: right;
+            margin-top: 15px;
+            margin-right: 20px;
+        }
+    </style>
+
+</head>
+<body class="easyui-layout">
+    <!--------------------------- START Top Bar with LOGO -------------------------------->
+    <div data-options="region:'north',border:false" style="height: 80px; background: #808080; padding: 10px; overflow: hidden;background-image: url('../../images/bg3.png');">
+        <img src="~/images/login/MyLogo.png" style="height:60px;width:180px"/>
+        <span class="txt">Welcome .. Login @ViewData["Date"]</span> 
+    </div>
+    <!---------------------------- END Top Bar with LOGO --------------------------------->
+
+    <!-------------------------------- START LEFT BAR ------------------------------------>
+    <div data-options="region:'west',split:true,title:'West'" style="width:200;padding:10px;">
+        <div class="easyui-accordion" style="width:auto;height:auto;">
+
+            <div title="User Management" data-options="iconCls:'icon-ok'" style="overflow:auto;padding:10px;">
+                <a href="javascript:void(0)" class="detailLink123" url="/UserInfo/Index">User Management</a>
+            </div>
+
+            <div title="Role Management" data-options="iconCls:'icon-ok'" style="overflow:auto;padding:10px;">
+                <a href="javascript:void(0)" class="detailLink123" url="/Login/Index">Role Management</a>
+            </div>
+        </div>
+    </div>
+    <!-------------------------------- END LEFT BAR -------------------------------------->
+
+    <!---------------- START Botton Bar ------------------->
+    <div data-options="region:'south',border:false" style="height:50px;background:#A9FACD;padding:10px;text-align:center">
+        Copyright&copy; Walter3019 2016
+    </div>
+    <!---------------- END Botton Bar ---------------------->
+
+    <!----------------- START Main Area Page --------------->
+    <div data-options="region:'center',title:'Center'">
+        <div class="easyui-tabs" style="width:700px;height:250px" fit="true" id="tt">
+            <div title="User Management" style="padding:0px" data-options="closable:true">
+                <iframe src="/UserInfo/Index" scrolling="no" frameborder="0" width="100%" height="100%"></iframe>
+            </div>
+        </div>
+    </div>
+    <!----------------- START Main Area Page --------------->
+</body>
+</html>

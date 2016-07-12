@@ -9,15 +9,21 @@ using OA.Model;
 
 namespace OA.UI.Controllers
 {
-    public class HomeController : BaseController
+    public class HomeController : Controller //BaseController
     {
         public IActionResult Index()
         {
-            if (userInfo != null)
-            {
-                ViewData["UserName"] = userInfo.UserName;
-            }
+            //if (userInfo != null)
+            //{
+            //    ViewData["UserName"] = userInfo.UserName;
+            //}
             
+            return View();
+        }
+
+        public IActionResult HomePage()
+        {
+            ViewData["Date"] = DateTime.Now.ToString("yyyy-MM-dd");
             return View();
         }
 

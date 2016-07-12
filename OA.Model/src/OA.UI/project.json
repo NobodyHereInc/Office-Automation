@@ -30,7 +30,6 @@
     "Microsoft.jQuery.Unobtrusive.Ajax": "3.2.3",
     "jQuery": "3.0.0.1",
     "OA.Common": "1.0.0-*",
-    "OA.IService": "1.0.0-*",
     "Microsoft.AspNetCore.Mvc.Formatters.Json": "1.0.0",
     "BundlerMinifier.Core": "2.1.258",
     "System.Net.Mail": "1.0.0-rtm-00002",
