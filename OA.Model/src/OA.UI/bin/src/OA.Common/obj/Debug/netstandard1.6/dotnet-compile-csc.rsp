@@ -8,8 +8,8 @@
 -debug:full
 -nostdlib
 -nologo
-"D:\OA.Model\src\OA.UI\bin\src\OA.Common\obj\Debug\netstandard1.6\dotnet-compile.assemblyinfo.cs"
--out:"D:\OA.Model\src\OA.UI\bin\src\OA.Common\bin\Debug\netstandard1.6\OA.Common.dll"
+"D:\Co-op Project\OA.Model\src\OA.UI\bin\src\OA.Common\obj\Debug\netstandard1.6\dotnet-compile.assemblyinfo.cs"
+-out:"D:\Co-op Project\OA.Model\src\OA.UI\bin\src\OA.Common\bin\Debug\netstandard1.6\OA.Common.dll"
 -r:"C:\Users\owner\.nuget\packages\Microsoft.Extensions.Configuration\1.0.0-rc2-final\lib\netstandard1.1\Microsoft.Extensions.Configuration.dll"
 -r:"C:\Users\owner\.nuget\packages\Microsoft.Extensions.Configuration.Abstractions\1.0.0-rc2-final\lib\netstandard1.0\Microsoft.Extensions.Configuration.Abstractions.dll"
 -r:"C:\Users\owner\.nuget\packages\Microsoft.Extensions.Configuration.Binder\1.0.0-rc2-final\lib\netstandard1.1\Microsoft.Extensions.Configuration.Binder.dll"
@@ -63,5 +63,5 @@
 -r:"C:\Users\owner\.nuget\packages\System.Threading.Timer\4.0.1\ref\netstandard1.2\System.Threading.Timer.dll"
 -r:"C:\Users\owner\.nuget\packages\System.Xml.ReaderWriter\4.0.11\ref\netstandard1.3\System.Xml.ReaderWriter.dll"
 -r:"C:\Users\owner\.nuget\packages\System.Xml.XDocument\4.0.11\ref\netstandard1.3\System.Xml.XDocument.dll"
-"D:\OA.Model\src\OA.Common\ReflectUserInfo.cs"
-"D:\OA.Model\src\OA.Common\Properties\AssemblyInfo.cs"
+"D:\Co-op Project\OA.Model\src\OA.Common\ReflectUserInfo.cs"
+"D:\Co-op Project\OA.Model\src\OA.Common\Properties\AssemblyInfo.cs"

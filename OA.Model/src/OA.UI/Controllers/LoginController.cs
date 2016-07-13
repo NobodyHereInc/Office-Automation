@@ -51,7 +51,7 @@ namespace OA.UI.Controllers
             String mail = Request.Form["txtMail"];
 
             //get this user info
-            var userInfo = us.GetList(u => u.UserName == UserName).FirstOrDefault();
+            var userInfo = us.GetList(u => u.Uname == UserName).FirstOrDefault();
 
             // check this user whether exist.
             if (userInfo != null)
@@ -88,7 +88,7 @@ namespace OA.UI.Controllers
             String UserName = Request.Form["LoginCode"];
             String UserPwd = Request.Form["LoginPwd"];
 
-            var userInfo = us.GetList(u => (u.UserName == UserName && u.UPwd == UserPwd)).FirstOrDefault();
+            var userInfo = us.GetList(u => (u.Uname == UserName && u.Upwd == UserPwd)).FirstOrDefault();
 
             // if userInfo is found.
             if (userInfo == null)
@@ -98,7 +98,7 @@ namespace OA.UI.Controllers
             else // otherwise.
             {
                 // store User Id into Session.
-                HttpContext.Session.SetString("Uid", userInfo.UserId.ToString());
+                HttpContext.Session.SetString("Uid", userInfo.Id.ToString());
 
                 // return content "ok"
                 return Content("Ok");

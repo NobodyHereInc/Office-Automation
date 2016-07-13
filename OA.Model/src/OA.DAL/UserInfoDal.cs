@@ -23,7 +23,7 @@ namespace OA.DAL
         /// <returns></returns>
         public bool Remove(int id)
         {
-            UserInfo userInfo = context.Set<UserInfo>().Where(u => u.UserId.Equals(id)) as UserInfo;
+            UserInfo userInfo = context.Set<UserInfo>().Where(u => u.Id.Equals(id)) as UserInfo;
             context.Set<UserInfo>().Remove(userInfo);
             return true;
         }
@@ -40,7 +40,7 @@ namespace OA.DAL
         {
             foreach (int id in ids)
             {
-                UserInfo userInfo = context.Set<UserInfo>().Where(u => u.UserId.Equals(id)) as UserInfo;
+                UserInfo userInfo = context.Set<UserInfo>().Where(u => u.Id.Equals(id)) as UserInfo;
                 context.Set<UserInfo>().Remove(userInfo);
             }
 
@@ -57,7 +57,7 @@ namespace OA.DAL
         /// <returns></returns>
         public UserInfo GetById(int id)
         {
-            return context.Set<UserInfo>().Where(u => u.UserId.Equals(id)) as UserInfo;
+            return context.Set<UserInfo>().Where(u => u.Id.Equals(id)) as UserInfo;
         }
     }
 }

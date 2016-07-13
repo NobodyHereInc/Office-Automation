@@ -43,7 +43,7 @@ namespace OA.UI.Controllers
             }
             else
             {
-                userInfo = us.GetList(u => u.UserId == Convert.ToInt32(userId)).FirstOrDefault();
+                userInfo = us.GetList(u => u.Id == Convert.ToInt32(userId)).FirstOrDefault();
             }
         }
     }

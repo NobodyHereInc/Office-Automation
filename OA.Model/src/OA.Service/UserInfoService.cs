@@ -48,7 +48,7 @@ namespace OA.Service
         public bool DeleteEntities(List<int> list)
         {
             // get all record that want to delete.
-            var deleteList = this.DbSession.UserInforDal.GetList(u => list.Contains(u.UserId));
+            var deleteList = this.DbSession.UserInforDal.GetList(u => list.Contains(u.Id));
 
             // if deleteList is not null.
             if (deleteList != null)
@@ -79,13 +79,13 @@ namespace OA.Service
             // if search condition UserName is set.
             if (!String.IsNullOrEmpty(filter.Uname))
             {
-                temp = temp.Where<UserInfo>(U => U.UserName.Contains(filter.Uname));
+                temp = temp.Where<UserInfo>(U => U.Uname.Contains(filter.Uname));
             }
 
             // if search condition UserRemark is set.
             if (!String.IsNullOrEmpty(filter.Uremark))
             {
-                temp = temp.Where<UserInfo>(U => U.UserName.Contains(filter.Uremark));
+                temp = temp.Where<UserInfo>(U => U.Uname.Contains(filter.Uremark));
             }
 
             // get total records after sarch condition.

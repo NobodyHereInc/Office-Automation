@@ -3465,8 +3465,8 @@
           "OA.DAL": "1.0.0",
           "OA.IDAL": "1.0.0",
           "Microsoft.Extensions.Options.ConfigurationExtensions": "1.0.0",
-          "OA.Model": "1.0.0",
-          "OA.Common": "1.0.0"
+          "OA.Common": "1.0.0",
+          "OA.Model": "1.0.0"
         },
         "compile": {
           "OA.DalFactory.dll": {}
@@ -3500,7 +3500,8 @@
           "Microsoft.EntityFrameworkCore": "1.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "1.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer.Design": "1.0.0",
-          "NETStandard.Library": "1.6.0"
+          "NETStandard.Library": "1.6.0",
+          "System.Data.SqlClient": "4.1.0"
         },
         "compile": {
           "OA.Model.dll": {}
@@ -6864,8 +6865,8 @@
           "OA.DAL": "1.0.0",
           "OA.IDAL": "1.0.0",
           "Microsoft.Extensions.Options.ConfigurationExtensions": "1.0.0",
-          "OA.Model": "1.0.0",
-          "OA.Common": "1.0.0"
+          "OA.Common": "1.0.0",
+          "OA.Model": "1.0.0"
         },
         "runtime": {
           "OA.DalFactory.dll": {}
@@ -6899,7 +6900,8 @@
           "Microsoft.EntityFrameworkCore": "1.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "1.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer.Design": "1.0.0",
-          "NETStandard.Library": "1.6.0"
+          "NETStandard.Library": "1.6.0",
+          "System.Data.SqlClient": "4.1.0"
         },
         "runtime": {
           "OA.Model.dll": {}

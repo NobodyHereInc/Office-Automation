@@ -74,7 +74,7 @@ namespace OA.UI
             
             // add Dbcontext
             var connectiongString = @"Data Source=.;Initial Catalog=OA_DB;Integrated Security=True;Connect Timeout=15;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
-            services.AddDbContext<OAContext>(options => options.UseSqlServer(connectiongString, b => b.MigrationsAssembly("OA.UI")));
+            services.AddDbContext<OA.Model.OAContext>(options => options.UseSqlServer(connectiongString, b => b.MigrationsAssembly("OA.UI")));
 
             // add configuration.
             services.AddOptions();

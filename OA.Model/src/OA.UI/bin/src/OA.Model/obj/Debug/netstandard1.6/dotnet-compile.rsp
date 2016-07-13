@@ -1,5 +1,5 @@
---temp-output:D:\OA.Model\src\OA.UI\bin\src\OA.Model\obj\Debug\netstandard1.6\
---out:D:\OA.Model\src\OA.UI\bin\src\OA.Model\bin\Debug\netstandard1.6\OA.Model.dll
+--temp-output:D:\Co-op Project\OA.Model\src\OA.UI\bin\src\OA.Model\obj\Debug\netstandard1.6\
+--out:D:\Co-op Project\OA.Model\src\OA.UI\bin\src\OA.Model\bin\Debug\netstandard1.6\OA.Model.dll
 --define:DEBUG
 --define:TRACE
 --define:NETSTANDARD1_6
@@ -81,6 +81,13 @@
 --reference:C:\Users\owner\.nuget\packages\System.Threading.Timer\4.0.1\ref\netstandard1.2\System.Threading.Timer.dll
 --reference:C:\Users\owner\.nuget\packages\System.Xml.ReaderWriter\4.0.11\ref\netstandard1.3\System.Xml.ReaderWriter.dll
 --reference:C:\Users\owner\.nuget\packages\System.Xml.XDocument\4.0.11\ref\netstandard1.3\System.Xml.XDocument.dll
-D:\OA.Model\src\OA.Model\OAContext.cs
-D:\OA.Model\src\OA.Model\UserInfo.cs
-D:\OA.Model\src\OA.Model\Properties\AssemblyInfo.cs
+D:\Co-op Project\OA.Model\src\OA.Model\ActionInfo.cs
+D:\Co-op Project\OA.Model\src\OA.Model\Department.cs
+D:\Co-op Project\OA.Model\src\OA.Model\OAContext.cs
+D:\Co-op Project\OA.Model\src\OA.Model\RoleInfo.cs
+D:\Co-op Project\OA.Model\src\OA.Model\R_UserInfo_ActionInfo.cs
+D:\Co-op Project\OA.Model\src\OA.Model\UserInfo.cs
+D:\Co-op Project\OA.Model\src\OA.Model\Enum\DeleteEnumType.cs
+D:\Co-op Project\OA.Model\src\OA.Model\Properties\AssemblyInfo.cs
+D:\Co-op Project\OA.Model\src\OA.Model\SearchParams\BaseParam.cs
+D:\Co-op Project\OA.Model\src\OA.Model\SearchParams\UserInfoFilter.cs

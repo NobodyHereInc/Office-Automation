@@ -1,23 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
 
 namespace OA.Model
 {
-    public class UserInfo
+    public partial class UserInfo
     {
-        [Key]
-        public int UserId { get; set; }
-        [Required]
-        public String UserName { get; set; }
-        public String UPwd { get; set; }
+        public UserInfo()
+        {
+            RUserInfoActionInfo = new HashSet<RUserInfoActionInfo>();
+            UserInfoDepartment = new HashSet<UserInfoDepartment>();
+            UserInfoRoleInfo = new HashSet<UserInfoRoleInfo>();
+        }
+
+        public int Id { get; set; }
+        public string Uname { get; set; }
+        public string Upwd { get; set; }
         public DateTime SubTime { get; set; }
         public short DelFlag { get; set; }
         public DateTime ModifiedOn { get; set; }
-        public String Remark { get; set; }
-        public String Sort { get; set; }
+        public string Remark { get; set; }
+        public string Sort { get; set; }
+
+        public virtual ICollection<RUserInfoActionInfo> RUserInfoActionInfo { get; set; }
+        public virtual ICollection<UserInfoDepartment> UserInfoDepartment { get; set; }
+        public virtual ICollection<UserInfoRoleInfo> UserInfoRoleInfo { get; set; }
     }
 }

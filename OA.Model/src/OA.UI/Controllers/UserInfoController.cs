@@ -56,17 +56,20 @@ namespace OA.UI.Controllers
         // new version for search User info.
         var UserInfoList = us.LoadSearchUserInfo(userInfoFilter);
 
+
         // select info.
         var temp = from u in UserInfoList
                        select new {
-                           UserId = u.UserId,
-                           UserName = u.UserName,
-                           UPwd = u.UPwd, 
+                           UserId = u.Id,
+                           UserName = u.Uname,
+                           UPwd = u.Upwd, 
                            Remark = u.Remark,
                            SubTime = u.SubTime,
                            Sort = u.Sort,
                            DelFlag = u.DelFlag
-                       }; 
+                       };
+
+            temp = temp.Where(u => u.DelFlag != 1);
 
             // return Json.
             return Json(new {rows = temp, total = userInfoFilter.TotalCount});
@@ -132,7 +135,7 @@ namespace OA.UI.Controllers
         #region ShowEditUserInfo
         public IActionResult ShowEditUserInfo(int id)
         {
-            UserInfo userInfo = us.GetList(u => u.UserId == id).FirstOrDefault();
+            UserInfo userInfo = us.GetList(u => u.Id == id).FirstOrDefault();
             //UserInfo userInfo = us.GetById(id);
 
             ViewData.Model = userInfo;

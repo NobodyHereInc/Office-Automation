@@ -83,6 +83,7 @@
 --reference:C:\Users\owner\.nuget\packages\System.Xml.XDocument\4.0.11\ref\netstandard1.3\System.Xml.XDocument.dll
 --reference:D:\Co-op Project\OA.Model\src\OA.IDAL\bin\Debug\netstandard1.6\OA.IDAL.dll
 --reference:D:\Co-op Project\OA.Model\src\OA.Model\bin\Debug\netstandard1.6\OA.Model.dll
+D:\Co-op Project\OA.Model\src\OA.DAL\ActionInfoDal.cs
 D:\Co-op Project\OA.Model\src\OA.DAL\BaseDal.cs
 D:\Co-op Project\OA.Model\src\OA.DAL\ContextFactory.cs
 D:\Co-op Project\OA.Model\src\OA.DAL\UserInfoDal.cs
