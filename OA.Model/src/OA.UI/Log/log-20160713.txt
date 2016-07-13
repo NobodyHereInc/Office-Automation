@@ -1,0 +1,169 @@
+﻿2016-07-13 09:32:33.340 -04:00 [Information] User profile is available. Using '"C:\Users\owner\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2016-07-13 09:32:33.523 -04:00 [Debug] Hosting starting
+2016-07-13 09:32:33.719 -04:00 [Debug] Hosting started
+2016-07-13 09:32:33.942 -04:00 [Debug] Connection id ""0HKTB48IRDH8N"" started.
+2016-07-13 09:32:33.942 -04:00 [Debug] Connection id ""0HKTB48IRDH8O"" started.
+2016-07-13 09:32:34.080 -04:00 [Information] Request starting HTTP/1.1 GET http://localhost:55839/  
+2016-07-13 09:32:34.080 -04:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:55839/  0
+2016-07-13 09:32:34.161 -04:00 [Information] Request finished in 103.2943ms 200 
+2016-07-13 09:32:34.208 -04:00 [Debug] The request path "/" does not match a supported file type
+2016-07-13 09:32:34.229 -04:00 [Debug] Connection id ""0HKTB48IRDH8N"" completed keep alive response.
+2016-07-13 09:32:34.248 -04:00 [Debug] Reading data from file '"C:\Users\owner\AppData\Local\ASP.NET\DataProtection-Keys\key-cb9f45e1-4ed9-48c0-bff0-6e92031944f4.xml"'.
+2016-07-13 09:32:34.261 -04:00 [Debug] Found key {cb9f45e1-4ed9-48c0-bff0-6e92031944f4}.
+2016-07-13 09:32:34.277 -04:00 [Debug] Considering key {cb9f45e1-4ed9-48c0-bff0-6e92031944f4} with expiration date 2016-10-04 12:23:19Z as default key.
+2016-07-13 09:32:34.287 -04:00 [Debug] Decrypting secret element using Windows DPAPI.
+2016-07-13 09:32:34.300 -04:00 [Debug] Opening CNG algorithm '"AES"' from provider 'null' with chaining mode CBC.
+2016-07-13 09:32:34.307 -04:00 [Debug] Opening CNG algorithm '"SHA256"' from provider 'null' with HMAC.
+2016-07-13 09:32:34.319 -04:00 [Debug] Using key {cb9f45e1-4ed9-48c0-bff0-6e92031944f4} as the default key.
+2016-07-13 09:32:34.486 -04:00 [Debug] Request successfully matched the route with name '"default"' and template '"{controller=Login}/{action=Index}/{id?}"'.
+2016-07-13 09:32:34.578 -04:00 [Debug] Executing action "OA.UI.Controllers.LoginController.Index (OA.UI)"
+2016-07-13 09:32:34.764 -04:00 [Information] Executing action method "OA.UI.Controllers.LoginController.Index (OA.UI)" with arguments (null) - ModelState is Valid
+2016-07-13 09:32:34.774 -04:00 [Debug] Executed action method "OA.UI.Controllers.LoginController.Index (OA.UI)", returned result "Microsoft.AspNetCore.Mvc.ViewResult".
+2016-07-13 09:32:34.895 -04:00 [Debug] View lookup cache miss for view '"Index"' in controller '"Login"'.
+2016-07-13 09:32:34.916 -04:00 [Debug] Code generation for the Razor file at '"/Views/Login/Index.cshtml"' started.
+2016-07-13 09:32:35.457 -04:00 [Debug] Code generation for the Razor file at '"/Views/Login/Index.cshtml"' completed in 538.3164ms.
+2016-07-13 09:32:35.473 -04:00 [Debug] Compilation of the generated code for the Razor file at '"/Views/Login/Index.cshtml"' started.
+2016-07-13 09:32:36.897 -04:00 [Debug] Compilation of the generated code for the Razor file at '"/Views/Login/Index.cshtml"' completed in 1423.3598ms.
+2016-07-13 09:32:36.903 -04:00 [Debug] Code generation for the Razor file at '"/Views/_ViewStart.cshtml"' started.
+2016-07-13 09:32:36.909 -04:00 [Debug] Code generation for the Razor file at '"/Views/_ViewStart.cshtml"' completed in 5.551ms.
+2016-07-13 09:32:36.909 -04:00 [Debug] Compilation of the generated code for the Razor file at '"/Views/_ViewStart.cshtml"' started.
+2016-07-13 09:32:36.961 -04:00 [Debug] Compilation of the generated code for the Razor file at '"/Views/_ViewStart.cshtml"' completed in 52.3124ms.
+2016-07-13 09:32:36.969 -04:00 [Debug] The view '"Index"' was found.
+2016-07-13 09:32:36.970 -04:00 [Information] Executing ViewResult, running view at path "/Views/Login/Index.cshtml".
+2016-07-13 09:32:37.192 -04:00 [Debug] A new antiforgery cookie token was created.
+2016-07-13 09:32:38.391 -04:00 [Information] Executed action "OA.UI.Controllers.LoginController.Index (OA.UI)" in 3811.9297ms
+2016-07-13 09:32:38.477 -04:00 [Information] Request finished in 4429.5172ms 200 text/html; charset=utf-8
+2016-07-13 09:32:38.482 -04:00 [Debug] Connection id ""0HKTB48IRDH8O"" completed keep alive response.
+2016-07-13 09:32:54.911 -04:00 [Information] Request starting HTTP/1.1 GET http://localhost:55839/home/index  
+2016-07-13 09:32:54.914 -04:00 [Debug] The request path "/home/index" does not match a supported file type
+2016-07-13 09:32:54.917 -04:00 [Debug] Request successfully matched the route with name '"default"' and template '"{controller=Login}/{action=Index}/{id?}"'.
+2016-07-13 09:32:54.918 -04:00 [Debug] Executing action "OA.UI.Controllers.HomeController.Index (OA.UI)"
+2016-07-13 09:32:54.919 -04:00 [Information] Executing action method "OA.UI.Controllers.HomeController.Index (OA.UI)" with arguments (null) - ModelState is Valid
+2016-07-13 09:32:54.922 -04:00 [Debug] Executed action method "OA.UI.Controllers.HomeController.Index (OA.UI)", returned result "Microsoft.AspNetCore.Mvc.ViewResult".
+2016-07-13 09:32:54.922 -04:00 [Debug] View lookup cache miss for view '"Index"' in controller '"Home"'.
+2016-07-13 09:32:54.923 -04:00 [Debug] Code generation for the Razor file at '"/Views/Home/Index.cshtml"' started.
+2016-07-13 09:32:55.289 -04:00 [Debug] Code generation for the Razor file at '"/Views/Home/Index.cshtml"' completed in 365.2853ms.
+2016-07-13 09:32:55.289 -04:00 [Debug] Compilation of the generated code for the Razor file at '"/Views/Home/Index.cshtml"' started.
+2016-07-13 09:32:55.348 -04:00 [Debug] Compilation of the generated code for the Razor file at '"/Views/Home/Index.cshtml"' completed in 58.8523ms.
+2016-07-13 09:32:55.349 -04:00 [Debug] The view '"Index"' was found.
+2016-07-13 09:32:55.349 -04:00 [Information] Executing ViewResult, running view at path "/Views/Home/Index.cshtml".
+2016-07-13 09:32:56.374 -04:00 [Information] Executed action "OA.UI.Controllers.HomeController.Index (OA.UI)" in 1456.5327ms
+2016-07-13 09:32:56.386 -04:00 [Information] Request finished in 1474.425ms 200 text/html; charset=utf-8
+2016-07-13 09:32:56.389 -04:00 [Debug] Connection id ""0HKTB48IRDH8N"" completed keep alive response.
+2016-07-13 09:32:56.617 -04:00 [Information] Request starting HTTP/1.1 GET http://localhost:55839/images/login/MyLogo.png  
+2016-07-13 09:32:56.633 -04:00 [Information] The file "/images/login/MyLogo.png" was not modified
+2016-07-13 09:32:56.645 -04:00 [Debug] Handled. Status code: 304 File: "/images/login/MyLogo.png"
+2016-07-13 09:32:56.648 -04:00 [Information] Request finished in 31.5393ms 304 image/png
+2016-07-13 09:32:56.651 -04:00 [Debug] Connection id ""0HKTB48IRDH8O"" completed keep alive response.
+2016-07-13 09:32:56.795 -04:00 [Information] Request starting HTTP/1.1 GET http://localhost:55839/images/applebg.jpg  
+2016-07-13 09:32:56.800 -04:00 [Information] The file "/images/applebg.jpg" was not modified
+2016-07-13 09:32:56.802 -04:00 [Debug] Handled. Status code: 304 File: "/images/applebg.jpg"
+2016-07-13 09:32:56.805 -04:00 [Information] Request finished in 9.7528ms 304 image/jpeg
+2016-07-13 09:32:56.807 -04:00 [Debug] Connection id ""0HKTB48IRDH8N"" completed keep alive response.
+2016-07-13 09:32:56.843 -04:00 [Information] Request starting HTTP/1.1 GET http://localhost:55839/home/~/lib/jquery-LigerUI-V1.3.3/images/3DSMAX.png  
+2016-07-13 09:32:56.843 -04:00 [Information] Request starting HTTP/1.1 GET http://localhost:55839/images/unnamed.png  
+2016-07-13 09:32:56.848 -04:00 [Debug] Connection id ""0HKTB48IRDH8P"" started.
+2016-07-13 09:32:56.848 -04:00 [Information] The file "/images/unnamed.png" was not modified
+2016-07-13 09:32:56.851 -04:00 [Debug] Connection id ""0HKTB48IRDH8Q"" started.
+2016-07-13 09:32:56.851 -04:00 [Debug] Handled. Status code: 304 File: "/images/unnamed.png"
+2016-07-13 09:32:56.851 -04:00 [Debug] Connection id ""0HKTB48IRDH8R"" started.
+2016-07-13 09:32:56.853 -04:00 [Information] Request finished in 10.3158ms 304 image/png
+2016-07-13 09:32:56.856 -04:00 [Debug] Connection id ""0HKTB48IRDH8O"" completed keep alive response.
+2016-07-13 09:32:56.856 -04:00 [Debug] The request path "/home/~/lib/jquery-LigerUI-V1.3.3/images/3DSMAX.png" does not match an existing file
+2016-07-13 09:32:56.858 -04:00 [Debug] Request did not match any routes.
+2016-07-13 09:32:56.861 -04:00 [Information] Request finished in 18.0266ms 404 
+2016-07-13 09:32:56.863 -04:00 [Debug] Connection id ""0HKTB48IRDH8N"" completed keep alive response.
+2016-07-13 09:32:56.870 -04:00 [Information] Request starting HTTP/1.1 GET http://localhost:55839/home/~/lib/jquery-LigerUI-V1.3.3/images/Xp-G5%20006.png  
+2016-07-13 09:32:56.870 -04:00 [Information] Request starting HTTP/1.1 GET http://localhost:55839/home/~/lib/jquery-LigerUI-V1.3.3/images/Alien%20Folder.png  
+2016-07-13 09:32:56.870 -04:00 [Information] Request starting HTTP/1.1 GET http://localhost:55839/home/~/lib/jquery-LigerUI-V1.3.3/images/Program%20Files%20Folder.png  
+2016-07-13 09:32:56.898 -04:00 [Debug] The request path "/home/~/lib/jquery-LigerUI-V1.3.3/images/Xp-G5 006.png" does not match an existing file
+2016-07-13 09:32:56.898 -04:00 [Debug] Request did not match any routes.
+2016-07-13 09:32:56.898 -04:00 [Debug] The request path "/home/~/lib/jquery-LigerUI-V1.3.3/images/Alien Folder.png" does not match an existing file
+2016-07-13 09:32:56.899 -04:00 [Debug] Request did not match any routes.
+2016-07-13 09:32:56.898 -04:00 [Debug] The request path "/home/~/lib/jquery-LigerUI-V1.3.3/images/Program Files Folder.png" does not match an existing file
+2016-07-13 09:32:56.922 -04:00 [Information] Request finished in 55.9067ms 404 
+2016-07-13 09:32:56.922 -04:00 [Debug] Request did not match any routes.
+2016-07-13 09:32:56.945 -04:00 [Information] Request finished in 79.0332ms 404 
+2016-07-13 09:32:56.967 -04:00 [Debug] Connection id ""0HKTB48IRDH8P"" completed keep alive response.
+2016-07-13 09:32:56.968 -04:00 [Debug] Connection id ""0HKTB48IRDH8R"" completed keep alive response.
+2016-07-13 09:32:56.971 -04:00 [Information] Request finished in 107.0399ms 404 
+2016-07-13 09:32:56.974 -04:00 [Debug] Connection id ""0HKTB48IRDH8Q"" completed keep alive response.
+2016-07-13 09:33:01.745 -04:00 [Information] Request starting HTTP/1.1 GET http://localhost:55839/UserInfo/index  
+2016-07-13 09:33:01.748 -04:00 [Debug] The request path "/UserInfo/index" does not match a supported file type
+2016-07-13 09:33:01.748 -04:00 [Debug] Request successfully matched the route with name '"default"' and template '"{controller=Login}/{action=Index}/{id?}"'.
+2016-07-13 09:33:01.749 -04:00 [Debug] Executing action "OA.UI.Controllers.UserInfoController.Index (OA.UI)"
+2016-07-13 09:33:01.751 -04:00 [Information] Executing action method "OA.UI.Controllers.UserInfoController.Index (OA.UI)" with arguments (null) - ModelState is Valid
+2016-07-13 09:33:02.427 -04:00 [Debug] Executed action method "OA.UI.Controllers.UserInfoController.Index (OA.UI)", returned result "Microsoft.AspNetCore.Mvc.ViewResult".
+2016-07-13 09:33:02.427 -04:00 [Debug] View lookup cache miss for view '"index"' in controller '"UserInfo"'.
+2016-07-13 09:33:02.431 -04:00 [Debug] Code generation for the Razor file at '"/Views/UserInfo/index.cshtml"' started.
+2016-07-13 09:33:02.483 -04:00 [Debug] Code generation for the Razor file at '"/Views/UserInfo/index.cshtml"' completed in 52.5151ms.
+2016-07-13 09:33:02.483 -04:00 [Debug] Compilation of the generated code for the Razor file at '"/Views/UserInfo/index.cshtml"' started.
+2016-07-13 09:33:02.543 -04:00 [Debug] Compilation of the generated code for the Razor file at '"/Views/UserInfo/index.cshtml"' completed in 59.6807ms.
+2016-07-13 09:33:02.543 -04:00 [Debug] The view '"index"' was found.
+2016-07-13 09:33:02.544 -04:00 [Information] Executing ViewResult, running view at path "/Views/UserInfo/index.cshtml".
+2016-07-13 09:33:02.572 -04:00 [Debug] An antiforgery cookie token was reused.
+2016-07-13 09:33:02.574 -04:00 [Information] Executed action "OA.UI.Controllers.UserInfoController.Index (OA.UI)" in 823.9933ms
+2016-07-13 09:33:02.581 -04:00 [Information] Request finished in 835.4051ms 200 text/html; charset=utf-8
+2016-07-13 09:33:02.583 -04:00 [Debug] Connection id ""0HKTB48IRDH8O"" completed keep alive response.
+2016-07-13 09:33:02.993 -04:00 [Information] Request starting HTTP/1.1 POST http://localhost:55839/UserInfo/GetUserInfo application/x-www-form-urlencoded; charset=UTF-8 14
+2016-07-13 09:33:02.996 -04:00 [Debug] "POST" requests are not supported
+2016-07-13 09:33:02.996 -04:00 [Debug] Request successfully matched the route with name '"default"' and template '"{controller=Login}/{action=Index}/{id?}"'.
+2016-07-13 09:33:02.997 -04:00 [Debug] Executing action "OA.UI.Controllers.UserInfoController.GetUserInfo (OA.UI)"
+2016-07-13 09:33:02.997 -04:00 [Information] Executing action method "OA.UI.Controllers.UserInfoController.GetUserInfo (OA.UI)" with arguments (null) - ModelState is Valid
+2016-07-13 09:33:03.646 -04:00 [Debug] Executed action method "OA.UI.Controllers.UserInfoController.GetUserInfo (OA.UI)", returned result "Microsoft.AspNetCore.Mvc.JsonResult".
+2016-07-13 09:33:03.646 -04:00 [Information] Executing JsonResult, writing value "{ rows = Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryable`1[<>f__AnonymousType0`7[System.Int32,System.String,System.String,System.String,System.DateTime,System.String,System.Int16]], total = 17 }".
+2016-07-13 09:33:04.131 -04:00 [Information] Executed action "OA.UI.Controllers.UserInfoController.GetUserInfo (OA.UI)" in 1149.2388ms
+2016-07-13 09:33:04.147 -04:00 [Information] Request finished in 1159.2378ms 200 application/json; charset=utf-8
+2016-07-13 09:33:04.147 -04:00 [Debug] Connection id ""0HKTB48IRDH8N"" completed keep alive response.
+2016-07-13 09:33:08.149 -04:00 [Debug] Connection id ""0HKTB48IRDH8P"" received FIN.
+2016-07-13 09:33:08.149 -04:00 [Debug] Connection id ""0HKTB48IRDH8R"" received FIN.
+2016-07-13 09:33:08.149 -04:00 [Debug] Connection id ""0HKTB48IRDH8N"" received FIN.
+2016-07-13 09:33:08.149 -04:00 [Debug] Connection id ""0HKTB48IRDH8O"" received FIN.
+2016-07-13 09:33:08.149 -04:00 [Debug] Connection id ""0HKTB48IRDH8Q"" received FIN.
+2016-07-13 09:33:08.150 -04:00 [Debug] Connection id ""0HKTB48IRDH8P"" disconnecting.
+2016-07-13 09:33:08.151 -04:00 [Debug] Connection id ""0HKTB48IRDH8Q"" disconnecting.
+2016-07-13 09:33:08.151 -04:00 [Debug] Connection id ""0HKTB48IRDH8N"" disconnecting.
+2016-07-13 09:33:08.151 -04:00 [Debug] Connection id ""0HKTB48IRDH8O"" disconnecting.
+2016-07-13 09:33:08.151 -04:00 [Debug] Connection id ""0HKTB48IRDH8S"" started.
+2016-07-13 09:33:08.151 -04:00 [Debug] Connection id ""0HKTB48IRDH8R"" disconnecting.
+2016-07-13 09:33:08.152 -04:00 [Debug] Connection id ""0HKTB48IRDH8R"" sending FIN.
+2016-07-13 09:33:08.152 -04:00 [Debug] Connection id ""0HKTB48IRDH8Q"" sending FIN.
+2016-07-13 09:33:08.152 -04:00 [Debug] Connection id ""0HKTB48IRDH8O"" sending FIN.
+2016-07-13 09:33:08.152 -04:00 [Debug] Connection id ""0HKTB48IRDH8P"" sending FIN.
+2016-07-13 09:33:08.153 -04:00 [Debug] Connection id ""0HKTB48IRDH8N"" sending FIN.
+2016-07-13 09:33:08.160 -04:00 [Debug] Connection id ""0HKTB48IRDH8Q"" sent FIN with status "0".
+2016-07-13 09:33:08.160 -04:00 [Debug] Connection id ""0HKTB48IRDH8P"" sent FIN with status "0".
+2016-07-13 09:33:08.160 -04:00 [Debug] Connection id ""0HKTB48IRDH8N"" sent FIN with status "0".
+2016-07-13 09:33:08.160 -04:00 [Debug] Connection id ""0HKTB48IRDH8O"" sent FIN with status "0".
+2016-07-13 09:33:08.164 -04:00 [Debug] Connection id ""0HKTB48IRDH8Q"" stopped.
+2016-07-13 09:33:08.164 -04:00 [Debug] Connection id ""0HKTB48IRDH8N"" stopped.
+2016-07-13 09:33:08.164 -04:00 [Debug] Connection id ""0HKTB48IRDH8P"" stopped.
+2016-07-13 09:33:08.165 -04:00 [Debug] Connection id ""0HKTB48IRDH8R"" sent FIN with status "0".
+2016-07-13 09:33:08.165 -04:00 [Debug] Connection id ""0HKTB48IRDH8R"" stopped.
+2016-07-13 09:33:08.164 -04:00 [Debug] Connection id ""0HKTB48IRDH8O"" stopped.
+2016-07-13 09:33:08.166 -04:00 [Information] Request starting HTTP/1.1 POST http://localhost:55839/UserInfo/GetUserInfo application/x-www-form-urlencoded; charset=UTF-8 14
+2016-07-13 09:33:08.169 -04:00 [Debug] "POST" requests are not supported
+2016-07-13 09:33:08.169 -04:00 [Debug] Request successfully matched the route with name '"default"' and template '"{controller=Login}/{action=Index}/{id?}"'.
+2016-07-13 09:33:08.170 -04:00 [Debug] Executing action "OA.UI.Controllers.UserInfoController.GetUserInfo (OA.UI)"
+2016-07-13 09:33:08.170 -04:00 [Information] Executing action method "OA.UI.Controllers.UserInfoController.GetUserInfo (OA.UI)" with arguments (null) - ModelState is Valid
+2016-07-13 09:33:08.183 -04:00 [Debug] Executed action method "OA.UI.Controllers.UserInfoController.GetUserInfo (OA.UI)", returned result "Microsoft.AspNetCore.Mvc.JsonResult".
+2016-07-13 09:33:08.183 -04:00 [Information] Executing JsonResult, writing value "{ rows = Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryable`1[<>f__AnonymousType0`7[System.Int32,System.String,System.String,System.String,System.DateTime,System.String,System.Int16]], total = 17 }".
+2016-07-13 09:33:08.192 -04:00 [Information] Executed action "OA.UI.Controllers.UserInfoController.GetUserInfo (OA.UI)" in 22.7523ms
+2016-07-13 09:33:08.197 -04:00 [Information] Request finished in 32.8778ms 200 application/json; charset=utf-8
+2016-07-13 09:33:08.197 -04:00 [Debug] Connection id ""0HKTB48IRDH8S"" completed keep alive response.
+2016-07-13 09:33:14.184 -04:00 [Debug] Connection id ""0HKTB48IRDH8S"" received FIN.
+2016-07-13 09:33:14.185 -04:00 [Debug] Connection id ""0HKTB48IRDH8S"" disconnecting.
+2016-07-13 09:33:14.185 -04:00 [Debug] Connection id ""0HKTB48IRDH8S"" sending FIN.
+2016-07-13 09:33:14.185 -04:00 [Debug] Connection id ""0HKTB48IRDH8T"" started.
+2016-07-13 09:33:14.185 -04:00 [Debug] Connection id ""0HKTB48IRDH8S"" sent FIN with status "0".
+2016-07-13 09:33:14.185 -04:00 [Debug] Connection id ""0HKTB48IRDH8S"" stopped.
+2016-07-13 09:33:14.186 -04:00 [Information] Request starting HTTP/1.1 POST http://localhost:55839/UserInfo/GetUserInfo application/x-www-form-urlencoded; charset=UTF-8 14
+2016-07-13 09:33:14.190 -04:00 [Debug] "POST" requests are not supported
+2016-07-13 09:33:14.190 -04:00 [Debug] Request successfully matched the route with name '"default"' and template '"{controller=Login}/{action=Index}/{id?}"'.
+2016-07-13 09:33:14.190 -04:00 [Debug] Executing action "OA.UI.Controllers.UserInfoController.GetUserInfo (OA.UI)"
+2016-07-13 09:33:14.190 -04:00 [Information] Executing action method "OA.UI.Controllers.UserInfoController.GetUserInfo (OA.UI)" with arguments (null) - ModelState is Valid
+2016-07-13 09:33:14.194 -04:00 [Debug] Executed action method "OA.UI.Controllers.UserInfoController.GetUserInfo (OA.UI)", returned result "Microsoft.AspNetCore.Mvc.JsonResult".
+2016-07-13 09:33:14.194 -04:00 [Information] Executing JsonResult, writing value "{ rows = Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryable`1[<>f__AnonymousType0`7[System.Int32,System.String,System.String,System.String,System.DateTime,System.String,System.Int16]], total = 17 }".
+2016-07-13 09:33:14.198 -04:00 [Information] Executed action "OA.UI.Controllers.UserInfoController.GetUserInfo (OA.UI)" in 8.0861ms
+2016-07-13 09:33:14.203 -04:00 [Information] Request finished in 16.943ms 200 application/json; charset=utf-8
+2016-07-13 09:33:14.204 -04:00 [Debug] Connection id ""0HKTB48IRDH8T"" completed keep alive response.

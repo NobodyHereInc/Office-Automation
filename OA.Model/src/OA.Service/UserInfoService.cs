@@ -48,7 +48,7 @@ namespace OA.Service
         public bool DeleteEntities(List<int> list)
         {
             // get all record that want to delete.
-            var deleteList = this.DbSession.UserInforDal.GetList(u => list.Contains(u.Id));
+            var deleteList = this.DbSession.UserInfoDal.GetList(u => list.Contains(u.Id));
 
             // if deleteList is not null.
             if (deleteList != null)
@@ -56,7 +56,7 @@ namespace OA.Service
                 // make deleteMark for each UserInfo.
                 foreach (var UserInfo in deleteList)
                 {
-                    this.DbSession.UserInforDal.Remove(UserInfo);
+                    this.DbSession.UserInfoDal.Remove(UserInfo);
                 }
             }
 
@@ -74,7 +74,7 @@ namespace OA.Service
         public IQueryable<UserInfo> LoadSearchUserInfo(UserInfoFilter filter)
         {
             // get all records from database.
-            var temp = this.DbSession.UserInforDal.GetList(u => true);
+            var temp = this.DbSession.UserInfoDal.GetList(u => true);
 
             // if search condition UserName is set.
             if (!String.IsNullOrEmpty(filter.Uname))
@@ -103,7 +103,7 @@ namespace OA.Service
         /// </summary>
         public override void SetCurrentDal()
         {
-            CurrentDal = this.DbSession.UserInforDal;
+            CurrentDal = this.DbSession.UserInfoDal;
         }
     }
 }

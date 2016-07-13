@@ -15,7 +15,6 @@ namespace OA.IService
         bool Add(T Entity);
         bool Edit(T Entity);
         bool Remove(T Entity);
-        T GetById(int id);
         IQueryable<T> GetList(Expression<Func<T, bool>> whereLambda);
         IQueryable<T> GetPageList<Tkey>(Expression<Func<T, bool>> whereLambda, Expression<Func<T, Tkey>> orderLambda, int pageIndex, int pageSize, out int totalCount, bool isAsc);
     }

@@ -86,5 +86,8 @@
 D:\Co-op Project\OA.Model\src\OA.DAL\ActionInfoDal.cs
 D:\Co-op Project\OA.Model\src\OA.DAL\BaseDal.cs
 D:\Co-op Project\OA.Model\src\OA.DAL\ContextFactory.cs
+D:\Co-op Project\OA.Model\src\OA.DAL\DepartmentDal.cs
+D:\Co-op Project\OA.Model\src\OA.DAL\RoleInfoDal.cs
+D:\Co-op Project\OA.Model\src\OA.DAL\RUserInfoActionInfoDal.cs
 D:\Co-op Project\OA.Model\src\OA.DAL\UserInfoDal.cs
 D:\Co-op Project\OA.Model\src\OA.DAL\Properties\AssemblyInfo.cs

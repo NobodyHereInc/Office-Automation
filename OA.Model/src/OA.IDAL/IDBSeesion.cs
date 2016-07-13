@@ -7,7 +7,15 @@ namespace OA.IDAL
 {
     public interface IDBSeesion
     {
-        IUserInfoDal UserInforDal { get; set; }
+        IActionInfoDal ActionInfoDal { get; set; }
+
+        IDepartmentDal DepartmentDal { get; set; }
+
+        IRUserInfoActionInfoDal RUserInfoActionInfoDal { get; set; }
+
+        IRoleInfoDal RoleInfoDal { get; set; }
+
+        IUserInfoDal UserInfoDal { get; set; }
 
         bool SaveChanges();
     }

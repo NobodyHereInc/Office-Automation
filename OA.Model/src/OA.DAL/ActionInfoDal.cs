@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using OA.Model;
+﻿using OA.Model;
+using OA.IDAL;
 
 namespace OA.DAL
 {
-    public class ActionInfoDal : BaseDal<ActionInfo>
+    public class ActionInfoDal : BaseDal<ActionInfo>, IActionInfoDal
     {
     }
 }

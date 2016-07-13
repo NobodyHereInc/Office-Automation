@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using OA.IDAL;
+﻿using OA.IDAL;
 using OA.DAL;
-using System.Reflection;
 using Microsoft.EntityFrameworkCore;
 
 namespace OA.DalFactory
@@ -16,8 +11,84 @@ namespace OA.DalFactory
     {
         public DbContext context = ContextFactory.GetContext();
         private IUserInfoDal _UserInfoDal;
+        private IActionInfoDal _ActionInfoDal;
+        private IDepartmentDal _DepartmentDal;
+        private IRoleInfoDal _RoleInfoDal;
+        private IRUserInfoActionInfoDal _RUserInfoActionInfoDal;
 
-        public IUserInfoDal UserInforDal
+        public IActionInfoDal ActionInfoDal
+        {
+            get
+            {
+                if (_ActionInfoDal == null)
+                {
+                    _ActionInfoDal = new ActionInfoDal();
+                    // _UserInfoDal = DALAbstractFactory.GetUserInfoDal(); // Abstract
+                }
+                return _ActionInfoDal;
+            }
+
+            set
+            {
+                _ActionInfoDal = value;
+            }
+        }
+
+        public IDepartmentDal DepartmentDal
+        {
+            get
+            {
+                if (_DepartmentDal == null)
+                {
+                    _DepartmentDal = new DepartmentDal();
+                    // _UserInfoDal = DALAbstractFactory.GetUserInfoDal(); // Abstract
+                }
+                return _DepartmentDal;
+            }
+
+            set
+            {
+                _DepartmentDal = value;
+            }
+        }
+
+        public IRoleInfoDal RoleInfoDal
+        {
+            get
+            {
+                if (_RoleInfoDal == null)
+                {
+                    _RoleInfoDal = new RoleInfoDal();
+                    // _UserInfoDal = DALAbstractFactory.GetUserInfoDal(); // Abstract
+                }
+                return _RoleInfoDal;
+            }
+
+            set
+            {
+                _RoleInfoDal = value;
+            }
+        }
+
+        public IRUserInfoActionInfoDal RUserInfoActionInfoDal
+        {
+            get
+            {
+                if (_RUserInfoActionInfoDal == null)
+                {
+                    _RUserInfoActionInfoDal = new RUserInfoActionInfoDal();
+                    // _UserInfoDal = DALAbstractFactory.GetUserInfoDal(); // Abstract
+                }
+                return _RUserInfoActionInfoDal;
+            }
+
+            set
+            {
+                _RUserInfoActionInfoDal = value;
+            }
+        }
+
+        public IUserInfoDal UserInfoDal
         {
             get
             {

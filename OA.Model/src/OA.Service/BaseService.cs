@@ -63,15 +63,6 @@ namespace OA.Service
             return this.DbSession.SaveChanges();
         }
 
-        /// <summary>
-        /// This function is used to complete Service level Get Entiry.
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        public T GetById(int id)
-        {
-            return this.CurrentDal.GetById(id);
-        }
 
         /// <summary>
         /// This function is used to complete Service level Get total Entiry.
