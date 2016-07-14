@@ -19,7 +19,7 @@
 
         function afterLogin(data) {
             if (data == "Ok") {
-                window.location.href = "Home/HomePage";
+                window.location.href = "/Home/Index";
             }
             else {
                 $("#errorMsg").text(data);
@@ -200,7 +200,7 @@
                                 <tr>
                                     <td align="center" colspan="2">
                                         <input type="submit" id="btnLogin" value="Log In" class="login-btn" /><a href="/Login/FindPwd">Forgot password?</a>
-                                        <input type="checkbox" name="checkMe" value="1" />remember me
+                                        @*<input type="checkbox" name="checkMe" value="1" />remember me*@
                                     </td>
                                 </tr>
                                 <tr>

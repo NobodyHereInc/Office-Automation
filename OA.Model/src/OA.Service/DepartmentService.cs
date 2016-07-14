@@ -3,7 +3,7 @@ using OA.IService;
 
 namespace OA.Service
 {
-    public class DepartmentService : BaseService<Department>
+    public class DepartmentService : BaseService<Department>, IDepartmentService
     {
         public override void SetCurrentDal()
         {

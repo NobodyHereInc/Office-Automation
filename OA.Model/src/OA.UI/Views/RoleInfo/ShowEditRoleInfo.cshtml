@@ -1,0 +1,64 @@
+﻿@model OA.Model.RoleInfo
+@{
+    Layout = null;
+}
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Show Edit Role Info</title>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap/dist/css/bootstrap-theme.css" rel="stylesheet" />
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/jquery-unobtrusive-ajax/jquery.unobtrusive-ajax.min.js"></script>
+    <script type="text/javascript">
+        /*
+        * Function :
+        * Decrption :
+        * Parameters :
+        * Return :
+        */
+        function subEditForm() {
+            $("#editForm").submit();
+        }
+        function Edit() {
+            window.parent.afterEdit();
+        }
+    </script>
+</head>
+<body>
+    <br />
+    <br />
+    <div class="container">
+        <h2>Edit User Info</h2>
+        <form asp-controller="RoleInfo" asp-action="EditRoleInfo" id="editForm" asp-ajax="true" data-ajax-method="POST" data-ajax-success="Edit" data-ajax-confirm="Are you sure you want update this user Information?">
+            <input type="hidden" asp-for="Id" />
+            <input type="hidden" asp-for="SubTime" />
+            <input type="hidden" asp-for="ModifiedOn" />
+            <div class="form-group">
+                <label class="control-label col-sm-2" asp-for="RoleName">Role Name:</label>
+                <div class="col-sm-10">
+                    <input type="text" asp-for="RoleName" class="form-control" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" asp-for="DelFlag">Delete Flag:</label>
+                <div class="col-sm-10">
+                    <input type="text" asp-for="DelFlag" class="form-control" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" asp-for="Remark">Remark:</label>
+                <div class="col-sm-10">
+                    <input type="text" asp-for="Remark" class="form-control" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" asp-for="Sort">Sort:</label>
+                <div class="col-sm-10">
+                    <input type="text" asp-for="Sort" class="form-control" />
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

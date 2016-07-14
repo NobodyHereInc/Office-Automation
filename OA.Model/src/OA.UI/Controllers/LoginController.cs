@@ -11,7 +11,7 @@ namespace OA.UI.Controllers
 {
     public class LoginController : Controller
     {
-        IUserInfoService us = new UserInfoService();
+        public IUserInfoService us = new UserInfoService();
 
         // GET: /<controller>/
         public IActionResult Index()
@@ -78,11 +78,11 @@ namespace OA.UI.Controllers
         public IActionResult CheckLogin()
         {
             // check captcha.
-            var captchaImage = Request.Form["g-recaptcha-response"];
-            if (String.IsNullOrEmpty(captchaImage))
-            {
-                return Content("Captcha image missing.");
-            }
+            //var captchaImage = Request.Form["g-recaptcha-response"];
+            //if (String.IsNullOrEmpty(captchaImage))
+            //{
+            //    return Content("Captcha image missing.");
+            //}
 
             // check user name and password
             String UserName = Request.Form["LoginCode"];
@@ -99,6 +99,13 @@ namespace OA.UI.Controllers
             {
                 // store User Id into Session.
                 HttpContext.Session.SetString("Uid", userInfo.Id.ToString());
+
+                #region RememberMe
+                //if (!String.IsNullOrEmpty(Request.Form["checkMe"]))
+                //{
+                //    HttpContext.Response.Cookies.Append("", "");
+                //}
+                #endregion
 
                 // return content "ok"
                 return Content("Ok");

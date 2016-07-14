@@ -98,7 +98,7 @@ namespace OA.UI.Controllers
                 return Content("No");
             }
         }
-        #endregion
+        #endregion 
 
         #region Add User Info
         public IActionResult AddUserInfo(UserInfo user)
@@ -164,6 +164,13 @@ namespace OA.UI.Controllers
 
             // return  int list.
             return result;
+        }
+        #endregion
+
+        #region Set Role For User
+        public IActionResult SetRoleInfo(int id)
+        {
+
         }
         #endregion
 

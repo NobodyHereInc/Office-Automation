@@ -1,7 +1,7 @@
-﻿@model IQueryable<OA.Model.UserInfo>
-@{ 
+﻿@{ 
     Layout = null;
 }
+
 
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -19,44 +19,41 @@
         $(function () {
             $('#addDiv').css("display", "none");
             $('#editDiv').css("display", "none");
+            $('#setUserRoleDiv').css("display","none");
             loadData();
-            $('#btnSerach').click(function () {
-                var pars = {
-                    name: $("#txtUName").val(),
-                    remark: $("#txtURemark").val()
-                }
-                loadData(pars);
-            });
         });
 
         function loadData(pars) {
             $('#tt').datagrid({
-                url: '/UserInfo/GetUserInfo',
-                title: 'User Info Table',
+                url: '/RoleInfo/GetRoleInfo',
+                title: 'Role Info Table',
                 fitColumns: true,
                 nowrap: false,
-                idField: 'userId',
-                loadMsg: 'Loading User Information...', // Loading message.
+                idField: 'id',
+                loadMsg: 'Loading Role Information...', // Loading message.
                 pagination: true, // whether speprate page.
                 singleSelect: false, // whether Select a single row.
                 pageSize: 10, // Page Size
                 pageNumber: 1, // Start Page
                 pageList: [10, 15, 20],
-                queryParams: pars, // send parameters to back-end.
+                queryParams: {}, // send parameters to back-end.
                 columns: [[
                     { field: 'ck', checkbox: true, align: 'left', width: 50 },
-					{ field: 'userId', title: 'ID', width: 80 },
-					{ field: 'userName', title: 'User Name', width: 120 },
-                    { field: 'uPwd', title: 'PassWord', width: 120 },
-                    { field: 'remark', title: 'Remark', width: 120 },
+					{ field: 'id', title: 'ID', width: 80 },
+					{ field: 'roleName', title: 'Role Name', width: 120 },
+                     { field: 'sort', title: 'SortMark', width: 120 },
+                      { field: 'remark', title: 'Remark', width: 120 },
 					{
-					    field: 'subTime', title: 'Submit Time', width: 120, align: 'right'
-                        /*
-					  formatter: function (value, row, index) {
-					    return (eval(value.replace(/\/Date\((\d+)\)\//gi, "new Date($1)"))).pattern("yyyy-M-d");
-					  }
-                      */
-					}
+					    field: 'subTime', title: 'SubTime', width: 80, align: 'right',
+					},
+                    {
+                        field: 'Operator', title: 'Operation', width: 80, align: 'right',
+                        formatter: function (value, row, index) {
+                            var str = "<a href='javascript:void(0)' ids='" + row.id + "' class='deleteLink'>Delete</a>";
+                            str += "&nbsp;&nbsp;<a href='javascript:void(0)' ids='" + row.id + "' class='editLink'>Edit</a>";
+                            return str;
+                        }
+                    },
                 ]],
                 toolbar: [{
                     id: 'btnDelete',
@@ -94,6 +91,11 @@
                         //setUserAction();
                     }
                 }],
+                onLoadSuccess: function (e, field) {
+                    $(".deleteLink").click(function () {
+                        $.messager.alert("Error Message", $(this).attr("ids"), "error");
+                    });
+                },
             });
         }
 
@@ -154,11 +156,11 @@
             $('#editDiv').css("display", "block");
 
             //
-            $("#editFrame").attr("src", "/UserInfo/ShowEditUserInfo/?id=" + rows[0].userId)
+            $("#editFrame").attr("src", "/RoleInfo/ShowEditRoleInfo/?id=" + rows[0].id)
 
             // dialog for editForm (easyUI)
             $('#editDiv').dialog({
-                title: "Edit User Information",
+                title: "Edit Role Information",
                 modal: true,
                 collapsible: true,
                 width: 400,
@@ -237,7 +239,7 @@
         {
             // get all seleted rows.
             var rows = $('#tt').datagrid('getSelections');
-    
+
             //
             if (!rows || rows.length == 0) {
                 // alart error message
@@ -250,20 +252,21 @@
                     // get what want to delete.
                     var strId = "";
                     for (var i = 0; i < rows.length; i++) {
-                        strId = strId + rows[i].userId + ","
+                        strId = strId + rows[i].id + ","
                     }
 
                     // delete last ","
                     strId = strId.substr(0, strId.length - 1);
 
                     // request to server-side (post method)
-                    $.post("/UserInfo/DeleteUserInfo", { "strId": strId }, function (data) {
+                    $.post("/RoleInfo/DeleteRoleInfo", { "strId": strId }, function (data) {
                             if (data = "Ok") {
+                                $.messager.confirm("Message", "The new RoelInfo has been added successfully.")
                                 $('#tt').datagrid("reload");
                                 $('#tt').datagrid("clearSelections");
                             }
                             else{
-
+                                $.messager.confirm("Message", "The new RoelInfo has been added Failly.")
                             }
                     });
                 }
@@ -272,60 +275,59 @@
     </script>
 </head>
 <body>
-    <!----- class="form-control col-sm-10" ----->
-    User Name:<input type="text" id="txtUName" />&nbsp;&nbsp;Remark:<input type="text" id="txtURemark" /><button id="btnSerach" class="btn btn-info btn-md">Search</button>
-    <!---------------------------------- START Display User Infromation --------------------------->
+    <!---------------------------------- START Display User Infromation ------------------------------>
     <div>
         <table id="tt" class="table-responsive col-md-2 col-md-8" title="" iconcls="icon-edit"></table>
     </div>
     <!---------------------------------- END Display User Infromation ------------------------------>
-
     <!---------------------------------- START Add User Information dialog ------------------------->
     <div id="addDiv">
-        <form asp-controller="UserInfo" asp-action="AddUserInfo" data-ajax="true" data-ajax-method="POST" data-ajax-success="afterAdd" id="addForm" >
+        <form asp-controller="RoleInfo" asp-action="AddRoleInfo" data-ajax="true" data-ajax-method="POST" data-ajax-success="afterAdd" id="addForm">
             <table>
                 <tr>
-                    <td>User Name</td><td><input type="text" name="uName" /></td>
+                    <td>Role Name</td>
+                    <td><input type="text" name="RoleName" /></td>
                 </tr>
                 <tr>
-                    <td>Pass Word</td><td><input type="password" name="uPwd" /></td>
+                    <td>Sort Mark</td>
+                    <td><input type="text" name="Sort" /></td>
                 </tr>
                 <tr>
-                <td>Remark</td><td><input type="text" name="remark" /></td>
+                    <td>Remark</td>
+                    <td><input type="text" name="Remark" /></td>
                 </tr>
             </table>
         </form>
     </div>
     <!---------------------------------- END Add User Information dialog --------------------------->
-
     <!----------------------- START Update User Information -------------------------->
     <div id="editDiv">
-            @*<form asp-controller="UserInfo" asp-action="EditUserInfo" data-ajax="true" data-ajax-method="POST" data-ajax-success="afterEdit" id="editForm" data-ajax-confirm="Are you sure you want update this user Information?">
-            <input type="hidden" name="userId" id="txtId" />
-            <input type="hidden" name="subTime" id="txtSubTime" />
-            <table>
-                <tr>
-                    <td>User Name:</td>
-                    <td><input type="text" name="userName" id="txtName" /></td>
-                </tr>
-                <tr>
-                    <td>Pass Word:</td>
-                    <td><input type="password" name="uPwd" id="txtuPwd" /></td>
-                </tr>
-                <tr>
-                    <td>Remark:</td>
-                    <td><input type="text" name="remark" id="txtremark" /></td>
-                </tr>
-                <tr>
-                    <td>Status:</td>
-                    <td><input type="text" name="DelFlag" id="txtDelFlag" /></td>
-                </tr>
-                <tr>
-                    <td>Sort:</td>
-                    <td><input type="text" name="Sort" id="txtSort" /></td>
-                </tr>
-            </table>
-        </form>*@
+        @*<form asp-controller="UserInfo" asp-action="EditUserInfo" data-ajax="true" data-ajax-method="POST" data-ajax-success="afterEdit" id="editForm" data-ajax-confirm="Are you sure you want update this user Information?">
+                <input type="hidden" name="userId" id="txtId" />
+                <input type="hidden" name="subTime" id="txtSubTime" />
+                <table>
+                    <tr>
+                        <td>User Name:</td>
+                        <td><input type="text" name="userName" id="txtName" /></td>
+                    </tr>
+                    <tr>
+                        <td>Pass Word:</td>
+                        <td><input type="password" name="uPwd" id="txtuPwd" /></td>
+                    </tr>
+                    <tr>
+                        <td>Remark:</td>
+                        <td><input type="text" name="remark" id="txtremark" /></td>
+                    </tr>
+                    <tr>
+                        <td>Status:</td>
+                        <td><input type="text" name="DelFlag" id="txtDelFlag" /></td>
+                    </tr>
+                    <tr>
+                        <td>Sort:</td>
+                        <td><input type="text" name="Sort" id="txtSort" /></td>
+                    </tr>
+                </table>
+            </form>*@
 
         <iframe id="editFrame" frameborder="0" scrolling="no" width="100%" height="100%"></iframe>
     </div>

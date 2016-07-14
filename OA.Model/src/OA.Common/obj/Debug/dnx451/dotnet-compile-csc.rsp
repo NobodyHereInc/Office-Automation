@@ -56,4 +56,5 @@
 -r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.1\System.Core.dll"
 -r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.1\Microsoft.CSharp.dll"
 "D:\Co-op Project\OA.Model\src\OA.Common\ReflectUserInfo.cs"
+"D:\Co-op Project\OA.Model\src\OA.Common\Webcommon.cs"
 "D:\Co-op Project\OA.Model\src\OA.Common\Properties\AssemblyInfo.cs"

@@ -4,7 +4,7 @@ using System;
 
 namespace OA.Service
 {
-    public class ActionInfoService : BaseService<ActionInfo>
+    public class ActionInfoService : BaseService<ActionInfo>, IActionInfoService
     {
         public override void SetCurrentDal()
         {

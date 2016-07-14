@@ -3,7 +3,7 @@ using OA.IService;
 
 namespace OA.Service
 {
-    public class RUserInfoActionInfoService : BaseService<RUserInfoActionInfo>
+    public class RUserInfoActionInfoService : BaseService<RUserInfoActionInfo>, IRUserInfoActionInfoService
     {
         public override void SetCurrentDal()
         {

@@ -108,6 +108,9 @@
         #myTop{
             background-image: url('../../images/bg3.png');
         }
+        .txt{
+            float:right;
+        }
     </style>
 
     <script type="text/javascript">
@@ -129,12 +132,9 @@
             </div>
         </div>
         <div position="top" id="myTop">
-            <span class="txt">Welcome .. Login @ViewData["Date"]</span> 
+            <span class="txt">Welcome @ViewData["UserName"] Login @ViewData["Date"]<a href="/Home/LogOut">Log Out</a></span>
         </div>
     </div>
-
-
-
 
 </body>
 <script type="text/javascript">
@@ -143,7 +143,7 @@
     // 1.
     function f_open(url, title, icon) {
         var win = $.ligerDialog.open(
-        { height: 600, url: url, width: 600, showMax: true, showToggle: true, showMin: true, isResize: true, modal: true, title: title, slide: false, buttons: [
+        { height: 450, url: url, width: 850, showMax: true, showToggle: true, showMin: true, isResize: true, modal: true, title: title, slide: false, buttons: [
             { text: '确定', onclick: function (item, Dialog, index) {
                 win.hide();
             }
@@ -160,17 +160,8 @@
     // 1.1 icon array.
     var links = [
             { icon: '../../images/unnamed.png', title: 'User Management', url: '/UserInfo/index' },
-            { icon: '~/lib/jquery-LigerUI-V1.3.3/images/3DSMAX.png', title: 'treegrid', url: '../grid/treegrid/treegrid.htm' },
-            { icon: '~/lib/jquery-LigerUI-V1.3.3/images/3DSMAX.png', title: '多表头', url: '../grid/mulheader/grid2.htm' },
-            { icon: '~/lib/jquery-LigerUI-V1.3.3/images/Program Files Folder.png', title: '固定列', url: '../grid/frozen/frozengrid.htm' },
-            { icon: '~/lib/jquery-LigerUI-V1.3.3/images/Program Files Folder.png', title: '可拖动', url: '../base/drag.htm' },
-            { icon: '~/lib/jquery-LigerUI-V1.3.3/images/Alien Folder.png', title: '树', url: '../tree/draggable.htm' },
-            { icon: '~/lib/jquery-LigerUI-V1.3.3/images/Xp-G5 006.png', title: '下拉框', url: '../comboBox/comboBoxGrid.htm' },
-            { icon: '~/lib/jquery-LigerUI-V1.3.3/images/Xp-G5 006.png', title: '下拉框', url: '../comboBox/comboBoxGrid.htm' },
-            { icon: '~/lib/jquery-LigerUI-V1.3.3/images/Alien Folder.png', title: 'layout', url: '../layout/layoutFullHeight.htm' },
-             { icon: '~/lib/jquery-LigerUI-V1.3.3/images/Alien Folder.png', title: 'menu', url: '../menu/menubar.htm' },
-             { icon: '~/lib/jquery-LigerUI-V1.3.3/images/Xp-G5 006.png', title: 'tab', url: '../tab/tabHtml.htm' },
-             { icon: '~/lib/jquery-LigerUI-V1.3.3/images/3DSMAX.png', title: '分组', url: '../grid/groupable/checkbox.htm' }
+            { icon: '~/lib/jquery-LigerUI-V1.3.3/images/3DSMAX.png', title: 'Role Management', url: '/RoleInfo/index' },
+            { icon: '~/lib/jquery-LigerUI-V1.3.3/images/3DSMAX.png', title: '多表头', url: '../grid/mulheader/grid2.htm' }
         ];
 
     // 2.resize window.
