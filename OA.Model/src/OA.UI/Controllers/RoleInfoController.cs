@@ -11,7 +11,7 @@ using System.Collections.Generic;
 
 namespace OA.UI.Controllers
 {
-    public class RoleInfoController : Controller
+    public class RoleInfoController : BaseController
     {
 
         private IRoleInfoService rs = new RoleInfoService();

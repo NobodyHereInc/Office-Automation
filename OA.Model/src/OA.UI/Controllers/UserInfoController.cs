@@ -6,7 +6,6 @@ using OA.Model;
 using OA.IService;
 using OA.Service;
 using OA.Model.Enum;
-using Microsoft.AspNetCore.Mvc.Formatters.Json;
 using OA.Model.SearchParams;
 using Microsoft.AspNetCore.Http;
 
@@ -14,10 +13,11 @@ using Microsoft.AspNetCore.Http;
 
 namespace OA.UI.Controllers
 {
-    public class UserInfoController : Controller
+    public class UserInfoController : BaseController
     {
         private IUserInfoService us = new UserInfoService();
         private IRoleInfoService rs = new RoleInfoService();
+        private IUserInfoRoleInfoService urs = new UserInfoRoleInfoService();
 
         // GET: /<controller>/
         public IActionResult Index()
@@ -182,11 +182,17 @@ namespace OA.UI.Controllers
             // get all roleInfo from database.
             ViewBag.AllRoles = rs.GetList(r => r.DelFlag == deleteflag).ToList();
 
-            var temp = user.UserInfoRoleInfo;
-
             // get exist RoleInfo id for this user.
-            ViewBag.ExtAllRoleIds = (from c in user.UserInfoRoleInfo
-                                    select c.RoleInfoId).ToList(); // get all role's id.
+            var temp = urs.GetList(ur => ur.UserInfoId == user.Id);
+
+            List<int> list = new List<int>();
+            foreach (var item in temp)
+            {
+                list.Add(item.RoleInfoId);
+            }
+
+            ViewBag.ExtAllRoleIds = list;
+
             return View();
         }
         #endregion

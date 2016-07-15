@@ -111,8 +111,22 @@ namespace OA.Service
             // whether this user is exist.
             if (user != null)
             {
-                // clear all origin roles.
-                user.UserInfoRoleInfo.Clear();
+                try
+                {   
+                    // clear all origin roles.
+                    var originRoles = this.DbSession.UserInfoRoleInfoDal.GetList(ur => ur.UserInfoId == user.Id);
+                    foreach (var item in originRoles)
+                    {
+                        this.DbSession.UserInfoRoleInfoDal.Remove(item);
+                    }
+
+                    this.DbSession.SaveChanges();
+                }
+                catch (Exception)
+                {
+                    return false;
+                }
+
 
                 foreach (int roleId in roleIds)
                 {
@@ -121,9 +135,6 @@ namespace OA.Service
                     {
                         UserInfoId = user.Id,
                         RoleInfoId = roleId,
-                        UserInfo = user,
-                        RoleInfo = roleInfo
-
                     };
                     user.UserInfoRoleInfo.Add(newRoles);
                 }

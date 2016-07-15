@@ -37,7 +37,10 @@
     "Serilog.Sinks.RollingFile": "2.1.0",
     "PaulMiami.AspNetCore.Mvc.Recaptcha": "1.0.2",
     "Microsoft.Framework.Caching.Memory": "1.0.0-beta8",
-    "Microsoft.AspNetCore.Session": "1.0.0"
+    "Microsoft.AspNetCore.Session": "1.0.0",
+    "Microsoft.AspNet.Http": "1.0.0-rc1-final",
+    "Microsoft.Net.Http.Headers": "1.0.0",
+    "Microsoft.AspNet.Http.Extensions": "1.0.0-rc1-final"
   },
 
   "tools": {

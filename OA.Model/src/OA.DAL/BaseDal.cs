@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
 
@@ -24,7 +22,6 @@ namespace OA.DAL
         public bool Add(T Entity)
         {
             context.Set<T>().Add(Entity);
-            //return context.SaveChanges();
             return true;
         }
 
@@ -36,32 +33,10 @@ namespace OA.DAL
         public bool Edit(T Entity)
         {
             context.Entry(Entity).State = EntityState.Modified;
-            //return context.SaveChanges();
             return true;
         }
 
 
-        /*
-        * context.Set<T>().Find(ID) can not find.
-        */
-
-        // delete
-        //public int Remove(int id)
-        //{
-        //    T userInfo = context.Set<T>().Where(u => u.T.Equals(id)) as T;
-        //    context.Set<T>().Remove(userInfo);
-        //    return context.SaveChanges();
-        //}
-        //public int Remove(int[] ids)
-        //{
-        //    foreach (int id in ids)
-        //    {
-        //        T userInfo = context.Set<T>().Where(u => u.T.Equals(id)) as T;
-        //        context.Set<T>().Remove(userInfo);
-        //    }
-
-        //    return context.SaveChanges();
-        //}
 
         /// <summary>
         /// This function is used to delete data from database.
@@ -76,13 +51,6 @@ namespace OA.DAL
             //return context.SaveChanges();
             return true;
         }
-
-        // seach
-        //public T GetById(int id)
-        //{
-        //    context.Set<T>().s
-        //    return context.Set<T>().Where(u => u..Equals(id)) as T;
-        //}
 
         /// <summary>
         /// This function is used to get total data from database.

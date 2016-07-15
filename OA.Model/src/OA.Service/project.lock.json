@@ -37,6 +37,89 @@
           "lib/netstandard1.3/MailKit.dll": {}
         }
       },
+      "Microsoft.AspNet.Http/1.0.0-rc1-final": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.Http.Abstractions": "1.0.0-rc1-final",
+          "Microsoft.AspNet.WebUtilities": "1.0.0-rc1-final",
+          "Microsoft.Net.Http.Headers": "1.0.0-rc1-final",
+          "System.Diagnostics.Debug": "4.0.11-beta-23516",
+          "System.Text.Encoding": "4.0.11-beta-23516"
+        },
+        "compile": {
+          "lib/dotnet5.4/Microsoft.AspNet.Http.dll": {}
+        },
+        "runtime": {
+          "lib/dotnet5.4/Microsoft.AspNet.Http.dll": {}
+        }
+      },
+      "Microsoft.AspNet.Http.Abstractions/1.0.0-rc1-final": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.Http.Features": "1.0.0-rc1-final",
+          "Microsoft.Extensions.WebEncoders.Core": "1.0.0-rc1-final",
+          "System.Collections": "4.0.11-beta-23516",
+          "System.Diagnostics.Tools": "4.0.1-beta-23516",
+          "System.Globalization": "4.0.11-beta-23516",
+          "System.Globalization.Extensions": "4.0.1-beta-23516",
+          "System.Linq": "4.0.1-beta-23516",
+          "System.Linq.Expressions": "4.0.11-beta-23516",
+          "System.Net.Primitives": "4.0.11-beta-23516",
+          "System.Net.WebSockets": "4.0.0-beta-23516",
+          "System.Reflection.TypeExtensions": "4.0.1-beta-23409",
+          "System.Runtime": "4.0.21-beta-23516",
+          "System.Runtime.InteropServices": "4.0.21-beta-23516",
+          "System.Security.Claims": "4.0.1-beta-23516",
+          "System.Security.Cryptography.X509Certificates": "4.0.0-beta-23516",
+          "System.Security.Principal": "4.0.1-beta-23516",
+          "System.Threading.Tasks": "4.0.11-beta-23516"
+        },
+        "compile": {
+          "lib/dotnet5.4/Microsoft.AspNet.Http.Abstractions.dll": {}
+        },
+        "runtime": {
+          "lib/dotnet5.4/Microsoft.AspNet.Http.Abstractions.dll": {}
+        }
+      },
+      "Microsoft.AspNet.Http.Features/1.0.0-rc1-final": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Primitives": "1.0.0-rc1-final",
+          "System.Collections": "4.0.11-beta-23516",
+          "System.Linq": "4.0.1-beta-23516",
+          "System.Net.Primitives": "4.0.11-beta-23516",
+          "System.Net.WebSockets": "4.0.0-beta-23516",
+          "System.Runtime.Extensions": "4.0.11-beta-23516",
+          "System.Security.Claims": "4.0.1-beta-23516",
+          "System.Security.Cryptography.X509Certificates": "4.0.0-beta-23516",
+          "System.Security.Principal": "4.0.1-beta-23516"
+        },
+        "compile": {
+          "lib/dotnet5.4/Microsoft.AspNet.Http.Features.dll": {}
+        },
+        "runtime": {
+          "lib/dotnet5.4/Microsoft.AspNet.Http.Features.dll": {}
+        }
+      },
+      "Microsoft.AspNet.WebUtilities/1.0.0-rc1-final": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Primitives": "1.0.0-rc1-final",
+          "Microsoft.Extensions.WebEncoders.Core": "1.0.0-rc1-final",
+          "System.Collections": "4.0.11-beta-23516",
+          "System.Diagnostics.Debug": "4.0.11-beta-23516",
+          "System.IO": "4.0.11-beta-23516",
+          "System.IO.FileSystem": "4.0.1-beta-23516",
+          "System.Runtime": "4.0.21-beta-23516",
+          "System.Runtime.Extensions": "4.0.11-beta-23516"
+        },
+        "compile": {
+          "lib/dotnet5.4/Microsoft.AspNet.WebUtilities.dll": {}
+        },
+        "runtime": {
+          "lib/dotnet5.4/Microsoft.AspNet.WebUtilities.dll": {}
+        }
+      },
       "Microsoft.CSharp/4.0.1": {
         "type": "package",
         "dependencies": {
@@ -337,6 +420,24 @@
           "lib/netstandard1.0/Microsoft.Extensions.Primitives.dll": {}
         }
       },
+      "Microsoft.Extensions.WebEncoders.Core/1.0.0-rc1-final": {
+        "type": "package",
+        "dependencies": {
+          "System.ComponentModel": "4.0.1-beta-23516",
+          "System.Diagnostics.Debug": "4.0.11-beta-23516",
+          "System.IO": "4.0.11-beta-23516",
+          "System.Reflection": "4.0.10",
+          "System.Resources.ResourceManager": "4.0.1-beta-23516",
+          "System.Runtime.Extensions": "4.0.11-beta-23516",
+          "System.Threading": "4.0.11-beta-23516"
+        },
+        "compile": {
+          "lib/dotnet5.4/Microsoft.Extensions.WebEncoders.Core.dll": {}
+        },
+        "runtime": {
+          "lib/dotnet5.4/Microsoft.Extensions.WebEncoders.Core.dll": {}
+        }
+      },
       "Microsoft.Framework.Configuration/1.0.0-beta8": {
         "type": "package",
         "dependencies": {
@@ -393,6 +494,25 @@
         },
         "runtime": {
           "lib/dnxcore50/Microsoft.Framework.Configuration.Json.dll": {}
+        }
+      },
+      "Microsoft.Net.Http.Headers/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Buffers": "4.0.0",
+          "System.Collections": "4.0.11",
+          "System.Diagnostics.Contracts": "4.0.1",
+          "System.Globalization": "4.0.11",
+          "System.Linq": "4.1.0",
+          "System.Resources.ResourceManager": "4.0.1",
+          "System.Runtime.Extensions": "4.1.0",
+          "System.Text.Encoding": "4.0.11"
+        },
+        "compile": {
+          "lib/netstandard1.1/Microsoft.Net.Http.Headers.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.1/Microsoft.Net.Http.Headers.dll": {}
         }
       },
       "Microsoft.NETCore.Platforms/1.0.1": {
@@ -671,7 +791,7 @@
           "System.Threading": "4.0.11"
         },
         "compile": {
-          "lib/netstandard1.1/_._": {}
+          "lib/netstandard1.1/System.Buffers.dll": {}
         },
         "runtime": {
           "lib/netstandard1.1/System.Buffers.dll": {}
@@ -917,6 +1037,18 @@
             "assetType": "runtime",
             "rid": "win"
           }
+        }
+      },
+      "System.Diagnostics.Contracts/4.0.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Runtime": "4.1.0"
+        },
+        "compile": {
+          "ref/netstandard1.0/System.Diagnostics.Contracts.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/System.Diagnostics.Contracts.dll": {}
         }
       },
       "System.Diagnostics.Debug/4.0.11": {
@@ -1471,6 +1603,21 @@
           "ref/netstandard1.3/System.Net.Sockets.dll": {}
         }
       },
+      "System.Net.WebSockets/4.0.0-beta-23516": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Win32.Primitives": "4.0.0",
+          "System.Resources.ResourceManager": "4.0.0",
+          "System.Runtime": "4.0.20",
+          "System.Threading.Tasks": "4.0.0"
+        },
+        "compile": {
+          "ref/dotnet5.1/System.Net.WebSockets.dll": {}
+        },
+        "runtime": {
+          "lib/dotnet5.4/System.Net.WebSockets.dll": {}
+        }
+      },
       "System.ObjectModel/4.0.12": {
         "type": "package",
         "dependencies": {
@@ -1705,7 +1852,7 @@
           "System.Security.Principal": "4.0.1"
         },
         "compile": {
-          "ref/netstandard1.3/_._": {}
+          "ref/netstandard1.3/System.Security.Claims.dll": {}
         },
         "runtime": {
           "lib/netstandard1.3/System.Security.Claims.dll": {}
@@ -2186,7 +2333,9 @@
         "type": "project",
         "framework": ".NETStandard,Version=v1.6",
         "dependencies": {
+          "Microsoft.AspNet.Http": "1.0.0-rc1-final",
           "Microsoft.Extensions.Options.ConfigurationExtensions": "1.0.0-rc2-final",
+          "Microsoft.Net.Http.Headers": "1.0.0",
           "NETStandard.Library": "1.6.0"
         },
         "compile": {
@@ -2313,6 +2462,58 @@
         "lib/win81/MailKit.xml",
         "lib/wpa81/MailKit.dll",
         "lib/wpa81/MailKit.xml"
+      ]
+    },
+    "Microsoft.AspNet.Http/1.0.0-rc1-final": {
+      "sha512": "2vVd6xlfDKxl7pln5VOSczVo5bdJK6VLF6LR62Tb+le6e0COju7diAPHujFcXQlX/eLq2GrctN5vbIMeQ6vRTg==",
+      "type": "package",
+      "path": "Microsoft.AspNet.Http/1.0.0-rc1-final",
+      "files": [
+        "Microsoft.AspNet.Http.1.0.0-rc1-final.nupkg.sha512",
+        "Microsoft.AspNet.Http.nuspec",
+        "lib/dotnet5.4/Microsoft.AspNet.Http.dll",
+        "lib/dotnet5.4/Microsoft.AspNet.Http.xml",
+        "lib/net451/Microsoft.AspNet.Http.dll",
+        "lib/net451/Microsoft.AspNet.Http.xml"
+      ]
+    },
+    "Microsoft.AspNet.Http.Abstractions/1.0.0-rc1-final": {
+      "sha512": "sfzc1WJMl8wGCF+rChVfJ7otT6tTv24RNXUej2r8tlQ2RDNnAozYyGb0SCW2mxpHrC31On99Wt0rksgF0c2WUw==",
+      "type": "package",
+      "path": "Microsoft.AspNet.Http.Abstractions/1.0.0-rc1-final",
+      "files": [
+        "Microsoft.AspNet.Http.Abstractions.1.0.0-rc1-final.nupkg.sha512",
+        "Microsoft.AspNet.Http.Abstractions.nuspec",
+        "lib/dotnet5.4/Microsoft.AspNet.Http.Abstractions.dll",
+        "lib/dotnet5.4/Microsoft.AspNet.Http.Abstractions.xml",
+        "lib/net451/Microsoft.AspNet.Http.Abstractions.dll",
+        "lib/net451/Microsoft.AspNet.Http.Abstractions.xml"
+      ]
+    },
+    "Microsoft.AspNet.Http.Features/1.0.0-rc1-final": {
+      "sha512": "WlscfdAvN8XaaK1iv1Iewp5emei7+0SlXNkUh7kMJpeaS6K0GhwNmwqZR6VrT1oN+Maw98nEONHS34/suqQwOA==",
+      "type": "package",
+      "path": "Microsoft.AspNet.Http.Features/1.0.0-rc1-final",
+      "files": [
+        "Microsoft.AspNet.Http.Features.1.0.0-rc1-final.nupkg.sha512",
+        "Microsoft.AspNet.Http.Features.nuspec",
+        "lib/dotnet5.4/Microsoft.AspNet.Http.Features.dll",
+        "lib/dotnet5.4/Microsoft.AspNet.Http.Features.xml",
+        "lib/net451/Microsoft.AspNet.Http.Features.dll",
+        "lib/net451/Microsoft.AspNet.Http.Features.xml"
+      ]
+    },
+    "Microsoft.AspNet.WebUtilities/1.0.0-rc1-final": {
+      "sha512": "0D80xroAEiWlB9X5eR/JUya1H2saIYnt4d7bPru5RRf5L/66X+9WWhf3hFkLUF3W13K6g6K9Is9dCTaEfFFKTA==",
+      "type": "package",
+      "path": "Microsoft.AspNet.WebUtilities/1.0.0-rc1-final",
+      "files": [
+        "Microsoft.AspNet.WebUtilities.1.0.0-rc1-final.nupkg.sha512",
+        "Microsoft.AspNet.WebUtilities.nuspec",
+        "lib/dotnet5.4/Microsoft.AspNet.WebUtilities.dll",
+        "lib/dotnet5.4/Microsoft.AspNet.WebUtilities.xml",
+        "lib/net451/Microsoft.AspNet.WebUtilities.dll",
+        "lib/net451/Microsoft.AspNet.WebUtilities.xml"
       ]
     },
     "Microsoft.CSharp/4.0.1": {
@@ -2571,6 +2772,19 @@
         "lib/netstandard1.0/Microsoft.Extensions.Primitives.xml"
       ]
     },
+    "Microsoft.Extensions.WebEncoders.Core/1.0.0-rc1-final": {
+      "sha512": "wt47w3Zu7JvuD7CfRSCaz0IZL5EzpuzicRm6Qcidteb2TVeB98Psg7YGiwIBeYB1b52YFTBgqC+ySKk/GRhy2A==",
+      "type": "package",
+      "path": "Microsoft.Extensions.WebEncoders.Core/1.0.0-rc1-final",
+      "files": [
+        "Microsoft.Extensions.WebEncoders.Core.1.0.0-rc1-final.nupkg.sha512",
+        "Microsoft.Extensions.WebEncoders.Core.nuspec",
+        "lib/dotnet5.4/Microsoft.Extensions.WebEncoders.Core.dll",
+        "lib/dotnet5.4/Microsoft.Extensions.WebEncoders.Core.xml",
+        "lib/net451/Microsoft.Extensions.WebEncoders.Core.dll",
+        "lib/net451/Microsoft.Extensions.WebEncoders.Core.xml"
+      ]
+    },
     "Microsoft.Framework.Configuration/1.0.0-beta8": {
       "sha512": "M2Fg4gBigELMjFow/w44eGZe7VICY6naOe8R6jKbtsXpDTKFsfCuXxpZcUfIgI791hs7Ney88IjxZ3XudsgJeg==",
       "type": "package",
@@ -2635,6 +2849,17 @@
         "lib/dotnet/Microsoft.Framework.Configuration.Json.xml",
         "lib/net45/Microsoft.Framework.Configuration.Json.dll",
         "lib/net45/Microsoft.Framework.Configuration.Json.xml"
+      ]
+    },
+    "Microsoft.Net.Http.Headers/1.0.0": {
+      "sha512": "1lr92itF1fKR2oEQ6gk1IUsuCgp7UMlf/b1sjlAyuDeUnttj39ra59GQHYpomglJX1UVNpi1/cSBbEsXoNeIhw==",
+      "type": "package",
+      "path": "Microsoft.Net.Http.Headers/1.0.0",
+      "files": [
+        "Microsoft.Net.Http.Headers.1.0.0.nupkg.sha512",
+        "Microsoft.Net.Http.Headers.nuspec",
+        "lib/netstandard1.1/Microsoft.Net.Http.Headers.dll",
+        "lib/netstandard1.1/Microsoft.Net.Http.Headers.xml"
       ]
     },
     "Microsoft.NETCore.Platforms/1.0.1": {
@@ -3527,6 +3752,64 @@
         "runtimes/win/lib/net451/System.Data.SqlClient.dll",
         "runtimes/win/lib/net46/System.Data.SqlClient.dll",
         "runtimes/win/lib/netstandard1.3/System.Data.SqlClient.dll"
+      ]
+    },
+    "System.Diagnostics.Contracts/4.0.1": {
+      "sha512": "HvQQjy712vnlpPxaloZYkuE78Gn353L0SJLJVeLcNASeg9c4qla2a1Xq8I7B3jZoDzKPtHTkyVO7AZ5tpeQGuA==",
+      "type": "package",
+      "path": "System.Diagnostics.Contracts/4.0.1",
+      "files": [
+        "System.Diagnostics.Contracts.4.0.1.nupkg.sha512",
+        "System.Diagnostics.Contracts.nuspec",
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net45/_._",
+        "lib/netcore50/System.Diagnostics.Contracts.dll",
+        "lib/netstandard1.0/System.Diagnostics.Contracts.dll",
+        "lib/portable-net45+win8+wp8+wpa81/_._",
+        "lib/win8/_._",
+        "lib/wp80/_._",
+        "lib/wpa81/_._",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net45/_._",
+        "ref/netcore50/System.Diagnostics.Contracts.dll",
+        "ref/netcore50/System.Diagnostics.Contracts.xml",
+        "ref/netcore50/de/System.Diagnostics.Contracts.xml",
+        "ref/netcore50/es/System.Diagnostics.Contracts.xml",
+        "ref/netcore50/fr/System.Diagnostics.Contracts.xml",
+        "ref/netcore50/it/System.Diagnostics.Contracts.xml",
+        "ref/netcore50/ja/System.Diagnostics.Contracts.xml",
+        "ref/netcore50/ko/System.Diagnostics.Contracts.xml",
+        "ref/netcore50/ru/System.Diagnostics.Contracts.xml",
+        "ref/netcore50/zh-hans/System.Diagnostics.Contracts.xml",
+        "ref/netcore50/zh-hant/System.Diagnostics.Contracts.xml",
+        "ref/netstandard1.0/System.Diagnostics.Contracts.dll",
+        "ref/netstandard1.0/System.Diagnostics.Contracts.xml",
+        "ref/netstandard1.0/de/System.Diagnostics.Contracts.xml",
+        "ref/netstandard1.0/es/System.Diagnostics.Contracts.xml",
+        "ref/netstandard1.0/fr/System.Diagnostics.Contracts.xml",
+        "ref/netstandard1.0/it/System.Diagnostics.Contracts.xml",
+        "ref/netstandard1.0/ja/System.Diagnostics.Contracts.xml",
+        "ref/netstandard1.0/ko/System.Diagnostics.Contracts.xml",
+        "ref/netstandard1.0/ru/System.Diagnostics.Contracts.xml",
+        "ref/netstandard1.0/zh-hans/System.Diagnostics.Contracts.xml",
+        "ref/netstandard1.0/zh-hant/System.Diagnostics.Contracts.xml",
+        "ref/portable-net45+win8+wp8+wpa81/_._",
+        "ref/win8/_._",
+        "ref/wp80/_._",
+        "ref/wpa81/_._",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "runtimes/aot/lib/netcore50/System.Diagnostics.Contracts.dll"
       ]
     },
     "System.Diagnostics.Debug/4.0.11": {
@@ -4830,6 +5113,37 @@
         "ref/xamarinmac20/_._",
         "ref/xamarintvos10/_._",
         "ref/xamarinwatchos10/_._"
+      ]
+    },
+    "System.Net.WebSockets/4.0.0-beta-23516": {
+      "sha512": "1HTK/ncmLrpKvooNRBIr6EgUY550tMM0hXh/84Ni6bc2Ia8ySGwc3UkLga27GKHSymslU7zCtFzc1UAxqxNeIw==",
+      "type": "package",
+      "path": "System.Net.WebSockets/4.0.0-beta-23516",
+      "files": [
+        "System.Net.WebSockets.4.0.0-beta-23516.nupkg.sha512",
+        "System.Net.WebSockets.nuspec",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/dotnet5.4/System.Net.WebSockets.dll",
+        "lib/net46/System.Net.WebSockets.dll",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/dotnet5.1/System.Net.WebSockets.dll",
+        "ref/dotnet5.1/System.Net.WebSockets.xml",
+        "ref/dotnet5.1/de/System.Net.WebSockets.xml",
+        "ref/dotnet5.1/es/System.Net.WebSockets.xml",
+        "ref/dotnet5.1/fr/System.Net.WebSockets.xml",
+        "ref/dotnet5.1/it/System.Net.WebSockets.xml",
+        "ref/dotnet5.1/ja/System.Net.WebSockets.xml",
+        "ref/dotnet5.1/ko/System.Net.WebSockets.xml",
+        "ref/dotnet5.1/ru/System.Net.WebSockets.xml",
+        "ref/dotnet5.1/zh-hans/System.Net.WebSockets.xml",
+        "ref/dotnet5.1/zh-hant/System.Net.WebSockets.xml",
+        "ref/net46/System.Net.WebSockets.dll",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._"
       ]
     },
     "System.ObjectModel/4.0.12": {

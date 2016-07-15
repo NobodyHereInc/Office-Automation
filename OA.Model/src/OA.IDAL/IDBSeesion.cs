@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using OA.Model;
 
 namespace OA.IDAL
 {
@@ -16,6 +17,7 @@ namespace OA.IDAL
         IRoleInfoDal RoleInfoDal { get; set; }
 
         IUserInfoDal UserInfoDal { get; set; }
+        IUserInfoRoleInfoDal UserInfoRoleInfoDal { get; set; }
 
         bool SaveChanges();
     }

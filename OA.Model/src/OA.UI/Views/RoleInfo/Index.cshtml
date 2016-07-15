@@ -76,21 +76,8 @@
                     handler: function () {
                         editInfo();
                     }
-                }, {
-                    id: 'btnSetRole',
-                    text: 'Set Role For User',
-                    iconCls: 'icon-edit',
-                    handler: function () {
-                        //setUserRole();
-                    }
-                }, {
-                    id: 'btnSetAction',
-                    text: 'Set For User',
-                    iconCls: 'icon-edit',
-                    handler: function () {
-                        //setUserAction();
-                    }
-                }],
+                },
+                ],
                 onLoadSuccess: function (e, field) {
                     $(".deleteLink").click(function () {
                         $.messager.alert("Error Message", $(this).attr("ids"), "error");

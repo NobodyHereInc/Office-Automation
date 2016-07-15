@@ -140,6 +140,14 @@
             });
         }
 
+        // after set
+        function afterSet()
+        {
+            $('#setUserRoleDiv').dialog('close');
+            $('#tt').datagrid('reload'); // reload info.
+            $("#editForm input").val(""); // clear input last data.
+        }
+
         //Modify User Info.
         function editInfo()
         {

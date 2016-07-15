@@ -15,10 +15,17 @@
         {
             $('#SetRoleForm').submit();
         }
+        function afterSet()
+        {
+            window.parent.afterSet();
+        }
     </script>
 </head>
 <body>
-    Set roles for @{ UserInfo user = (UserInfo)ViewBag.UserInfo; @user.Uname}
+    <br />
+    <br />
+    <h2>Set roles for @{ UserInfo user = (UserInfo)ViewBag.UserInfo; @user.Uname}</h2>
+    <hr />
     <form asp-controller="UserInfo" asp-action="SetUserRoleInfo" id="SetRoleForm" data-ajax="true" data-ajax-method="POST" data-ajax-success="afterSet">
         @{
             List<RoleInfo> roleInfoList = (List<RoleInfo>)ViewBag.AllRoles;
@@ -27,13 +34,13 @@
             {
                 if (ExtRoleIdList.Contains(roleInfo.Id))
                 {
-                    <input type="checkbox" name="roleId" value="@roleInfo.Id" checked/>@roleInfo.RoleName
+                    @roleInfo.RoleName<input type="checkbox" name="roleId" value="@roleInfo.Id" checked />
                 }
                 else
                 {
-                    <input type="checkbox" name="roleId" value="@roleInfo.Id" />@roleInfo.RoleName
+                    @roleInfo.RoleName<input type="checkbox" name="roleId" value="@roleInfo.Id" />
                 }
-
+                <hr />
             }
 
             <input type="hidden" name="userId" value="@user.Id" />
