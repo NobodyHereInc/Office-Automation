@@ -96,6 +96,48 @@ namespace OA.Service
         }
         #endregion
 
+        #region Set User Role
+        /// <summary>
+        /// This function is used to set rols for this user (userId)
+        /// </summary>
+        /// <param name="userId"> user's id. </param>
+        /// <param name="roleIds"> role'ids that need to set for this user.</param>
+        /// <returns> true: Set Ok, false: Set Fail. </returns>
+        public bool SetUserRole(int userId, List<int> roleIds)
+        {
+            // get this user info by id.
+            var user = this.DbSession.UserInfoDal.GetList(u => u.Id == userId).FirstOrDefault();
+
+            // whether this user is exist.
+            if (user != null)
+            {
+                // clear all origin roles.
+                user.UserInfoRoleInfo.Clear();
+
+                foreach (int roleId in roleIds)
+                {
+                    var roleInfo = this.DbSession.RoleInfoDal.GetList(r => r.Id == roleId).FirstOrDefault();
+                    UserInfoRoleInfo newRoles = new UserInfoRoleInfo
+                    {
+                        UserInfoId = user.Id,
+                        RoleInfoId = roleId,
+                        UserInfo = user,
+                        RoleInfo = roleInfo
+
+                    };
+                    user.UserInfoRoleInfo.Add(newRoles);
+                }
+
+                this.DbSession.SaveChanges();
+
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        #endregion
 
 
         /// <summary>
@@ -105,5 +147,7 @@ namespace OA.Service
         {
             CurrentDal = this.DbSession.UserInfoDal;
         }
+
+
     }
 }

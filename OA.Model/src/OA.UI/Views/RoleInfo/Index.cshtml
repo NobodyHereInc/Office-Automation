@@ -81,7 +81,7 @@
                     text: 'Set Role For User',
                     iconCls: 'icon-edit',
                     handler: function () {
-                        setUserRole();
+                        //setUserRole();
                     }
                 }, {
                     id: 'btnSetAction',
@@ -96,49 +96,6 @@
                         $.messager.alert("Error Message", $(this).attr("ids"), "error");
                     });
                 },
-            });
-        }
-
-        // Set setUserRole();
-        function setUserRole() {
-            var rows = $('#tt').datagrid('getSelections');
-
-            if (rows.length != 1) {
-                $.messager.alert("Error Message", "Please select one user!", "error")
-                return;
-            }
-
-            // display editDiv div
-            $('#setUserRoleDiv').css("display", "block");
-
-            //
-            $("#setUserRoleFrame").attr("src", "/RoleInfo/SetRoleInfo/?id=" + rows[0].id)
-            // dialog for editForm (easyUI)
-            $('#setUserRoleDiv').dialog({
-                title: "Set Role For User",
-                modal: true,
-                collapsible: true,
-                width: 400,
-                height: 500,
-                buttons: [{
-                    text: 'Ok',
-                    iconCls: 'icon-ok',
-                    handler: function () {
-                        //check input data !----------------
-
-                        //get child window object.
-                        var chilidWindow = $("#setUserRoleFrame")[0].contentWindow;
-                        // use child window function called "subEditFrom".
-                        chilidWindow.subEditForm();
-                    }
-                }, {
-                    text: 'Cancel',
-                    handler: function () {
-                        $('#setUserRoleDiv').dialog('close');
-                        $('#tt').datagrid('reload'); // reload info.
-                        $("#setUserRoleFrame input").val("");
-                    }
-                }]
             });
         }
 
@@ -332,11 +289,5 @@
         <iframe id="editFrame" frameborder="0" scrolling="no" width="100%" height="100%"></iframe>
     </div>
     <!----------------------- END Update User Information ---------------------------->
-
-    <!------------------------- START Set role For User ------------------------------->
-    <div id="setUserRoleDiv">
-        <iframe id="setUserRoleFrame" frameborder="0" scrolling="no" width="100%" height="100%"></iframe>
-    </div>
-    <!---------------------- END Set Role For User ------------------------------------>
 </body>
 </html>

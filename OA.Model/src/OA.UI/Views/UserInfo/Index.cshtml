@@ -110,7 +110,7 @@
             $('#setUserRoleDiv').css("display", "block");
 
             //
-            $("#setUserRoleFrame").attr("src", "/RoleInfo/SetRoleInfo/?id=" + rows[0].id)
+            $("#setUserRoleFrame").attr("src", "/UserInfo/SetRoleInfo/?id=" + rows[0].userId)
             // dialog for editForm (easyUI)
             $('#setUserRoleDiv').dialog({
                 title: "Set Role For User",
@@ -127,7 +127,7 @@
                         //get child window object.
                         var chilidWindow = $("#setUserRoleFrame")[0].contentWindow;
                         // use child window function called "subEditFrom".
-                        chilidWindow.subEditForm();
+                        chilidWindow.subSetRoleForm();
                     }
                 }, {
                     text: 'Cancel',

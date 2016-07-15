@@ -28,5 +28,13 @@ namespace OA.IService
         /// </summary>
         /// <param name="userInfo"></param>
         void FindUserPwd(UserInfo userInfo);
+
+        /// <summary>
+        /// use to set roles for user by userId
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <param name="roleIds"></param>
+        /// <returns></returns>
+        bool SetUserRole(int userId, List<int> roleIds);
     }
 }

@@ -1,15 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using OA.Model;
 using OA.IService;
 using OA.Service;
 using OA.Model.Enum;
 using Microsoft.AspNetCore.Mvc.Formatters.Json;
 using OA.Model.SearchParams;
+using Microsoft.AspNetCore.Http;
 
 // For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -18,6 +17,7 @@ namespace OA.UI.Controllers
     public class UserInfoController : Controller
     {
         private IUserInfoService us = new UserInfoService();
+        private IRoleInfoService rs = new RoleInfoService();
 
         // GET: /<controller>/
         public IActionResult Index()
@@ -167,10 +167,56 @@ namespace OA.UI.Controllers
         }
         #endregion
 
-        #region Set Role For User
+        #region Set Role Info
         public IActionResult SetRoleInfo(int id)
         {
+            // get user info with sepcific id.
+            UserInfo user = us.GetList(u => u.Id == id).FirstOrDefault();
 
+            // set value to view page.
+            ViewBag.UserInfo = user;
+
+            // delete flag.
+            short deleteflag = (short)DeleteEnumType.Normal;
+
+            // get all roleInfo from database.
+            ViewBag.AllRoles = rs.GetList(r => r.DelFlag == deleteflag).ToList();
+
+            var temp = user.UserInfoRoleInfo;
+
+            // get exist RoleInfo id for this user.
+            ViewBag.ExtAllRoleIds = (from c in user.UserInfoRoleInfo
+                                    select c.RoleInfoId).ToList(); // get all role's id.
+            return View();
+        }
+        #endregion
+
+        #region Set User Role Info
+        [HttpPost]
+        public IActionResult SetUserRoleInfo(FormCollection collection)
+        {
+            // get user id.
+            int userId = int.Parse(Request.Form["userId"]);
+            // get a string contains all role's id.
+            String keysStr = Request.Form["roleId"];
+            // split role's id String.
+            String[] AllKeys = keysStr.Split(',');
+            List<int> roleIdList = new List<int>();
+
+            foreach (String key in AllKeys)
+            {
+                roleIdList.Add(int.Parse(key));
+            }
+
+            // set role(s) to this user.
+            if (us.SetUserRole(userId, roleIdList))
+            {
+                return Content("ok");
+            }
+            else
+            {
+                return Content("NO");
+            }           
         }
         #endregion
 
