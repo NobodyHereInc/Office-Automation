@@ -1,4 +1,5 @@
 ﻿@using OA.Model
+@model OA.Model.UserInfo
 @{
     Layout = null;
 }
@@ -7,6 +8,43 @@
 <head>
     <title>Set Special Permission For User.</title>
     <link href="~/css/tableStyle.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/lib/jquery-easyui-1.4.5/themes/bootstrap/easyui.css" rel="stylesheet" />
+    <link href="~/lib/jquery-easyui-1.4.5/themes/icon.css" rel="stylesheet" />
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/jquery-easyui-1.4.5/jquery.easyui.min.js"></script>
+    <script src="~/lib/jquery-easyui-1.4.5/locale/easyui-lang-en.js"></script>
+    <script src="~/lib/jquery-unobtrusive-ajax/jquery.unobtrusive-ajax.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('.setActions').click(function () {
+                $.post("/UserInfo/SetActionForUser", {"userId": @Model.Id, "actionId": $(this).attr("ids"), "value":$(this).val()}, function (data) {
+                    if (data == "ok") {
+                        $.messager.show({
+                            title:'Message',
+                            msg:'Set Successfully!!',
+                            showType:'fade'
+                        });
+                    }
+                });
+            });
+
+            //clear
+            $(".btnClearAction").click(function(){        
+                $(this).parent().find(".setActions").attr("checked",false);
+                $.post("/UserInfo/ClearActionUser",{"userId":@Model.Id,"actionId": $(this).attr("ids")},function(data){
+                    if(data=="ok"){
+                        $.messager.show({
+                            title:'Message',
+                            msg:'Clear Successfully!!',
+                            showType:'fade'
+                        });
+
+                    }
+                }); 
+            });
+        });
+    </script>
 </head>
 <body>
     <br />
@@ -35,17 +73,46 @@
                     </tr>
                 @foreach (var actionInfo in actionInfoList)
                 {
+                    var rb = "rb_" + actionInfo.Id;
+                    var rb_no = "rb_no_" + actionInfo.Id;
+
                     <tr>
                         <td>@actionInfo.Id</td>
                         <td>@actionInfo.ActionInfoName</td>
                         <td>@actionInfo.Url</td>
                         <td>@actionInfo.HttpMethod</td>
                         <td>
-                            @{ 
-                                var extAction = from r in actionExitList
-                                                where r.ActionInfoId == actionInfo.Id
-                                                select r.ActionInfoId;
+                            @{
+                                var extAction = (from r in actionExitList
+                                                 where r.ActionInfoId == actionInfo.Id
+                                                 select r).FirstOrDefault();
+                                if (extAction != null)
+                                {
+                                    if (extAction.IsPass)
+                                    {
+                                        <label for="@rb">Allow</label>
+                                        <input type="radio" id="@rb" name="@rb" value="true" ids="@actionInfo.Id" class="setActions" checked="checked"/>
+                                        <label for="@rb_no">Not Allow</label>
+                                        <input type="radio" id="@rb_no" name="@rb" value="false" ids="@actionInfo.Id" class="setActions" />
+                                    }
+                                    else // otherwise.
+                                    {
+                                        <label for="@rb">Allow</label>
+                                        <input type="radio" id="@rb" name="@rb" value="true" ids="@actionInfo.Id" class="setActions" />
+                                        <label for="@rb_no">Not Allow</label>
+                                        <input type="radio" id="@rb_no" name="@rb" value="false" checked="checked" ids="@actionInfo.Id" class="setActions" />
+
+                                    }
+                                }
+                                else // No action set for this user.
+                                {
+                                    <label for="@rb">Allow</label>
+                                    <input type="radio" id="@rb" name="@rb" value="true" ids="@actionInfo.Id" class="setActions"/>
+                                    <label for="@rb_no">Not Allow</label>
+                                    <input type="radio" id="@rb_no" name="@rb" value="false" ids="@actionInfo.Id" class="setActions" />
+                                }
                             }
+                            <input type="button" class="btnClearAction" value="Clear Action" />
                         </td>
                     </tr>
                   }

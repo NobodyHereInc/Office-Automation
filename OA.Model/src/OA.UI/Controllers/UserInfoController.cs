@@ -232,7 +232,9 @@ namespace OA.UI.Controllers
         public IActionResult SetUserActionInfo(int id)
         {
             // get this user info.
-           ViewBag.userInfo = us.GetList(u => u.Id == id).FirstOrDefault();
+            userInfo= us.GetList(u => u.Id == id).FirstOrDefault();
+            ViewBag.userInfo = userInfo;
+            ViewData.Model = userInfo;
 
             // get all action.
             ViewBag.allAction = asf.GetList(a => a.DelFlag == 0).ToList();
@@ -241,6 +243,50 @@ namespace OA.UI.Controllers
             ViewBag.allExtAction = ras.GetList(r => r.UserInfoId == userInfo.Id).ToList();
 
             return View();
+        }
+
+        public ActionResult SetActionForUser()
+        {
+            // get userId
+            int userId = int.Parse(Request.Form["userId"]);
+            // get actionId
+            int actionId = int.Parse(Request.Form["actionId"]);
+            // get isPass
+            string value = Request.Form["value"];
+            // convert string to bool.
+            bool isPass = value == "true" ? true : false;
+            // 
+            if (ras.SetUserAction(userId, actionId, isPass))
+            {
+                return Content("ok");
+            }
+            else
+            {
+                return Content("no");
+            }
+        }
+        #endregion
+
+        #region Clear Action User
+        public IActionResult ClearActionUser(int userId, int actionId)
+        {            
+            //// get userId
+            //int userId = int.Parse(Request.Form["userId"]);
+            //// get actionId
+            //int actionId = int.Parse(Request.Form["actionId"]);
+
+            // get this record.
+            var actionInfo = ras.GetList(r => r.UserInfoId == userId && r.ActionInfoId == actionId).FirstOrDefault();
+
+            if (actionInfo != null)
+            {
+                ras.Remove(actionInfo);
+                return Content("ok");
+            }
+            else
+            {
+                return Content("no");
+            }
         }
         #endregion
 
