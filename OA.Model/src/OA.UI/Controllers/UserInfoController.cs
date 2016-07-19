@@ -18,6 +18,8 @@ namespace OA.UI.Controllers
         private IUserInfoService us = new UserInfoService();
         private IRoleInfoService rs = new RoleInfoService();
         private IUserInfoRoleInfoService urs = new UserInfoRoleInfoService();
+        private IRUserInfoActionInfoService ras = new RUserInfoActionInfoService();
+        private IActionInfoService asf = new ActionInfoService();
 
         // GET: /<controller>/
         public IActionResult Index()
@@ -223,6 +225,22 @@ namespace OA.UI.Controllers
             {
                 return Content("NO");
             }           
+        }
+        #endregion
+
+        #region Set User Action Info
+        public IActionResult SetUserActionInfo(int id)
+        {
+            // get this user info.
+           ViewBag.userInfo = us.GetList(u => u.Id == id).FirstOrDefault();
+
+            // get all action.
+            ViewBag.allAction = asf.GetList(a => a.DelFlag == 0).ToList();
+
+            // get all exist action.
+            ViewBag.allExtAction = ras.GetList(r => r.UserInfoId == userInfo.Id).ToList();
+
+            return View();
         }
         #endregion
 

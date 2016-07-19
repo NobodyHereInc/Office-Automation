@@ -17,6 +17,25 @@ namespace OA.DalFactory
         private IRoleInfoDal _RoleInfoDal;
         private IRUserInfoActionInfoDal _RUserInfoActionInfoDal;
         private IUserInfoRoleInfoDal _UserInfoRoleInfoDal;
+        private IRoleInfoActionInfo _RoleInfoActionInfo;
+
+        public IRoleInfoActionInfo RoleInfoActionInfo
+        {
+            get
+            {
+                if (_RoleInfoActionInfo == null)
+                {
+                    _RoleInfoActionInfo = new RoleInfoActionInfoDal();
+                    // _UserInfoDal = DALAbstractFactory.GetUserInfoDal(); // Abstract
+                }
+                return _RoleInfoActionInfo;
+            }
+
+            set
+            {
+                _RoleInfoActionInfo = value;
+            }
+        }
 
         public IUserInfoRoleInfoDal UserInfoRoleInfoDal
         {

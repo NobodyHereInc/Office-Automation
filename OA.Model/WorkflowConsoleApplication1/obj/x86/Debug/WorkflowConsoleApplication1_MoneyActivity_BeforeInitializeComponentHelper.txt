@@ -1,0 +1,2 @@
+MoneyActivity.g.xaml
+XamlStaticHelperNamespace._XamlStaticHelper

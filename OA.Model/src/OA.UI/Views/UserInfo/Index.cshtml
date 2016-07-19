@@ -19,6 +19,9 @@
         $(function () {
             $('#addDiv').css("display", "none");
             $('#editDiv').css("display", "none");
+            $('#setUserRoleDiv').css("display", "none");
+            $('#setUserActionDiv').css("display", "none");
+            
             loadData();
             $('#btnSerach').click(function () {
                 var pars = {
@@ -88,13 +91,61 @@
                     }
                 }, {
                     id: 'btnSetAction',
-                    text: 'Set For User',
+                    text: 'Set Special Permission for User',
                     iconCls: 'icon-edit',
                     handler: function () {
-                        //setUserAction();
+                        setUserAction();
                     }
                 }],
             });
+        }
+
+        // set user Action.
+        function setUserAction()
+        {
+            var rows = $('#tt').datagrid('getSelections');
+
+            if (rows.length != 1) {
+                $.messager.alert("Error Message", "Please select one user!", "error")
+                return;
+            }
+
+            $('#setUserActionDiv').css("display", "block");
+
+            //
+            $("#setUserActionFrame").attr("src", "/UserInfo/SetUserActionInfo/?id=" + rows[0].userId)
+            // dialog for editForm (easyUI)
+            $('#setUserActionDiv').dialog({
+                title: "Set Special Permission For User",
+                modal: true,
+                collapsible: true,
+                width: 700,
+                height: 400,
+                buttons: [{
+                    text: 'Ok',
+                    iconCls: 'icon-ok',
+                    handler: function () {
+                        //check input data !----------------
+
+                        //get child window object.
+                        var chilidWindow = $("#setUserActionFrame")[0].contentWindow;
+                        // use child window function called "subEditFrom".
+                        chilidWindow.subSetUserActionForm();
+
+                        $('#setUserActionDiv').dialog('close');
+                        $('#tt').datagrid('reload'); // reload info.
+                        $("#setUserActionFrame input").val("");
+                    }
+                }, {
+                    text: 'Cancel',
+                    handler: function () {
+                        $('#setUserActionDiv').dialog('close');
+                        $('#tt').datagrid('reload'); // reload info.
+                        $("#setUserActionFrame input").val("");
+                    }
+                }]
+            });
+
         }
 
         // Set setUserRole();
@@ -128,6 +179,10 @@
                         var chilidWindow = $("#setUserRoleFrame")[0].contentWindow;
                         // use child window function called "subEditFrom".
                         chilidWindow.subSetRoleForm();
+
+                        $('#setUserRoleDiv').dialog('close');
+                        $('#tt').datagrid('reload'); // reload info.
+                        $("#setUserRoleFrame input").val("");
                     }
                 }, {
                     text: 'Cancel',
@@ -341,8 +396,14 @@
 
     <!------------------------- START Set role For User ------------------------------->
     <div id="setUserRoleDiv">
-        <iframe id="setUserRoleFrame" frameborder="0" scrolling="no" width="100%" height="100%"></iframe>
+        <iframe id="setUserRoleFrame" frameborder="0" width="100%" height="100%"></iframe>
     </div>
     <!---------------------- END Set Role For User ------------------------------------>
+
+    <!------------------------- START Set special Permission For User ------------------------------->
+    <div id="setUserActionDiv" style="overflow:hidden">
+        <iframe id="setUserActionFrame" frameborder="0" width="100%" height="100%"></iframe>
+    </div>
+    <!---------------------- END Set special Permission For User ------------------------------------>
 </body>
 </html>

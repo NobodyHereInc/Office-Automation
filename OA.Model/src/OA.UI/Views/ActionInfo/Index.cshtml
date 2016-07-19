@@ -19,6 +19,7 @@
         $(function () {
             $('#addDiv').css("display", "none");
             $('#editDiv').css("display", "none");
+            $('#setActionRoleDiv').css("display", "none");
             loadData();
             
             bindSelectActionTypeChange(); // display or not display iamge of Incon select tag.
@@ -90,7 +91,62 @@
                         editInfo();
                     }
                 },
+                {
+                    id: 'btnSetRole',
+                    text: 'Set Permission to Role',
+                    iconCls: 'icon-edit',
+                    handler: function () {
+                        setActionRoleInfo();
+                    }
+                },
                 ],
+            });
+        }
+
+        // set permission to role.
+        function setActionRoleInfo()
+        {
+            var rows = $('#tt').datagrid('getSelections');
+
+            if (rows.length != 1) {
+                $.messager.alert("Error Message", "Please select one!", "error")
+                return;
+            }
+
+            $('#setActionRoleDiv').css("display", "block");
+
+            $('#setActionRoleFrame').attr("src", "/ActionInfo/SetActionRole/?id=" + rows[0].id);
+
+            // dialog for editForm (easyUI)
+            $('#setActionRoleDiv').dialog({
+                title: "Set Permission to Role",
+                modal: true,
+                collapsible: true,
+                width: 400,
+                height: 800,
+                buttons: [{
+                    text: 'Ok',
+                    iconCls: 'icon-ok',
+                    handler: function () {
+                        //check input data !----------------
+
+                        //get child window object.
+                        var chilidWindow = $("#setActionRoleFrame")[0].contentWindow;
+                        // use child window function called "subEditFrom".
+                        chilidWindow.subEditForm();
+
+                        $('#setActionRoleDiv').dialog('close');
+                        $('#tt').datagrid('reload'); // reload info.
+                        $("#setActionRoleFrame input").val("");
+                    }
+                }, {
+                    text: 'Cancel',
+                    handler: function () {
+                        $('#setActionRoleDiv').dialog('close');
+                        $('#tt').datagrid('reload'); // reload info.
+                        $("#setActionRoleFrame input").val("");
+                    }
+                }]
             });
         }
 
@@ -105,7 +161,7 @@
                 }
 
                 // ajax upload form
-                $('#addForm').ajaxForm({
+                $('#addForm').ajaxSubmit({
                     type: "Post",
                     url: '/ActionInfo/GetMenuIcon',
                     success: function (data) {
@@ -119,11 +175,6 @@
                     }
                 });
              });
-
-
-
-            
-
         }
 
         // display or not display iamge of Incon select tag
@@ -154,15 +205,15 @@
             $('#editDiv').css("display", "block");
 
             //
-            $("#editFrame").attr("src", "/UserInfo/ShowEditUserInfo/?id=" + rows[0].userId)
+            $("#editFrame").attr("src", "/ActionInfo/ShowEditActionInfo/?id=" + rows[0].id)
 
             // dialog for editForm (easyUI)
             $('#editDiv').dialog({
-                title: "Edit User Information",
+                title: "Edit Permission Information",
                 modal: true,
                 collapsible: true,
                 width: 400,
-                height: 500,
+                height: 800,
                 buttons: [{
                     text: 'Ok',
                     iconCls: 'icon-ok',
@@ -245,19 +296,19 @@
                 return;
             }
 
-            if ($.messager.confirm("Message", "Are you sure you want to remove this user?", function (r) {
+            if ($.messager.confirm("Message", "Are you sure you want to remove this Action?", function (r) {
                 if (r) { // user click "OK"
                     // get what want to delete.
                     var strId = "";
                     for (var i = 0; i < rows.length; i++) {
-                        strId = strId + rows[i].userId + ","
+                        strId = strId + rows[i].id + ","
                     }
 
                     // delete last ","
                     strId = strId.substr(0, strId.length - 1);
 
                     // request to server-side (post method)
-                    $.post("/UserInfo/DeleteUserInfo", { "strId": strId }, function (data) {
+                    $.post("/ActionInfo/DeleteActionInfo", { "strId": strId }, function (data) {
                             if (data = "Ok") {
                                 $('#tt').datagrid("reload");
                                 $('#tt').datagrid("clearSelections");
@@ -272,12 +323,16 @@
     </script>
 </head>
 <body>
+    <!---------------------------------- START Display Permission Infromation ------------------------------>
     <div>
         <table id="tt" class="table-responsive col-md-2 col-md-8" title="" iconcls="icon-edit"></table>
     </div>
-    <!---------------------------------- END Display User Infromation ------------------------------>
-    <!---------------------------------- START Add User Information dialog ------------------------->
+    <!---------------------------------- END Display Permission Infromation ------------------------------>
+    <!---------------------------------- START Add Permissioner Information dialog ------------------------->
     <div id="addDiv">
+        <br />
+        <h2>Add New Permission Infomation</h2>
+        <br />
         <form asp-controller="ActionInfo" asp-action="AddActionInfo" data-ajax="true" data-ajax-method="POST" data-ajax-success="afterAdd" id="addForm" class="form-horizontal" enctype="multipart/form-data">
             <input type="hidden" asp-for="Id" />
             <input type="hidden" asp-for="SubTime" />
@@ -343,9 +398,9 @@
             </div>
         </form>
     </div>
-    <!---------------------------------- END Add User Information dialog --------------------------->
-    <!----------------------- START Update User Information -------------------------->
-    <div id="editDiv">
+    <!---------------------------------- END Add Permission Information dialog --------------------------->
+    <!----------------------- START Update Permission Information -------------------------->
+    <div id="editDiv" style="overflow:hidden">
         @*<form asp-controller="UserInfo" asp-action="EditUserInfo" data-ajax="true" data-ajax-method="POST" data-ajax-success="afterEdit" id="editForm" data-ajax-confirm="Are you sure you want update this user Information?">
                 <input type="hidden" name="userId" id="txtId" />
                 <input type="hidden" name="subTime" id="txtSubTime" />
@@ -373,13 +428,13 @@
                 </table>
             </form>*@
 
-        <iframe id="editFrame" frameborder="0" scrolling="no" width="100%" height="100%"></iframe>
+        <iframe id="editFrame" frameborder="0" width="100%" height="100%"></iframe>
     </div>
-    <!----------------------- END Update User Information ---------------------------->
-    <!------------------------- START Set role For User ------------------------------->
-    <div id="setUserRoleDiv">
-        <iframe id="setUserRoleFrame" frameborder="0" scrolling="no" width="100%" height="100%"></iframe>
+    <!----------------------- END Update Permission Information ---------------------------->
+    <!------------------------- START Set Permission For Role ------------------------------->
+    <div id="setActionRoleDiv">
+        <iframe id="setActionRoleFrame" frameborder="0" width="100%" height="100%"></iframe>
     </div>
-    <!---------------------- END Set Role For User ------------------------------------>
+    <!---------------------- END Set Permission For Role ------------------------------------>
 </body>
 </html>

@@ -1,0 +1,67 @@
+﻿@using OA.Model
+@{
+    Layout = null;
+}
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Set Permission for role</title>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap/dist/css/bootstrap-theme.css" rel="stylesheet" />
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/jquery-unobtrusive-ajax/jquery.unobtrusive-ajax.min.js"></script>
+    <script type="text/javascript">
+        function subEditForm() {
+            $('#Form1').submit();
+        }
+    </script>
+</head>
+<body>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    
+    <div>
+        Set
+        @{
+            ActionInfo actionInfo = (ActionInfo)ViewBag.actionInfo;
+            <span style="font-size:16px;color:red">@actionInfo.ActionInfoName</span>
+        }
+        Permission For
+        <hr />
+    </div>
+
+    <div>
+        <form asp-controller="ActionInfo" asp-action="SetActionRole" data-ajax="true" id="Form1" data-ajax-method="POST" data-ajax-success="afterSetRole">
+            @{ 
+                List<RoleInfo> allRolelist = (List<RoleInfo>)ViewBag.allRoles;
+                List<int> AllExtRoleIds = (List<int>)ViewBag.AllExtRoleIds;
+
+                // print all role list.
+                foreach (var roleInfo in allRolelist)
+                {
+                    if (AllExtRoleIds.Contains(roleInfo.Id))
+                    {
+                        @roleInfo.RoleName<input type="checkbox" name="roleId" value="@roleInfo.Id" checked/>
+                        <hr />
+                    }
+                    else
+                    {
+                        @roleInfo.RoleName<input type="checkbox" value="@roleInfo.Id" name="roleId" />
+                        <hr />
+                    }
+                }
+                <input type="hidden" name="actionId" value="@actionInfo.Id"/>
+            }
+        </form>
+    </div>
+</body>
+</html>

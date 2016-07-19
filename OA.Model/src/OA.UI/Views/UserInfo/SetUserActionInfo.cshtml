@@ -1,0 +1,57 @@
+﻿@using OA.Model
+@{
+    Layout = null;
+}
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Set Special Permission For User.</title>
+    <link href="~/css/tableStyle.css" rel="stylesheet" />
+</head>
+<body>
+    <br />
+    <br />
+
+    <div>
+        @{ 
+            UserInfo userInfo = (UserInfo)ViewBag.userInfo;
+            <h2>Set Special Permission For <span style="font:bold">@userInfo.Uname</span></h2>
+        }
+    </div>
+
+    <div>
+        @{ 
+            List<ActionInfo> actionInfoList = (List<ActionInfo>)ViewBag.allAction;
+            List<RUserInfoActionInfo> actionExitList = (List<RUserInfoActionInfo>)ViewBag.allExtAction;
+
+            <form asp-controller="UserInfo" asp-action="SetUserActionInfo" id="SetUserActionForm" data-ajax="true" data-ajax-method="POST" data-ajax-success="afterSet">
+                <table>
+                    <tr>
+                        <th>Permission's Id</th>
+                        <th>Permission Name</th>
+                        <th>Url</th>
+                        <th>Permission Method Type</th>
+                        <th>Opration</th>
+                    </tr>
+                @foreach (var actionInfo in actionInfoList)
+                {
+                    <tr>
+                        <td>@actionInfo.Id</td>
+                        <td>@actionInfo.ActionInfoName</td>
+                        <td>@actionInfo.Url</td>
+                        <td>@actionInfo.HttpMethod</td>
+                        <td>
+                            @{ 
+                                var extAction = from r in actionExitList
+                                                where r.ActionInfoId == actionInfo.Id
+                                                select r.ActionInfoId;
+                            }
+                        </td>
+                    </tr>
+                  }
+                </table>
+            </form>
+        }
+    </div>
+</body>
+</html>

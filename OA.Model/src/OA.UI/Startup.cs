@@ -19,6 +19,8 @@ using Serilog.Events;
 using PaulMiami.AspNetCore.Mvc.Recaptcha;
 using Microsoft.Framework.DependencyInjection;
 
+// https://github.com/dotnet/corefx/issues/2394
+
 namespace OA.UI
 {
     public class Startup

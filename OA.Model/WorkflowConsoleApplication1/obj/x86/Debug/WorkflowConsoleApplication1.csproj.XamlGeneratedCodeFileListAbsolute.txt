@@ -1,0 +1,6 @@
+obj\x86\Debug\_WorkflowConsoleApplication1.g.cs
+obj\x86\Debug\Workflow1.g.cs
+obj\x86\Debug\MoneyActivity.g.cs
+obj\x86\Debug\WorkflowConsoleApplication1_Workflow1_BeforeInitializeComponentHelper.cs
+obj\x86\Debug\WorkflowConsoleApplication1_MoneyActivity_BeforeInitializeComponentHelper.cs
+D:\Co-op Project\OA.Model\WorkflowConsoleApplication1\obj\x86\Debug\WorkflowConsoleApplication1_MoneyActivity_CompiledExpressionRoot.cs
