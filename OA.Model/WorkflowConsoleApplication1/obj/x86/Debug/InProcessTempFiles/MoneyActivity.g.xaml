@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<w:MoneyActivity xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:w="clr-namespace:WorkflowConsoleApplication1;assembly=WorkflowConsoleApplication1" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<local:MoneyActivity xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:local="clr-namespace:WorkflowConsoleApplication1;assembly=WorkflowConsoleApplication1" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mca="clr-namespace:Microsoft.CSharp.Activities;assembly=System.Activities" xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System</x:String>
@@ -26,18 +26,62 @@
       <AssemblyReference>WorkflowConsoleApplication1</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <w:MoneyActivity.Implementation>
-    <Flowchart StartNode="{x:Reference __ReferenceID1}">
-      <FlowStep x:Name="__ReferenceID1">
-        <WriteLine Text="Start check1" />
-        <FlowStep.Next>
-          <FlowStep x:Name="__ReferenceID0">
-            <WriteLine Text="Start check2" />
-          </FlowStep>
-        </FlowStep.Next>
-      </FlowStep>
+  <local:MoneyActivity.Implementation>
+    <Flowchart>
+      <Flowchart.Variables>
+        <Variable x:TypeArguments="x:Int32" Name="GetMoney" />
+      </Flowchart.Variables>
+      <Flowchart.StartNode>
+        <FlowStep x:Name="__ReferenceID0">
+          <WriteLine Text="Start check1" />
+          <FlowStep.Next>
+            <FlowStep x:Name="__ReferenceID1">
+              <WriteLine Text="Start check2" />
+              <FlowStep.Next>
+                <FlowStep x:Name="__ReferenceID2">
+                  <local:MoneyCodeActivity>
+                    <local:MoneyCodeActivity.Money>
+                      <OutArgument x:TypeArguments="x:Int32">
+                        <mca:CSharpReference x:TypeArguments="x:Int32">GetMoney</mca:CSharpReference>
+                      </OutArgument>
+                    </local:MoneyCodeActivity.Money>
+                  </local:MoneyCodeActivity>
+                  <FlowStep.Next>
+                    <FlowStep x:Name="__ReferenceID3">
+                      <WriteLine DisplayName="Manage Check" Text="Start check3" />
+                      <FlowStep.Next>
+                        <FlowDecision x:Name="__ReferenceID4">
+                          <FlowDecision.Condition>
+                            <mca:CSharpValue x:TypeArguments="x:Boolean">GetMoney &gt; 50</mca:CSharpValue>
+                          </FlowDecision.Condition>
+                          <FlowDecision.True>
+                            <FlowStep x:Name="__ReferenceID6">
+                              <WriteLine DisplayName="Manage Check" Text="Start check5" />
+                            </FlowStep>
+                          </FlowDecision.True>
+                          <FlowDecision.False>
+                            <FlowStep x:Name="__ReferenceID5">
+                              <WriteLine DisplayName="Manage Check" Text="Start check4" />
+                            </FlowStep>
+                          </FlowDecision.False>
+                        </FlowDecision>
+                      </FlowStep.Next>
+                    </FlowStep>
+                  </FlowStep.Next>
+                </FlowStep>
+              </FlowStep.Next>
+            </FlowStep>
+          </FlowStep.Next>
+        </FlowStep>
+      </Flowchart.StartNode>
       <x:Reference>__ReferenceID0</x:Reference>
-      <sads:DebugSymbol.Symbol>d0hEOlxDby1vcCBQcm9qZWN0XE9BLk1vZGVsXFdvcmtmbG93Q29uc29sZUFwcGxpY2F0aW9uMVxNb25leUFjdGl2aXR5LnhhbWwFJQMzDwIBAScHJ1YCAQQqCypaAgECJxcnJQIBBSobKikCAQM=</sads:DebugSymbol.Symbol>
+      <x:Reference>__ReferenceID1</x:Reference>
+      <x:Reference>__ReferenceID2</x:Reference>
+      <x:Reference>__ReferenceID3</x:Reference>
+      <x:Reference>__ReferenceID4</x:Reference>
+      <x:Reference>__ReferenceID5</x:Reference>
+      <x:Reference>__ReferenceID6</x:Reference>
+      <sads:DebugSymbol.Symbol>d0hEOlxDby1vcCBQcm9qZWN0XE9BLk1vZGVsXFdvcmtmbG93Q29uc29sZUFwcGxpY2F0aW9uMVxNb25leUFjdGl2aXR5LnhhbWwOJwNkDwIBAS0JLVgCAQ8wDTBcAgENMxE6KwIBCj0VPX8CAQhBG0FqAgEGSx1LhwECAQRFHUWHAQIBAi1HLVUCARAwSzBZAgEONhc2ZAIBCz1APU4CAQlLSEtWAgEFRUhFVgIBAw==</sads:DebugSymbol.Symbol>
     </Flowchart>
-  </w:MoneyActivity.Implementation>
-</w:MoneyActivity>
+  </local:MoneyActivity.Implementation>
+</local:MoneyActivity>

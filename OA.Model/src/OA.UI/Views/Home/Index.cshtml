@@ -145,7 +145,7 @@
     function f_open(url, title, icon) {
         var win = $.ligerDialog.open(
         { height: 450, url: url, width: 850, showMax: true, showToggle: true, showMin: true, isResize: true, modal: true, title: title, slide: false, buttons: [
-            { text: '确定', onclick: function (item, Dialog, index) {
+            { text: 'Ok', onclick: function (item, Dialog, index) {
                 win.hide();
             }
             }
@@ -160,9 +160,9 @@
 
     // 1.1 icon array.
     var links = [
-            { icon: '../../images/unnamed.png', title: 'User Management', url: '/UserInfo/index' },
-            { icon: '~/lib/jquery-LigerUI-V1.3.3/images/3DSMAX.png', title: 'Role Management', url: '/RoleInfo/index' },
-            { icon: '~/lib/jquery-LigerUI-V1.3.3/images/3DSMAX.png', title: 'Permission Management', url: '/ActionInfo/index' }
+            //{ icon: '../../images/unnamed.png', title: 'User Management', url: '/UserInfo/index' },
+            //{ icon: '~/lib/jquery-LigerUI-V1.3.3/images/3DSMAX.png', title: 'Role Management', url: '/RoleInfo/index' },
+            //{ icon: '~/lib/jquery-LigerUI-V1.3.3/images/3DSMAX.png', title: 'Permission Management', url: '/ActionInfo/index' }
         ];
 
     // 2.resize window.
@@ -170,7 +170,7 @@
         var linksHeight = $(window).height() - TASKBARHEIGHT - 50;
         var winlinks = $("#winlinks");
         winlinks.height(linksHeight);
-        var colMaxNumber = parseInt(linksHeight / LINKHEIGHT);//一列最多显示几个快捷方式
+        var colMaxNumber = parseInt(linksHeight / LINKHEIGHT);
         for (var i = 0, l = links.length; i < l; i++) {
             var link = links[i];
             var jlink = $("li[linkindex=" + i + "]", winlinks);
@@ -209,8 +209,15 @@
     $.ligerui.win.removeTaskbar = function () { }; //不允许移除
     $.ligerui.win.createTaskbar(); //页面加载时创建任务栏
 
-    linksInit();
-    onResize();
+    $.getJSON("/Home/GetMenuItmes", {}, function (data) {
+        // get menu Items depend on user.
+        links = data;
+
+        linksInit();
+        onResize();
+    });
+    //linksInit();
+    //onResize();
 
 </script>
 </html>

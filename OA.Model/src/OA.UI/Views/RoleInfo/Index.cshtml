@@ -64,14 +64,14 @@
                     }
                 }, {
                     id: 'btnAdd',
-                    text: 'Add User',
+                    text: 'Add Role Information',
                     iconCls: 'icon-add',
                     handler: function () {
                         addInfo();
                     }
                 }, {
                     id: 'btnEdit',
-                    text: 'Edit User',
+                    text: 'Edit Role Information',
                     iconCls: 'icon-edit',
                     handler: function () {
                         editInfo();
@@ -119,6 +119,10 @@
                         var chilidWindow = $("#editFrame")[0].contentWindow;
                         // use child window function called "subEditFrom".
                         chilidWindow.subEditForm();
+
+                        $('#editDiv').dialog('close');
+                        $('#tt').datagrid('reload'); // reload info.
+                        $("#editForm input").val("");
                     }
                 }, {
                     text: 'Cancel',
