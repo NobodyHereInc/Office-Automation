@@ -1,0 +1,5 @@
+D:\Co-op Project\OASystem\OA.Common\bin\Debug\OA.Common.dll
+D:\Co-op Project\OASystem\OA.Common\bin\Debug\OA.Common.pdb
+D:\Co-op Project\OASystem\OA.Common\obj\Debug\OA.Common.csprojResolveAssemblyReference.cache
+D:\Co-op Project\OASystem\OA.Common\obj\Debug\OA.Common.dll
+D:\Co-op Project\OASystem\OA.Common\obj\Debug\OA.Common.pdb

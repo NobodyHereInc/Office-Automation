@@ -1,0 +1,12 @@
+D:\Co-op Project\OASystem\OA.DAL\bin\Debug\OA.DAL.dll.config
+D:\Co-op Project\OASystem\OA.DAL\bin\Debug\OA.DAL.dll
+D:\Co-op Project\OASystem\OA.DAL\bin\Debug\OA.DAL.pdb
+D:\Co-op Project\OASystem\OA.DAL\bin\Debug\EntityFramework.dll
+D:\Co-op Project\OASystem\OA.DAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\Co-op Project\OASystem\OA.DAL\bin\Debug\OA.Model.dll
+D:\Co-op Project\OASystem\OA.DAL\bin\Debug\OA.Model.pdb
+D:\Co-op Project\OASystem\OA.DAL\bin\Debug\EntityFramework.xml
+D:\Co-op Project\OASystem\OA.DAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\Co-op Project\OASystem\OA.DAL\obj\Debug\OA.DAL.csprojResolveAssemblyReference.cache
+D:\Co-op Project\OASystem\OA.DAL\obj\Debug\OA.DAL.dll
+D:\Co-op Project\OASystem\OA.DAL\obj\Debug\OA.DAL.pdb

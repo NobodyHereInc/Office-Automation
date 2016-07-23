@@ -1,0 +1,5 @@
+D:\Co-op Project\OASystem\OA.DalFactory\bin\Debug\OA.DalFactory.dll
+D:\Co-op Project\OASystem\OA.DalFactory\bin\Debug\OA.DalFactory.pdb
+D:\Co-op Project\OASystem\OA.DalFactory\obj\Debug\OA.DalFactory.csprojResolveAssemblyReference.cache
+D:\Co-op Project\OASystem\OA.DalFactory\obj\Debug\OA.DalFactory.dll
+D:\Co-op Project\OASystem\OA.DalFactory\obj\Debug\OA.DalFactory.pdb

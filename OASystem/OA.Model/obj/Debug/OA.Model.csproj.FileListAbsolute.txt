@@ -1,0 +1,10 @@
+D:\Co-op Project\OASystem\OA.Model\bin\Debug\OA.Model.dll.config
+D:\Co-op Project\OASystem\OA.Model\bin\Debug\OA.Model.dll
+D:\Co-op Project\OASystem\OA.Model\bin\Debug\OA.Model.pdb
+D:\Co-op Project\OASystem\OA.Model\bin\Debug\EntityFramework.dll
+D:\Co-op Project\OASystem\OA.Model\bin\Debug\EntityFramework.SqlServer.dll
+D:\Co-op Project\OASystem\OA.Model\bin\Debug\EntityFramework.xml
+D:\Co-op Project\OASystem\OA.Model\bin\Debug\EntityFramework.SqlServer.xml
+D:\Co-op Project\OASystem\OA.Model\obj\Debug\OA.Model.csprojResolveAssemblyReference.cache
+D:\Co-op Project\OASystem\OA.Model\obj\Debug\OA.Model.dll
+D:\Co-op Project\OASystem\OA.Model\obj\Debug\OA.Model.pdb

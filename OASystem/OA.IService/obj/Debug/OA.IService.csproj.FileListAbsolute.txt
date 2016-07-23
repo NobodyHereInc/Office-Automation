@@ -1,0 +1,5 @@
+D:\Co-op Project\OASystem\OA.IService\bin\Debug\OA.IService.dll
+D:\Co-op Project\OASystem\OA.IService\bin\Debug\OA.IService.pdb
+D:\Co-op Project\OASystem\OA.IService\obj\Debug\OA.IService.csprojResolveAssemblyReference.cache
+D:\Co-op Project\OASystem\OA.IService\obj\Debug\OA.IService.dll
+D:\Co-op Project\OASystem\OA.IService\obj\Debug\OA.IService.pdb
