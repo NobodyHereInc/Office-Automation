@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<objects>
+  <object type="OA.Service.UserInfoService, OA.Service" singleton="false" name="userInfoService" >
+  </object>
+</objects>

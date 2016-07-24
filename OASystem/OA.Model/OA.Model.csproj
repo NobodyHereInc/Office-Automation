@@ -82,6 +82,8 @@
     <Compile Include="R_UserInfo_ActionInfo.cs">
       <DependentUpon>OA.tt</DependentUpon>
     </Compile>
+    <Compile Include="SearchParam\BaseParam.cs" />
+    <Compile Include="SearchParam\UserInfoFilter.cs" />
     <Compile Include="sysdiagram.cs">
       <DependentUpon>OA.tt</DependentUpon>
     </Compile>

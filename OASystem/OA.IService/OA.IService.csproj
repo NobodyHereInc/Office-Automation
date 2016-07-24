@@ -40,7 +40,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IBaseService.cs" />
+    <Compile Include="IUserInfoService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\OA.Common\OA.Common.csproj">
+      <Project>{95a313ef-167b-4014-ae0b-2e0d1b3748de}</Project>
+      <Name>OA.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OA.DAL\OA.DAL.csproj">
+      <Project>{6dd858cb-bf00-4589-9df4-42b9614c0e4c}</Project>
+      <Name>OA.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OA.IDAL\OA.IDAL.csproj">
+      <Project>{C12C501C-74B7-4DAE-B732-EAA3EEE2D3F0}</Project>
+      <Name>OA.IDAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OA.Model\OA.Model.csproj">
+      <Project>{ef0c73d8-e13b-4720-9998-0e9cf510fb5c}</Project>
+      <Name>OA.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

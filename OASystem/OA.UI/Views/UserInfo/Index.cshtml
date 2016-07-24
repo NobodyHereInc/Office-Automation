@@ -1,0 +1,388 @@
+﻿@{
+    Layout = null;
+}
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title></title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/easyUI/themes/bootstrap/easyui.css" rel="stylesheet" />
+    <link href="~/Content/easyUI/themes/icon.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-3.1.0.min.js"></script>
+    <script src="~/Content/easyUI/jquery.easyui.min.js"></script>
+    <script src="~/Content/easyUI/locale/easyui-lang-en.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="~/Scripts/datapattern.js"></script> 
+    <script>
+        $(function () {
+            $('#addDiv').css("display", "none");
+            $('#editDiv').css("display", "none");
+            $('#setUserRoleDiv').css("display", "none");
+            $('#setUserActionDiv').css("display", "none");
+
+            loadData();
+            $('#btnSerach').click(function () {
+                var pars = {
+                    name: $("#txtUName").val(),
+                    remark: $("#txtURemark").val()
+                }
+                loadData(pars);
+            });
+        });
+
+        function loadData(pars) {
+            $('#tt').datagrid({
+                url: '/UserInfo/GetUserInfo',
+                title: 'User Info Table',
+                fitColumns: true,
+                nowrap: false,
+                idField: 'UserId',
+                loadMsg: 'Loading User Information...', // Loading message.
+                pagination: true, // whether speprate page.
+                singleSelect: false, // whether Select a single row.
+                pageSize: 10, // Page Size
+                pageNumber: 1, // Start Page
+                pageList: [10, 15, 20],
+                queryParams: pars, // send parameters to back-end.
+                columns: [[
+                    { field: 'ck', checkbox: true, align: 'left', width: 50 },
+					{ field: 'UserId', title: 'ID', width: 80 },
+					{ field: 'UserName', title: 'User Name', width: 120 },
+                    { field: 'UPwd', title: 'PassWord', width: 120 },
+                    { field: 'Remark', title: 'Remark', width: 120 },
+					{
+					    field: 'SubTime', title: 'Submit Time', width: 120, align: 'right',
+					    formatter: function (value, row, index) {
+					        return (eval(value.replace(/\/Date\((\d+)\)\//gi, "new Date($1)"))).pattern("yyyy-M-d");
+					    }
+					}
+                ]],
+                toolbar: [{
+                    id: 'btnDelete',
+                    text: 'Delete',
+                    iconCls: 'icon-remove',
+                    handler: function () {
+                        deleteInfo();
+                    }
+                }, {
+                    id: 'btnAdd',
+                    text: 'Add User',
+                    iconCls: 'icon-add',
+                    handler: function () {
+                        addInfo();
+                    }
+                }, {
+                    id: 'btnEdit',
+                    text: 'Edit User',
+                    iconCls: 'icon-edit',
+                    handler: function () {
+                        editInfo();
+                    }
+                }, {
+                    id: 'btnSetRole',
+                    text: 'Set Role For User',
+                    iconCls: 'icon-edit',
+                    handler: function () {
+                        //setUserRole();
+                    }
+                }, {
+                    id: 'btnSetAction',
+                    text: 'Set Special Permission for User',
+                    iconCls: 'icon-edit',
+                    handler: function () {
+                        //setUserAction();
+                    }
+                }],
+            });
+        }
+
+        // set user Action.
+        function setUserAction()
+        {
+            var rows = $('#tt').datagrid('getSelections');
+
+            if (rows.length != 1) {
+                $.messager.alert("Error Message", "Please select one user!", "error")
+                return;
+            }
+
+            $('#setUserActionDiv').css("display", "block");
+
+            //
+            $("#setUserActionFrame").attr("src", "/UserInfo/SetUserActionInfo/?id=" + rows[0].userId)
+            // dialog for editForm (easyUI)
+            $('#setUserActionDiv').dialog({
+                title: "Set Special Permission For User",
+                modal: true,
+                collapsible: true,
+                width: 750,
+                height: 400,
+                buttons: [{
+                    text: 'Ok',
+                    iconCls: 'icon-ok',
+                    handler: function () {
+                        //check input data !----------------
+
+                        //get child window object.
+                        var chilidWindow = $("#setUserActionFrame")[0].contentWindow;
+                        // use child window function called "subEditFrom".
+                        chilidWindow.subSetUserActionForm();
+
+                        $('#setUserActionDiv').dialog('close');
+                        $('#tt').datagrid('reload'); // reload info.
+                        $("#setUserActionFrame input").val("");
+                    }
+                }, {
+                    text: 'Cancel',
+                    handler: function () {
+                        $('#setUserActionDiv').dialog('close');
+                        $('#tt').datagrid('reload'); // reload info.
+                        $("#setUserActionFrame input").val("");
+                    }
+                }]
+            });
+
+        }
+
+        // Set setUserRole();
+        function setUserRole() {
+            var rows = $('#tt').datagrid('getSelections');
+
+            if (rows.length != 1) {
+                $.messager.alert("Error Message", "Please select one user!", "error")
+                return;
+            }
+
+            // display editDiv div
+            $('#setUserRoleDiv').css("display", "block");
+
+            //
+            $("#setUserRoleFrame").attr("src", "/UserInfo/SetRoleInfo/?id=" + rows[0].userId)
+            // dialog for editForm (easyUI)
+            $('#setUserRoleDiv').dialog({
+                title: "Set Role For User",
+                modal: true,
+                collapsible: true,
+                width: 400,
+                height: 500,
+                buttons: [{
+                    text: 'Ok',
+                    iconCls: 'icon-ok',
+                    handler: function () {
+                        //check input data !----------------
+
+                        //get child window object.
+                        var chilidWindow = $("#setUserRoleFrame")[0].contentWindow;
+                        // use child window function called "subEditFrom".
+                        chilidWindow.subSetRoleForm();
+
+                        $('#setUserRoleDiv').dialog('close');
+                        $('#tt').datagrid('reload'); // reload info.
+                        $("#setUserRoleFrame input").val("");
+                    }
+                }, {
+                    text: 'Cancel',
+                    handler: function () {
+                        $('#setUserRoleDiv').dialog('close');
+                        $('#tt').datagrid('reload'); // reload info.
+                        $("#setUserRoleFrame input").val("");
+                    }
+                }]
+            });
+        }
+
+        // after set
+        function afterSet()
+        {
+            $('#setUserRoleDiv').dialog('close');
+            $('#tt').datagrid('reload'); // reload info.
+            $("#editForm input").val(""); // clear input last data.
+        }
+
+        //Modify User Info.
+        function editInfo()
+        {
+            var rows = $('#tt').datagrid('getSelections');
+
+            if (rows.length != 1) {
+                $.messager.alert("Error Message", "Please select one user!", "error")
+                return;
+            }
+
+            // display editDiv div
+            $('#editDiv').css("display", "block");
+
+            //
+            $("#editFrame").attr("src", "/UserInfo/ShowEditUserInfo/?id=" + rows[0].UserId)
+
+            // dialog for editForm (easyUI)
+            $('#editDiv').dialog({
+                title: "Edit User Information",
+                modal: true,
+                collapsible: true,
+                width: 400,
+                height: 500,
+                buttons: [{
+                    text: 'Ok',
+                    iconCls: 'icon-ok',
+                    handler: function () {
+                        //check input data !----------------
+
+                        //get child window object.
+                        var chilidWindow = $("#editFrame")[0].contentWindow;
+                        // use child window function called "subEditFrom".
+                        chilidWindow.subEditForm();
+                        $('#tt').datagrid('reload'); // reload info.
+                    }
+                }, {
+                    text: 'Cancel',
+                    handler: function () {
+                        $('#editDiv').dialog('close');                  
+                        $("#editForm input").val("");
+                    }
+                }]
+            });
+        }
+
+        // After edit user
+        function afterEdit()
+        {
+            $('#editDiv').dialog('close');
+            $('#tt').datagrid('reload'); // reload info.
+            $("#editForm input").val(""); // clear input last data.
+        }
+
+        //Add User Info.
+        function addInfo()
+        {
+            // display form
+            $('#addDiv').css("display", "block");
+
+            // dialog for addForm (easyUI)
+            $('#addDiv').dialog({
+                title: "Add User Information",
+                modal: true,
+                collapsible: true,
+                width: 300,
+                height: 200,
+                buttons: [{
+                    text: 'Ok',
+                    iconCls: 'icon-ok',
+                    handler: function () {
+                        //check input data !----------------
+
+                        $("#addForm").submit();//Submit form
+                    }
+                }, {
+                    text: 'Cancel',
+                    handler: function () {
+                        $('#addDiv').dialog('close');
+                        $('#tt').datagrid('reload'); // reload info.
+                        $("#addForm input").val("");
+                    }
+                }]
+            });
+        }
+
+        // afterAdd
+        function afterAdd() {
+            $('#addDiv').dialog('close');
+            $('#tt').datagrid('reload'); // reload info.
+            $("#addForm input").val(""); // clear input last data.
+        }
+
+        //Delete User Info.
+        function deleteInfo()
+        {
+            // get all seleted rows.
+            var rows = $('#tt').datagrid('getSelections');
+
+            //
+            if (!rows || rows.length == 0) {
+                // alart error message
+                $.messager.alert("Error Message", "Please select item to delete!", "error");
+                return;
+            }
+
+            if ($.messager.confirm("Message", "Are you sure you want to remove this user?", function (r) {
+                if (r) { // user click "OK"
+                    // get what want to delete.
+                    var strId = "";
+                    for (var i = 0; i < rows.length; i++) {
+                        strId = strId + rows[i].UserId + ","
+                    }
+
+                    // delete last ","
+                    strId = strId.substr(0, strId.length - 1);
+
+                    // request to server-side (post method)
+                    $.post("/UserInfo/DeleteUserInfo", { "strId": strId }, function (data) {
+                            if (data = "Ok") {
+                                $('#tt').datagrid("reload");
+                                $('#tt').datagrid("clearSelections");
+                            }
+                            else{
+
+                            }
+                    });
+                }
+            }));
+        }
+    </script>
+</head>
+<body>
+    
+    <!---------------------------------- START Display User Infromation --------------------------->
+    <div class="container">
+        <div class="row">
+            <div>
+                User Name:<input type="text" id="txtUName" />&nbsp;&nbsp;Remark:<input type="text" id="txtURemark" /><button id="btnSerach" class="btn btn-info btn-md">Search</button>
+            </div>
+            <div>
+                <table id="tt" class="table-responsive col-md-2 col-md-8" title="" iconcls="icon-edit"></table>
+            </div>
+        </div>
+    </div>
+
+    <!---------------------------------- END Display User Infromation ------------------------------>
+    <!---------------------------------- START Add User Information dialog ------------------------->
+    <div id="addDiv">
+        <form action="AddUserInfo" data-ajax="true" data-ajax-method="POST" data-ajax-success="afterAdd" id="addForm">
+            <table class="table-responsive">
+                <tr>
+                    <td>User Name</td>
+                    <td><input type="text" name="uName" /></td>
+                </tr>
+                <tr>
+                    <td>Pass Word</td>
+                    <td><input type="password" name="uPwd" /></td>
+                </tr>
+                <tr>
+                    <td>Remark</td>
+                    <td><input type="text" name="remark" /></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <!---------------------------------- END Add User Information dialog --------------------------->
+    <!----------------------- START Update User Information -------------------------->
+    <div id="editDiv">
+        <iframe id="editFrame" frameborder="0" width="100%" height="100%"></iframe>
+    </div>
+    <!----------------------- END Update User Information ---------------------------->
+    <!------------------------- START Set role For User ------------------------------->
+    <div id="setUserRoleDiv">
+        <iframe id="setUserRoleFrame" frameborder="0" width="100%" height="100%"></iframe>
+    </div>
+    <!---------------------- END Set Role For User ------------------------------------>
+    <!------------------------- START Set special Permission For User ------------------------------->
+    <div id="setUserActionDiv" style="overflow:hidden">
+        <iframe id="setUserActionFrame" frameborder="0" width="100%" height="100%"></iframe>
+    </div>
+    <!---------------------- END Set special Permission For User ------------------------------------>
+</body>
+</html>

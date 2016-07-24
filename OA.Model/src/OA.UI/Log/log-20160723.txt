@@ -1,0 +1,325 @@
+﻿2016-07-23 10:46:24.030 -04:00 [Information] User profile is available. Using '"C:\Users\owner\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2016-07-23 10:46:24.224 -04:00 [Debug] Hosting starting
+2016-07-23 10:46:24.460 -04:00 [Debug] Hosting started
+2016-07-23 10:46:24.481 -04:00 [Debug] Connection id ""0HKTJ10FADKN0"" started.
+2016-07-23 10:46:24.481 -04:00 [Debug] Connection id ""0HKTJ10FADKN1"" started.
+2016-07-23 10:46:24.642 -04:00 [Information] Request starting HTTP/1.1 GET http://localhost:55839/  
+2016-07-23 10:46:24.642 -04:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:55839/  0
+2016-07-23 10:46:24.737 -04:00 [Information] Request finished in 130.2506ms 200 
+2016-07-23 10:46:24.800 -04:00 [Debug] Connection id ""0HKTJ10FADKN1"" completed keep alive response.
+2016-07-23 10:46:24.801 -04:00 [Debug] The request path "/" does not match a supported file type
+2016-07-23 10:46:24.846 -04:00 [Debug] Reading data from file '"C:\Users\owner\AppData\Local\ASP.NET\DataProtection-Keys\key-cb9f45e1-4ed9-48c0-bff0-6e92031944f4.xml"'.
+2016-07-23 10:46:24.857 -04:00 [Debug] Found key {cb9f45e1-4ed9-48c0-bff0-6e92031944f4}.
+2016-07-23 10:46:24.874 -04:00 [Debug] Considering key {cb9f45e1-4ed9-48c0-bff0-6e92031944f4} with expiration date 2016-10-04 12:23:19Z as default key.
+2016-07-23 10:46:24.885 -04:00 [Debug] Decrypting secret element using Windows DPAPI.
+2016-07-23 10:46:24.900 -04:00 [Debug] Opening CNG algorithm '"AES"' from provider 'null' with chaining mode CBC.
+2016-07-23 10:46:24.909 -04:00 [Debug] Opening CNG algorithm '"SHA256"' from provider 'null' with HMAC.
+2016-07-23 10:46:24.920 -04:00 [Debug] Using key {cb9f45e1-4ed9-48c0-bff0-6e92031944f4} as the default key.
+2016-07-23 10:46:25.125 -04:00 [Debug] Request successfully matched the route with name '"default"' and template '"{controller=Login}/{action=Index}/{id?}"'.
+2016-07-23 10:46:25.211 -04:00 [Debug] Executing action "OA.UI.Controllers.LoginController.Index (OA.UI)"
+2016-07-23 10:46:25.535 -04:00 [Information] Executing action method "OA.UI.Controllers.LoginController.Index (OA.UI)" with arguments (null) - ModelState is Valid
+2016-07-23 10:46:25.544 -04:00 [Debug] Executed action method "OA.UI.Controllers.LoginController.Index (OA.UI)", returned result "Microsoft.AspNetCore.Mvc.ViewResult".
+2016-07-23 10:46:25.704 -04:00 [Debug] View lookup cache miss for view '"Index"' in controller '"Login"'.
+2016-07-23 10:46:25.725 -04:00 [Debug] Code generation for the Razor file at '"/Views/Login/Index.cshtml"' started.
+2016-07-23 10:46:26.229 -04:00 [Debug] Code generation for the Razor file at '"/Views/Login/Index.cshtml"' completed in 500.7168ms.
+2016-07-23 10:46:26.254 -04:00 [Debug] Compilation of the generated code for the Razor file at '"/Views/Login/Index.cshtml"' started.
+2016-07-23 10:46:27.924 -04:00 [Debug] Compilation of the generated code for the Razor file at '"/Views/Login/Index.cshtml"' completed in 1670.0939ms.
+2016-07-23 10:46:27.929 -04:00 [Debug] Code generation for the Razor file at '"/Views/_ViewStart.cshtml"' started.
+2016-07-23 10:46:27.935 -04:00 [Debug] Code generation for the Razor file at '"/Views/_ViewStart.cshtml"' completed in 6.2747ms.
+2016-07-23 10:46:27.935 -04:00 [Debug] Compilation of the generated code for the Razor file at '"/Views/_ViewStart.cshtml"' started.
+2016-07-23 10:46:27.984 -04:00 [Debug] Compilation of the generated code for the Razor file at '"/Views/_ViewStart.cshtml"' completed in 49.4984ms.
+2016-07-23 10:46:27.991 -04:00 [Debug] The view '"Index"' was found.
+2016-07-23 10:46:27.993 -04:00 [Information] Executing ViewResult, running view at path "/Views/Login/Index.cshtml".
+2016-07-23 10:46:28.233 -04:00 [Debug] A new antiforgery cookie token was created.
+2016-07-23 10:46:29.438 -04:00 [Information] Executed action "OA.UI.Controllers.LoginController.Index (OA.UI)" in 4225.8736ms
+2016-07-23 10:46:29.518 -04:00 [Information] Request finished in 4921.615ms 200 text/html; charset=utf-8
+2016-07-23 10:46:29.523 -04:00 [Debug] Connection id ""0HKTJ10FADKN0"" completed keep alive response.
+2016-07-23 10:46:30.032 -04:00 [Information] Request starting HTTP/1.1 GET http://localhost:55839/lib/jquery/dist/jquery.js  
+2016-07-23 10:46:30.036 -04:00 [Information] Request starting HTTP/1.1 GET http://localhost:55839/lib/jquery-unobtrusive-ajax/jquery.unobtrusive-ajax.min.js  
+2016-07-23 10:46:30.054 -04:00 [Information] The file "/lib/jquery-unobtrusive-ajax/jquery.unobtrusive-ajax.min.js" was not modified
+2016-07-23 10:46:30.054 -04:00 [Information] The file "/lib/jquery/dist/jquery.js" was not modified
+2016-07-23 10:46:30.088 -04:00 [Debug] Handled. Status code: 304 File: "/lib/jquery/dist/jquery.js"
+2016-07-23 10:46:30.088 -04:00 [Debug] Handled. Status code: 304 File: "/lib/jquery-unobtrusive-ajax/jquery.unobtrusive-ajax.min.js"
+2016-07-23 10:46:30.111 -04:00 [Information] Request finished in 79.6349ms 304 application/javascript
+2016-07-23 10:46:30.112 -04:00 [Information] Request finished in 76.2358ms 304 application/javascript
+2016-07-23 10:46:30.117 -04:00 [Debug] Connection id ""0HKTJ10FADKN1"" completed keep alive response.
+2016-07-23 10:46:30.119 -04:00 [Debug] Connection id ""0HKTJ10FADKN0"" completed keep alive response.
+2016-07-23 10:46:31.885 -04:00 [Information] Request starting HTTP/1.1 POST http://localhost:55839/Login/CheckLogin application/x-www-form-urlencoded; charset=UTF-8 264
+2016-07-23 10:46:31.888 -04:00 [Debug] "POST" requests are not supported
+2016-07-23 10:46:31.888 -04:00 [Debug] Request successfully matched the route with name '"default"' and template '"{controller=Login}/{action=Index}/{id?}"'.
+2016-07-23 10:46:31.889 -04:00 [Information] Request starting HTTP/1.1 POST http://localhost:55839/Login/CheckLogin application/x-www-form-urlencoded; charset=UTF-8 264
+2016-07-23 10:46:31.892 -04:00 [Debug] Executing action "OA.UI.Controllers.LoginController.CheckLogin (OA.UI)"
+2016-07-23 10:46:31.892 -04:00 [Debug] "POST" requests are not supported
+2016-07-23 10:46:31.892 -04:00 [Debug] Request successfully matched the route with name '"default"' and template '"{controller=Login}/{action=Index}/{id?}"'.
+2016-07-23 10:46:31.892 -04:00 [Information] Executing action method "OA.UI.Controllers.LoginController.CheckLogin (OA.UI)" with arguments (null) - ModelState is Valid
+2016-07-23 10:46:31.892 -04:00 [Debug] Executing action "OA.UI.Controllers.LoginController.CheckLogin (OA.UI)"
+2016-07-23 10:46:31.899 -04:00 [Information] Executing action method "OA.UI.Controllers.LoginController.CheckLogin (OA.UI)" with arguments (null) - ModelState is Valid
+2016-07-23 10:46:33.590 -04:00 [Debug] Executed action method "OA.UI.Controllers.LoginController.CheckLogin (OA.UI)", returned result "Microsoft.AspNetCore.Mvc.ContentResult".
+2016-07-23 10:46:33.590 -04:00 [Debug] Executed action method "OA.UI.Controllers.LoginController.CheckLogin (OA.UI)", returned result "Microsoft.AspNetCore.Mvc.ContentResult".
+2016-07-23 10:46:33.606 -04:00 [Information] Executing ContentResult with HTTP Response ContentType of "text/plain; charset=utf-8"
+2016-07-23 10:46:33.606 -04:00 [Information] Executing ContentResult with HTTP Response ContentType of "text/plain; charset=utf-8"
+2016-07-23 10:46:33.606 -04:00 [Information] Executed action "OA.UI.Controllers.LoginController.CheckLogin (OA.UI)" in 1722.8919ms
+2016-07-23 10:46:33.606 -04:00 [Information] Executed action "OA.UI.Controllers.LoginController.CheckLogin (OA.UI)" in 1721.0233ms
+2016-07-23 10:46:33.622 -04:00 [Information] Session started; Key:"fc3d27ac-73a2-68b4-8ef9-d6c3fe31efd1", Id:"ae8ea37e-6d54-72c1-3d5a-0595cf853b6f"
+2016-07-23 10:46:33.622 -04:00 [Information] Session started; Key:"6b27a014-0e40-c6a7-a271-0ac8fca786df", Id:"a4c76b1f-be34-ce76-1771-dfe895fd7bb8"
+2016-07-23 10:46:33.653 -04:00 [Debug] Session stored; Key:"6b27a014-0e40-c6a7-a271-0ac8fca786df", Id:"a4c76b1f-be34-ce76-1771-dfe895fd7bb8", Count:1
+2016-07-23 10:46:33.653 -04:00 [Debug] Session stored; Key:"fc3d27ac-73a2-68b4-8ef9-d6c3fe31efd1", Id:"ae8ea37e-6d54-72c1-3d5a-0595cf853b6f", Count:1
+2016-07-23 10:46:33.653 -04:00 [Information] Request finished in 1780.495ms 200 text/plain; charset=utf-8
+2016-07-23 10:46:33.669 -04:00 [Information] Request finished in 1778.2278ms 200 text/plain; charset=utf-8
+2016-07-23 10:46:33.669 -04:00 [Debug] Connection id ""0HKTJ10FADKN1"" completed keep alive response.
+2016-07-23 10:46:33.669 -04:00 [Debug] Connection id ""0HKTJ10FADKN0"" completed keep alive response.
+2016-07-23 10:46:33.685 -04:00 [Information] Request starting HTTP/1.1 GET http://localhost:55839/Home/Index  
+2016-07-23 10:46:33.688 -04:00 [Debug] The request path "/Home/Index" does not match a supported file type
+2016-07-23 10:46:33.699 -04:00 [Debug] Request successfully matched the route with name '"default"' and template '"{controller=Login}/{action=Index}/{id?}"'.
+2016-07-23 10:46:33.700 -04:00 [Debug] Executing action "OA.UI.Controllers.HomeController.Index (OA.UI)"
+2016-07-23 10:46:33.715 -04:00 [Debug] Session loaded; Key:"fc3d27ac-73a2-68b4-8ef9-d6c3fe31efd1", Id:"ae8ea37e-6d54-72c1-3d5a-0595cf853b6f", Count:1
+2016-07-23 10:46:33.731 -04:00 [Information] Executing action method "OA.UI.Controllers.HomeController.Index (OA.UI)" with arguments (null) - ModelState is Valid
+2016-07-23 10:46:33.734 -04:00 [Debug] Executed action method "OA.UI.Controllers.HomeController.Index (OA.UI)", returned result "Microsoft.AspNetCore.Mvc.ViewResult".
+2016-07-23 10:46:33.735 -04:00 [Debug] View lookup cache miss for view '"Index"' in controller '"Home"'.
+2016-07-23 10:46:33.738 -04:00 [Debug] Code generation for the Razor file at '"/Views/Home/Index.cshtml"' started.
+2016-07-23 10:46:33.795 -04:00 [Debug] Code generation for the Razor file at '"/Views/Home/Index.cshtml"' completed in 56.3448ms.
+2016-07-23 10:46:33.795 -04:00 [Debug] Compilation of the generated code for the Razor file at '"/Views/Home/Index.cshtml"' started.
+2016-07-23 10:46:33.875 -04:00 [Debug] Compilation of the generated code for the Razor file at '"/Views/Home/Index.cshtml"' completed in 80.4297ms.
+2016-07-23 10:46:33.877 -04:00 [Debug] The view '"Index"' was found.
+2016-07-23 10:46:33.877 -04:00 [Information] Executing ViewResult, running view at path "/Views/Home/Index.cshtml".
+2016-07-23 10:46:34.901 -04:00 [Information] Executed action "OA.UI.Controllers.HomeController.Index (OA.UI)" in 1201.1641ms
+2016-07-23 10:46:34.907 -04:00 [Information] Request finished in 1222.1857ms 200 text/html; charset=utf-8
+2016-07-23 10:46:34.910 -04:00 [Debug] Connection id ""0HKTJ10FADKN1"" completed keep alive response.
+2016-07-23 10:46:35.291 -04:00 [Information] Request starting HTTP/1.1 GET http://localhost:55839/images/applebg.jpg  
+2016-07-23 10:46:35.295 -04:00 [Information] The file "/images/applebg.jpg" was not modified
+2016-07-23 10:46:35.297 -04:00 [Debug] Handled. Status code: 304 File: "/images/applebg.jpg"
+2016-07-23 10:46:35.301 -04:00 [Information] Request finished in 9.8623ms 304 image/jpeg
+2016-07-23 10:46:35.303 -04:00 [Debug] Connection id ""0HKTJ10FADKN0"" completed keep alive response.
+2016-07-23 10:46:35.325 -04:00 [Information] Request starting HTTP/1.1 GET http://localhost:55839/Home/GetMenuItmes  
+2016-07-23 10:46:35.329 -04:00 [Debug] The request path "/Home/GetMenuItmes" does not match a supported file type
+2016-07-23 10:46:35.329 -04:00 [Debug] Request successfully matched the route with name '"default"' and template '"{controller=Login}/{action=Index}/{id?}"'.
+2016-07-23 10:46:35.330 -04:00 [Debug] Executing action "OA.UI.Controllers.HomeController.GetMenuItmes (OA.UI)"
+2016-07-23 10:46:35.330 -04:00 [Debug] Session loaded; Key:"fc3d27ac-73a2-68b4-8ef9-d6c3fe31efd1", Id:"ae8ea37e-6d54-72c1-3d5a-0595cf853b6f", Count:1
+2016-07-23 10:46:35.332 -04:00 [Information] Executing action method "OA.UI.Controllers.HomeController.GetMenuItmes (OA.UI)" with arguments (null) - ModelState is Valid
+2016-07-23 10:46:35.486 -04:00 [Debug] Executed action method "OA.UI.Controllers.HomeController.GetMenuItmes (OA.UI)", returned result "Microsoft.AspNetCore.Mvc.JsonResult".
+2016-07-23 10:46:35.490 -04:00 [Information] Executing JsonResult, writing value "System.Linq.Enumerable+SelectListIterator`2[OA.Model.ActionInfo,<>f__AnonymousType2`3[System.String,System.String,System.String]]".
+2016-07-23 10:46:35.691 -04:00 [Information] Executed action "OA.UI.Controllers.HomeController.GetMenuItmes (OA.UI)" in 361.2383ms
+2016-07-23 10:46:35.696 -04:00 [Information] Request finished in 371.3298ms 200 application/json; charset=utf-8
+2016-07-23 10:46:35.699 -04:00 [Debug] Connection id ""0HKTJ10FADKN1"" completed keep alive response.
+2016-07-23 10:46:35.867 -04:00 [Information] Request starting HTTP/1.1 GET http://localhost:55839/uploads/unnamed.png  
+2016-07-23 10:46:35.870 -04:00 [Information] Request starting HTTP/1.1 GET http://localhost:55839/uploads/kitten_potd_3290498k.jpg  
+2016-07-23 10:46:35.874 -04:00 [Debug] Connection id ""0HKTJ10FADKN2"" started.
+2016-07-23 10:46:35.874 -04:00 [Information] The file "/uploads/unnamed.png" was not modified
+2016-07-23 10:46:35.874 -04:00 [Information] The file "/uploads/kitten_potd_3290498k.jpg" was not modified
+2016-07-23 10:46:35.876 -04:00 [Debug] Handled. Status code: 304 File: "/uploads/unnamed.png"
+2016-07-23 10:46:35.879 -04:00 [Debug] Handled. Status code: 304 File: "/uploads/kitten_potd_3290498k.jpg"
+2016-07-23 10:46:35.881 -04:00 [Information] Request starting HTTP/1.1 GET http://localhost:55839/uploads/dfe6c142-7ffe-40e7-a0b7-f67dbfbc0e43.jpg  
+2016-07-23 10:46:35.915 -04:00 [Information] Request finished in 48.57ms 304 image/png
+2016-07-23 10:46:35.915 -04:00 [Debug] Connection id ""0HKTJ10FADKN0"" completed keep alive response.
+2016-07-23 10:46:35.915 -04:00 [Information] The file "/uploads/dfe6c142-7ffe-40e7-a0b7-f67dbfbc0e43.jpg" was not modified
+2016-07-23 10:46:35.915 -04:00 [Information] Request finished in 56.4649ms 304 image/jpeg
+2016-07-23 10:46:35.915 -04:00 [Debug] Handled. Status code: 304 File: "/uploads/dfe6c142-7ffe-40e7-a0b7-f67dbfbc0e43.jpg"
+2016-07-23 10:46:35.931 -04:00 [Debug] Connection id ""0HKTJ10FADKN1"" completed keep alive response.
+2016-07-23 10:46:35.936 -04:00 [Information] Request finished in 54.3343ms 304 image/jpeg
+2016-07-23 10:46:35.942 -04:00 [Debug] Connection id ""0HKTJ10FADKN2"" completed keep alive response.
+2016-07-23 10:46:36.971 -04:00 [Information] Request starting HTTP/1.1 GET http://localhost:55839/userinfo/index  
+2016-07-23 10:46:36.974 -04:00 [Debug] The request path "/userinfo/index" does not match a supported file type
+2016-07-23 10:46:36.974 -04:00 [Debug] Request successfully matched the route with name '"default"' and template '"{controller=Login}/{action=Index}/{id?}"'.
+2016-07-23 10:46:36.975 -04:00 [Debug] Executing action "OA.UI.Controllers.UserInfoController.Index (OA.UI)"
+2016-07-23 10:46:36.977 -04:00 [Debug] Session loaded; Key:"fc3d27ac-73a2-68b4-8ef9-d6c3fe31efd1", Id:"ae8ea37e-6d54-72c1-3d5a-0595cf853b6f", Count:1
+2016-07-23 10:46:36.979 -04:00 [Information] Executing action method "OA.UI.Controllers.UserInfoController.Index (OA.UI)" with arguments (null) - ModelState is Valid
+2016-07-23 10:46:36.992 -04:00 [Debug] Executed action method "OA.UI.Controllers.UserInfoController.Index (OA.UI)", returned result "Microsoft.AspNetCore.Mvc.ViewResult".
+2016-07-23 10:46:36.992 -04:00 [Debug] View lookup cache miss for view '"index"' in controller '"UserInfo"'.
+2016-07-23 10:46:36.992 -04:00 [Debug] Code generation for the Razor file at '"/Views/UserInfo/index.cshtml"' started.
+2016-07-23 10:46:37.013 -04:00 [Debug] Code generation for the Razor file at '"/Views/UserInfo/index.cshtml"' completed in 21.0322ms.
+2016-07-23 10:46:37.014 -04:00 [Debug] Compilation of the generated code for the Razor file at '"/Views/UserInfo/index.cshtml"' started.
+2016-07-23 10:46:37.084 -04:00 [Debug] Compilation of the generated code for the Razor file at '"/Views/UserInfo/index.cshtml"' completed in 70.1099ms.
+2016-07-23 10:46:37.084 -04:00 [Debug] The view '"index"' was found.
+2016-07-23 10:46:37.084 -04:00 [Information] Executing ViewResult, running view at path "/Views/UserInfo/index.cshtml".
+2016-07-23 10:46:37.105 -04:00 [Debug] An antiforgery cookie token was reused.
+2016-07-23 10:46:38.111 -04:00 [Information] Executed action "OA.UI.Controllers.UserInfoController.Index (OA.UI)" in 1136.0769ms
+2016-07-23 10:46:38.116 -04:00 [Information] Request finished in 1144.8722ms 200 text/html; charset=utf-8
+2016-07-23 10:46:38.118 -04:00 [Debug] Connection id ""0HKTJ10FADKN0"" completed keep alive response.
+2016-07-23 10:46:38.689 -04:00 [Information] Request starting HTTP/1.1 POST http://localhost:55839/UserInfo/GetUserInfo application/x-www-form-urlencoded; charset=UTF-8 14
+2016-07-23 10:46:38.692 -04:00 [Debug] "POST" requests are not supported
+2016-07-23 10:46:38.693 -04:00 [Debug] Request successfully matched the route with name '"default"' and template '"{controller=Login}/{action=Index}/{id?}"'.
+2016-07-23 10:46:38.693 -04:00 [Debug] Executing action "OA.UI.Controllers.UserInfoController.GetUserInfo (OA.UI)"
+2016-07-23 10:46:38.693 -04:00 [Debug] Session loaded; Key:"fc3d27ac-73a2-68b4-8ef9-d6c3fe31efd1", Id:"ae8ea37e-6d54-72c1-3d5a-0595cf853b6f", Count:1
+2016-07-23 10:46:38.695 -04:00 [Information] Executing action method "OA.UI.Controllers.UserInfoController.GetUserInfo (OA.UI)" with arguments (null) - ModelState is Valid
+2016-07-23 10:46:38.737 -04:00 [Debug] Executed action method "OA.UI.Controllers.UserInfoController.GetUserInfo (OA.UI)", returned result "Microsoft.AspNetCore.Mvc.JsonResult".
+2016-07-23 10:46:38.738 -04:00 [Information] Executing JsonResult, writing value "{ rows = Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryable`1[<>f__AnonymousType4`7[System.Int32,System.String,System.String,System.String,System.DateTime,System.String,System.Int16]], total = 14 }".
+2016-07-23 10:46:38.857 -04:00 [Information] Executed action "OA.UI.Controllers.UserInfoController.GetUserInfo (OA.UI)" in 163.0509ms
+2016-07-23 10:46:38.861 -04:00 [Information] Request finished in 171.7407ms 200 application/json; charset=utf-8
+2016-07-23 10:46:38.863 -04:00 [Debug] Connection id ""0HKTJ10FADKN1"" completed keep alive response.
+2016-07-23 10:46:41.329 -04:00 [Information] Request starting HTTP/1.1 POST http://localhost:55839/UserInfo/GetUserInfo application/x-www-form-urlencoded; charset=UTF-8 14
+2016-07-23 10:46:41.333 -04:00 [Debug] "POST" requests are not supported
+2016-07-23 10:46:41.333 -04:00 [Debug] Request successfully matched the route with name '"default"' and template '"{controller=Login}/{action=Index}/{id?}"'.
+2016-07-23 10:46:41.333 -04:00 [Debug] Executing action "OA.UI.Controllers.UserInfoController.GetUserInfo (OA.UI)"
+2016-07-23 10:46:41.333 -04:00 [Debug] Session loaded; Key:"fc3d27ac-73a2-68b4-8ef9-d6c3fe31efd1", Id:"ae8ea37e-6d54-72c1-3d5a-0595cf853b6f", Count:1
+2016-07-23 10:46:41.335 -04:00 [Information] Executing action method "OA.UI.Controllers.UserInfoController.GetUserInfo (OA.UI)" with arguments (null) - ModelState is Valid
+2016-07-23 10:46:41.338 -04:00 [Debug] Executed action method "OA.UI.Controllers.UserInfoController.GetUserInfo (OA.UI)", returned result "Microsoft.AspNetCore.Mvc.JsonResult".
+2016-07-23 10:46:41.339 -04:00 [Information] Executing JsonResult, writing value "{ rows = Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryable`1[<>f__AnonymousType4`7[System.Int32,System.String,System.String,System.String,System.DateTime,System.String,System.Int16]], total = 14 }".
+2016-07-23 10:46:41.358 -04:00 [Information] Executed action "OA.UI.Controllers.UserInfoController.GetUserInfo (OA.UI)" in 24.5281ms
+2016-07-23 10:46:41.363 -04:00 [Information] Request finished in 34.3912ms 200 application/json; charset=utf-8
+2016-07-23 10:46:41.367 -04:00 [Debug] Connection id ""0HKTJ10FADKN2"" completed keep alive response.
+2016-07-23 10:46:42.516 -04:00 [Information] Request starting HTTP/1.1 POST http://localhost:55839/UserInfo/GetUserInfo application/x-www-form-urlencoded; charset=UTF-8 14
+2016-07-23 10:46:42.521 -04:00 [Debug] "POST" requests are not supported
+2016-07-23 10:46:42.521 -04:00 [Debug] Request successfully matched the route with name '"default"' and template '"{controller=Login}/{action=Index}/{id?}"'.
+2016-07-23 10:46:42.522 -04:00 [Debug] Executing action "OA.UI.Controllers.UserInfoController.GetUserInfo (OA.UI)"
+2016-07-23 10:46:42.522 -04:00 [Debug] Session loaded; Key:"fc3d27ac-73a2-68b4-8ef9-d6c3fe31efd1", Id:"ae8ea37e-6d54-72c1-3d5a-0595cf853b6f", Count:1
+2016-07-23 10:46:42.533 -04:00 [Information] Executing action method "OA.UI.Controllers.UserInfoController.GetUserInfo (OA.UI)" with arguments (null) - ModelState is Valid
+2016-07-23 10:46:42.539 -04:00 [Debug] Executed action method "OA.UI.Controllers.UserInfoController.GetUserInfo (OA.UI)", returned result "Microsoft.AspNetCore.Mvc.JsonResult".
+2016-07-23 10:46:42.540 -04:00 [Information] Executing JsonResult, writing value "{ rows = Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryable`1[<>f__AnonymousType4`7[System.Int32,System.String,System.String,System.String,System.DateTime,System.String,System.Int16]], total = 14 }".
+2016-07-23 10:46:42.543 -04:00 [Information] Executed action "OA.UI.Controllers.UserInfoController.GetUserInfo (OA.UI)" in 21.4668ms
+2016-07-23 10:46:42.562 -04:00 [Information] Request finished in 46.6808ms 200 application/json; charset=utf-8
+2016-07-23 10:46:42.565 -04:00 [Debug] Connection id ""0HKTJ10FADKN0"" completed keep alive response.
+2016-07-23 10:46:43.079 -04:00 [Information] Request starting HTTP/1.1 POST http://localhost:55839/UserInfo/GetUserInfo application/x-www-form-urlencoded; charset=UTF-8 14
+2016-07-23 10:46:43.082 -04:00 [Debug] "POST" requests are not supported
+2016-07-23 10:46:43.082 -04:00 [Debug] Request successfully matched the route with name '"default"' and template '"{controller=Login}/{action=Index}/{id?}"'.
+2016-07-23 10:46:43.082 -04:00 [Debug] Executing action "OA.UI.Controllers.UserInfoController.GetUserInfo (OA.UI)"
+2016-07-23 10:46:43.082 -04:00 [Debug] Session loaded; Key:"fc3d27ac-73a2-68b4-8ef9-d6c3fe31efd1", Id:"ae8ea37e-6d54-72c1-3d5a-0595cf853b6f", Count:1
+2016-07-23 10:46:43.084 -04:00 [Information] Executing action method "OA.UI.Controllers.UserInfoController.GetUserInfo (OA.UI)" with arguments (null) - ModelState is Valid
+2016-07-23 10:46:43.087 -04:00 [Debug] Executed action method "OA.UI.Controllers.UserInfoController.GetUserInfo (OA.UI)", returned result "Microsoft.AspNetCore.Mvc.JsonResult".
+2016-07-23 10:46:43.088 -04:00 [Information] Executing JsonResult, writing value "{ rows = Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryable`1[<>f__AnonymousType4`7[System.Int32,System.String,System.String,System.String,System.DateTime,System.String,System.Int16]], total = 14 }".
+2016-07-23 10:46:43.091 -04:00 [Information] Executed action "OA.UI.Controllers.UserInfoController.GetUserInfo (OA.UI)" in 9.2764ms
+2016-07-23 10:46:43.096 -04:00 [Information] Request finished in 17.8796ms 200 application/json; charset=utf-8
+2016-07-23 10:46:43.099 -04:00 [Debug] Connection id ""0HKTJ10FADKN1"" completed keep alive response.
+2016-07-23 10:46:43.538 -04:00 [Information] Request starting HTTP/1.1 POST http://localhost:55839/UserInfo/GetUserInfo application/x-www-form-urlencoded; charset=UTF-8 14
+2016-07-23 10:46:43.541 -04:00 [Debug] "POST" requests are not supported
+2016-07-23 10:46:43.542 -04:00 [Debug] Request successfully matched the route with name '"default"' and template '"{controller=Login}/{action=Index}/{id?}"'.
+2016-07-23 10:46:43.542 -04:00 [Debug] Executing action "OA.UI.Controllers.UserInfoController.GetUserInfo (OA.UI)"
+2016-07-23 10:46:43.542 -04:00 [Debug] Session loaded; Key:"fc3d27ac-73a2-68b4-8ef9-d6c3fe31efd1", Id:"ae8ea37e-6d54-72c1-3d5a-0595cf853b6f", Count:1
+2016-07-23 10:46:43.544 -04:00 [Information] Executing action method "OA.UI.Controllers.UserInfoController.GetUserInfo (OA.UI)" with arguments (null) - ModelState is Valid
+2016-07-23 10:46:43.547 -04:00 [Debug] Executed action method "OA.UI.Controllers.UserInfoController.GetUserInfo (OA.UI)", returned result "Microsoft.AspNetCore.Mvc.JsonResult".
+2016-07-23 10:46:43.547 -04:00 [Information] Executing JsonResult, writing value "{ rows = Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryable`1[<>f__AnonymousType4`7[System.Int32,System.String,System.String,System.String,System.DateTime,System.String,System.Int16]], total = 14 }".
+2016-07-23 10:46:43.551 -04:00 [Information] Executed action "OA.UI.Controllers.UserInfoController.GetUserInfo (OA.UI)" in 9.1239ms
+2016-07-23 10:46:43.557 -04:00 [Information] Request finished in 19.2604ms 200 application/json; charset=utf-8
+2016-07-23 10:46:43.560 -04:00 [Debug] Connection id ""0HKTJ10FADKN2"" completed keep alive response.
+2016-07-23 10:46:45.673 -04:00 [Information] Request starting HTTP/1.1 POST http://localhost:55839/UserInfo/GetUserInfo application/x-www-form-urlencoded; charset=UTF-8 14
+2016-07-23 10:46:45.677 -04:00 [Debug] "POST" requests are not supported
+2016-07-23 10:46:45.677 -04:00 [Debug] Request successfully matched the route with name '"default"' and template '"{controller=Login}/{action=Index}/{id?}"'.
+2016-07-23 10:46:45.677 -04:00 [Debug] Executing action "OA.UI.Controllers.UserInfoController.GetUserInfo (OA.UI)"
+2016-07-23 10:46:45.677 -04:00 [Debug] Session loaded; Key:"fc3d27ac-73a2-68b4-8ef9-d6c3fe31efd1", Id:"ae8ea37e-6d54-72c1-3d5a-0595cf853b6f", Count:1
+2016-07-23 10:46:45.679 -04:00 [Information] Executing action method "OA.UI.Controllers.UserInfoController.GetUserInfo (OA.UI)" with arguments (null) - ModelState is Valid
+2016-07-23 10:46:45.683 -04:00 [Debug] Executed action method "OA.UI.Controllers.UserInfoController.GetUserInfo (OA.UI)", returned result "Microsoft.AspNetCore.Mvc.JsonResult".
+2016-07-23 10:46:45.683 -04:00 [Information] Executing JsonResult, writing value "{ rows = Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryable`1[<>f__AnonymousType4`7[System.Int32,System.String,System.String,System.String,System.DateTime,System.String,System.Int16]], total = 14 }".
+2016-07-23 10:46:45.687 -04:00 [Information] Executed action "OA.UI.Controllers.UserInfoController.GetUserInfo (OA.UI)" in 9.4759ms
+2016-07-23 10:46:45.692 -04:00 [Information] Request finished in 18.9783ms 200 application/json; charset=utf-8
+2016-07-23 10:46:45.694 -04:00 [Debug] Connection id ""0HKTJ10FADKN0"" completed keep alive response.
+2016-07-23 10:46:47.775 -04:00 [Information] Request starting HTTP/1.1 POST http://localhost:55839/UserInfo/GetUserInfo application/x-www-form-urlencoded; charset=UTF-8 14
+2016-07-23 10:46:47.797 -04:00 [Debug] "POST" requests are not supported
+2016-07-23 10:46:47.799 -04:00 [Debug] Request successfully matched the route with name '"default"' and template '"{controller=Login}/{action=Index}/{id?}"'.
+2016-07-23 10:46:47.799 -04:00 [Debug] Executing action "OA.UI.Controllers.UserInfoController.GetUserInfo (OA.UI)"
+2016-07-23 10:46:47.799 -04:00 [Debug] Session loaded; Key:"fc3d27ac-73a2-68b4-8ef9-d6c3fe31efd1", Id:"ae8ea37e-6d54-72c1-3d5a-0595cf853b6f", Count:1
+2016-07-23 10:46:47.801 -04:00 [Information] Executing action method "OA.UI.Controllers.UserInfoController.GetUserInfo (OA.UI)" with arguments (null) - ModelState is Valid
+2016-07-23 10:46:47.805 -04:00 [Debug] Executed action method "OA.UI.Controllers.UserInfoController.GetUserInfo (OA.UI)", returned result "Microsoft.AspNetCore.Mvc.JsonResult".
+2016-07-23 10:46:47.805 -04:00 [Information] Executing JsonResult, writing value "{ rows = Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryable`1[<>f__AnonymousType4`7[System.Int32,System.String,System.String,System.String,System.DateTime,System.String,System.Int16]], total = 14 }".
+2016-07-23 10:46:47.809 -04:00 [Information] Executed action "OA.UI.Controllers.UserInfoController.GetUserInfo (OA.UI)" in 9.2784ms
+2016-07-23 10:46:47.816 -04:00 [Information] Request finished in 40.3097ms 200 application/json; charset=utf-8
+2016-07-23 10:46:47.819 -04:00 [Debug] Connection id ""0HKTJ10FADKN1"" completed keep alive response.
+2016-07-23 10:46:48.101 -04:00 [Information] Request starting HTTP/1.1 POST http://localhost:55839/UserInfo/GetUserInfo application/x-www-form-urlencoded; charset=UTF-8 14
+2016-07-23 10:46:48.105 -04:00 [Debug] "POST" requests are not supported
+2016-07-23 10:46:48.105 -04:00 [Debug] Request successfully matched the route with name '"default"' and template '"{controller=Login}/{action=Index}/{id?}"'.
+2016-07-23 10:46:48.105 -04:00 [Debug] Executing action "OA.UI.Controllers.UserInfoController.GetUserInfo (OA.UI)"
+2016-07-23 10:46:48.106 -04:00 [Debug] Session loaded; Key:"fc3d27ac-73a2-68b4-8ef9-d6c3fe31efd1", Id:"ae8ea37e-6d54-72c1-3d5a-0595cf853b6f", Count:1
+2016-07-23 10:46:48.107 -04:00 [Information] Executing action method "OA.UI.Controllers.UserInfoController.GetUserInfo (OA.UI)" with arguments (null) - ModelState is Valid
+2016-07-23 10:46:48.111 -04:00 [Debug] Executed action method "OA.UI.Controllers.UserInfoController.GetUserInfo (OA.UI)", returned result "Microsoft.AspNetCore.Mvc.JsonResult".
+2016-07-23 10:46:48.111 -04:00 [Information] Executing JsonResult, writing value "{ rows = Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryable`1[<>f__AnonymousType4`7[System.Int32,System.String,System.String,System.String,System.DateTime,System.String,System.Int16]], total = 14 }".
+2016-07-23 10:46:48.115 -04:00 [Information] Executed action "OA.UI.Controllers.UserInfoController.GetUserInfo (OA.UI)" in 8.2322ms
+2016-07-23 10:46:48.120 -04:00 [Information] Request finished in 18.0784ms 200 application/json; charset=utf-8
+2016-07-23 10:46:48.124 -04:00 [Debug] Connection id ""0HKTJ10FADKN2"" completed keep alive response.
+2016-07-23 10:46:48.369 -04:00 [Information] Request starting HTTP/1.1 POST http://localhost:55839/UserInfo/GetUserInfo application/x-www-form-urlencoded; charset=UTF-8 14
+2016-07-23 10:46:48.372 -04:00 [Debug] "POST" requests are not supported
+2016-07-23 10:46:48.372 -04:00 [Debug] Request successfully matched the route with name '"default"' and template '"{controller=Login}/{action=Index}/{id?}"'.
+2016-07-23 10:46:48.372 -04:00 [Debug] Executing action "OA.UI.Controllers.UserInfoController.GetUserInfo (OA.UI)"
+2016-07-23 10:46:48.372 -04:00 [Debug] Session loaded; Key:"fc3d27ac-73a2-68b4-8ef9-d6c3fe31efd1", Id:"ae8ea37e-6d54-72c1-3d5a-0595cf853b6f", Count:1
+2016-07-23 10:46:48.374 -04:00 [Information] Executing action method "OA.UI.Controllers.UserInfoController.GetUserInfo (OA.UI)" with arguments (null) - ModelState is Valid
+2016-07-23 10:46:48.377 -04:00 [Debug] Executed action method "OA.UI.Controllers.UserInfoController.GetUserInfo (OA.UI)", returned result "Microsoft.AspNetCore.Mvc.JsonResult".
+2016-07-23 10:46:48.377 -04:00 [Information] Executing JsonResult, writing value "{ rows = Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryable`1[<>f__AnonymousType4`7[System.Int32,System.String,System.String,System.String,System.DateTime,System.String,System.Int16]], total = 14 }".
+2016-07-23 10:46:48.380 -04:00 [Information] Executed action "OA.UI.Controllers.UserInfoController.GetUserInfo (OA.UI)" in 7.3252ms
+2016-07-23 10:46:48.384 -04:00 [Information] Request finished in 15.2734ms 200 application/json; charset=utf-8
+2016-07-23 10:46:48.387 -04:00 [Debug] Connection id ""0HKTJ10FADKN0"" completed keep alive response.
+2016-07-23 10:46:48.568 -04:00 [Information] Request starting HTTP/1.1 POST http://localhost:55839/UserInfo/GetUserInfo application/x-www-form-urlencoded; charset=UTF-8 14
+2016-07-23 10:46:48.571 -04:00 [Debug] "POST" requests are not supported
+2016-07-23 10:46:48.572 -04:00 [Debug] Request successfully matched the route with name '"default"' and template '"{controller=Login}/{action=Index}/{id?}"'.
+2016-07-23 10:46:48.572 -04:00 [Debug] Executing action "OA.UI.Controllers.UserInfoController.GetUserInfo (OA.UI)"
+2016-07-23 10:46:48.572 -04:00 [Debug] Session loaded; Key:"fc3d27ac-73a2-68b4-8ef9-d6c3fe31efd1", Id:"ae8ea37e-6d54-72c1-3d5a-0595cf853b6f", Count:1
+2016-07-23 10:46:48.574 -04:00 [Information] Executing action method "OA.UI.Controllers.UserInfoController.GetUserInfo (OA.UI)" with arguments (null) - ModelState is Valid
+2016-07-23 10:46:48.576 -04:00 [Debug] Executed action method "OA.UI.Controllers.UserInfoController.GetUserInfo (OA.UI)", returned result "Microsoft.AspNetCore.Mvc.JsonResult".
+2016-07-23 10:46:48.577 -04:00 [Information] Executing JsonResult, writing value "{ rows = Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryable`1[<>f__AnonymousType4`7[System.Int32,System.String,System.String,System.String,System.DateTime,System.String,System.Int16]], total = 14 }".
+2016-07-23 10:46:48.579 -04:00 [Information] Executed action "OA.UI.Controllers.UserInfoController.GetUserInfo (OA.UI)" in 7.5839ms
+2016-07-23 10:46:48.584 -04:00 [Information] Request finished in 16.8675ms 200 application/json; charset=utf-8
+2016-07-23 10:46:48.586 -04:00 [Debug] Connection id ""0HKTJ10FADKN1"" completed keep alive response.
+2016-07-23 10:46:48.780 -04:00 [Information] Request starting HTTP/1.1 POST http://localhost:55839/UserInfo/GetUserInfo application/x-www-form-urlencoded; charset=UTF-8 14
+2016-07-23 10:46:48.783 -04:00 [Debug] "POST" requests are not supported
+2016-07-23 10:46:48.783 -04:00 [Debug] Request successfully matched the route with name '"default"' and template '"{controller=Login}/{action=Index}/{id?}"'.
+2016-07-23 10:46:48.784 -04:00 [Debug] Executing action "OA.UI.Controllers.UserInfoController.GetUserInfo (OA.UI)"
+2016-07-23 10:46:48.784 -04:00 [Debug] Session loaded; Key:"fc3d27ac-73a2-68b4-8ef9-d6c3fe31efd1", Id:"ae8ea37e-6d54-72c1-3d5a-0595cf853b6f", Count:1
+2016-07-23 10:46:48.786 -04:00 [Information] Executing action method "OA.UI.Controllers.UserInfoController.GetUserInfo (OA.UI)" with arguments (null) - ModelState is Valid
+2016-07-23 10:46:48.788 -04:00 [Debug] Executed action method "OA.UI.Controllers.UserInfoController.GetUserInfo (OA.UI)", returned result "Microsoft.AspNetCore.Mvc.JsonResult".
+2016-07-23 10:46:48.789 -04:00 [Information] Executing JsonResult, writing value "{ rows = Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryable`1[<>f__AnonymousType4`7[System.Int32,System.String,System.String,System.String,System.DateTime,System.String,System.Int16]], total = 14 }".
+2016-07-23 10:46:48.791 -04:00 [Information] Executed action "OA.UI.Controllers.UserInfoController.GetUserInfo (OA.UI)" in 7.5452ms
+2016-07-23 10:46:48.795 -04:00 [Information] Request finished in 15.032ms 200 application/json; charset=utf-8
+2016-07-23 10:46:48.797 -04:00 [Debug] Connection id ""0HKTJ10FADKN2"" completed keep alive response.
+2016-07-23 10:46:57.382 -04:00 [Information] Request starting HTTP/1.1 GET http://localhost:55839/UserInfo/ShowEditUserInfo/?id=24  
+2016-07-23 10:46:57.387 -04:00 [Debug] The request path "/UserInfo/ShowEditUserInfo/" does not match a supported file type
+2016-07-23 10:46:57.387 -04:00 [Debug] Request successfully matched the route with name '"default"' and template '"{controller=Login}/{action=Index}/{id?}"'.
+2016-07-23 10:46:57.388 -04:00 [Debug] Executing action "OA.UI.Controllers.UserInfoController.ShowEditUserInfo (OA.UI)"
+2016-07-23 10:46:57.487 -04:00 [Debug] Session loaded; Key:"fc3d27ac-73a2-68b4-8ef9-d6c3fe31efd1", Id:"ae8ea37e-6d54-72c1-3d5a-0595cf853b6f", Count:1
+2016-07-23 10:46:57.491 -04:00 [Information] Executing action method "OA.UI.Controllers.UserInfoController.ShowEditUserInfo (OA.UI)" with arguments (["24"]) - ModelState is Valid
+2016-07-23 10:46:57.502 -04:00 [Debug] Executed action method "OA.UI.Controllers.UserInfoController.ShowEditUserInfo (OA.UI)", returned result "Microsoft.AspNetCore.Mvc.ViewResult".
+2016-07-23 10:46:57.502 -04:00 [Debug] View lookup cache miss for view '"ShowEditUserInfo"' in controller '"UserInfo"'.
+2016-07-23 10:46:57.502 -04:00 [Debug] Code generation for the Razor file at '"/Views/UserInfo/ShowEditUserInfo.cshtml"' started.
+2016-07-23 10:46:57.567 -04:00 [Debug] Code generation for the Razor file at '"/Views/UserInfo/ShowEditUserInfo.cshtml"' completed in 64.1007ms.
+2016-07-23 10:46:57.567 -04:00 [Debug] Compilation of the generated code for the Razor file at '"/Views/UserInfo/ShowEditUserInfo.cshtml"' started.
+2016-07-23 10:46:57.813 -04:00 [Debug] Compilation of the generated code for the Razor file at '"/Views/UserInfo/ShowEditUserInfo.cshtml"' completed in 246.0826ms.
+2016-07-23 10:46:57.813 -04:00 [Debug] The view '"ShowEditUserInfo"' was found.
+2016-07-23 10:46:57.814 -04:00 [Information] Executing ViewResult, running view at path "/Views/UserInfo/ShowEditUserInfo.cshtml".
+2016-07-23 10:46:57.830 -04:00 [Debug] An antiforgery cookie token was reused.
+2016-07-23 10:46:58.969 -04:00 [Information] Executed action "OA.UI.Controllers.UserInfoController.ShowEditUserInfo (OA.UI)" in 1581.1881ms
+2016-07-23 10:46:58.978 -04:00 [Information] Request finished in 1596.264ms 200 text/html; charset=utf-8
+2016-07-23 10:46:58.982 -04:00 [Debug] Connection id ""0HKTJ10FADKN0"" completed keep alive response.
+2016-07-23 10:46:59.376 -04:00 [Information] Request starting HTTP/1.1 GET http://localhost:55839/lib/bootstrap/dist/css/bootstrap-theme.css  
+2016-07-23 10:46:59.380 -04:00 [Information] The file "/lib/bootstrap/dist/css/bootstrap-theme.css" was not modified
+2016-07-23 10:46:59.382 -04:00 [Debug] Handled. Status code: 304 File: "/lib/bootstrap/dist/css/bootstrap-theme.css"
+2016-07-23 10:46:59.386 -04:00 [Information] Request finished in 9.9614ms 304 text/css
+2016-07-23 10:46:59.388 -04:00 [Debug] Connection id ""0HKTJ10FADKN1"" completed keep alive response.
+2016-07-23 10:47:01.059 -04:00 [Information] Request starting HTTP/1.1 POST http://localhost:55839/UserInfo/GetUserInfo application/x-www-form-urlencoded; charset=UTF-8 14
+2016-07-23 10:47:01.063 -04:00 [Debug] "POST" requests are not supported
+2016-07-23 10:47:01.063 -04:00 [Debug] Request successfully matched the route with name '"default"' and template '"{controller=Login}/{action=Index}/{id?}"'.
+2016-07-23 10:47:01.064 -04:00 [Debug] Executing action "OA.UI.Controllers.UserInfoController.GetUserInfo (OA.UI)"
+2016-07-23 10:47:01.064 -04:00 [Debug] Session loaded; Key:"fc3d27ac-73a2-68b4-8ef9-d6c3fe31efd1", Id:"ae8ea37e-6d54-72c1-3d5a-0595cf853b6f", Count:1
+2016-07-23 10:47:01.065 -04:00 [Information] Executing action method "OA.UI.Controllers.UserInfoController.GetUserInfo (OA.UI)" with arguments (null) - ModelState is Valid
+2016-07-23 10:47:01.069 -04:00 [Debug] Executed action method "OA.UI.Controllers.UserInfoController.GetUserInfo (OA.UI)", returned result "Microsoft.AspNetCore.Mvc.JsonResult".
+2016-07-23 10:47:01.069 -04:00 [Information] Executing JsonResult, writing value "{ rows = Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryable`1[<>f__AnonymousType4`7[System.Int32,System.String,System.String,System.String,System.DateTime,System.String,System.Int16]], total = 14 }".
+2016-07-23 10:47:01.073 -04:00 [Information] Executed action "OA.UI.Controllers.UserInfoController.GetUserInfo (OA.UI)" in 9.1812ms
+2016-07-23 10:47:01.080 -04:00 [Information] Request finished in 19.9521ms 200 application/json; charset=utf-8
+2016-07-23 10:47:01.082 -04:00 [Debug] Connection id ""0HKTJ10FADKN2"" completed keep alive response.
+2016-07-23 10:47:02.064 -04:00 [Information] Request starting HTTP/1.1 POST http://localhost:55839/UserInfo/GetUserInfo application/x-www-form-urlencoded; charset=UTF-8 14
+2016-07-23 10:47:02.067 -04:00 [Debug] "POST" requests are not supported
+2016-07-23 10:47:02.067 -04:00 [Debug] Request successfully matched the route with name '"default"' and template '"{controller=Login}/{action=Index}/{id?}"'.
+2016-07-23 10:47:02.068 -04:00 [Debug] Executing action "OA.UI.Controllers.UserInfoController.GetUserInfo (OA.UI)"
+2016-07-23 10:47:02.068 -04:00 [Debug] Session loaded; Key:"fc3d27ac-73a2-68b4-8ef9-d6c3fe31efd1", Id:"ae8ea37e-6d54-72c1-3d5a-0595cf853b6f", Count:1
+2016-07-23 10:47:02.069 -04:00 [Information] Executing action method "OA.UI.Controllers.UserInfoController.GetUserInfo (OA.UI)" with arguments (null) - ModelState is Valid
+2016-07-23 10:47:02.073 -04:00 [Debug] Executed action method "OA.UI.Controllers.UserInfoController.GetUserInfo (OA.UI)", returned result "Microsoft.AspNetCore.Mvc.JsonResult".
+2016-07-23 10:47:02.073 -04:00 [Information] Executing JsonResult, writing value "{ rows = Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryable`1[<>f__AnonymousType4`7[System.Int32,System.String,System.String,System.String,System.DateTime,System.String,System.Int16]], total = 14 }".
+2016-07-23 10:47:02.077 -04:00 [Information] Executed action "OA.UI.Controllers.UserInfoController.GetUserInfo (OA.UI)" in 9.02ms
+2016-07-23 10:47:02.082 -04:00 [Information] Request finished in 18.4015ms 200 application/json; charset=utf-8
+2016-07-23 10:47:02.084 -04:00 [Debug] Connection id ""0HKTJ10FADKN0"" completed keep alive response.
+2016-07-23 10:47:02.526 -04:00 [Information] Request starting HTTP/1.1 POST http://localhost:55839/UserInfo/GetUserInfo application/x-www-form-urlencoded; charset=UTF-8 14
+2016-07-23 10:47:02.529 -04:00 [Debug] "POST" requests are not supported
+2016-07-23 10:47:02.530 -04:00 [Debug] Request successfully matched the route with name '"default"' and template '"{controller=Login}/{action=Index}/{id?}"'.
+2016-07-23 10:47:02.530 -04:00 [Debug] Executing action "OA.UI.Controllers.UserInfoController.GetUserInfo (OA.UI)"
+2016-07-23 10:47:02.530 -04:00 [Debug] Session loaded; Key:"fc3d27ac-73a2-68b4-8ef9-d6c3fe31efd1", Id:"ae8ea37e-6d54-72c1-3d5a-0595cf853b6f", Count:1
+2016-07-23 10:47:02.532 -04:00 [Information] Executing action method "OA.UI.Controllers.UserInfoController.GetUserInfo (OA.UI)" with arguments (null) - ModelState is Valid
+2016-07-23 10:47:02.536 -04:00 [Debug] Executed action method "OA.UI.Controllers.UserInfoController.GetUserInfo (OA.UI)", returned result "Microsoft.AspNetCore.Mvc.JsonResult".
+2016-07-23 10:47:02.536 -04:00 [Information] Executing JsonResult, writing value "{ rows = Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryable`1[<>f__AnonymousType4`7[System.Int32,System.String,System.String,System.String,System.DateTime,System.String,System.Int16]], total = 14 }".
+2016-07-23 10:47:02.542 -04:00 [Information] Executed action "OA.UI.Controllers.UserInfoController.GetUserInfo (OA.UI)" in 11.7439ms
+2016-07-23 10:47:02.546 -04:00 [Information] Request finished in 20.2283ms 200 application/json; charset=utf-8
+2016-07-23 10:47:02.549 -04:00 [Debug] Connection id ""0HKTJ10FADKN1"" completed keep alive response.
+2016-07-23 10:47:02.684 -04:00 [Information] Request starting HTTP/1.1 POST http://localhost:55839/UserInfo/GetUserInfo application/x-www-form-urlencoded; charset=UTF-8 14
+2016-07-23 10:47:02.687 -04:00 [Debug] "POST" requests are not supported
+2016-07-23 10:47:02.687 -04:00 [Debug] Request successfully matched the route with name '"default"' and template '"{controller=Login}/{action=Index}/{id?}"'.
+2016-07-23 10:47:02.687 -04:00 [Debug] Executing action "OA.UI.Controllers.UserInfoController.GetUserInfo (OA.UI)"
+2016-07-23 10:47:02.688 -04:00 [Debug] Session loaded; Key:"fc3d27ac-73a2-68b4-8ef9-d6c3fe31efd1", Id:"ae8ea37e-6d54-72c1-3d5a-0595cf853b6f", Count:1
+2016-07-23 10:47:02.689 -04:00 [Information] Executing action method "OA.UI.Controllers.UserInfoController.GetUserInfo (OA.UI)" with arguments (null) - ModelState is Valid
+2016-07-23 10:47:02.694 -04:00 [Debug] Executed action method "OA.UI.Controllers.UserInfoController.GetUserInfo (OA.UI)", returned result "Microsoft.AspNetCore.Mvc.JsonResult".
+2016-07-23 10:47:02.694 -04:00 [Information] Executing JsonResult, writing value "{ rows = Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryable`1[<>f__AnonymousType4`7[System.Int32,System.String,System.String,System.String,System.DateTime,System.String,System.Int16]], total = 14 }".
+2016-07-23 10:47:02.696 -04:00 [Information] Executed action "OA.UI.Controllers.UserInfoController.GetUserInfo (OA.UI)" in 8.6787ms
+2016-07-23 10:47:02.701 -04:00 [Information] Request finished in 17.2053ms 200 application/json; charset=utf-8
+2016-07-23 10:47:02.703 -04:00 [Debug] Connection id ""0HKTJ10FADKN2"" completed keep alive response.

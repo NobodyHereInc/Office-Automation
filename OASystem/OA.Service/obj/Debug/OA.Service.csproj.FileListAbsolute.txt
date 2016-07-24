@@ -3,3 +3,15 @@ D:\Co-op Project\OASystem\OA.Service\bin\Debug\OA.Service.pdb
 D:\Co-op Project\OASystem\OA.Service\obj\Debug\OA.Service.csprojResolveAssemblyReference.cache
 D:\Co-op Project\OASystem\OA.Service\obj\Debug\OA.Service.dll
 D:\Co-op Project\OASystem\OA.Service\obj\Debug\OA.Service.pdb
+D:\Co-op Project\OASystem\OA.Service\bin\Debug\OA.DAL.dll
+D:\Co-op Project\OASystem\OA.Service\bin\Debug\OA.DalFactory.dll
+D:\Co-op Project\OASystem\OA.Service\bin\Debug\OA.IDAL.dll
+D:\Co-op Project\OASystem\OA.Service\bin\Debug\OA.IService.dll
+D:\Co-op Project\OASystem\OA.Service\bin\Debug\OA.Model.dll
+D:\Co-op Project\OASystem\OA.Service\bin\Debug\EntityFramework.dll
+D:\Co-op Project\OASystem\OA.Service\bin\Debug\OA.DalFactory.pdb
+D:\Co-op Project\OASystem\OA.Service\bin\Debug\OA.DAL.pdb
+D:\Co-op Project\OASystem\OA.Service\bin\Debug\OA.IDAL.pdb
+D:\Co-op Project\OASystem\OA.Service\bin\Debug\OA.IService.pdb
+D:\Co-op Project\OASystem\OA.Service\bin\Debug\OA.Model.pdb
+D:\Co-op Project\OASystem\OA.Service\bin\Debug\EntityFramework.xml

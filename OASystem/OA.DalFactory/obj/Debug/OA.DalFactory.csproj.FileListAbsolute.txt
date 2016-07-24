@@ -3,3 +3,13 @@ D:\Co-op Project\OASystem\OA.DalFactory\bin\Debug\OA.DalFactory.pdb
 D:\Co-op Project\OASystem\OA.DalFactory\obj\Debug\OA.DalFactory.csprojResolveAssemblyReference.cache
 D:\Co-op Project\OASystem\OA.DalFactory\obj\Debug\OA.DalFactory.dll
 D:\Co-op Project\OASystem\OA.DalFactory\obj\Debug\OA.DalFactory.pdb
+D:\Co-op Project\OASystem\OA.DalFactory\bin\Debug\EntityFramework.dll
+D:\Co-op Project\OASystem\OA.DalFactory\bin\Debug\EntityFramework.SqlServer.dll
+D:\Co-op Project\OASystem\OA.DalFactory\bin\Debug\OA.DAL.dll
+D:\Co-op Project\OASystem\OA.DalFactory\bin\Debug\OA.IDAL.dll
+D:\Co-op Project\OASystem\OA.DalFactory\bin\Debug\OA.Model.dll
+D:\Co-op Project\OASystem\OA.DalFactory\bin\Debug\OA.DAL.pdb
+D:\Co-op Project\OASystem\OA.DalFactory\bin\Debug\OA.IDAL.pdb
+D:\Co-op Project\OASystem\OA.DalFactory\bin\Debug\OA.Model.pdb
+D:\Co-op Project\OASystem\OA.DalFactory\bin\Debug\EntityFramework.xml
+D:\Co-op Project\OASystem\OA.DalFactory\bin\Debug\EntityFramework.SqlServer.xml

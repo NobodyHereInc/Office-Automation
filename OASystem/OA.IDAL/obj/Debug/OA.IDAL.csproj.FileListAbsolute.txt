@@ -3,3 +3,7 @@ D:\Co-op Project\OASystem\OA.IDAL\bin\Debug\OA.IDAL.pdb
 D:\Co-op Project\OASystem\OA.IDAL\obj\Debug\OA.IDAL.csprojResolveAssemblyReference.cache
 D:\Co-op Project\OASystem\OA.IDAL\obj\Debug\OA.IDAL.dll
 D:\Co-op Project\OASystem\OA.IDAL\obj\Debug\OA.IDAL.pdb
+D:\Co-op Project\OASystem\OA.IDAL\bin\Debug\OA.Model.dll
+D:\Co-op Project\OASystem\OA.IDAL\bin\Debug\EntityFramework.dll
+D:\Co-op Project\OASystem\OA.IDAL\bin\Debug\OA.Model.pdb
+D:\Co-op Project\OASystem\OA.IDAL\bin\Debug\EntityFramework.xml
