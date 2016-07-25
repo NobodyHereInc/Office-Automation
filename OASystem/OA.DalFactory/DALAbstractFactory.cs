@@ -12,21 +12,6 @@ namespace OA.DalFactory
         private static readonly string DalNameSpace = ConfigurationManager.AppSettings["DalNameSpace"];
         private static readonly string DalAssembly = ConfigurationManager.AppSettings["DalAssembly"];
 
-        /// <summary>
-        /// This function is used to create IUserInfoDal by reflection.
-        /// </summary>
-        /// <returns></returns>
-        public static IUserInfoDal CreateUserInfoDal()
-        {
-            string classFulleName = DalNameSpace + ".UserInfoDal";
-            
-            var obj = CreateInstance(classFulleName, DalAssembly);
-
-            return obj as IUserInfoDal;
-        }
-
-
-
 
 
         /// <summary>

@@ -2,7 +2,7 @@
 
 namespace OA.IDAL
 {
-    public interface IUserInfoDal : IBaseDal<UserInfo>
+    public partial interface IUserInfoDal : IBaseDal<UserInfo>
     {
     }
 }

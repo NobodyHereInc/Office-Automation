@@ -1,0 +1,26 @@
+﻿@{
+    Layout = null;
+}
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title> Find PassWord </title>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    <form action="FindPwd" method="post">
+        <table class="table-responsive table-bordered">
+            <tr>
+                <td>User Name:</td>
+                <td><input type="text" name="txtName" /></td>
+            </tr>
+            <tr>
+                <td>Email:</td>
+                <td><input type="text" name="txtMail" value="menglingchen3019@gmail.com" readonly /></td>
+            </tr>
+            <tr><td><input type="submit" value="Find PassWord" /></td></tr>
+        </table>
+    </form>
+</body>
+</html>

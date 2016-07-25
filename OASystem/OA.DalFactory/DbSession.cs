@@ -14,28 +14,10 @@ namespace OA.DalFactory
     /// </summary>
     public partial class DbSession : IDbSession
     {
-        private IUserInfoDal _UserInfoDal;
 
         public DbContext Db
         {
             get { return DBContextFactory.CreateDbContext(); }
-        }
-
-        public IUserInfoDal UserInfoDal
-        {
-            get
-            {
-                if (_UserInfoDal == null)
-                {
-                    _UserInfoDal = DALAbstractFactory.CreateUserInfoDal();
-                }
-                return _UserInfoDal;
-            }
-
-            set
-            {
-                _UserInfoDal = value;
-            }
         }
 
         public bool SaveChanges()

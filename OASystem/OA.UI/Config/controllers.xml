@@ -3,14 +3,29 @@
 
   <object type="OA.UI.Controllers.UserInfoController, OA.UI" singleton="false" >
     <property name="userInfoService" ref="userInfoService" />
+    <property name="roleInfoService" ref="roleInfoService" />
+    <property name="actionInfoService" ref="actionInfoService" />
+    <property name="r_UserInfo_ActionInfoService" ref="r_UserInfo_ActionInfoService" /> 
   </object>
 
   <object type="OA.UI.Controllers.LogInController, OA.UI" singleton="false" >
     <property name="userInfoService" ref="userInfoService" />
   </object>
 
-
+  <object type="OA.UI.Controllers.RoleInfoController, OA.UI" singleton="false" >
+    <property name="roleInfoService" ref="roleInfoService" />
+  </object>
   
+  <object type="OA.UI.Controllers.ActionInfoController, OA.UI" singleton="false" >
+    <property name="roleInfoService" ref="roleInfoService" />
+    <property name="actionInfoService" ref="actionInfoService" />   
+  </object>
+
+  <object type="OA.UI.Controllers.HomeController, OA.UI" singleton="false" >
+    <property name="userInfoService" ref="userInfoService" />
+  </object>
+
+
   <!--intentionally do NOT register the AccountController or the ValuesController with the container; demonstrates that the underlying
   default controller factory will properly (attempt to!) resolve all controllers not registered with Spring.NET
   using its default controller resolution behavoir-->

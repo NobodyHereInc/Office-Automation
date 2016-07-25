@@ -1,0 +1,261 @@
+﻿@{
+    Layout = null;
+}
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/easyUI/themes/bootstrap/easyui.css" rel="stylesheet" />
+    <link href="~/Content/easyUI/themes/icon.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-3.1.0.min.js"></script>
+    <script src="~/Content/easyUI/jquery.easyui.min.js"></script>
+    <script src="~/Content/easyUI/locale/easyui-lang-en.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="~/Scripts/datapattern.js"></script> 
+    <script>
+        $(function () {
+            $('#addDiv').css("display", "none");
+            $('#editDiv').css("display", "none");
+            $('#setUserRoleDiv').css("display","none");
+            loadData();
+        });
+
+        function loadData(pars) {
+            $('#tt').datagrid({
+                url: '/RoleInfo/GetRoleInfo',
+                title: 'Role Info Table',
+                fitColumns: true,
+                nowrap: false,
+                idField: 'ID',
+                loadMsg: 'Loading Role Information...', // Loading message.
+                pagination: true, // whether speprate page.
+                singleSelect: false, // whether Select a single row.
+                pageSize: 10, // Page Size
+                pageNumber: 1, // Start Page
+                pageList: [10, 15, 20],
+                queryParams: {}, // send parameters to back-end.
+                columns: [[
+                    { field: 'ck', checkbox: true, align: 'left', width: 50 },
+					{ field: 'ID', title: 'ID', width: 80 },
+					{ field: 'RoleName', title: 'Role Name', width: 120 },
+                     { field: 'Sort', title: 'SortMark', width: 120 },
+                      { field: 'Remark', title: 'Remark', width: 120 },
+					{
+					    field: 'SubTime', title: 'SubTime', width: 80, align: 'right',
+					    formatter: function (value, row, index) {
+					        return (eval(value.replace(/\/Date\((\d+)\)\//gi, "new Date($1)"))).pattern("yyyy-M-d");
+					    }
+					},
+                    {
+                        field: 'Operator', title: 'Operation', width: 80, align: 'right',
+                        formatter: function (value, row, index) {
+                            var str = "<a href='javascript:void(0)' ids='" + row.id + "' class='deleteLink'>Delete</a>";
+                            str += "&nbsp;&nbsp;<a href='javascript:void(0)' ids='" + row.id + "' class='editLink'>Edit</a>";
+                            return str;
+                        }
+                    },
+                ]],
+                toolbar: [{
+                    id: 'btnDelete',
+                    text: 'Delete',
+                    iconCls: 'icon-remove',
+                    handler: function () {
+                        deleteInfo();
+                    }
+                }, {
+                    id: 'btnAdd',
+                    text: 'Add Role Information',
+                    iconCls: 'icon-add',
+                    handler: function () {
+                        addInfo();
+                    }
+                }, {
+                    id: 'btnEdit',
+                    text: 'Edit Role Information',
+                    iconCls: 'icon-edit',
+                    handler: function () {
+                        editInfo();
+                    }
+                },
+                ],
+                onLoadSuccess: function (e, field) {
+                    $(".deleteLink").click(function () {
+                        $.messager.alert("Error Message", $(this).attr("ids"), "error");
+                    });
+                },
+            });
+        }
+
+        //Modify User Info.
+        function editInfo()
+        {
+            var rows = $('#tt').datagrid('getSelections');
+
+            if (rows.length != 1) {
+                $.messager.alert("Error Message", "Please select one user!", "error")
+                return;
+            }
+
+            // display editDiv div
+            $('#editDiv').css("display", "block");
+
+            //
+            $("#editFrame").attr("src", "/RoleInfo/ShowEditRoleInfo/?id=" + rows[0].ID)
+
+            // dialog for editForm (easyUI)
+            $('#editDiv').dialog({
+                title: "Edit Role Information",
+                modal: true,
+                collapsible: true,
+                width: 400,
+                height: 500,
+                buttons: [{
+                    text: 'Ok',
+                    iconCls: 'icon-ok',
+                    handler: function () {
+                        //check input data !----------------
+
+                        //get child window object.
+                        var chilidWindow = $("#editFrame")[0].contentWindow;
+                        // use child window function called "subEditFrom".
+                        chilidWindow.subEditForm();
+
+                        $('#editDiv').dialog('close');
+                        $('#tt').datagrid('reload'); // reload info.
+                        $("#editForm input").val("");
+                    }
+                }, {
+                    text: 'Cancel',
+                    handler: function () {
+                        $('#editDiv').dialog('close');
+                        $('#tt').datagrid('reload'); // reload info.
+                        $("#editForm input").val("");
+                    }
+                }]
+            });
+        }
+
+        // After edit user
+        function afterEdit()
+        {
+            $('#editDiv').dialog('close');
+            $('#tt').datagrid('reload'); // reload info.
+            $("#editForm input").val(""); // clear input last data.
+        }
+
+        //Add User Info.
+        function addInfo()
+        {
+            // display form
+            $('#addDiv').css("display", "block");
+
+            // dialog for addForm (easyUI)
+            $('#addDiv').dialog({
+                title: "Add User Information",
+                modal: true,
+                collapsible: true,
+                width: 300,
+                height: 200,
+                buttons: [{
+                    text: 'Ok',
+                    iconCls: 'icon-ok',
+                    handler: function () {
+                        //check input data !----------------
+
+                        $("#addForm").submit();//Submit form
+                    }
+                }, {
+                    text: 'Cancel',
+                    handler: function () {
+                        $('#addDiv').dialog('close');
+                        $('#tt').datagrid('reload'); // reload info.
+                        $("#addForm input").val("");
+                    }
+                }]
+            });
+        }
+
+        // afterAdd
+        function afterAdd() {
+            $('#addDiv').dialog('close');
+            $('#tt').datagrid('reload'); // reload info.
+            $("#addForm input").val(""); // clear input last data.
+        }
+
+        //Delete User Info.
+        function deleteInfo()
+        {
+            // get all seleted rows.
+            var rows = $('#tt').datagrid('getSelections');
+
+            //
+            if (!rows || rows.length == 0) {
+                // alart error message
+                $.messager.alert("Error Message", "Please select item to delete!", "error");
+                return;
+            }
+
+            if ($.messager.confirm("Message", "Are you sure you want to remove this user?", function (r) {
+                if (r) { // user click "OK"
+                    // get what want to delete.
+                    var strId = "";
+                    for (var i = 0; i < rows.length; i++) {
+                        strId = strId + rows[i].ID + ","
+                    }
+
+                    // delete last ","
+                    strId = strId.substr(0, strId.length - 1);
+
+                    // request to server-side (post method)
+                    $.post("/RoleInfo/DeleteRoleInfo", { "strId": strId }, function (data) {
+                            if (data = "Ok") {
+                                $.messager.confirm("Message", "The new RoelInfo has been added successfully.")
+                                $('#tt').datagrid("reload");
+                                $('#tt').datagrid("clearSelections");
+                            }
+                            else{
+                                $.messager.confirm("Message", "This RoleInfo has been deleted Failly.")
+                            }
+                    });
+                }
+            }));
+        }
+    </script>
+</head>
+<body>
+    <!---------------------------------- START Display User Infromation ------------------------------>
+    <div>
+        <table id="tt" class="table-responsive col-md-2 col-md-8" title="" iconcls="icon-edit"></table>
+    </div>
+    <!---------------------------------- END Display User Infromation ------------------------------>
+    <!---------------------------------- START Add User Information dialog ------------------------->
+    <div id="addDiv">
+        <form action="/RoleInfo/AddRoleInfo" data-ajax="true" data-ajax-method="POST" data-ajax-success="afterAdd" id="addForm">
+            <table>
+                <tr>
+                    <td>Role Name</td>
+                    <td><input type="text" name="RoleName" /></td>
+                </tr>
+                <tr>
+                    <td>Sort Mark</td>
+                    <td><input type="text" name="Sort" /></td>
+                </tr>
+                <tr>
+                    <td>Remark</td>
+                    <td><input type="text" name="Remark" /></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <!---------------------------------- END Add User Information dialog --------------------------->
+    <!----------------------- START Update User Information -------------------------->
+    <div id="editDiv" style="overflow:hidden">
+        <iframe id="editFrame" frameborder="0" width="100%" height="100%"></iframe>
+    </div>
+    <!----------------------- END Update User Information ---------------------------->
+</body>
+</html>
+

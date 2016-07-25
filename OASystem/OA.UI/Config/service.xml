@@ -2,4 +2,10 @@
 <objects>
   <object type="OA.Service.UserInfoService, OA.Service" singleton="false" name="userInfoService" >
   </object>
+  <object type="OA.Service.RoleInfoService, OA.Service" singleton="false" name="roleInfoService" >
+  </object>
+    <object type="OA.Service.ActionInfoService, OA.Service" singleton="false" name="actionInfoService" >
+  </object>
+  <object type="OA.Service.R_UserInfo_ActionInfoService, OA.Service" singleton="false" name="r_UserInfo_ActionInfoService" >
+  </object>
 </objects>

@@ -16,11 +16,15 @@ namespace OA.UI.Models
         /// <param name="filterContext"></param>
         public override void OnException(ExceptionContext filterContext)
         {
+            base.OnException(filterContext);
+
             // write exception into Queue.
             exceptionQueue.Enqueue(filterContext.Exception);
 
             // redirect to error page.
             filterContext.HttpContext.Response.Redirect("/error.html");
+
+            filterContext.HttpContext.Response.End();
         }
     }
 }

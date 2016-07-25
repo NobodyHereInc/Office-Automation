@@ -4,10 +4,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System;
 using OA.Model.SearchParam;
+using System.Net.Mail;
+using System.Text;
+using System.Net;
 
 namespace OA.Service
 {
-    public class UserInfoService : BaseService<UserInfo>, IUserInfoService
+    public partial class UserInfoService : BaseService<UserInfo>, IUserInfoService
     {
         #region Find User Pwd
         /// <summary>
@@ -16,6 +19,22 @@ namespace OA.Service
         /// <param name="userInfo"></param>
         public void FindUserPwd(UserInfo userInfo)
         {
+            string newPwd = Guid.NewGuid().ToString().Substring(0, 8);
+            userInfo.UPwd = newPwd;
+            this.DbSession.UserInfoDal.Edit(userInfo);
+            this.DbSession.SaveChanges();
+            MailMessage mailMsg = new MailMessage();
+            mailMsg.From = new MailAddress("527768601@qq.com", "Linchen Meng");
+            mailMsg.To.Add(new MailAddress("527768601@qq.com", "Lingchen Meng"));
+            mailMsg.Subject = "New account Information:";
+            StringBuilder sb = new StringBuilder();
+            sb.Append("New User account:");
+            sb.Append("User Name: " + userInfo.UName);
+            sb.Append("PassWord: " + newPwd);
+            mailMsg.Body = sb.ToString(); 
+            SmtpClient client = new SmtpClient("smtp.qq.com");
+            client.Credentials = new NetworkCredential("527768601", "198811032");
+            client.Send(mailMsg);
         }
         #endregion
 
@@ -85,13 +104,55 @@ namespace OA.Service
         /// <returns> true: Set Ok, false: Set Fail. </returns>
         public bool SetUserRole(int userId, List<int> roleIds)
         {
-            return false;
+            // get user info by id.
+            var userInfo = this.DbSession.UserInfoDal.GetList(u => u.ID == userId).FirstOrDefault();
+
+            // if user is exist.
+            if (userInfo != null)
+            {
+                // clear original role info in this user.
+                userInfo.RoleInfoes.Clear();
+
+                // add new role info for this user.
+                foreach (int roleId in roleIds)
+                {
+                    // get role info.
+                    var roleInfo = this.DbSession.RoleInfoDal.GetList(r => r.ID == roleId).FirstOrDefault();
+
+                    // add to this user.
+                    userInfo.RoleInfoes.Add(roleInfo);//根据RoleIdList集合中存储的角色编号，获取角色信息，然后给当前用户添加.
+                }
+            }
+
+            // save change.
+            return this.DbSession.SaveChanges();
         }
         #endregion
 
-        public override void SetCurrentDal()
+        #region Set User Action
+        public bool SetUserAction(int userId, int actionId, bool value)
         {
-            CurrentDal = this.DbSession.UserInfoDal;
+            //
+            var actionInfo = this.DbSession.R_UserInfo_ActionInfoDal.GetList(r => r.UserInfoID == userId && r.ActionInfoID == actionId).FirstOrDefault();
+            // if user do not have
+            if (actionInfo == null)
+            {
+                R_UserInfo_ActionInfo r_UserInfo_ActionInfo = new R_UserInfo_ActionInfo();
+                r_UserInfo_ActionInfo.IsPass = value;
+                r_UserInfo_ActionInfo.ActionInfoID = actionId;
+                r_UserInfo_ActionInfo.UserInfoID = userId;
+
+                this.DbSession.R_UserInfo_ActionInfoDal.Add(r_UserInfo_ActionInfo);
+            }
+            else// otherwise
+            {
+                if (actionInfo.IsPass != value)
+                {
+                    actionInfo.IsPass = value;
+                }
+            }
+            return this.DbSession.SaveChanges();
         }
+        #endregion
     }
 }

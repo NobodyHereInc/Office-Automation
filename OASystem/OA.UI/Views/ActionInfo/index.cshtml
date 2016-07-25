@@ -1,0 +1,412 @@
+﻿@model OA.Model.ActionInfo
+@{
+    Layout = null;
+}
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/easyUI/themes/bootstrap/easyui.css" rel="stylesheet" />
+    <link href="~/Content/easyUI/themes/icon.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-3.1.0.min.js"></script>
+    <script src="~/Content/easyUI/jquery.easyui.min.js"></script>
+    <script src="~/Content/easyUI/locale/easyui-lang-en.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="~/Scripts/datapattern.js"></script>
+    <script src="~/Scripts/MyAjaxForm.js"></script>
+    <script>
+        $(function () {
+            $('#addDiv').css("display", "none");
+            $('#editDiv').css("display", "none");
+            $('#setActionRoleDiv').css("display", "none");
+            loadData();
+
+            bindSelectActionTypeChange(); // display or not display iamge of Incon select tag.
+            bindFileUpload(); // filr upload
+        });
+
+        function loadData(pars) {
+            $('#tt').datagrid({
+                url: '/ActionInfo/GetActionInfo',
+                title: 'User Permissions Info Table',
+                fitColumns: true,
+                nowrap: false,
+                idField: 'ID',
+                loadMsg: 'Loading User Permissions Information...', // Loading message.
+                pagination: true, // whether speprate page.
+                singleSelect: false, // whether Select a single row.
+                pageSize: 10, // Page Size
+                pageNumber: 1, // Start Page
+                pageList: [10, 15, 20],
+                queryParams: {}, // send parameters to back-end.
+                columns: [[
+                    { field: 'ck', checkbox: true, align: 'left', width: 50 },
+					{ field: 'ID', title: 'ID', width: 80 },
+					{ field: 'actionInfoName', title: 'Permission Name', width: 120 },
+                    { field: 'url', title: 'URL', width: 120 },
+                    {
+                        field: 'ActionTypeEnum', title: 'Permission Type', width: 120,
+                        formatter: function (value, row, index) {
+                            if (value == 1) {
+                                return "Menu Permission";
+                            }
+                            else {
+                                return "Normal Permission";
+                            }
+                        }
+                    },
+                    { field: 'httpMethod', title: 'Http Method', width: 120 },
+                    { field: 'remark', title: 'Remark', width: 120 },
+                    { field: 'sort', title: 'Sort mark', width: 120 },
+					{ field: 'subTime', title: 'Submit Time', width: 120, align: 'right' },
+                    {
+                        field: 'Operator', title: 'Operation', width: 80, align: 'right',
+                        formatter: function (value, row, index) {
+                            var str = "<a href='javascript:void(0)' ids='" + row.id + "' class='deleteLink'>Delete</a>";
+                            str += "&nbsp;&nbsp;<a href='javascript:void(0)' ids='" + row.id + "' class='editLink'>Edit</a>";
+                            return str;
+                        }
+                    },
+                ]],
+                toolbar: [{
+                    id: 'btnDelete',
+                    text: 'Delete',
+                    iconCls: 'icon-remove',
+                    handler: function () {
+                        deleteInfo();
+                    }
+                }, {
+                    id: 'btnAdd',
+                    text: 'Add Permission Info',
+                    iconCls: 'icon-add',
+                    handler: function () {
+                        addInfo();
+                    }
+                }, {
+                    id: 'btnEdit',
+                    text: 'Edit Permission Info',
+                    iconCls: 'icon-edit',
+                    handler: function () {
+                        editInfo();
+                    }
+                },
+                {
+                    id: 'btnSetRole',
+                    text: 'Set Permission to Role',
+                    iconCls: 'icon-edit',
+                    handler: function () {
+                        setActionRoleInfo();
+                    }
+                },
+                ],
+            });
+        }
+
+        // set permission to role.
+        function setActionRoleInfo()
+        {
+            var rows = $('#tt').datagrid('getSelections');
+
+            if (rows.length != 1) {
+                $.messager.alert("Error Message", "Please select one!", "error")
+                return;
+            }
+
+            $('#setActionRoleDiv').css("display", "block");
+
+            $('#setActionRoleFrame').attr("src", "/ActionInfo/SetActionRole/?id=" + rows[0].ID);
+
+            // dialog for editForm (easyUI)
+            $('#setActionRoleDiv').dialog({
+                title: "Set Permission to Role",
+                modal: true,
+                collapsible: true,
+                width: 400,
+                height: 800,
+                buttons: [{
+                    text: 'Ok',
+                    iconCls: 'icon-ok',
+                    handler: function () {
+                        //check input data !----------------
+
+                        //get child window object.
+                        var chilidWindow = $("#setActionRoleFrame")[0].contentWindow;
+                        // use child window function called "subEditFrom".
+                        chilidWindow.subEditForm();
+
+                        $('#setActionRoleDiv').dialog('close');
+                        $('#tt').datagrid('reload'); // reload info.
+                        $("#setActionRoleFrame input").val("");
+                    }
+                }, {
+                    text: 'Cancel',
+                    handler: function () {
+                        $('#setActionRoleDiv').dialog('close');
+                        $('#tt').datagrid('reload'); // reload info.
+                        $("#setActionRoleFrame input").val("");
+                    }
+                }]
+            });
+        }
+
+        // file upload with ajax.
+        function bindFileUpload()
+        {
+            $('#btnUpload').click(function () {
+                // check user whether select a file.
+                if ($("#ImgIcon").val() == "") {
+                    $.messager.alert("Error Message", "Please select one File to upload!", "error");
+                    return;
+                }
+
+                $("#addForm").ajaxSubmit({
+                    type: 'post',
+                    url: '/ActionInfo/GetMenuIcon',
+                    success: function (data) {
+                        var serverData = data.split(':');
+                        if (serverData[0] == "ok") {
+                            $("#hidImage").attr("value", serverData[1]);
+                            $("#menuIconShow").append("<img src='" + serverData[1] + "' width='40px' height='40px' />");
+                        } else {
+                            $.messager.alert("Error Message", "Upload file is fail!");
+                        }
+                    }
+                });
+             });
+        }
+
+        // display or not display iamge of Incon select tag
+        function bindSelectActionTypeChange()
+        {
+            $('#selectActionType').change(function () {
+                if ($('#selectActionType')[0].value == 0) {
+                    $('#image').fadeOut("slow");
+                }
+                else {
+                    $('#image').fadeIn("slow");
+                }
+            });
+
+        }
+
+        //Modify User Info.
+        function editInfo()
+        {
+            var rows = $('#tt').datagrid('getSelections');
+
+            if (rows.length != 1) {
+                $.messager.alert("Error Message", "Please select one user!", "error")
+                return;
+            }
+
+            // display editDiv div
+            $('#editDiv').css("display", "block");
+
+            //
+            $("#editFrame").attr("src", "/ActionInfo/ShowEditActionInfo/?id=" + rows[0].ID)
+
+            // dialog for editForm (easyUI)
+            $('#editDiv').dialog({
+                title: "Edit Permission Information",
+                modal: true,
+                collapsible: true,
+                width: 400,
+                height: 800,
+                buttons: [{
+                    text: 'Ok',
+                    iconCls: 'icon-ok',
+                    handler: function () {
+                        //check input data !----------------
+
+                        //get child window object.
+                        var chilidWindow = $("#editFrame")[0].contentWindow;
+                        // use child window function called "subEditFrom".
+                        chilidWindow.subEditForm();
+                    }
+                }, {
+                    text: 'Cancel',
+                    handler: function () {
+                        $('#editDiv').dialog('close');
+                        $('#tt').datagrid('reload'); // reload info.
+                        $("#editForm input").val("");
+                    }
+                }]
+            });
+        }
+
+        // After edit user
+        function afterEdit()
+        {
+            $('#editDiv').dialog('close');
+            $('#tt').datagrid('reload'); // reload info.
+            $("#editForm input").val(""); // clear input last data.
+        }
+
+        //Add User Info.
+        function addInfo()
+        {
+            // display form
+            $('#addDiv').css("display", "block");
+
+            // dialog for addForm (easyUI)
+            $('#addDiv').dialog({
+                title: "Add User Information",
+                modal: true,
+                collapsible: true,
+                width: 600,
+                height: 500,
+                buttons: [{
+                    text: 'Ok',
+                    iconCls: 'icon-ok',
+                    handler: function () {
+                        //check input data !----------------
+
+                        $("#addForm").submit();//Submit form
+                    }
+                }, {
+                    text: 'Cancel',
+                    handler: function () {
+                        $('#addDiv').dialog('close');
+                        $('#tt').datagrid('reload'); // reload info.
+                        $("#addForm input").val("");
+                    }
+                }]
+            });
+        }
+
+        // afterAdd
+        function afterAdd() {
+            $('#addDiv').dialog('close');
+            $('#tt').datagrid('reload'); // reload info.
+            $("#addForm input").val(""); // clear input last data.
+        }
+
+        //Delete User Info.
+        function deleteInfo()
+        {
+            // get all seleted rows.
+            var rows = $('#tt').datagrid('getSelections');
+
+            //
+            if (!rows || rows.length == 0) {
+                // alart error message
+                $.messager.alert("Error Message", "Please select item to delete!", "error");
+                return;
+            }
+
+            if ($.messager.confirm("Message", "Are you sure you want to remove this Action?", function (r) {
+                if (r) { // user click "OK"
+                    // get what want to delete.
+                    var strId = "";
+                    for (var i = 0; i < rows.length; i++) {
+                        strId = strId + rows[i].ID + ","
+                    }
+
+                    // delete last ","
+                    strId = strId.substr(0, strId.length - 1);
+
+                    // request to server-side (post method)
+                    $.post("/ActionInfo/DeleteActionInfo", { "strId": strId }, function (data) {
+                            if (data = "Ok") {
+                                $('#tt').datagrid("reload");
+                                $('#tt').datagrid("clearSelections");
+                            }
+                            else{
+
+                            }
+                    });
+                }
+            }));
+        }
+    </script>
+</head>
+<body>
+    <!---------------------------------- START Display Permission Infromation ------------------------------>
+    <div>
+        <table id="tt" class="table-responsive col-md-2 col-md-8" title="" iconcls="icon-edit"></table>
+    </div>
+    <!---------------------------------- END Display Permission Infromation ------------------------------>
+    <!---------------------------------- START Add Permissioner Information dialog ------------------------->
+    <div id="addDiv">
+        <br />
+        <h2>Add New Permission Infomation</h2>
+        <br />
+        <form action="/ActionInfo/AddActionInfo" data-ajax="true" data-ajax-method="POST" data-ajax-success="afterAdd" id="addForm" class="form-horizontal" enctype="multipart/form-data">
+            <input type="hidden" name="Id" />
+            <input type="hidden" name="SubTime" />
+            <input type="hidden" name="ModifiedOn" />
+            <div class="form-group">
+                <label class="control-label col-sm-4" asp-for="ActionInfoName">Permission Name:</label>
+                <div class="col-sm-8">
+                    <input type="text" name="ActionInfoName" class="form-control" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-4" asp-for="Url">URL:</label>
+                <div class="col-sm-8">
+                    <input type="text" name="Url" class="form-control" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-4" asp-for="DelFlag">Delete Flag:</label>
+                <div class="col-sm-8">
+                    <input type="text" name="DelFlag" class="form-control" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-4" asp-for="HttpMethod">Http Method:</label>
+                <div class="col-sm-8">
+                    <select name="HttpMethod" class="form-control">
+                        <option value="Get">Get</option>
+                        <option value="Post">Post</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-4" asp-for="ActionTypeEnum">Permission Type:</label>
+                <div class="col-sm-8">
+                    <select name="ActionTypeEnum" class="form-control" id="selectActionType">
+                        <option value="1">Menu Permission</option>
+                        <option value="0" selected>Normal Permission</option>
+                    </select>
+                    <div id="menuIconShow">
+
+                    </div>
+                </div>
+                <input type="hidden" id="hidImage" name="MenuIcon" asp-for="MenuIcon" />
+            </div>
+            <div class="form-group" style="display:none" id="image">
+                <label class="control-label col-sm-4">Meun Icon:</label>
+                <div class="col-sm-8">
+                    <input type="file" id="ImgIcon" name="Photo" />
+                    <input type="button" id="btnUpload" value="Upload Icon Image">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-4" asp-for="Sort">Sort:</label>
+                <div class="col-sm-8">
+                    <input type="text" name="Sort" class="form-control" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-4" asp-for="Remark">Remark:</label>
+                <div class="col-sm-8">
+                    <input type="text" name="Remark" class="form-control" />
+                </div>
+            </div>
+        </form>
+    </div>
+    <!---------------------------------- END Add Permission Information dialog --------------------------->
+    <!----------------------- START Update Permission Information -------------------------->
+    <div id="editDiv" style="overflow:hidden">
+        <iframe id="editFrame" frameborder="0" width="100%" height="100%"></iframe>
+    </div>
+    <!----------------------- END Update Permission Information ---------------------------->
+    <!------------------------- START Set Permission For Role ------------------------------->
+    <div id="setActionRoleDiv">
+        <iframe id="setActionRoleFrame" frameborder="0" width="100%" height="100%"></iframe>
+    </div>
+    <!---------------------- END Set Permission For Role ------------------------------------>
+</body>
+</html>

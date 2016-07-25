@@ -38,6 +38,10 @@
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -51,12 +55,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActionEqualityCompare\ActionEqualCompare.cs" />
     <Compile Include="ActionInfo.cs">
       <DependentUpon>OA.tt</DependentUpon>
     </Compile>
     <Compile Include="Department.cs">
       <DependentUpon>OA.tt</DependentUpon>
     </Compile>
+    <Compile Include="Enum\ActionTypeEnum.cs" />
+    <Compile Include="Enum\DeleteEnumType.cs" />
     <Compile Include="OA.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

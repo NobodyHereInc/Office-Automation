@@ -8,7 +8,7 @@ namespace OA.IDAL
 {
     public partial interface IDbSession
     {
-        IUserInfoDal UserInfoDal { get; set; }
+        //IUserInfoDal UserInfoDal { get; set; }
         bool SaveChanges();
     }
 }

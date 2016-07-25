@@ -87,18 +87,19 @@
                     text: 'Set Role For User',
                     iconCls: 'icon-edit',
                     handler: function () {
-                        //setUserRole();
+                        setUserRole();
                     }
                 }, {
                     id: 'btnSetAction',
                     text: 'Set Special Permission for User',
                     iconCls: 'icon-edit',
                     handler: function () {
-                        //setUserAction();
+                        setUserAction();
                     }
                 }],
             });
         }
+
 
         // set user Action.
         function setUserAction()
@@ -113,7 +114,7 @@
             $('#setUserActionDiv').css("display", "block");
 
             //
-            $("#setUserActionFrame").attr("src", "/UserInfo/SetUserActionInfo/?id=" + rows[0].userId)
+            $("#setUserActionFrame").attr("src", "/UserInfo/SetUserActionInfo/?id=" + rows[0].UserId)
             // dialog for editForm (easyUI)
             $('#setUserActionDiv').dialog({
                 title: "Set Special Permission For User",
@@ -130,7 +131,7 @@
                         //get child window object.
                         var chilidWindow = $("#setUserActionFrame")[0].contentWindow;
                         // use child window function called "subEditFrom".
-                        chilidWindow.subSetUserActionForm();
+                        //chilidWindow.subSetUserActionForm();
 
                         $('#setUserActionDiv').dialog('close');
                         $('#tt').datagrid('reload'); // reload info.
@@ -145,7 +146,6 @@
                     }
                 }]
             });
-
         }
 
         // Set setUserRole();
@@ -161,7 +161,7 @@
             $('#setUserRoleDiv').css("display", "block");
 
             //
-            $("#setUserRoleFrame").attr("src", "/UserInfo/SetRoleInfo/?id=" + rows[0].userId)
+            $("#setUserRoleFrame").attr("src", "/UserInfo/SetRoleInfo/?id=" + rows[0].UserId)
             // dialog for editForm (easyUI)
             $('#setUserRoleDiv').dialog({
                 title: "Set Role For User",

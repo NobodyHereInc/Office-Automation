@@ -1,0 +1,124 @@
+﻿@using OA.Model
+@model OA.Model.UserInfo
+@{
+    Layout = null;
+}
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Set Special Permission For User.</title>
+    <link href="~/Content/tableStyle.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/easyUI/themes/bootstrap/easyui.css" rel="stylesheet" />
+    <link href="~/Content/easyUI/themes/icon.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-3.1.0.min.js"></script>
+    <script src="~/Content/easyUI/jquery.easyui.min.js"></script>
+    <script src="~/Content/easyUI/locale/easyui-lang-en.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="~/Scripts/datapattern.js"></script> 
+    <script type="text/javascript">
+        $(function () {
+            $('.setActions').click(function () {
+                $.post("/UserInfo/SetActionForUser", {"userId": @Model.ID, "actionId": $(this).attr("ids"), "value":$(this).val()}, function (data) {
+                    if (data == "ok") {
+                        $.messager.show({
+                            title:'Message',
+                            msg:'Set Successfully!!',
+                            showType:'fade'
+                        });
+                    }
+                });
+            });
+
+            //clear
+            $(".btnClearAction").click(function(){
+                $(this).parent().find(".setActions").attr("checked",false);
+                $.post("/UserInfo/ClearActionUser",{"userId":@Model.ID,"actionId": $(this).attr("ids")},function(data){
+                    if(data=="ok"){
+                        $.messager.show({
+                            title:'Message',
+                            msg:'Clear Successfully!!',
+                            showType:'fade'
+                        });
+
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <br />
+    <br />
+
+    <div>
+        @{
+            UserInfo userInfo = (UserInfo)ViewBag.userInfo;
+            <h2>Set Special Permission For <span style="font:bold">@userInfo.UName</span></h2>
+        }
+    </div>
+
+    <div>
+        @{
+            List<ActionInfo> actionInfoList = (List<ActionInfo>)ViewBag.AllActions;
+            List<R_UserInfo_ActionInfo> actionExitList = (List<R_UserInfo_ActionInfo>)ViewBag.AllExtActions;
+
+            <form action="/UserInfo/SetUserActionInfo" id="SetUserActionForm" data-ajax="true" data-ajax-method="POST">
+                <table>
+                    <tr>
+                        <th>Permission's Id</th>
+                        <th>Permission Name</th>
+                        <th>Url</th>
+                        <th>Permission Method Type</th>
+                        <th>Opration</th>
+                    </tr>
+                    @foreach (var actionInfo in actionInfoList)
+                    {
+                        var rb = "rb_" + actionInfo.ID;
+                        var rb_no = "rb_no_" + actionInfo.ID;
+                        <tr>
+                            <td>@actionInfo.ID</td>
+                            <td>@actionInfo.ActionInfoName</td>
+                            <td>@actionInfo.Url</td>
+                            <td>@actionInfo.HttpMethod</td>
+                            <td>
+                                @{
+                                    var ExtAction = (from a in actionExitList
+                                                     where a.ActionInfoID == actionInfo.ID
+                                                     select a).FirstOrDefault();
+                                    if (ExtAction != null)
+                                    {
+                                        if (ExtAction.IsPass == true) // allow
+                                        {
+                                            <label for="@rb">Allow</label>
+                                            <input type="radio" id="@rb" name="@rb" checked="checked" value="true" ids="@actionInfo.ID" class="setActions" />
+                                            <label for="@rb_no">Not Allow</label>
+                                            <input type="radio" id="@rb_no" name="@rb" value="false" ids="@actionInfo.ID" class="setActions" />
+                                        }
+                                        else // not allow
+                                        {
+                                            <label for="@rb">Allow</label>
+                                            <input type="radio" id="@rb" name="@rb" value="true" ids="@actionInfo.ID" class="setActions" />
+                                            <label for="@rb_no">Not Allow</label>
+                                            <input type="radio" id="@rb_no" name="@rb" value="false" checked="checked" ids="@actionInfo.ID" class="setActions" />
+                                        }
+                                    }
+                                    else// allow and now allow all not set
+                                    {
+                                        <label for="@rb">Allow</label>
+                                        <input type="radio" id="@rb" name="@rb" value="true" ids="@actionInfo.ID"/ class="setActions">
+                                        <label for="@rb_no">Not Allow</label>
+                                        <input type="radio" id="@rb_no" name="@rb" value="false" ids="@actionInfo.ID" class="setActions" />
+                                    }
+
+                                }
+                                <input type="button" class="btnClearAction" value="clear" ids="@actionInfo.ID">
+                            </td>
+                        </tr>
+                                    }
+                </table>
+            </form>
+        }
+    </div>
+</body>
+</html>

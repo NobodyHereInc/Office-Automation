@@ -7,3 +7,6 @@ D:\Co-op Project\OASystem\OA.IDAL\bin\Debug\OA.Model.dll
 D:\Co-op Project\OASystem\OA.IDAL\bin\Debug\EntityFramework.dll
 D:\Co-op Project\OASystem\OA.IDAL\bin\Debug\OA.Model.pdb
 D:\Co-op Project\OASystem\OA.IDAL\bin\Debug\EntityFramework.xml
+D:\Co-op Project\OASystem\OA.IDAL\bin\Debug\Newtonsoft.Json.dll
+D:\Co-op Project\OASystem\OA.IDAL\bin\Debug\Newtonsoft.Json.pdb
+D:\Co-op Project\OASystem\OA.IDAL\bin\Debug\Newtonsoft.Json.xml

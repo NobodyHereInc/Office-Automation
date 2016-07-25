@@ -1,0 +1,50 @@
+﻿@using OA.Model
+@{
+    Layout = null;
+}
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Set Role Info for User</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-3.1.0.min.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script>
+        function subSetRoleForm()
+        {
+            $('#SetRoleForm').submit();
+        }
+        function afterSet()
+        {
+            window.parent.afterSet();
+        }
+    </script>
+</head>
+<body>
+    <br />
+    <br />
+    <h2>Set roles for @{ UserInfo user = (UserInfo)ViewBag.UserInfo; @user.UName}</h2>
+    <hr />
+    <form action="/UserInfo/SetUserRoleInfo" id="SetRoleForm" data-ajax="true" data-ajax-method="POST" data-ajax-success="afterSet">
+        @{
+            List<RoleInfo> roleInfoList = (List<RoleInfo>)ViewBag.AllRoles;
+            List<int> ExtRoleIdList = (List<int>)ViewBag.ExtAllRoleIds;
+            foreach (var roleInfo in roleInfoList)
+            {
+                String roleName = "cba_" + roleInfo.ID;
+                if (ExtRoleIdList.Contains(roleInfo.ID))
+                {
+                    @roleInfo.RoleName<input type="checkbox" name="@roleName" value="@roleInfo.ID" checked />
+                }
+                else
+                {
+                    @roleInfo.RoleName<input type="checkbox" name="@roleName" value="@roleInfo.ID" />
+                }
+                <hr />
+            }
+
+            <input type="hidden" name="userId" value="@user.ID" />
+        }
+    </form>
+</body>
+</html>

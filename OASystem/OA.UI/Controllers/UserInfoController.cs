@@ -1,22 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
-using OA.Service;
 using OA.IService;
 using OA.Model;
 using OA.Model.SearchParam;
+using OA.Model.Enum;
 
 namespace OA.UI.Controllers
 {
-    public class UserInfoController : Controller
+    public class UserInfoController : BaseController
     {
         private IUserInfoService userInfoService { get; set; }
-        //private IRoleInfoService rs = new RoleInfoService();
-        //private IUserInfoRoleInfoService urs = new UserInfoRoleInfoService();
-        //private IRUserInfoActionInfoService ras = new RUserInfoActionInfoService();
-        //private IActionInfoService asf = new ActionInfoService();
+        private IRoleInfoService roleInfoService { get; set; }
+        private IActionInfoService actionInfoService { get; set; }
+        private IR_UserInfo_ActionInfoService r_UserInfo_ActionInfoService { get; set; }
 
         // GET: /<controller>/
         public ActionResult Index()
@@ -167,125 +165,106 @@ namespace OA.UI.Controllers
         }
         #endregion
 
-        //#region Set Role Info
-        //public IActionResult SetRoleInfo(int id)
-        //{
-        //    // get user info with sepcific id.
-        //    UserInfo user = us.GetList(u => u.Id == id).FirstOrDefault();
+        #region Set Role Info
+        public ActionResult SetRoleInfo(int id)
+        {
+            // get user info with sepcific id.
+            UserInfo user = userInfoService.GetList(u => u.ID == id).FirstOrDefault();
 
-        //    // set value to view page.
-        //    ViewBag.UserInfo = user;
+            // set value to view page.
+            ViewBag.UserInfo = user;
 
-        //    // delete flag.
-        //    short deleteflag = (short)DeleteEnumType.Normal;
+            // delete flag.
+            short deleteflag = (short)DeleteEnumType.Normal;
 
-        //    // get all roleInfo from database.
-        //    ViewBag.AllRoles = rs.GetList(r => r.DelFlag == deleteflag).ToList();
+            // get all roleInfo from database.
+            ViewBag.AllRoles = roleInfoService.GetList(r => r.DelFlag == deleteflag).ToList();
 
-        //    // get exist RoleInfo id for this user.
-        //    var temp = urs.GetList(ur => ur.UserInfoId == user.Id);
+            // get exist RoleInfo id for this user.
+            ViewBag.ExtAllRoleIds = (from r in user.RoleInfoes
+                                     select r.ID).ToList();
 
-        //    List<int> list = new List<int>();
-        //    foreach (var item in temp)
-        //    {
-        //        list.Add(item.RoleInfoId);
-        //    }
+            return View();
+        }
+        #endregion
 
-        //    ViewBag.ExtAllRoleIds = list;
+        #region Set User Role Info
+        [HttpPost]
+        public ActionResult SetUserRoleInfo(FormCollection collection)
+        {
+            // get user id.
+            int userId = int.Parse(Request["userId"]);
+            // get all value of name in form.
+            string[] AllKeys = Request.Form.AllKeys;
+            // initiate a list.
+            List<int> list = new List<int>();
+            foreach (string key in AllKeys)
+            {
+                if (key.StartsWith("cba_"))
+                {
+                    string roleId = key.Replace("cba_", "");
+                    list.Add(int.Parse(roleId));
+                }
+            }
 
-        //    return View();
-        //}
-        //#endregion
+            // get role for this user.
+            userInfoService.SetUserRole(userId, list);
 
-        //#region Set User Role Info
-        //[HttpPost]
-        //public IActionResult SetUserRoleInfo(FormCollection collection)
-        //{
-        //    // get user id.
-        //    int userId = int.Parse(Request.Form["userId"]);
-        //    // get a string contains all role's id.
-        //    String keysStr = Request.Form["roleId"];
-        //    // split role's id String.
-        //    String[] AllKeys = keysStr.Split(',');
-        //    List<int> roleIdList = new List<int>();
+            // return.
+            return Content("ok");
+        }
+        #endregion
 
-        //    foreach (String key in AllKeys)
-        //    {
-        //        roleIdList.Add(int.Parse(key));
-        //    }
+        #region Set User Action Info
+        public ActionResult SetUserActionInfo(int id)
+        {
+            // get user info by id.
+            int userId = int.Parse(Request["id"]);
+            var userInfo = userInfoService.GetList(u => u.ID == userId).FirstOrDefault();
+            // pass user info to view page.
+            ViewData.Model = userInfo;
+            ViewBag.UserInfo = userInfo;
+            // get all action info and pass to view page.
+            ViewBag.AllActions = actionInfoService.GetList(a => a.DelFlag == 0).ToList();
+            // get user have action info (include allow and now allow).
+            ViewBag.AllExtActions = userInfo.R_UserInfo_ActionInfo.ToList();
 
-        //    // set role(s) to this user.
-        //    if (us.SetUserRole(userId, roleIdList))
-        //    {
-        //        return Content("ok");
-        //    }
-        //    else
-        //    {
-        //        return Content("NO");
-        //    }
-        //}
-        //#endregion
+            // return.
+            return View();
+        }
 
-        //#region Set User Action Info
-        //public IActionResult SetUserActionInfo(int id)
-        //{
-        //    // get this user info.
-        //    userInfo = us.GetList(u => u.Id == id).FirstOrDefault();
-        //    ViewBag.userInfo = userInfo;
-        //    ViewData.Model = userInfo;
+        public ActionResult SetActionForUser()
+        {
+            // get user id.
+            int userId = int.Parse(Request["userId"]);
+            // get action ids.
+            int actionId = int.Parse(Request["actionId"]);
+            // get all not allow.
+            string value = Request["value"];
 
-        //    // get all action.
-        //    ViewBag.allAction = asf.GetList(a => a.DelFlag == 0).ToList();
+            bool isPass = value == "true" ? true : false;
 
-        //    // get all exist action.
-        //    ViewBag.allExtAction = ras.GetList(r => r.UserInfoId == userInfo.Id).ToList();
+            if (userInfoService.SetUserAction(userId, actionId, isPass))
+            {
+                return Content("ok");
+            }
+            else
+            {
+                return Content("no");
+            }
+        }
+        #endregion
 
-        //    return View();
-        //}
-
-        //public ActionResult SetActionForUser()
-        //{
-        //    // get userId
-        //    int userId = int.Parse(Request.Form["userId"]);
-        //    // get actionId
-        //    int actionId = int.Parse(Request.Form["actionId"]);
-        //    // get isPass
-        //    string value = Request.Form["value"];
-        //    // convert string to bool.
-        //    bool isPass = value == "true" ? true : false;
-        //    // 
-        //    if (ras.SetUserAction(userId, actionId, isPass))
-        //    {
-        //        return Content("ok");
-        //    }
-        //    else
-        //    {
-        //        return Content("no");
-        //    }
-        //}
-        //#endregion
-
-        //#region Clear Action User
-        //public IActionResult ClearActionUser(int userId, int actionId)
-        //{
-        //    //// get userId
-        //    //int userId = int.Parse(Request.Form["userId"]);
-        //    //// get actionId
-        //    //int actionId = int.Parse(Request.Form["actionId"]);
-
-        //    // get this record.
-        //    var actionInfo = ras.GetList(r => r.UserInfoId == userId && r.ActionInfoId == actionId).FirstOrDefault();
-
-        //    if (actionInfo != null)
-        //    {
-        //        ras.Remove(actionInfo);
-        //        return Content("ok");
-        //    }
-        //    else
-        //    {
-        //        return Content("no");
-        //    }
-        //}
-        //#endregion
+        #region Clear Action User
+        public ActionResult ClearActionUser(int userId, int actionId)
+        {
+            var actionInfo = r_UserInfo_ActionInfoService.GetList(r => r.UserInfoID == userId && r.ActionInfoID == actionId).FirstOrDefault();
+            if (actionInfo != null)
+            {
+                r_UserInfo_ActionInfoService.Remove(actionInfo);
+            }
+            return Content("ok");
+        }
+        #endregion
     }
 }

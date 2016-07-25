@@ -5,7 +5,7 @@ using OA.Model.SearchParam;
 
 namespace OA.IService
 {
-    public interface IUserInfoService : IBaseService<UserInfo>
+    public partial interface IUserInfoService : IBaseService<UserInfo>
     {
         /// <summary>
         /// batch remove user info.
@@ -34,5 +34,14 @@ namespace OA.IService
         /// <param name="roleIds"></param>
         /// <returns></returns>
         bool SetUserRole(int userId, List<int> roleIds);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <param name="actionId"></param>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        bool SetUserAction(int userId, int actionId, bool value);
     }
 }
