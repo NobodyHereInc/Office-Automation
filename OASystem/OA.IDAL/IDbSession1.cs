@@ -13,15 +13,13 @@ namespace OA.IDAL
 	
 		IActionInfoDal ActionInfoDal{get;set;}
 	
-		IDepartmentDal DepartmentDal{get;set;}
+		IbookDal bookDal{get;set;}
 	
-		IOrderInfoDal OrderInfoDal{get;set;}
+		IDepartmentDal DepartmentDal{get;set;}
 	
 		IR_UserInfo_ActionInfoDal R_UserInfo_ActionInfoDal{get;set;}
 	
 		IRoleInfoDal RoleInfoDal{get;set;}
-	
-		IsysdiagramDal sysdiagramDal{get;set;}
 	
 		IUserInfoDal UserInfoDal{get;set;}
 	}	

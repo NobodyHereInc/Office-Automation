@@ -9,12 +9,12 @@ namespace OA.IService
        
     }   
 	
-	public partial interface IDepartmentService : IBaseService<Department>
+	public partial interface IbookService : IBaseService<book>
     {
        
     }   
 	
-	public partial interface IOrderInfoService : IBaseService<OrderInfo>
+	public partial interface IDepartmentService : IBaseService<Department>
     {
        
     }   
@@ -25,11 +25,6 @@ namespace OA.IService
     }   
 	
 	public partial interface IRoleInfoService : IBaseService<RoleInfo>
-    {
-       
-    }   
-	
-	public partial interface IsysdiagramService : IBaseService<sysdiagram>
     {
        
     }   

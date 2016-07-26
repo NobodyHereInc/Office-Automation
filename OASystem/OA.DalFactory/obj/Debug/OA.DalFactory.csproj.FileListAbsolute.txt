@@ -16,3 +16,4 @@ D:\Co-op Project\OASystem\OA.DalFactory\bin\Debug\EntityFramework.SqlServer.xml
 D:\Co-op Project\OASystem\OA.DalFactory\bin\Debug\Newtonsoft.Json.dll
 D:\Co-op Project\OASystem\OA.DalFactory\bin\Debug\Newtonsoft.Json.pdb
 D:\Co-op Project\OASystem\OA.DalFactory\bin\Debug\Newtonsoft.Json.xml
+D:\Co-op Project\OASystem\OA.DalFactory\bin\Debug\OA.DalFactory.dll.config

@@ -20,3 +20,5 @@ D:\Co-op Project\OASystem\OA.IService\bin\Debug\Memcached.ClientLibrary.pdb
 D:\Co-op Project\OASystem\OA.IService\bin\Debug\Newtonsoft.Json.dll
 D:\Co-op Project\OASystem\OA.IService\bin\Debug\Newtonsoft.Json.pdb
 D:\Co-op Project\OASystem\OA.IService\bin\Debug\Newtonsoft.Json.xml
+D:\Co-op Project\OASystem\OA.IService\bin\Debug\Lucene.Net.dll
+D:\Co-op Project\OASystem\OA.IService\bin\Debug\OA.IService.dll.config

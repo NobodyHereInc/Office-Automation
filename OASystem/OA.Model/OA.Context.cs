@@ -27,10 +27,9 @@ namespace OA.Model
     
         public virtual DbSet<ActionInfo> ActionInfoes { get; set; }
         public virtual DbSet<Department> Departments { get; set; }
-        public virtual DbSet<OrderInfo> OrderInfoes { get; set; }
         public virtual DbSet<R_UserInfo_ActionInfo> R_UserInfo_ActionInfo { get; set; }
         public virtual DbSet<RoleInfo> RoleInfoes { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<UserInfo> UserInfoes { get; set; }
+        public virtual DbSet<book> books { get; set; }
     }
 }

@@ -20,19 +20,19 @@ namespace OA.Service
         }
     }   
 	
+	public partial class bookService :BaseService<book>,IbookService
+    {
+        public override void SetCurrentDal()
+        {
+            CurrentDal = this.DbSession.bookDal;
+        }
+    }   
+	
 	public partial class DepartmentService :BaseService<Department>,IDepartmentService
     {
         public override void SetCurrentDal()
         {
             CurrentDal = this.DbSession.DepartmentDal;
-        }
-    }   
-	
-	public partial class OrderInfoService :BaseService<OrderInfo>,IOrderInfoService
-    {
-        public override void SetCurrentDal()
-        {
-            CurrentDal = this.DbSession.OrderInfoDal;
         }
     }   
 	
@@ -49,14 +49,6 @@ namespace OA.Service
         public override void SetCurrentDal()
         {
             CurrentDal = this.DbSession.RoleInfoDal;
-        }
-    }   
-	
-	public partial class sysdiagramService :BaseService<sysdiagram>,IsysdiagramService
-    {
-        public override void SetCurrentDal()
-        {
-            CurrentDal = this.DbSession.sysdiagramDal;
         }
     }   
 	

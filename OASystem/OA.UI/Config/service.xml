@@ -8,4 +8,6 @@
   </object>
   <object type="OA.Service.R_UserInfo_ActionInfoService, OA.Service" singleton="false" name="r_UserInfo_ActionInfoService" >
   </object>
+  <object type="OA.Service.bookService, OA.Service" singleton="false" name="bookService" >
+  </object>
 </objects>

@@ -114,3 +114,8 @@ D:\Co-op Project\OASystem\OA.UI\bin\Commons.dll
 D:\Co-op Project\OASystem\OA.UI\bin\ICSharpCode.SharpZipLib.dll
 D:\Co-op Project\OASystem\OA.UI\bin\Memcached.ClientLibrary.dll
 D:\Co-op Project\OASystem\OA.UI\bin\Memcached.ClientLibrary.pdb
+D:\Co-op Project\OASystem\OA.UI\bin\Lucene.Net.dll
+D:\Co-op Project\OASystem\OA.UI\bin\PanGu.dll
+D:\Co-op Project\OASystem\OA.UI\bin\PanGu.HighLight.dll
+D:\Co-op Project\OASystem\OA.UI\bin\PanGu.Lucene.Analyzer.dll
+D:\Co-op Project\OASystem\OA.UI\bin\PanGu.HighLight.pdb

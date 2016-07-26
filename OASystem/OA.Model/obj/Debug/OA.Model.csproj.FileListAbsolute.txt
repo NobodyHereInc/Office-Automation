@@ -10,4 +10,3 @@ D:\Co-op Project\OASystem\OA.Model\obj\Debug\OA.Model.pdb
 D:\Co-op Project\OASystem\OA.Model\bin\Debug\Newtonsoft.Json.dll
 D:\Co-op Project\OASystem\OA.Model\bin\Debug\Newtonsoft.Json.pdb
 D:\Co-op Project\OASystem\OA.Model\bin\Debug\Newtonsoft.Json.xml
-D:\Co-op Project\OASystem\OA.Model\obj\Debug\OA.Model.csprojResolveAssemblyReference.cache

@@ -33,11 +33,16 @@
     <Reference Include="Commons">
       <HintPath>..\Lib\Commons.dll</HintPath>
     </Reference>
-    <Reference Include="ICSharpCode.SharpZipLib">
-      <HintPath>..\Lib\ICSharpCode.SharpZipLib.dll</HintPath>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="log4net">
       <HintPath>..\Lib\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Lucene.Net, Version=2.9.2.2, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Lucene.Net.dll</HintPath>
     </Reference>
     <Reference Include="Memcached.ClientLibrary">
       <HintPath>..\Lib\Memcached.ClientLibrary.dll</HintPath>
@@ -45,6 +50,15 @@
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Lib\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PanGu">
+      <HintPath>..\Lib\PanGu.dll</HintPath>
+    </Reference>
+    <Reference Include="PanGu.HighLight">
+      <HintPath>..\Lib\PanGu.HighLight.dll</HintPath>
+    </Reference>
+    <Reference Include="PanGu.Lucene.Analyzer">
+      <HintPath>..\Lib\PanGu.Lucene.Analyzer.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -63,6 +77,10 @@
     <Compile Include="SerializerHelper.cs" />
     <Compile Include="ValidateCode.cs" />
     <Compile Include="WebCommon.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

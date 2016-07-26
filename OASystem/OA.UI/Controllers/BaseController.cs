@@ -14,7 +14,7 @@ namespace OA.UI.Controllers
         public UserInfo LoginUser { get; set; }
 
         /// <summary>
-        /// protect user enter uerl in bowser.
+        /// protect user enter uerl in bowser. 
         /// </summary>
         /// <param name="filterContext"></param>
         protected override void OnActionExecuting(ActionExecutingContext filterContext)

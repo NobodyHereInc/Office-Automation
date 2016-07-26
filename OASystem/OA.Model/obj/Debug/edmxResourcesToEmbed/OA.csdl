@@ -36,12 +36,6 @@
     <NavigationProperty Name="ActionInfoes" Relationship="Self.DepartmentActionInfo" FromRole="Department" ToRole="ActionInfo" />
     <NavigationProperty Name="UserInfoes" Relationship="Self.UserInfoDepartment" FromRole="Department" ToRole="UserInfo" />
   </EntityType>
-  <EntityType Name="OrderInfo">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-  </EntityType>
   <EntityType Name="R_UserInfo_ActionInfo">
     <Key>
       <PropertyRef Name="ID" />
@@ -66,16 +60,6 @@
     <Property Name="Sort" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="ActionInfoes" Relationship="Self.RoleInfoActionInfo" FromRole="RoleInfo" ToRole="ActionInfo" />
     <NavigationProperty Name="UserInfoes" Relationship="Self.UserInfoRoleInfo" FromRole="RoleInfo" ToRole="UserInfo" />
-  </EntityType>
-  <EntityType Name="sysdiagram">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="principal_id" Type="Int32" Nullable="false" />
-    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="version" Type="Int32" />
-    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
   </EntityType>
   <EntityType Name="UserInfo">
     <Key>
@@ -136,10 +120,8 @@
   <EntityContainer Name="OA_DBEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="ActionInfoes" EntityType="Self.ActionInfo" />
     <EntitySet Name="Departments" EntityType="Self.Department" />
-    <EntitySet Name="OrderInfoes" EntityType="Self.OrderInfo" />
     <EntitySet Name="R_UserInfo_ActionInfo" EntityType="Self.R_UserInfo_ActionInfo" />
     <EntitySet Name="RoleInfoes" EntityType="Self.RoleInfo" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
     <EntitySet Name="UserInfoes" EntityType="Self.UserInfo" />
     <AssociationSet Name="FK_ActionInfoR_UserInfo_ActionInfo" Association="Self.FK_ActionInfoR_UserInfo_ActionInfo">
       <End Role="ActionInfo" EntitySet="ActionInfoes" />
@@ -165,5 +147,25 @@
       <End Role="RoleInfo" EntitySet="RoleInfoes" />
       <End Role="UserInfo" EntitySet="UserInfoes" />
     </AssociationSet>
+    <EntitySet Name="books" EntityType="OA_DBModel.book" />
   </EntityContainer>
+  <EntityType Name="book">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Author" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PublisherId" Type="Int32" />
+    <Property Name="PublishedDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ISBN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="WordsCount" Type="Int32" />
+    <Property Name="UnitPrice" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="ContentDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AuthorDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="EditorComment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TOC" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CategoryId" Type="Int32" />
+    <Property Name="Clicks" Type="Int32" />
+  </EntityType>
 </Schema>

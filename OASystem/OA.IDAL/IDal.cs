@@ -16,12 +16,12 @@ namespace OA.IDAL
       
     }
 	
-	public partial interface IDepartmentDal :IBaseDal<Department>
+	public partial interface IbookDal :IBaseDal<book>
     {
       
     }
 	
-	public partial interface IOrderInfoDal :IBaseDal<OrderInfo>
+	public partial interface IDepartmentDal :IBaseDal<Department>
     {
       
     }
@@ -32,11 +32,6 @@ namespace OA.IDAL
     }
 	
 	public partial interface IRoleInfoDal :IBaseDal<RoleInfo>
-    {
-      
-    }
-	
-	public partial interface IsysdiagramDal :IBaseDal<sysdiagram>
     {
       
     }

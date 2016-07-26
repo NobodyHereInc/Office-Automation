@@ -18,6 +18,9 @@ namespace OA.UI
     {
         protected void Application_Start()
         {
+
+            // for book into with update lucene.Net
+            IndexManager.GetInstance().CreateThread();
             log4net.Config.XmlConfigurator.Configure(); //Read Log4Net Config Info.
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);

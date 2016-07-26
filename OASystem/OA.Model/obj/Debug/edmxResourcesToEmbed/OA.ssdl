@@ -20,6 +20,25 @@
     <Property Name="IconWidth" Type="int" Nullable="false" />
     <Property Name="IconHeight" Type="int" Nullable="false" />
   </EntityType>
+  <EntityType Name="book">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="50" />
+    <Property Name="Author" Type="nvarchar" MaxLength="50" />
+    <Property Name="PublisherId" Type="int" />
+    <Property Name="PublishedDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="ISBN" Type="nvarchar" MaxLength="50" />
+    <Property Name="WordsCount" Type="int" />
+    <Property Name="UnitPrice" Type="money" />
+    <Property Name="ContentDescription" Type="nvarchar(max)" />
+    <Property Name="AuthorDescription" Type="nvarchar(max)" />
+    <Property Name="EditorComment" Type="nvarchar(max)" />
+    <Property Name="TOC" Type="nvarchar(max)" />
+    <Property Name="CategoryId" Type="int" />
+    <Property Name="Clicks" Type="int" />
+  </EntityType>
   <EntityType Name="Department">
     <Key>
       <PropertyRef Name="ID" />
@@ -38,12 +57,6 @@
     </Key>
     <Property Name="ActionInfo_ID" Type="int" Nullable="false" />
     <Property Name="Department_ID" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="OrderInfo">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
   </EntityType>
   <EntityType Name="R_UserInfo_ActionInfo">
     <Key>
@@ -73,16 +86,6 @@
     </Key>
     <Property Name="ActionInfo_ID" Type="int" Nullable="false" />
     <Property Name="RoleInfo_ID" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="sysdiagrams">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-    <Property Name="principal_id" Type="int" Nullable="false" />
-    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="version" Type="int" />
-    <Property Name="definition" Type="varbinary(max)" />
   </EntityType>
   <EntityType Name="UserInfo">
     <Key>
@@ -235,13 +238,12 @@
   </Association>
   <EntityContainer Name="OA_DBModelStoreContainer">
     <EntitySet Name="ActionInfo" EntityType="Self.ActionInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="book" EntityType="Self.book" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Department" EntityType="Self.Department" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DepartmentActionInfo" EntityType="Self.DepartmentActionInfo" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="OrderInfo" EntityType="Self.OrderInfo" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="R_UserInfo_ActionInfo" EntityType="Self.R_UserInfo_ActionInfo" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="RoleInfo" EntityType="Self.RoleInfo" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="RoleInfoActionInfo" EntityType="Self.RoleInfoActionInfo" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="UserInfo" EntityType="Self.UserInfo" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="UserInfoDepartment" EntityType="Self.UserInfoDepartment" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="UserInfoRoleInfo" EntityType="Self.UserInfoRoleInfo" Schema="dbo" store:Type="Tables" />

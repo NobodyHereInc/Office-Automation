@@ -29,6 +29,20 @@ namespace OA.DalFactory
             set { _ActionInfoDal = value; }
         }
 	
+		private IbookDal _bookDal;
+        public IbookDal bookDal
+        {
+            get
+            {
+                if(_bookDal == null)
+                {
+                    _bookDal = DALAbstractFactory.CreatebookDal();
+                }
+                return _bookDal;
+            }
+            set { _bookDal = value; }
+        }
+	
 		private IDepartmentDal _DepartmentDal;
         public IDepartmentDal DepartmentDal
         {
@@ -41,20 +55,6 @@ namespace OA.DalFactory
                 return _DepartmentDal;
             }
             set { _DepartmentDal = value; }
-        }
-	
-		private IOrderInfoDal _OrderInfoDal;
-        public IOrderInfoDal OrderInfoDal
-        {
-            get
-            {
-                if(_OrderInfoDal == null)
-                {
-                    _OrderInfoDal = DALAbstractFactory.CreateOrderInfoDal();
-                }
-                return _OrderInfoDal;
-            }
-            set { _OrderInfoDal = value; }
         }
 	
 		private IR_UserInfo_ActionInfoDal _R_UserInfo_ActionInfoDal;
@@ -83,20 +83,6 @@ namespace OA.DalFactory
                 return _RoleInfoDal;
             }
             set { _RoleInfoDal = value; }
-        }
-	
-		private IsysdiagramDal _sysdiagramDal;
-        public IsysdiagramDal sysdiagramDal
-        {
-            get
-            {
-                if(_sysdiagramDal == null)
-                {
-                    _sysdiagramDal = DALAbstractFactory.CreatesysdiagramDal();
-                }
-                return _sysdiagramDal;
-            }
-            set { _sysdiagramDal = value; }
         }
 	
 		private IUserInfoDal _UserInfoDal;

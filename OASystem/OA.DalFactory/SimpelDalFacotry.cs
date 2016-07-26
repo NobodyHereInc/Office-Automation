@@ -25,6 +25,16 @@ namespace OA.DalFactory
             return obj as IActionInfoDal;
         }
 		
+	    public static IbookDal CreatebookDal()
+        {
+
+            string classFulleName = ConfigurationManager.AppSettings["DalNameSpace"] + ".bookDal";
+
+            var obj  = CreateInstance(classFulleName,ConfigurationManager.AppSettings["DalAssembly"]);
+
+            return obj as IbookDal;
+        }
+		
 	    public static IDepartmentDal CreateDepartmentDal()
         {
 
@@ -33,16 +43,6 @@ namespace OA.DalFactory
             var obj  = CreateInstance(classFulleName,ConfigurationManager.AppSettings["DalAssembly"]);
 
             return obj as IDepartmentDal;
-        }
-		
-	    public static IOrderInfoDal CreateOrderInfoDal()
-        {
-
-            string classFulleName = ConfigurationManager.AppSettings["DalNameSpace"] + ".OrderInfoDal";
-
-            var obj  = CreateInstance(classFulleName,ConfigurationManager.AppSettings["DalAssembly"]);
-
-            return obj as IOrderInfoDal;
         }
 		
 	    public static IR_UserInfo_ActionInfoDal CreateR_UserInfo_ActionInfoDal()
@@ -63,16 +63,6 @@ namespace OA.DalFactory
             var obj  = CreateInstance(classFulleName,ConfigurationManager.AppSettings["DalAssembly"]);
 
             return obj as IRoleInfoDal;
-        }
-		
-	    public static IsysdiagramDal CreatesysdiagramDal()
-        {
-
-            string classFulleName = ConfigurationManager.AppSettings["DalNameSpace"] + ".sysdiagramDal";
-
-            var obj  = CreateInstance(classFulleName,ConfigurationManager.AppSettings["DalAssembly"]);
-
-            return obj as IsysdiagramDal;
         }
 		
 	    public static IUserInfoDal CreateUserInfoDal()

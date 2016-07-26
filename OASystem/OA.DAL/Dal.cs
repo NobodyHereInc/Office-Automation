@@ -17,12 +17,12 @@ namespace OA.DAL
       
     }
 	
-	public partial class DepartmentDal :BaseDal<Department>,IDepartmentDal
+	public partial class bookDal :BaseDal<book>,IbookDal
     {
       
     }
 	
-	public partial class OrderInfoDal :BaseDal<OrderInfo>,IOrderInfoDal
+	public partial class DepartmentDal :BaseDal<Department>,IDepartmentDal
     {
       
     }
@@ -33,11 +33,6 @@ namespace OA.DAL
     }
 	
 	public partial class RoleInfoDal :BaseDal<RoleInfo>,IRoleInfoDal
-    {
-      
-    }
-	
-	public partial class sysdiagramDal :BaseDal<sysdiagram>,IsysdiagramDal
     {
       
     }

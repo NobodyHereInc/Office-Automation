@@ -1,0 +1,41 @@
+﻿@{
+    Layout = null;
+}
+@using OA.UI.Models
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Search Article In WebSite</title>
+    <style type="text/css">
+        .search-btn2{width:102px; height:32px; line-height:32px; cursor:pointer; border:0px; background-color:#d6000f;font-family:'Microsoft Yahei'; font-size:16px;color:#f3f3f3;}
+        .search-text2{ display:block; width:528px; height:26px; line-height:26px; float:left; margin:3px 5px; border:1px solid ;  font-family:'Microsoft Yahei'; font-size:14px;}
+        .search-list dt{font-family:'Microsoft Yahei'; font-size:16px; line-height:20px; margin-bottom:7px; font-weight:normal;}
+        .search-list dt a{color:#2981a9;}
+        .search-list dt a em{ font-style:normal; color:#cc0000;}
+        .search-detail{font-size:12px; color:#666666;margin-bottom:5px; font-family:Arial;line-height:16px;}
+        .search-list .search-detail em{font-style:normal; color:#cc0000;}
+    </style>
+</head>
+<body>
+    <div>
+        <form action="/Search/SearchContent" method="get">
+            <input type="text" name="txtSearchContent" class="search-text2"/>
+            <input type="submit" name="btnSearch" value="Search" class="search-btn2"/>
+        </form>
+        <hr />
+
+        @if (ViewData["list"] != null)
+        {        
+            <dl class="search-list">
+            @foreach (var item in (List<SearchResultViewModel>)ViewData["list"])
+            {
+                <dt>@MvcHtmlString.Create(item.Title)</dt>
+                <dd class="search-detail">@MvcHtmlString.Create(item.Content)</dd>
+            }
+            </dl>
+        }
+    </div>
+</body>
+</html>

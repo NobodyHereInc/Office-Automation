@@ -18,3 +18,4 @@ D:\Co-op Project\OASystem\OA.Service\bin\Debug\EntityFramework.xml
 D:\Co-op Project\OASystem\OA.Service\bin\Debug\Newtonsoft.Json.dll
 D:\Co-op Project\OASystem\OA.Service\bin\Debug\Newtonsoft.Json.pdb
 D:\Co-op Project\OASystem\OA.Service\bin\Debug\Newtonsoft.Json.xml
+D:\Co-op Project\OASystem\OA.Service\bin\Debug\OA.Service.dll.config
