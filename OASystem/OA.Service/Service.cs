@@ -36,6 +36,14 @@ namespace OA.Service
         }
     }   
 	
+	public partial class KeyWordsRankService :BaseService<KeyWordsRank>,IKeyWordsRankService
+    {
+        public override void SetCurrentDal()
+        {
+            CurrentDal = this.DbSession.KeyWordsRankDal;
+        }
+    }   
+	
 	public partial class R_UserInfo_ActionInfoService :BaseService<R_UserInfo_ActionInfo>,IR_UserInfo_ActionInfoService
     {
         public override void SetCurrentDal()
@@ -49,6 +57,14 @@ namespace OA.Service
         public override void SetCurrentDal()
         {
             CurrentDal = this.DbSession.RoleInfoDal;
+        }
+    }   
+	
+	public partial class SearchDetailService :BaseService<SearchDetail>,ISearchDetailService
+    {
+        public override void SetCurrentDal()
+        {
+            CurrentDal = this.DbSession.SearchDetailDal;
         }
     }   
 	

@@ -58,6 +58,14 @@
     <Property Name="ActionInfo_ID" Type="int" Nullable="false" />
     <Property Name="Department_ID" Type="int" Nullable="false" />
   </EntityType>
+  <EntityType Name="KeyWordsRank">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="KeyWords" Type="nvarchar" MaxLength="50" />
+    <Property Name="SearchCount" Type="int" />
+  </EntityType>
   <EntityType Name="R_UserInfo_ActionInfo">
     <Key>
       <PropertyRef Name="ID" />
@@ -86,6 +94,14 @@
     </Key>
     <Property Name="ActionInfo_ID" Type="int" Nullable="false" />
     <Property Name="RoleInfo_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SearchDetails">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="KeyWords" Type="nvarchar" MaxLength="50" />
+    <Property Name="SearchDateTime" Type="datetime" />
   </EntityType>
   <EntityType Name="UserInfo">
     <Key>
@@ -241,9 +257,11 @@
     <EntitySet Name="book" EntityType="Self.book" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Department" EntityType="Self.Department" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="DepartmentActionInfo" EntityType="Self.DepartmentActionInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KeyWordsRank" EntityType="Self.KeyWordsRank" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="R_UserInfo_ActionInfo" EntityType="Self.R_UserInfo_ActionInfo" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="RoleInfo" EntityType="Self.RoleInfo" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="RoleInfoActionInfo" EntityType="Self.RoleInfoActionInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SearchDetails" EntityType="Self.SearchDetails" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="UserInfo" EntityType="Self.UserInfo" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="UserInfoDepartment" EntityType="Self.UserInfoDepartment" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="UserInfoRoleInfo" EntityType="Self.UserInfoRoleInfo" Schema="dbo" store:Type="Tables" />

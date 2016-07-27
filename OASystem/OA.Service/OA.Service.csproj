@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="ActionInfoService.cs" />
     <Compile Include="BaseService.cs" />
+    <Compile Include="KeyWordsRankService.cs" />
     <Compile Include="RoleInfoService.cs" />
     <Compile Include="Service.cs">
       <AutoGen>True</AutoGen>

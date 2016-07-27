@@ -123,5 +123,23 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="KeyWordsRanks">
+      <EntityTypeMapping TypeName="OA_DBModel.KeyWordsRank">
+        <MappingFragment StoreEntitySet="KeyWordsRank">
+          <ScalarProperty Name="SearchCount" ColumnName="SearchCount" />
+          <ScalarProperty Name="KeyWords" ColumnName="KeyWords" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SearchDetails">
+      <EntityTypeMapping TypeName="OA_DBModel.SearchDetail">
+        <MappingFragment StoreEntitySet="SearchDetails">
+          <ScalarProperty Name="SearchDateTime" ColumnName="SearchDateTime" />
+          <ScalarProperty Name="KeyWords" ColumnName="KeyWords" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

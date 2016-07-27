@@ -57,6 +57,20 @@ namespace OA.DalFactory
             set { _DepartmentDal = value; }
         }
 	
+		private IKeyWordsRankDal _KeyWordsRankDal;
+        public IKeyWordsRankDal KeyWordsRankDal
+        {
+            get
+            {
+                if(_KeyWordsRankDal == null)
+                {
+                    _KeyWordsRankDal = DALAbstractFactory.CreateKeyWordsRankDal();
+                }
+                return _KeyWordsRankDal;
+            }
+            set { _KeyWordsRankDal = value; }
+        }
+	
 		private IR_UserInfo_ActionInfoDal _R_UserInfo_ActionInfoDal;
         public IR_UserInfo_ActionInfoDal R_UserInfo_ActionInfoDal
         {
@@ -83,6 +97,20 @@ namespace OA.DalFactory
                 return _RoleInfoDal;
             }
             set { _RoleInfoDal = value; }
+        }
+	
+		private ISearchDetailDal _SearchDetailDal;
+        public ISearchDetailDal SearchDetailDal
+        {
+            get
+            {
+                if(_SearchDetailDal == null)
+                {
+                    _SearchDetailDal = DALAbstractFactory.CreateSearchDetailDal();
+                }
+                return _SearchDetailDal;
+            }
+            set { _SearchDetailDal = value; }
         }
 	
 		private IUserInfoDal _UserInfoDal;

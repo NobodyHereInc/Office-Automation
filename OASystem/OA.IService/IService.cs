@@ -19,12 +19,22 @@ namespace OA.IService
        
     }   
 	
+	public partial interface IKeyWordsRankService : IBaseService<KeyWordsRank>
+    {
+       
+    }   
+	
 	public partial interface IR_UserInfo_ActionInfoService : IBaseService<R_UserInfo_ActionInfo>
     {
        
     }   
 	
 	public partial interface IRoleInfoService : IBaseService<RoleInfo>
+    {
+       
+    }   
+	
+	public partial interface ISearchDetailService : IBaseService<SearchDetail>
     {
        
     }   

@@ -63,6 +63,14 @@
           <Property Name="ActionInfo_ID" Type="int" Nullable="false" />
           <Property Name="Department_ID" Type="int" Nullable="false" />
         </EntityType>
+        <EntityType Name="KeyWordsRank">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="KeyWords" Type="nvarchar" MaxLength="50" />
+          <Property Name="SearchCount" Type="int" />
+        </EntityType>
         <EntityType Name="R_UserInfo_ActionInfo">
           <Key>
             <PropertyRef Name="ID" />
@@ -91,6 +99,14 @@
           </Key>
           <Property Name="ActionInfo_ID" Type="int" Nullable="false" />
           <Property Name="RoleInfo_ID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SearchDetails">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="KeyWords" Type="nvarchar" MaxLength="50" />
+          <Property Name="SearchDateTime" Type="datetime" />
         </EntityType>
         <EntityType Name="UserInfo">
           <Key>
@@ -246,9 +262,11 @@
           <EntitySet Name="book" EntityType="Self.book" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Department" EntityType="Self.Department" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DepartmentActionInfo" EntityType="Self.DepartmentActionInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KeyWordsRank" EntityType="Self.KeyWordsRank" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="R_UserInfo_ActionInfo" EntityType="Self.R_UserInfo_ActionInfo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="RoleInfo" EntityType="Self.RoleInfo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="RoleInfoActionInfo" EntityType="Self.RoleInfoActionInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SearchDetails" EntityType="Self.SearchDetails" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserInfo" EntityType="Self.UserInfo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserInfoDepartment" EntityType="Self.UserInfoDepartment" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserInfoRoleInfo" EntityType="Self.UserInfoRoleInfo" Schema="dbo" store:Type="Tables" />
@@ -445,7 +463,9 @@
             <End Role="UserInfo" EntitySet="UserInfoes" />
           </AssociationSet>
           <EntitySet Name="books" EntityType="OA_DBModel.book" />
-        </EntityContainer>
+          <EntitySet Name="KeyWordsRanks" EntityType="OA_DBModel.KeyWordsRank" />
+          <EntitySet Name="SearchDetails" EntityType="OA_DBModel.SearchDetail" />
+          </EntityContainer>
         <EntityType Name="book">
           <Key>
             <PropertyRef Name="Id" />
@@ -465,7 +485,23 @@
           <Property Name="CategoryId" Type="Int32" />
           <Property Name="Clicks" Type="Int32" />
         </EntityType>
-      </Schema>
+        <EntityType Name="KeyWordsRank">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Guid" Nullable="false" />
+          <Property Name="KeyWords" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SearchCount" Type="Int32" />
+        </EntityType>
+        <EntityType Name="SearchDetail">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Guid" Nullable="false" />
+          <Property Name="KeyWords" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SearchDateTime" Type="DateTime" Precision="3" />
+        </EntityType>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -593,7 +629,25 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-        </EntityContainerMapping>
+          <EntitySetMapping Name="KeyWordsRanks">
+            <EntityTypeMapping TypeName="OA_DBModel.KeyWordsRank">
+              <MappingFragment StoreEntitySet="KeyWordsRank">
+                <ScalarProperty Name="SearchCount" ColumnName="SearchCount" />
+                <ScalarProperty Name="KeyWords" ColumnName="KeyWords" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SearchDetails">
+            <EntityTypeMapping TypeName="OA_DBModel.SearchDetail">
+              <MappingFragment StoreEntitySet="SearchDetails">
+                <ScalarProperty Name="SearchDateTime" ColumnName="SearchDateTime" />
+                <ScalarProperty Name="KeyWords" ColumnName="KeyWords" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
   </edmx:Runtime>

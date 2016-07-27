@@ -68,6 +68,9 @@
     <Compile Include="Enum\ActionTypeEnum.cs" />
     <Compile Include="Enum\DeleteEnumType.cs" />
     <Compile Include="Enum\LuceneEnumType.cs" />
+    <Compile Include="KeyWordsRank.cs">
+      <DependentUpon>OA.tt</DependentUpon>
+    </Compile>
     <Compile Include="OA.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -88,6 +91,9 @@
       <DependentUpon>OA.tt</DependentUpon>
     </Compile>
     <Compile Include="R_UserInfo_ActionInfo.cs">
+      <DependentUpon>OA.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SearchDetail.cs">
       <DependentUpon>OA.tt</DependentUpon>
     </Compile>
     <Compile Include="SearchParam\BaseParam.cs" />

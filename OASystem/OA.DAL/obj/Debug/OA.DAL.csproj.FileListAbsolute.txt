@@ -16,7 +16,6 @@ D:\Co-op Project\OASystem\OA.DAL\bin\Debug\OA.Common.pdb
 D:\Co-op Project\OASystem\OA.DAL\bin\Debug\OA.IDAL.pdb
 D:\Co-op Project\OASystem\OA.DAL\bin\Debug\Memcached.ClientLibrary.dll
 D:\Co-op Project\OASystem\OA.DAL\bin\Debug\log4net.dll
-D:\Co-op Project\OASystem\OA.DAL\bin\Debug\ICSharpCode.SharpZipLib.dll
 D:\Co-op Project\OASystem\OA.DAL\bin\Debug\Memcached.ClientLibrary.pdb
 D:\Co-op Project\OASystem\OA.DAL\bin\Debug\Newtonsoft.Json.dll
 D:\Co-op Project\OASystem\OA.DAL\bin\Debug\Newtonsoft.Json.pdb

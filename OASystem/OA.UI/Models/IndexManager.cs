@@ -85,7 +85,15 @@ namespace OA.UI.Models
             {
                 if (queue.Count > 0)
                 {
-                    WriteSearchContent();
+                    try
+                    {
+                        WriteSearchContent();
+                    }
+                    catch (System.Exception)
+                    {
+
+                    }
+                    
                 }
                 else
                 {

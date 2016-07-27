@@ -8,6 +8,9 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Search Article In WebSite</title>
+    <script src="~/Scripts/jquery-3.1.0.min.js"></script>
+    <script src="~/Scripts/jquery-ui-1.8.20.min.js"></script>
+    <link href="~/Content/themes/base/jquery.ui.all.css" rel="stylesheet" />
     <style type="text/css">
         .search-btn2{width:102px; height:32px; line-height:32px; cursor:pointer; border:0px; background-color:#d6000f;font-family:'Microsoft Yahei'; font-size:16px;color:#f3f3f3;}
         .search-text2{ display:block; width:528px; height:26px; line-height:26px; float:left; margin:3px 5px; border:1px solid ;  font-family:'Microsoft Yahei'; font-size:14px;}
@@ -17,6 +20,15 @@
         .search-detail{font-size:12px; color:#666666;margin-bottom:5px; font-family:Arial;line-height:16px;}
         .search-list .search-detail em{font-style:normal; color:#cc0000;}
     </style>
+
+    <script type="text/javascript">
+        $(function () {
+            $("#txtSearchContent").autocomplete({
+                source: "/Search/GetSarch",
+
+            });
+        });
+    </script>
 </head>
 <body>
     <div>
@@ -31,7 +43,7 @@
             <dl class="search-list">
             @foreach (var item in (List<SearchResultViewModel>)ViewData["list"])
             {
-                <dt>@MvcHtmlString.Create(item.Title)</dt>
+                <dt><a href="@item.Url">@MvcHtmlString.Create(item.Title)</a></dt>
                 <dd class="search-detail">@MvcHtmlString.Create(item.Content)</dd>
             }
             </dl>

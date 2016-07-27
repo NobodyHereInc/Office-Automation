@@ -119,3 +119,6 @@ D:\Co-op Project\OASystem\OA.UI\bin\PanGu.dll
 D:\Co-op Project\OASystem\OA.UI\bin\PanGu.HighLight.dll
 D:\Co-op Project\OASystem\OA.UI\bin\PanGu.Lucene.Analyzer.dll
 D:\Co-op Project\OASystem\OA.UI\bin\PanGu.HighLight.pdb
+D:\Co-op Project\OASystem\OA.UI\bin\ServiceStack.dll
+D:\Co-op Project\OASystem\OA.UI\bin\ServiceStack.Interfaces.dll
+D:\Co-op Project\OASystem\OA.UI\bin\ServiceStack.ServiceInterface.dll

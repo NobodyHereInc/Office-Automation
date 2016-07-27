@@ -31,5 +31,7 @@ namespace OA.Model
         public virtual DbSet<RoleInfo> RoleInfoes { get; set; }
         public virtual DbSet<UserInfo> UserInfoes { get; set; }
         public virtual DbSet<book> books { get; set; }
+        public virtual DbSet<KeyWordsRank> KeyWordsRanks { get; set; }
+        public virtual DbSet<SearchDetail> SearchDetails { get; set; }
     }
 }

@@ -45,6 +45,16 @@ namespace OA.DalFactory
             return obj as IDepartmentDal;
         }
 		
+	    public static IKeyWordsRankDal CreateKeyWordsRankDal()
+        {
+
+            string classFulleName = ConfigurationManager.AppSettings["DalNameSpace"] + ".KeyWordsRankDal";
+
+            var obj  = CreateInstance(classFulleName,ConfigurationManager.AppSettings["DalAssembly"]);
+
+            return obj as IKeyWordsRankDal;
+        }
+		
 	    public static IR_UserInfo_ActionInfoDal CreateR_UserInfo_ActionInfoDal()
         {
 
@@ -63,6 +73,16 @@ namespace OA.DalFactory
             var obj  = CreateInstance(classFulleName,ConfigurationManager.AppSettings["DalAssembly"]);
 
             return obj as IRoleInfoDal;
+        }
+		
+	    public static ISearchDetailDal CreateSearchDetailDal()
+        {
+
+            string classFulleName = ConfigurationManager.AppSettings["DalNameSpace"] + ".SearchDetailDal";
+
+            var obj  = CreateInstance(classFulleName,ConfigurationManager.AppSettings["DalAssembly"]);
+
+            return obj as ISearchDetailDal;
         }
 		
 	    public static IUserInfoDal CreateUserInfoDal()

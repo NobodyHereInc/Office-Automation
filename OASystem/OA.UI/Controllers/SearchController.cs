@@ -9,15 +9,14 @@ using OA.IService;
 using System.IO;
 using OA.UI.Models;
 using System.Collections.Generic;
-using System.Linq;
-using Lucene.Net.Analysis.PanGu;
-using Lucene.Net.Analysis.Standard;
 
 namespace OA.UI.Controllers
 {
     public class SearchController : Controller
     {
         private IbookService bookService { get; set; }
+        private ISearchDetailService searchDetailService { get; set; }
+        private IKeyWordsRankService keyWordsRankService { get; set; }
 
         // GET: Search
         public ActionResult Index()
@@ -71,22 +70,36 @@ namespace OA.UI.Controllers
             List<SearchResultViewModel> searchResultList = new List<SearchResultViewModel>();
             for (int i = 0; i < docs.Length; i++)
             {
-
                 int docId = docs[i].doc;
                 Document doc = searcher.Doc(docId);
                 SearchResultViewModel viewModel = new SearchResultViewModel();
                 viewModel.Id = int.Parse(doc.Get("id"));
                 viewModel.Title = doc.Get("title");
+                viewModel.Url = "/Book/ShowBookDetail/?id=" + viewModel.Id;
                 viewModel.Content = Common.WebCommon.CreateHightLight(kw, doc.Get("Content"));
                 searchResultList.Add(viewModel);
             }
 
-            //SearchDetails searchDetail = new SearchDetails();
-            //searchDetail.KeyWords = kw;
-            //searchDetail.Id = Guid.NewGuid();
-            //searchDetail.SearchDateTime = DateTime.Now;
-            //searchDetailService.AddEntity(searchDetail);
+            // save search Info into database. (Hot Words)
+            SearchDetail searchDetail = new SearchDetail();
+            searchDetail.id = Guid.NewGuid();
+            searchDetail.KeyWords = kw;
+            searchDetail.SearchDateTime = DateTime.Now;
+            searchDetailService.Add(searchDetail);
             return searchResultList;
+        }
+        #endregion
+
+
+        #region Get Hot Word
+        public ActionResult GetSarch()
+        {
+            // get user input.
+            String term = Request["term"];
+            // search in database to get match hot word.
+            List<String> list = keyWordsRankService.GetSearchWord(term);
+            // return result.
+            return Json(list.ToArray(), JsonRequestBehavior.AllowGet);
         }
         #endregion
     }

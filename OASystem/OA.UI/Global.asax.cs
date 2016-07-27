@@ -34,15 +34,18 @@ namespace OA.UI
             {
                 while (true)// Continuously scans the log queue.
                 {
-                    if (MyExceptionAttribute.exceptionQueue.Count() > 0)//check log queue thether contains exception data.
+                    //if (MyExceptionAttribute.exceptionQueue.Count() > 0)//check log queue thether contains exception data.
+                    if (MyExceptionAttribute.redisClent.GetListCount("errorMessage") > 0)
                     {
-                        Exception ex= MyExceptionAttribute.exceptionQueue.Dequeue(); // get exception data from queue.                
-                        if (ex != null)
+                        //Exception ex= MyExceptionAttribute.exceptionQueue.Dequeue(); // get exception data from queue.
+                        String errorMessage = MyExceptionAttribute.redisClent.DequeueItemFromList("errorMessage");
+                        //if (ex != null)
+                        if (!String.IsNullOrEmpty(errorMessage))
                         {
                             //string fileName = DateTime.Now.ToString("yyyy-MM-dd") + ".txt";
                             //File.AppendAllText(fileLogPath + fileName, ex.ToString(), Encoding.Default);//write exception into log file.
                             ILog logger = LogManager.GetLogger("errorMsg");
-                            logger.Error(ex); // write exception into log file.
+                            logger.Error(errorMessage); // write exception into log file.
                         }
                         else
                         {

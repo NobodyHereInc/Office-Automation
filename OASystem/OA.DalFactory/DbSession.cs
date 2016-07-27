@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using OA.DAL;
 using OA.IDAL;
 using System.Data.Entity;
+using System.Data.SqlClient;
 
 namespace OA.DalFactory
 {
@@ -20,9 +21,36 @@ namespace OA.DalFactory
             get { return DBContextFactory.CreateDbContext(); }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public bool SaveChanges()
         {
             return Db.SaveChanges() > 0;
+        }
+
+        /// <summary>
+        /// This function is used to EXECUTE insert delete and update
+        /// </summary>
+        /// <param name="sql"></param>
+        /// <param name="para"></param>
+        /// <returns></returns>
+        public int ExecuteSql(String sql,params SqlParameter[] para)
+        {
+            return Db.Database.ExecuteSqlCommand(sql, para);
+        }
+
+        /// <summary>
+        /// This function is used to EXECUTE SELECT
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="sql"></param>
+        /// <param name="para"></param>
+        /// <returns></returns>
+        public List<T> ExecuteQuery<T>(String sql, params SqlParameter[] para)
+        {
+            return Db.Database.SqlQuery<T>(sql, para).ToList();
         }
     }
 }

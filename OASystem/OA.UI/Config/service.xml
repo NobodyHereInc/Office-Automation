@@ -10,4 +10,8 @@
   </object>
   <object type="OA.Service.bookService, OA.Service" singleton="false" name="bookService" >
   </object>
+    <object type="OA.Service.SearchDetailService, OA.Service" singleton="false" name="searchDetailService" >
+  </object>
+  <object type="OA.Service.KeyWordsRankService, OA.Service" singleton="false" name="keyWordsRankService" >
+  </object>
 </objects>
