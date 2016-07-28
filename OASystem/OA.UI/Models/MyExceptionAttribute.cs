@@ -30,7 +30,7 @@ namespace OA.UI.Models
             redisClent.EnqueueItemOnList("errorMessage", filterContext.Exception.ToString());
 
             // redirect to error page.
-            filterContext.HttpContext.Response.Redirect("/error.html");
+            filterContext.HttpContext.Response.Redirect("/Error.html");
 
             filterContext.HttpContext.Response.End();
         }

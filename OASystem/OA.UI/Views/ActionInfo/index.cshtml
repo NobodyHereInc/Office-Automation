@@ -46,7 +46,7 @@
 					{ field: 'actionInfoName', title: 'Permission Name', width: 120 },
                     { field: 'url', title: 'URL', width: 120 },
                     {
-                        field: 'ActionTypeEnum', title: 'Permission Type', width: 120,
+                        field: 'actionTypeEnum', title: 'Permission Type', width: 120,
                         formatter: function (value, row, index) {
                             if (value == 1) {
                                 return "Menu Permission";
@@ -59,7 +59,11 @@
                     { field: 'httpMethod', title: 'Http Method', width: 120 },
                     { field: 'remark', title: 'Remark', width: 120 },
                     { field: 'sort', title: 'Sort mark', width: 120 },
-					{ field: 'subTime', title: 'Submit Time', width: 120, align: 'right' },
+					{ field: 'subTime', title: 'Submit Time', width: 120, align: 'right',
+					    formatter: function (value, row, index) {
+					        return (eval(value.replace(/\/Date\((\d+)\)\//gi, "new Date($1)"))).pattern("yyyy-M-d");
+					    }
+					},
                     {
                         field: 'Operator', title: 'Operation', width: 80, align: 'right',
                         formatter: function (value, row, index) {
