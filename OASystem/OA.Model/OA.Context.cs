@@ -33,5 +33,8 @@ namespace OA.Model
         public virtual DbSet<book> books { get; set; }
         public virtual DbSet<KeyWordsRank> KeyWordsRanks { get; set; }
         public virtual DbSet<SearchDetail> SearchDetails { get; set; }
+        public virtual DbSet<WF_Instance> WF_Instance { get; set; }
+        public virtual DbSet<WF_StepInfo> WF_StepInfo { get; set; }
+        public virtual DbSet<WF_Temp> WF_Temp { get; set; }
     }
 }

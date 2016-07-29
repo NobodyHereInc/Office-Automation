@@ -52,4 +52,19 @@ namespace OA.DAL
       
     }
 	
+	public partial class WF_InstanceDal :BaseDal<WF_Instance>,IWF_InstanceDal
+    {
+      
+    }
+	
+	public partial class WF_StepInfoDal :BaseDal<WF_StepInfo>,IWF_StepInfoDal
+    {
+      
+    }
+	
+	public partial class WF_TempDal :BaseDal<WF_Temp>,IWF_TempDal
+    {
+      
+    }
+	
 }

@@ -252,6 +252,7 @@
     <Compile Include="Controllers\RoleInfoController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Controllers\UserInfoController.cs" />
+    <Compile Include="Controllers\WF_TempController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -825,12 +826,15 @@
     <Content Include="Views\UserInfo\SetUserActionInfo.cshtml" />
     <Content Include="Views\Search\index.cshtml" />
     <Content Include="Views\MyAlbum\index.cshtml" />
+    <Content Include="Views\WF_Temp\Index.cshtml" />
+    <Content Include="Views\WF_Temp\Add.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\easyUI\" />
     <Folder Include="Content\Images\CompanyPic\" />
     <Folder Include="Content\Images\icon\" />
+    <Folder Include="Content\KinderEditor\" />
     <Folder Include="Content\uploads\" />
     <Folder Include="Views\Base\" />
     <Folder Include="Views\ExceptionTest\" />

@@ -94,6 +94,36 @@ namespace OA.DalFactory
 
             return obj as IUserInfoDal;
         }
+		
+	    public static IWF_InstanceDal CreateWF_InstanceDal()
+        {
+
+            string classFulleName = ConfigurationManager.AppSettings["DalNameSpace"] + ".WF_InstanceDal";
+
+            var obj  = CreateInstance(classFulleName,ConfigurationManager.AppSettings["DalAssembly"]);
+
+            return obj as IWF_InstanceDal;
+        }
+		
+	    public static IWF_StepInfoDal CreateWF_StepInfoDal()
+        {
+
+            string classFulleName = ConfigurationManager.AppSettings["DalNameSpace"] + ".WF_StepInfoDal";
+
+            var obj  = CreateInstance(classFulleName,ConfigurationManager.AppSettings["DalAssembly"]);
+
+            return obj as IWF_StepInfoDal;
+        }
+		
+	    public static IWF_TempDal CreateWF_TempDal()
+        {
+
+            string classFulleName = ConfigurationManager.AppSettings["DalNameSpace"] + ".WF_TempDal";
+
+            var obj  = CreateInstance(classFulleName,ConfigurationManager.AppSettings["DalAssembly"]);
+
+            return obj as IWF_TempDal;
+        }
 	}
 	
 }

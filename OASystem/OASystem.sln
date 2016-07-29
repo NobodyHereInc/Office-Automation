@@ -27,6 +27,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BackEndComponent", "BackEnd
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OA.Component.Quartz", "OA.Component.Quartz\OA.Component.Quartz.csproj", "{1694882C-B61B-4823-9932-0058C5B3FE30}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OA.WorkFlow", "OA.WorkFlow\OA.WorkFlow.csproj", "{45197E67-B8C1-4DEE-9A8C-6D9B91E31C81}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,10 @@ Global
 		{1694882C-B61B-4823-9932-0058C5B3FE30}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1694882C-B61B-4823-9932-0058C5B3FE30}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1694882C-B61B-4823-9932-0058C5B3FE30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45197E67-B8C1-4DEE-9A8C-6D9B91E31C81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45197E67-B8C1-4DEE-9A8C-6D9B91E31C81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45197E67-B8C1-4DEE-9A8C-6D9B91E31C81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45197E67-B8C1-4DEE-9A8C-6D9B91E31C81}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

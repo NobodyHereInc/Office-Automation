@@ -51,4 +51,19 @@ namespace OA.IDAL
       
     }
 	
+	public partial interface IWF_InstanceDal :IBaseDal<WF_Instance>
+    {
+      
+    }
+	
+	public partial interface IWF_StepInfoDal :IBaseDal<WF_StepInfo>
+    {
+      
+    }
+	
+	public partial interface IWF_TempDal :IBaseDal<WF_Temp>
+    {
+      
+    }
+	
 }

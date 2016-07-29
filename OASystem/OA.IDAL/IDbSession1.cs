@@ -26,5 +26,11 @@ namespace OA.IDAL
 		ISearchDetailDal SearchDetailDal{get;set;}
 	
 		IUserInfoDal UserInfoDal{get;set;}
+	
+		IWF_InstanceDal WF_InstanceDal{get;set;}
+	
+		IWF_StepInfoDal WF_StepInfoDal{get;set;}
+	
+		IWF_TempDal WF_TempDal{get;set;}
 	}	
 }

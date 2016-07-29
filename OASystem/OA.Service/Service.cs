@@ -76,4 +76,28 @@ namespace OA.Service
         }
     }   
 	
+	public partial class WF_InstanceService :BaseService<WF_Instance>,IWF_InstanceService
+    {
+        public override void SetCurrentDal()
+        {
+            CurrentDal = this.DbSession.WF_InstanceDal;
+        }
+    }   
+	
+	public partial class WF_StepInfoService :BaseService<WF_StepInfo>,IWF_StepInfoService
+    {
+        public override void SetCurrentDal()
+        {
+            CurrentDal = this.DbSession.WF_StepInfoDal;
+        }
+    }   
+	
+	public partial class WF_TempService :BaseService<WF_Temp>,IWF_TempService
+    {
+        public override void SetCurrentDal()
+        {
+            CurrentDal = this.DbSession.WF_TempDal;
+        }
+    }   
+	
 }

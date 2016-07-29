@@ -1,0 +1,42 @@
+﻿@using OA.Model
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/tableStyle.css" rel="stylesheet" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        <table>
+            <tr>
+                <th>Temp's Id</th>
+                <th>Temp Name</th>
+                <th>Create Time</th>
+                <th>Remark</th>
+                <th>WorkFlow Status</th>
+                <th>Opration</th>
+            </tr>
+            @foreach (var temp in (List<WF_Temp>)ViewData["list"])
+            {
+                <tr>
+                    <td>@temp.ID</td>
+                    <td>@temp.TempName</td>
+                    <td>@temp.SubTime</td>
+                    <td>@temp.Remark</td>
+                    <td>@temp.TempStatus</td>
+                    <td>Edit </td>
+                </tr>
+            }
+        </table>
+
+        <hr />
+        <a href="/wf_temp/add">CreateTemp</a>
+    </div>
+</body>
+</html>

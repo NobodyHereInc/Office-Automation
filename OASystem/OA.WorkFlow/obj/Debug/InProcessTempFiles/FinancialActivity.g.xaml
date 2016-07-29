@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ow:FinancialActivity xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:ow="clr-namespace:OA.WorkFlow;assembly=OA.WorkFlow" xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Text</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <ow:FinancialActivity.Implementation>
+    <StateMachine InitialState="{x:Reference __ReferenceID5}">
+      <State x:Name="__ReferenceID5" DisplayName="Start Financial Approval">
+        <State.Transitions>
+          <Transition DisplayName="T1">
+            <Transition.To>
+              <State x:Name="__ReferenceID0" DisplayName="Manager Approval">
+                <State.Transitions>
+                  <Transition DisplayName="Next Approval Step">
+                    <Transition.To>
+                      <State x:Name="__ReferenceID4" DisplayName="Vice President">
+                        <State.Transitions>
+                          <Transition DisplayName="Financial Plan Pass">
+                            <Transition.To>
+                              <State x:Name="__ReferenceID2" DisplayName="Financial Allocation">
+                                <State.Transitions>
+                                  <Transition DisplayName="T2">
+                                    <Transition.To>
+                                      <State x:Name="__ReferenceID1" DisplayName="Financial WorkFlow End" IsFinal="True" />
+                                    </Transition.To>
+                                  </Transition>
+                                </State.Transitions>
+                              </State>
+                            </Transition.To>
+                          </Transition>
+                          <Transition DisplayName="Financial Plan Reject">
+                            <Transition.To>
+                              <State x:Name="__ReferenceID3" DisplayName="Add more Information (Approval again)">
+                                <State.Transitions>
+                                  <Transition DisplayName="Approval Again" To="{x:Reference __ReferenceID0}" />
+                                  <Transition DisplayName="Finish Approval" To="{x:Reference __ReferenceID1}" />
+                                </State.Transitions>
+                              </State>
+                            </Transition.To>
+                          </Transition>
+                        </State.Transitions>
+                      </State>
+                    </Transition.To>
+                  </Transition>
+                  <Transition DisplayName="Financial Plan Pass" To="{x:Reference __ReferenceID2}" />
+                  <Transition DisplayName="Financial Plan Reject" To="{x:Reference __ReferenceID3}" />
+                </State.Transitions>
+              </State>
+            </Transition.To>
+          </Transition>
+        </State.Transitions>
+      </State>
+      <x:Reference>__ReferenceID0</x:Reference>
+      <x:Reference>__ReferenceID4</x:Reference>
+      <x:Reference>__ReferenceID2</x:Reference>
+      <x:Reference>__ReferenceID1</x:Reference>
+      <x:Reference>__ReferenceID3</x:Reference>
+      <sads:DebugSymbol.Symbol>dzxEOlxDby1vcCBQcm9qZWN0XE9BU3lzdGVtXE9BLldvcmtGbG93XEZpbmFuY2lhbEFjdGl2aXR5LnhhbWwHHgNdEgIBAR8FVQ0CARAjDU8VAgENJxVHHQIBCisdNSUCAQcvJS+kAQIBBTsdQSUCAQI=</sads:DebugSymbol.Symbol>
+    </StateMachine>
+  </ow:FinancialActivity.Implementation>
+</ow:FinancialActivity>

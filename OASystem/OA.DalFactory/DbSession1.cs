@@ -126,5 +126,47 @@ namespace OA.DalFactory
             }
             set { _UserInfoDal = value; }
         }
+	
+		private IWF_InstanceDal _WF_InstanceDal;
+        public IWF_InstanceDal WF_InstanceDal
+        {
+            get
+            {
+                if(_WF_InstanceDal == null)
+                {
+                    _WF_InstanceDal = DALAbstractFactory.CreateWF_InstanceDal();
+                }
+                return _WF_InstanceDal;
+            }
+            set { _WF_InstanceDal = value; }
+        }
+	
+		private IWF_StepInfoDal _WF_StepInfoDal;
+        public IWF_StepInfoDal WF_StepInfoDal
+        {
+            get
+            {
+                if(_WF_StepInfoDal == null)
+                {
+                    _WF_StepInfoDal = DALAbstractFactory.CreateWF_StepInfoDal();
+                }
+                return _WF_StepInfoDal;
+            }
+            set { _WF_StepInfoDal = value; }
+        }
+	
+		private IWF_TempDal _WF_TempDal;
+        public IWF_TempDal WF_TempDal
+        {
+            get
+            {
+                if(_WF_TempDal == null)
+                {
+                    _WF_TempDal = DALAbstractFactory.CreateWF_TempDal();
+                }
+                return _WF_TempDal;
+            }
+            set { _WF_TempDal = value; }
+        }
 	}	
 }

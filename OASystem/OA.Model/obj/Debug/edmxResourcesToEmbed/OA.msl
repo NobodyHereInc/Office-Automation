@@ -141,5 +141,59 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="WF_Instance">
+      <EntityTypeMapping TypeName="OA_DBModel.WF_Instance">
+        <MappingFragment StoreEntitySet="WF_Instance">
+          <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+          <ScalarProperty Name="WF_TempID" ColumnName="WF_TempID" />
+          <ScalarProperty Name="Result" ColumnName="Result" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="SubForm" ColumnName="SubForm" />
+          <ScalarProperty Name="Level" ColumnName="Level" />
+          <ScalarProperty Name="StartedBy" ColumnName="StartedBy" />
+          <ScalarProperty Name="SubTime" ColumnName="SubTime" />
+          <ScalarProperty Name="InstanceName" ColumnName="InstanceName" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WF_StepInfo">
+      <EntityTypeMapping TypeName="OA_DBModel.WF_StepInfo">
+        <MappingFragment StoreEntitySet="WF_StepInfo">
+          <ScalarProperty Name="WF_InstanceID" ColumnName="WF_InstanceID" />
+          <ScalarProperty Name="ChildStepID" ColumnName="ChildStepID" />
+          <ScalarProperty Name="ParentStepID" ColumnName="ParentStepID" />
+          <ScalarProperty Name="ProcessBy" ColumnName="ProcessBy" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="ProcessTime" ColumnName="ProcessTime" />
+          <ScalarProperty Name="SubTime" ColumnName="SubTime" />
+          <ScalarProperty Name="DelFlag" ColumnName="DelFlag" />
+          <ScalarProperty Name="StepResult" ColumnName="StepResult" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="IsEndStep" ColumnName="IsEndStep" />
+          <ScalarProperty Name="IsStartStep" ColumnName="IsStartStep" />
+          <ScalarProperty Name="IsProcessed" ColumnName="IsProcessed" />
+          <ScalarProperty Name="SetpName" ColumnName="SetpName" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WF_Temp">
+      <EntityTypeMapping TypeName="OA_DBModel.WF_Temp">
+        <MappingFragment StoreEntitySet="WF_Temp">
+          <ScalarProperty Name="SubBy" ColumnName="SubBy" />
+          <ScalarProperty Name="TempStatus" ColumnName="TempStatus" />
+          <ScalarProperty Name="TempForm" ColumnName="TempForm" />
+          <ScalarProperty Name="TempDescription" ColumnName="TempDescription" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="DelFlag" ColumnName="DelFlag" />
+          <ScalarProperty Name="ModfiedOn" ColumnName="ModfiedOn" />
+          <ScalarProperty Name="SubTime" ColumnName="SubTime" />
+          <ScalarProperty Name="TempName" ColumnName="TempName" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

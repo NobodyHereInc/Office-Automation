@@ -150,6 +150,17 @@
     <EntitySet Name="books" EntityType="OA_DBModel.book" />
     <EntitySet Name="KeyWordsRanks" EntityType="OA_DBModel.KeyWordsRank" />
     <EntitySet Name="SearchDetails" EntityType="OA_DBModel.SearchDetail" />
+    <EntitySet Name="WF_Instance" EntityType="OA_DBModel.WF_Instance" />
+    <EntitySet Name="WF_StepInfo" EntityType="OA_DBModel.WF_StepInfo" />
+    <EntitySet Name="WF_Temp" EntityType="OA_DBModel.WF_Temp" />
+    <AssociationSet Name="FK_WF_TempWF_Instance" Association="OA_DBModel.FK_WF_TempWF_Instance">
+      <End Role="WF_Temp" EntitySet="WF_Temp" />
+      <End Role="WF_Instance" EntitySet="WF_Instance" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WF_InstanceWF_StepInfo" Association="OA_DBModel.FK_WF_InstanceWF_StepInfo">
+      <End Role="WF_Instance" EntitySet="WF_Instance" />
+      <End Role="WF_StepInfo" EntitySet="WF_StepInfo" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="book">
     <Key>
@@ -186,4 +197,83 @@
     <Property Name="KeyWords" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="SearchDateTime" Type="DateTime" Precision="3" />
   </EntityType>
+  <EntityType Name="WF_Instance">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InstanceName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SubTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="StartedBy" Type="Int32" Nullable="false" />
+    <Property Name="Level" Type="Int16" Nullable="false" />
+    <Property Name="SubForm" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Int16" Nullable="false" />
+    <Property Name="Result" Type="Int16" Nullable="false" />
+    <Property Name="WF_TempID" Type="Int32" Nullable="false" />
+    <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="WF_Temp" Relationship="OA_DBModel.FK_WF_TempWF_Instance" FromRole="WF_Instance" ToRole="WF_Temp" />
+    <NavigationProperty Name="WF_StepInfo" Relationship="OA_DBModel.FK_WF_InstanceWF_StepInfo" FromRole="WF_Instance" ToRole="WF_StepInfo" />
+  </EntityType>
+  <EntityType Name="WF_StepInfo">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SetpName" Type="String" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Name="IsProcessed" Type="Boolean" Nullable="false" />
+    <Property Name="IsStartStep" Type="Boolean" Nullable="false" />
+    <Property Name="IsEndStep" Type="Boolean" Nullable="false" />
+    <Property Name="Title" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Name="Comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="StepResult" Type="Int16" Nullable="false" />
+    <Property Name="DelFlag" Type="Int16" Nullable="false" />
+    <Property Name="SubTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ProcessTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ProcessBy" Type="Int32" Nullable="false" />
+    <Property Name="ParentStepID" Type="Int32" Nullable="false" />
+    <Property Name="ChildStepID" Type="Int32" Nullable="false" />
+    <Property Name="WF_InstanceID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="WF_Instance" Relationship="OA_DBModel.FK_WF_InstanceWF_StepInfo" FromRole="WF_StepInfo" ToRole="WF_Instance" />
+  </EntityType>
+  <EntityType Name="WF_Temp">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TempName" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Name="SubTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModfiedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DelFlag" Type="Int16" Nullable="false" />
+    <Property Name="Remark" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="TempDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TempForm" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TempStatus" Type="Int16" Nullable="false" />
+    <Property Name="SubBy" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="WF_Instance" Relationship="OA_DBModel.FK_WF_TempWF_Instance" FromRole="WF_Temp" ToRole="WF_Instance" />
+  </EntityType>
+  <Association Name="FK_WF_TempWF_Instance">
+    <End Type="OA_DBModel.WF_Temp" Role="WF_Temp" Multiplicity="1" />
+    <End Type="OA_DBModel.WF_Instance" Role="WF_Instance" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WF_Temp">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="WF_Instance">
+        <PropertyRef Name="WF_TempID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WF_InstanceWF_StepInfo">
+    <End Type="OA_DBModel.WF_Instance" Role="WF_Instance" Multiplicity="1" />
+    <End Type="OA_DBModel.WF_StepInfo" Role="WF_StepInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WF_Instance">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="WF_StepInfo">
+        <PropertyRef Name="WF_InstanceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>
