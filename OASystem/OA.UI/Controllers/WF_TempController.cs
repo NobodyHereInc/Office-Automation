@@ -8,7 +8,7 @@ using OA.IService;
 
 namespace OA.UI.Controllers
 {
-    public class WF_TempController : Controller
+    public class WF_TempController : BaseController
     {
 
         private IWF_TempService wF_TempService { get; set; }
@@ -31,6 +31,26 @@ namespace OA.UI.Controllers
         public ActionResult Add()
         {
             return View();
+        }
+
+        [HttpPost]
+        [ValidateInput(false)]
+        public ActionResult Add(WF_Temp temp)
+        {
+            // compelete temp info.
+            temp.DelFlag = 0;
+            temp.ModfiedOn = DateTime.Now;
+            temp.SubTime = DateTime.Now;
+            temp.Remark = "Financial Approval WorkFlag Temp";
+            temp.SubBy = LoginUser.ID;
+            temp.TempStatus = 0;
+
+            // add new temp into database.
+            wF_TempService.Add(temp);
+
+            // return 
+            return RedirectToAction("index");
+
         }
         #endregion
     }

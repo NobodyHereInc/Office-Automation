@@ -1,0 +1,139 @@
+
+----------------------header--------------------------
+2016-07-30 19:46:47,077 [11] ERROR Memcached.ClientLibrary.SockIOPool - Failed to get SockIO obj for: 10.0.0.132:11211 -- new socket is not connected
+System.IO.IOException: Could not connect for 1000 milliseconds
+   at Memcached.ClientLibrary.SockIO.GetSocket(String host, Int32 port, Int32 timeout) in C:\devroot\memcacheddotnet\trunk\clientlib\src\clientlib\SockIO.cs:line 163
+   at Memcached.ClientLibrary.SockIO..ctor(SockIOPool pool, String host, Int32 timeout, Int32 connectTimeout, Boolean noDelay) in C:\devroot\memcacheddotnet\trunk\clientlib\src\clientlib\SockIO.cs:line 105
+   at Memcached.ClientLibrary.SockIOPool.CreateSocket(String host) in C:\devroot\memcacheddotnet\trunk\clientlib\src\clientlib\SockIOPool.cs:line 562
+2016-07-30 19:46:47,092 [11] ERROR Memcached.ClientLibrary.SockIOPool - Failed to create connection to: 10.0.0.132:11211 -- only 0 created
+2016-07-30 19:52:45,759 [10] ERROR errorMsg - System.ArgumentException: The parameters dictionary contains a null entry for parameter 'id' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult StartWorkFlow(Int32)' in 'OA.UI.Controllers.WF_InstanceController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+   at System.Web.Mvc.ActionDescriptor.ExtractParameterFromDictionary(ParameterInfo parameterInfo, IDictionary`2 parameters, MethodInfo methodInfo)
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+
+----------------------header--------------------------
+2016-07-30 20:07:01,717 [14] ERROR Memcached.ClientLibrary.SockIOPool - Failed to get SockIO obj for: 10.0.0.132:11211 -- new socket is not connected
+System.IO.IOException: Could not connect for 1000 milliseconds
+   at Memcached.ClientLibrary.SockIO.GetSocket(String host, Int32 port, Int32 timeout) in C:\devroot\memcacheddotnet\trunk\clientlib\src\clientlib\SockIO.cs:line 163
+   at Memcached.ClientLibrary.SockIO..ctor(SockIOPool pool, String host, Int32 timeout, Int32 connectTimeout, Boolean noDelay) in C:\devroot\memcacheddotnet\trunk\clientlib\src\clientlib\SockIO.cs:line 105
+   at Memcached.ClientLibrary.SockIOPool.CreateSocket(String host) in C:\devroot\memcacheddotnet\trunk\clientlib\src\clientlib\SockIOPool.cs:line 562
+2016-07-30 20:07:01,728 [14] ERROR Memcached.ClientLibrary.SockIOPool - Failed to create connection to: 10.0.0.132:11211 -- only 0 created
+
+----------------------header--------------------------
+2016-07-30 20:35:29,948 [14] ERROR Memcached.ClientLibrary.SockIOPool - Failed to get SockIO obj for: 10.0.0.132:11211 -- new socket is not connected
+System.IO.IOException: Could not connect for 1000 milliseconds
+   at Memcached.ClientLibrary.SockIO.GetSocket(String host, Int32 port, Int32 timeout) in C:\devroot\memcacheddotnet\trunk\clientlib\src\clientlib\SockIO.cs:line 163
+   at Memcached.ClientLibrary.SockIO..ctor(SockIOPool pool, String host, Int32 timeout, Int32 connectTimeout, Boolean noDelay) in C:\devroot\memcacheddotnet\trunk\clientlib\src\clientlib\SockIO.cs:line 105
+   at Memcached.ClientLibrary.SockIOPool.CreateSocket(String host) in C:\devroot\memcacheddotnet\trunk\clientlib\src\clientlib\SockIOPool.cs:line 562
+2016-07-30 20:35:29,962 [14] ERROR Memcached.ClientLibrary.SockIOPool - Failed to create connection to: 10.0.0.132:11211 -- only 0 created
+
+----------------------header--------------------------
+2016-07-30 20:44:11,374 [11] ERROR Memcached.ClientLibrary.SockIOPool - Failed to get SockIO obj for: 10.0.0.132:11211 -- new socket is not connected
+System.IO.IOException: Could not connect for 1000 milliseconds
+   at Memcached.ClientLibrary.SockIO.GetSocket(String host, Int32 port, Int32 timeout) in C:\devroot\memcacheddotnet\trunk\clientlib\src\clientlib\SockIO.cs:line 163
+   at Memcached.ClientLibrary.SockIO..ctor(SockIOPool pool, String host, Int32 timeout, Int32 connectTimeout, Boolean noDelay) in C:\devroot\memcacheddotnet\trunk\clientlib\src\clientlib\SockIO.cs:line 105
+   at Memcached.ClientLibrary.SockIOPool.CreateSocket(String host) in C:\devroot\memcacheddotnet\trunk\clientlib\src\clientlib\SockIOPool.cs:line 562
+2016-07-30 20:44:11,407 [11] ERROR Memcached.ClientLibrary.SockIOPool - Failed to create connection to: 10.0.0.132:11211 -- only 0 created
+
+----------------------header--------------------------
+2016-07-30 20:45:52,403 [16] ERROR Memcached.ClientLibrary.SockIOPool - Failed to get SockIO obj for: 10.0.0.132:11211 -- new socket is not connected
+System.IO.IOException: Could not connect for 1000 milliseconds
+   at Memcached.ClientLibrary.SockIO.GetSocket(String host, Int32 port, Int32 timeout) in C:\devroot\memcacheddotnet\trunk\clientlib\src\clientlib\SockIO.cs:line 163
+   at Memcached.ClientLibrary.SockIO..ctor(SockIOPool pool, String host, Int32 timeout, Int32 connectTimeout, Boolean noDelay) in C:\devroot\memcacheddotnet\trunk\clientlib\src\clientlib\SockIO.cs:line 105
+   at Memcached.ClientLibrary.SockIOPool.CreateSocket(String host) in C:\devroot\memcacheddotnet\trunk\clientlib\src\clientlib\SockIOPool.cs:line 562
+2016-07-30 20:45:52,425 [16] ERROR Memcached.ClientLibrary.SockIOPool - Failed to create connection to: 10.0.0.132:11211 -- only 0 created
+
+----------------------header--------------------------
+2016-07-30 20:48:40,680 [14] ERROR Memcached.ClientLibrary.SockIOPool - Failed to get SockIO obj for: 10.0.0.132:11211 -- new socket is not connected
+System.IO.IOException: Could not connect for 1000 milliseconds
+   at Memcached.ClientLibrary.SockIO.GetSocket(String host, Int32 port, Int32 timeout) in C:\devroot\memcacheddotnet\trunk\clientlib\src\clientlib\SockIO.cs:line 163
+   at Memcached.ClientLibrary.SockIO..ctor(SockIOPool pool, String host, Int32 timeout, Int32 connectTimeout, Boolean noDelay) in C:\devroot\memcacheddotnet\trunk\clientlib\src\clientlib\SockIO.cs:line 105
+   at Memcached.ClientLibrary.SockIOPool.CreateSocket(String host) in C:\devroot\memcacheddotnet\trunk\clientlib\src\clientlib\SockIOPool.cs:line 562
+2016-07-30 20:48:40,706 [14] ERROR Memcached.ClientLibrary.SockIOPool - Failed to create connection to: 10.0.0.132:11211 -- only 0 created
+
+----------------------header--------------------------
+2016-07-30 21:55:43,857 [10] ERROR Memcached.ClientLibrary.SockIOPool - Failed to get SockIO obj for: 10.0.0.132:11211 -- new socket is not connected
+System.IO.IOException: Could not connect for 1000 milliseconds
+   at Memcached.ClientLibrary.SockIO.GetSocket(String host, Int32 port, Int32 timeout) in C:\devroot\memcacheddotnet\trunk\clientlib\src\clientlib\SockIO.cs:line 163
+   at Memcached.ClientLibrary.SockIO..ctor(SockIOPool pool, String host, Int32 timeout, Int32 connectTimeout, Boolean noDelay) in C:\devroot\memcacheddotnet\trunk\clientlib\src\clientlib\SockIO.cs:line 105
+   at Memcached.ClientLibrary.SockIOPool.CreateSocket(String host) in C:\devroot\memcacheddotnet\trunk\clientlib\src\clientlib\SockIOPool.cs:line 562
+2016-07-30 21:55:43,868 [10] ERROR Memcached.ClientLibrary.SockIOPool - Failed to create connection to: 10.0.0.132:11211 -- only 0 created
+
+----------------------header--------------------------
+2016-07-30 21:56:42,853 [10] ERROR Memcached.ClientLibrary.SockIOPool - Failed to get SockIO obj for: 10.0.0.132:11211 -- new socket is not connected
+System.IO.IOException: Could not connect for 1000 milliseconds
+   at Memcached.ClientLibrary.SockIO.GetSocket(String host, Int32 port, Int32 timeout) in C:\devroot\memcacheddotnet\trunk\clientlib\src\clientlib\SockIO.cs:line 163
+   at Memcached.ClientLibrary.SockIO..ctor(SockIOPool pool, String host, Int32 timeout, Int32 connectTimeout, Boolean noDelay) in C:\devroot\memcacheddotnet\trunk\clientlib\src\clientlib\SockIO.cs:line 105
+   at Memcached.ClientLibrary.SockIOPool.CreateSocket(String host) in C:\devroot\memcacheddotnet\trunk\clientlib\src\clientlib\SockIOPool.cs:line 562
+2016-07-30 21:56:42,878 [10] ERROR Memcached.ClientLibrary.SockIOPool - Failed to create connection to: 10.0.0.132:11211 -- only 0 created
+2016-07-30 21:56:44,231 [8] ERROR errorMsg - System.ArgumentException: The parameters dictionary contains a null entry for parameter 'id' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult CheckWF(Int32)' in 'OA.UI.Controllers.WF_InstanceController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+   at System.Web.Mvc.ActionDescriptor.ExtractParameterFromDictionary(ParameterInfo parameterInfo, IDictionary`2 parameters, MethodInfo methodInfo)
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+
+----------------------header--------------------------
+2016-07-30 21:57:35,131 [11] ERROR Memcached.ClientLibrary.SockIOPool - Failed to get SockIO obj for: 10.0.0.132:11211 -- new socket is not connected
+System.IO.IOException: Could not connect for 1000 milliseconds
+   at Memcached.ClientLibrary.SockIO.GetSocket(String host, Int32 port, Int32 timeout) in C:\devroot\memcacheddotnet\trunk\clientlib\src\clientlib\SockIO.cs:line 163
+   at Memcached.ClientLibrary.SockIO..ctor(SockIOPool pool, String host, Int32 timeout, Int32 connectTimeout, Boolean noDelay) in C:\devroot\memcacheddotnet\trunk\clientlib\src\clientlib\SockIO.cs:line 105
+   at Memcached.ClientLibrary.SockIOPool.CreateSocket(String host) in C:\devroot\memcacheddotnet\trunk\clientlib\src\clientlib\SockIOPool.cs:line 562
+2016-07-30 21:57:35,164 [11] ERROR Memcached.ClientLibrary.SockIOPool - Failed to create connection to: 10.0.0.132:11211 -- only 0 created
+2016-07-30 21:57:38,061 [10] ERROR errorMsg - System.ArgumentException: The parameters dictionary contains a null entry for parameter 'id' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult CheckWF(Int32)' in 'OA.UI.Controllers.WF_InstanceController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+   at System.Web.Mvc.ActionDescriptor.ExtractParameterFromDictionary(ParameterInfo parameterInfo, IDictionary`2 parameters, MethodInfo methodInfo)
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+
+----------------------header--------------------------
+2016-07-30 21:58:25,453 [14] ERROR Memcached.ClientLibrary.SockIOPool - Failed to get SockIO obj for: 10.0.0.132:11211 -- new socket is not connected
+System.IO.IOException: Could not connect for 1000 milliseconds
+   at Memcached.ClientLibrary.SockIO.GetSocket(String host, Int32 port, Int32 timeout) in C:\devroot\memcacheddotnet\trunk\clientlib\src\clientlib\SockIO.cs:line 163
+   at Memcached.ClientLibrary.SockIO..ctor(SockIOPool pool, String host, Int32 timeout, Int32 connectTimeout, Boolean noDelay) in C:\devroot\memcacheddotnet\trunk\clientlib\src\clientlib\SockIO.cs:line 105
+   at Memcached.ClientLibrary.SockIOPool.CreateSocket(String host) in C:\devroot\memcacheddotnet\trunk\clientlib\src\clientlib\SockIOPool.cs:line 562
+2016-07-30 21:58:25,464 [14] ERROR Memcached.ClientLibrary.SockIOPool - Failed to create connection to: 10.0.0.132:11211 -- only 0 created
+
+----------------------header--------------------------
+2016-07-30 21:59:54,486 [14] ERROR Memcached.ClientLibrary.SockIOPool - Failed to get SockIO obj for: 10.0.0.132:11211 -- new socket is not connected
+System.IO.IOException: Could not connect for 1000 milliseconds
+   at Memcached.ClientLibrary.SockIO.GetSocket(String host, Int32 port, Int32 timeout) in C:\devroot\memcacheddotnet\trunk\clientlib\src\clientlib\SockIO.cs:line 163
+   at Memcached.ClientLibrary.SockIO..ctor(SockIOPool pool, String host, Int32 timeout, Int32 connectTimeout, Boolean noDelay) in C:\devroot\memcacheddotnet\trunk\clientlib\src\clientlib\SockIO.cs:line 105
+   at Memcached.ClientLibrary.SockIOPool.CreateSocket(String host) in C:\devroot\memcacheddotnet\trunk\clientlib\src\clientlib\SockIOPool.cs:line 562
+2016-07-30 21:59:54,509 [14] ERROR Memcached.ClientLibrary.SockIOPool - Failed to create connection to: 10.0.0.132:11211 -- only 0 created

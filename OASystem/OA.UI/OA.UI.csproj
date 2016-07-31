@@ -126,6 +126,7 @@
       <HintPath>..\Lib\Spring.Web.Mvc4.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Activities" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web.DynamicData" />
@@ -252,6 +253,7 @@
     <Compile Include="Controllers\RoleInfoController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Controllers\UserInfoController.cs" />
+    <Compile Include="Controllers\WF_InstanceController.cs" />
     <Compile Include="Controllers\WF_TempController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -828,6 +830,10 @@
     <Content Include="Views\MyAlbum\index.cshtml" />
     <Content Include="Views\WF_Temp\Index.cshtml" />
     <Content Include="Views\WF_Temp\Add.cshtml" />
+    <Content Include="Views\WF_Instance\Index.cshtml" />
+    <Content Include="Views\WF_Instance\StartWorkFlow.cshtml" />
+    <Content Include="Views\WF_Instance\GetMyWorkFlows.cshtml" />
+    <Content Include="Views\WF_Instance\CheckWF.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -863,6 +869,10 @@
     <ProjectReference Include="..\OA.Service\OA.Service.csproj">
       <Project>{e45576dc-b549-4988-b9c8-53e1fdf3c9ee}</Project>
       <Name>OA.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OA.WorkFlow\OA.WorkFlow.csproj">
+      <Project>{45197e67-b8c1-4dee-9a8c-6d9b91e31c81}</Project>
+      <Name>OA.WorkFlow</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

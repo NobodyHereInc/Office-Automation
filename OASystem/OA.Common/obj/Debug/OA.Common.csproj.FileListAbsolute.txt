@@ -11,9 +11,9 @@ D:\Co-op Project\OASystem\OA.Common\bin\Debug\Newtonsoft.Json.dll
 D:\Co-op Project\OASystem\OA.Common\bin\Debug\Newtonsoft.Json.pdb
 D:\Co-op Project\OASystem\OA.Common\bin\Debug\Newtonsoft.Json.xml
 D:\Co-op Project\OASystem\OA.Common\bin\Debug\Lucene.Net.dll
-D:\Co-op Project\OASystem\OA.Common\obj\Debug\OA.Common.csprojResolveAssemblyReference.cache
 D:\Co-op Project\OASystem\OA.Common\bin\Debug\OA.Common.dll.config
 D:\Co-op Project\OASystem\OA.Common\bin\Debug\PanGu.dll
 D:\Co-op Project\OASystem\OA.Common\bin\Debug\PanGu.HighLight.dll
 D:\Co-op Project\OASystem\OA.Common\bin\Debug\PanGu.Lucene.Analyzer.dll
 D:\Co-op Project\OASystem\OA.Common\bin\Debug\PanGu.HighLight.pdb
+D:\Co-op Project\OASystem\OA.Common\obj\Debug\OA.Common.csprojResolveAssemblyReference.cache

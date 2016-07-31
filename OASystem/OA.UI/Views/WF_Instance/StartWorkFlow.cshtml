@@ -1,0 +1,79 @@
+﻿@model OA.Model.WF_Instance
+@using OA.Model
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>StartWorkflow</title>
+    <script src="../../Content/KinderEditor/kindeditor-min.js"></script>
+    <link rel="stylesheet" href="../../Content/KinderEditor/themes/default/default.css" />
+    <link rel="stylesheet" href="../../Content/KinderEditor/plugins/code/prettify.css" />
+    <script charset="utf-8" src="../../Content/KinderEditor/kindeditor.js"></script>
+    <script src="~/Content/KinderEditor/lang/en.js"></script>
+    <script charset="utf-8" src="../../Content/KinderEditor/plugins/code/prettify.js"></script>
+    <link href="~/Content/tableStyle.css" rel="stylesheet" />
+    <script type="text/javascript">
+        KindEditor.ready(function (K) {
+
+            var editor2 = K.create('#SubForm', {
+                cssPath: '../../Content/KinderEditor/plugins/code/prettify.css',
+                uploadJson: '../../Content/KinderEditor/asp.net/upload_json.ashx',
+                fileManagerJson:
+
+'../../Content/KinderEditor/asp.net/file_manager_json.ashx',
+                allowFileManager: true,
+                afterCreate: function () {
+                    var self = this;
+                }
+            });
+
+            prettyPrint();
+        });
+    </script>
+</head>
+<body>
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary(true)
+        WF_Temp currentTemp = (WF_Temp)ViewBag.Temp;
+        <input type="hidden" name="id" value="@currentTemp.ID" />
+        <table>
+            <tr><th colspan="3">Launch @currentTemp.TempName</th></tr>
+            <tr><td>WorkFlow Name</td><td><input type="text" name="InstanceName" /></td></tr>
+            <tr>
+                <td>Degree of Urgency</td>
+                <td>
+                    <select name="Level">
+                        <option value="0">Normal</option>
+                        <option value="1">Exigency</option>
+                        <option value="2">Dispatch</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Content of Apply</td>
+                <td>
+                    <textarea id="SubForm" cols="100" rows="8"
+                              style="width:700px;height:200px;visibility:hidden;"
+                              name="SubForm">
+                        @currentTemp.TempForm
+
+                    </textarea>
+                </td>
+
+            </tr>
+            <tr>
+                <td>Transfer To</td>
+                <td>@Html.DropDownList("FlowTo")</td>
+            </tr>
+        </table>
+
+        <input type="submit" value="Launch Financial WorkFlow" />
+    }
+</body>
+</html>

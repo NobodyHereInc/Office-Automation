@@ -1,0 +1,51 @@
+﻿@model IEnumerable<OA.Model.WF_Instance>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>GetMyWorkFlows</title>
+    <link href="~/Content/tableStyle.css" rel="stylesheet" />
+</head>
+<body>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.InstanceName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StartedBy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Level)
+            </th>
+            <th>
+                Opration
+            </th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.InstanceName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartedBy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Level)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "CheckWF", new { id=item.ID }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+            </td>
+        </tr>
+    }   
+    </table>
+</body>
+</html>

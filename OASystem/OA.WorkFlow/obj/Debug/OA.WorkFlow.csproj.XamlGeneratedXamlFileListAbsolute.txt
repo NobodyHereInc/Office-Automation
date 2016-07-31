@@ -1,0 +1,4 @@
+obj\Debug\FinancialActivity.g.xaml
+obj\Debug\FincalActivity.g.xaml
+obj\Debug\OA.WorkFlow_FinancialActivity_BeforeInitializeComponentHelper.txt
+obj\Debug\CZBK.HeiMaOA.WorkFlow_FincalActivity_BeforeInitializeComponentHelper.txt

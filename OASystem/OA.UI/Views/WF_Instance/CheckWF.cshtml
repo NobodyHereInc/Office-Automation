@@ -1,0 +1,107 @@
+﻿@model OA.Model.WF_StepInfo
+@using OA.Model;
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/tableStyle.css" rel="stylesheet" />
+    <title>Check WorkFlow</title>
+    <script type="text/javascript">
+        $(function () {
+            $("#reject").click(function () {
+                $("#StepResult").val(2);
+                $("form").submit();
+            });
+            $("#isPass").click(function () {
+                $("#StepResult").val(1);
+                $("form").submit();
+            });
+        })
+    </script>
+</head>
+<body>
+    @{ 
+        WF_Instance instance = ViewBag.Instance;
+        List<WF_StepInfo> steps = ViewBag.Steps;
+    }
+
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary(true)
+        <div>
+            <table>
+                <tr>
+                    <td>WorkFlow Title：</td>
+                    <td>@instance.InstanceName</td>
+                </tr>
+                <tr>
+                    <td>Start By：</td>
+                    <td>@instance.StartedBy</td>
+                </tr>
+                <tr>
+                    <td>Started Time：</td>
+                    <td>@instance.SubTime</td>
+                </tr>
+                <tr>
+                    <td>Temp Name：</td>
+                    <td>@instance.WF_Temp.TempName</td>
+                </tr>
+                <tr>
+                    <td>Content of Approval：</td>
+                    <td>@Html.Raw(instance.SubForm)</td>
+                </tr>
+                <tr>
+                    <td>WorkFlow Step：</td>
+                    <td>
+                        @foreach (var wfStepInfo in steps)
+                        {
+                            <p>
+                                Step Name： @wfStepInfo.SetpName  <br />
+                                Process By：@wfStepInfo.ProcessBy<br />
+                                Title：@wfStepInfo.Title<br />
+                                Comment：@wfStepInfo.Comment<br />
+                                Result：@if (wfStepInfo.StepResult == 1 || wfStepInfo.StepResult == 4)
+                                {
+                                    <span>Allow</span>
+                                }
+                                else
+                                {
+                                    <span style="color: red;font-weight: bold;">Not Allow</span>
+                                }
+                                <hr />
+                            </p>
+                        }
+                    </td>
+                </tr>
+                <tr>
+                    <td>Your Approval Title：</td>
+                    <td>@Html.EditorFor(m => m.Title)</td>
+                </tr>
+                <tr>
+                    <td>Your Comment：</td>
+                    <td>@Html.EditorFor(m => m.Comment)</td>
+                </tr>
+                <tr>
+                    <td>Process By：</td>
+                    <td>@Html.DropDownList("ProcessBy")</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="hidden" name="StepResult" id="StepResult" />
+                        <input type="button" id="reject" value="Reject" />
+                    </td>
+                    <td>
+                        <input type="button" id="isPass" value="Pass" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+    }
+</body>
+</html>

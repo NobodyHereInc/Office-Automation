@@ -16,4 +16,8 @@
   </object>
   <object type="OA.Service.WF_TempService, OA.Service" singleton="false" name="wF_TempService" >
   </object>
+  <object type="OA.Service.WF_InstanceService, OA.Service" singleton="false" name="wF_InstanceService" >
+  </object>
+  <object type="OA.Service.WF_StepInfoService, OA.Service" singleton="false" name="wF_StepInfoService" >
+  </object>
 </objects>

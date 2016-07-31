@@ -1,0 +1,312 @@
+﻿<Activity mc:Ignorable="sap sap2010 sads" x:Class="CZBK.HeiMaOA.WorkFlow.FincalActivity"
+ xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+ xmlns:local="clr-namespace:CZBK.HeiMaOA.WorkFlow"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:mca="clr-namespace:Microsoft.CSharp.Activities;assembly=System.Activities"
+ xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
+ xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
+ xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
+ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+ xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="TempBookMarkName" Type="InOutArgument(x:String)" />
+  </x:Members>
+  <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
+  <sap2010:WorkflowViewState.IdRef>CZBK.HeiMaOA.WorkFlow.FincalActivity_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Text</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>Microsoft.CSharp</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>CZBK.HeiMaOA.WorkFlow</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <StateMachine sap2010:WorkflowViewState.IdRef="StateMachine_1">
+    <StateMachine.InitialState>
+      <State x:Name="__ReferenceID4" DisplayName="开始财务审批" sap2010:WorkflowViewState.IdRef="State_6">
+        <State.Transitions>
+          <Transition DisplayName="T1" sap2010:WorkflowViewState.IdRef="Transition_9">
+            <Transition.To>
+              <State x:Name="__ReferenceID0" DisplayName="总监审批" sap2010:WorkflowViewState.IdRef="State_5">
+                <State.Entry>
+                  <local:Input4WaitBookMark x:TypeArguments="x:Int32" DisplayName="等待总监审批" sap2010:WorkflowViewState.IdRef="Input4WaitBookMark`1_1">
+                    <local:Input4WaitBookMark.BookMark>
+                      <InOutArgument x:TypeArguments="x:String">
+                        <mca:CSharpReference x:TypeArguments="x:String">TempBookMarkName</mca:CSharpReference>
+                      </InOutArgument>
+                    </local:Input4WaitBookMark.BookMark>
+                    <local:Input4WaitBookMark.Result>
+                      <OutArgument x:TypeArguments="x:Int32">
+                        <mca:CSharpReference x:TypeArguments="x:Int32">TempResult</mca:CSharpReference>
+                      </OutArgument>
+                    </local:Input4WaitBookMark.Result>
+                    <local:Input4WaitBookMark.SetpId>
+                      <OutArgument x:TypeArguments="x:Int32">
+                        <mca:CSharpReference x:TypeArguments="x:Int32">TempSetpId</mca:CSharpReference>
+                      </OutArgument>
+                    </local:Input4WaitBookMark.SetpId>
+                  </local:Input4WaitBookMark>
+                </State.Entry>
+                <State.Transitions>
+                  <Transition DisplayName="继续审批" sap2010:WorkflowViewState.IdRef="Transition_6">
+                    <Transition.Condition>
+                      <mca:CSharpValue x:TypeArguments="x:Boolean">TempResult==3</mca:CSharpValue>
+                    </Transition.Condition>
+                    <Transition.To>
+                      <State x:Name="__ReferenceID5" DisplayName="副总审批" sap2010:WorkflowViewState.IdRef="State_4">
+                        <State.Entry>
+                          <local:Input4WaitBookMark x:TypeArguments="x:Int32" BookMark="{x:Null}" Result="{x:Null}" SetpId="{x:Null}" DisplayName="等待副总审批" sap2010:WorkflowViewState.IdRef="Input4WaitBookMark`1_2" />
+                        </State.Entry>
+                        <State.Transitions>
+                          <Transition DisplayName="审批通过拨款" sap2010:WorkflowViewState.IdRef="Transition_2">
+                            <Transition.Condition>
+                              <mca:CSharpValue x:TypeArguments="x:Boolean">TempResult==0</mca:CSharpValue>
+                            </Transition.Condition>
+                            <Transition.To>
+                              <State x:Name="__ReferenceID2" DisplayName="财务拨款" sap2010:WorkflowViewState.IdRef="State_2">
+                                <State.Transitions>
+                                  <Transition DisplayName="T2" sap2010:WorkflowViewState.IdRef="Transition_1">
+                                    <Transition.To>
+                                      <State x:Name="__ReferenceID1" DisplayName="流程结束" sap2010:WorkflowViewState.IdRef="State_1" IsFinal="True" />
+                                    </Transition.To>
+                                  </Transition>
+                                </State.Transitions>
+                              </State>
+                            </Transition.To>
+                          </Transition>
+                          <Transition DisplayName="驳回" sap2010:WorkflowViewState.IdRef="Transition_5">
+                            <Transition.Condition>
+                              <mca:CSharpValue x:TypeArguments="x:Boolean">TempResult==1||TempResult==2</mca:CSharpValue>
+                            </Transition.Condition>
+                            <Transition.To>
+                              <State x:Name="__ReferenceID3" DisplayName="继续填写审批内容" sap2010:WorkflowViewState.IdRef="State_3">
+                                <State.Entry>
+                                  <local:Input4WaitBookMark x:TypeArguments="x:Int32" BookMark="{x:Null}" Result="{x:Null}" SetpId="{x:Null}" DisplayName="等待员工继续申请" sap2010:WorkflowViewState.IdRef="Input4WaitBookMark`1_3" />
+                                </State.Entry>
+                                <State.Transitions>
+                                  <Transition DisplayName="继续审批" sap2010:WorkflowViewState.IdRef="Transition_3" To="{x:Reference __ReferenceID0}">
+                                    <Transition.Condition>
+                                      <mca:CSharpValue x:TypeArguments="x:Boolean">TempResult==3</mca:CSharpValue>
+                                    </Transition.Condition>
+                                  </Transition>
+                                  <Transition DisplayName="结束" sap2010:WorkflowViewState.IdRef="Transition_4" To="{x:Reference __ReferenceID1}">
+                                    <Transition.Condition>
+                                      <mca:CSharpValue x:TypeArguments="x:Boolean">TempResult!=0</mca:CSharpValue>
+                                    </Transition.Condition>
+                                  </Transition>
+                                </State.Transitions>
+                              </State>
+                            </Transition.To>
+                          </Transition>
+                        </State.Transitions>
+                      </State>
+                    </Transition.To>
+                  </Transition>
+                  <Transition DisplayName="审批通过拨款" sap2010:WorkflowViewState.IdRef="Transition_7" To="{x:Reference __ReferenceID2}">
+                    <Transition.Condition>
+                      <mca:CSharpValue x:TypeArguments="x:Boolean">TempResult==0</mca:CSharpValue>
+                    </Transition.Condition>
+                  </Transition>
+                  <Transition DisplayName="驳回" sap2010:WorkflowViewState.IdRef="Transition_8" To="{x:Reference __ReferenceID3}">
+                    <Transition.Condition>
+                      <mca:CSharpValue x:TypeArguments="x:Boolean">TempResult==1 ||TempResult==2</mca:CSharpValue>
+                    </Transition.Condition>
+                  </Transition>
+                </State.Transitions>
+              </State>
+            </Transition.To>
+          </Transition>
+        </State.Transitions>
+      </State>
+    </StateMachine.InitialState>
+    <x:Reference>__ReferenceID4</x:Reference>
+    <x:Reference>__ReferenceID0</x:Reference>
+    <x:Reference>__ReferenceID5</x:Reference>
+    <x:Reference>__ReferenceID2</x:Reference>
+    <x:Reference>__ReferenceID1</x:Reference>
+    <x:Reference>__ReferenceID3</x:Reference>
+    <StateMachine.Variables>
+      <Variable x:TypeArguments="x:Int32" Name="TempResult" />
+      <Variable x:TypeArguments="x:Int32" Name="TempSetpId" />
+    </StateMachine.Variables>
+    <sads:DebugSymbol.Symbol>d2BEOlzkvKDmmbrorrLor75c6buR6ams5Y2B5Zub5pyfXOesrOWNgeWkqVxDWkJLLkhlaU1hT0FcQ1pCSy5IZWlNYU9BLldvcmtGbG93XEZpbmNhbEFjdGl2aXR5LnhhbWwULAOZARICAQEuB4wBDwIBOzIPiAEXAgEfTBd6HwIBE1YfXicCARBaJ1qUAQIBDmYfdicCAQI0E0QuAgEuSRdJYwIBKX8Xf2MCASWEAReEAXMCASFOG07XAQIBHlMfU2sCARljH2N6AgEVaCNo4QECAQ1tJ21zAgEIcidycwIBBDcZN28CATdBGUFoAgEzPBk8aAIBLw==</sads:DebugSymbol.Symbol>
+  </StateMachine>
+  <sap2010:WorkflowViewState.ViewStateManager>
+    <sap2010:ViewStateManager>
+      <sap2010:ViewStateData Id="Input4WaitBookMark`1_1" sap:VirtualizedContainerService.HintSize="200,22" />
+      <sap2010:ViewStateData Id="Input4WaitBookMark`1_2" sap:VirtualizedContainerService.HintSize="200,22" />
+      <sap2010:ViewStateData Id="State_1" sap:VirtualizedContainerService.HintSize="114,61">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:Point x:Key="ShapeLocation">553,509.5</av:Point>
+            <av:Size x:Key="ShapeSize">114,61</av:Size>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Transition_1">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:PointCollection x:Key="ConnectorLocation">105.7,420.5 105.7,552.2 553,552.2</av:PointCollection>
+            <x:Int32 x:Key="SrcConnectionPointIndex">43</x:Int32>
+            <x:Int32 x:Key="DestConnectionPointIndex">53</x:Int32>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="State_2" sap:VirtualizedContainerService.HintSize="114,61">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:Point x:Key="ShapeLocation">43,359.5</av:Point>
+            <av:Size x:Key="ShapeSize">114,61</av:Size>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Transition_2" sap:VirtualizedContainerService.HintSize="430,500">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:PointCollection x:Key="ConnectorLocation">517,266.95 547,266.95 547,390 157,390</av:PointCollection>
+            <x:Int32 x:Key="SrcConnectionPointIndex">32</x:Int32>
+            <x:Int32 x:Key="DestConnectionPointIndex">36</x:Int32>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Input4WaitBookMark`1_3" sap:VirtualizedContainerService.HintSize="200,22" />
+      <sap2010:ViewStateData Id="Transition_3" sap:VirtualizedContainerService.HintSize="430,500">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:PointCollection x:Key="ConnectorLocation">539.95,90.5 539.95,183 197,183 197,254.75 167,254.75</av:PointCollection>
+            <x:Int32 x:Key="SrcConnectionPointIndex">35</x:Int32>
+            <x:Int32 x:Key="DestConnectionPointIndex">16</x:Int32>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Transition_4" sap:VirtualizedContainerService.HintSize="430,500">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:PointCollection x:Key="ConnectorLocation">570.1,29.5 570.1,17.8 697,17.8 697,527.8 667,527.8</av:PointCollection>
+            <x:Int32 x:Key="SrcConnectionPointIndex">46</x:Int32>
+            <x:Int32 x:Key="DestConnectionPointIndex">20</x:Int32>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="State_3" sap:VirtualizedContainerService.HintSize="201,61">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:Point x:Key="ShapeLocation">449.5,29.5</av:Point>
+            <av:Size x:Key="ShapeSize">201,61</av:Size>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            <x:Double x:Key="StateContainerWidth">187</x:Double>
+            <x:Double x:Key="StateContainerHeight">25</x:Double>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Transition_5" sap:VirtualizedContainerService.HintSize="430,500">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:PointCollection x:Key="ConnectorLocation">517,251.7 680.5,251.7 680.5,47.8 650.5,47.8</av:PointCollection>
+            <x:Int32 x:Key="SrcConnectionPointIndex">12</x:Int32>
+            <x:Int32 x:Key="DestConnectionPointIndex">20</x:Int32>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="State_4" sap:VirtualizedContainerService.HintSize="114,61">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:Point x:Key="ShapeLocation">403,239.5</av:Point>
+            <av:Size x:Key="ShapeSize">114,61</av:Size>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Transition_6" sap:VirtualizedContainerService.HintSize="430,500">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:PointCollection x:Key="ConnectorLocation">167,270 197,270 197,273.05 403,273.05</av:PointCollection>
+            <x:Int32 x:Key="SrcConnectionPointIndex">36</x:Int32>
+            <x:Int32 x:Key="DestConnectionPointIndex">41</x:Int32>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Transition_7" sap:VirtualizedContainerService.HintSize="430,500">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:PointCollection x:Key="ConnectorLocation">110,300.5 110,330.5 105.7,330.5 105.7,359.5</av:PointCollection>
+            <x:Int32 x:Key="SrcConnectionPointIndex">39</x:Int32>
+            <x:Int32 x:Key="DestConnectionPointIndex">42</x:Int32>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Transition_8" sap:VirtualizedContainerService.HintSize="430,500">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:PointCollection x:Key="ConnectorLocation">138.5,239.5 138.5,209.5 419.5,209.5 419.5,66.1 449.5,66.1</av:PointCollection>
+            <x:Int32 x:Key="SrcConnectionPointIndex">58</x:Int32>
+            <x:Int32 x:Key="DestConnectionPointIndex">45</x:Int32>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="State_5" sap:VirtualizedContainerService.HintSize="114,61">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:Point x:Key="ShapeLocation">53,239.5</av:Point>
+            <av:Size x:Key="ShapeSize">114,61</av:Size>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Transition_9">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:PointCollection x:Key="ConnectorLocation">121.6,153 121.6,183 92.9,183 92.9,239.5</av:PointCollection>
+            <x:Int32 x:Key="SrcConnectionPointIndex">31</x:Int32>
+            <x:Int32 x:Key="DestConnectionPointIndex">26</x:Int32>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="State_6" sap:VirtualizedContainerService.HintSize="179,73">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:Point x:Key="ShapeLocation">50,80</av:Point>
+            <av:Size x:Key="ShapeSize">179,73</av:Size>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            <x:Double x:Key="StateContainerWidth">165</x:Double>
+            <x:Double x:Key="StateContainerHeight">36.626666666666665</x:Double>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="StateMachine_1" sap:VirtualizedContainerService.HintSize="842,784">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
+            <x:Double x:Key="StateContainerWidth">828</x:Double>
+            <x:Double x:Key="StateContainerHeight">748.31333333333328</x:Double>
+            <av:PointCollection x:Key="ConnectorLocation">300,77.5 300,116.5 229,116.5</av:PointCollection>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="CZBK.HeiMaOA.WorkFlow.FincalActivity_1" sap:VirtualizedContainerService.HintSize="882,864" />
+    </sap2010:ViewStateManager>
+  </sap2010:WorkflowViewState.ViewStateManager>
+</Activity>
