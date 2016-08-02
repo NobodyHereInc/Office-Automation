@@ -110,6 +110,7 @@
 
         #myTop {
             background-image: url('/Content/images/bg3.png');
+            height:300px;
         }
 
         .txt {
@@ -135,8 +136,9 @@
                 <ul></ul>
             </div>
         </div>
-        <div position="top" id="myTop">
-            <span class="txt">Welcome @ViewData["UserName"] Login @ViewData["Date"]<a href="/Home/LogOut">Log Out</a></span>
+        <div position="top" id="myTop" >
+            <h2><strong>Welcome OA System</strong></h2>
+            <span class="txt" >Welcome @ViewData["UserName"] Login @ViewData["Date"] <a style="padding-top:25px;padding-right:10px;" href="/Home/LogOut"> Log Out</a></span>
         </div>
     </div>
 </body>

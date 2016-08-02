@@ -1,0 +1,43 @@
+﻿@{
+    Layout = null;
+}
+@using OA.Model
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ShowBookDetail</title>
+</head>
+<body>
+    @{ 
+        book bookInfo = (book)ViewBag.BookInfo;
+    }
+    <img src="~/Content/Images/Demo.jpg" style="width:350px;height:400px;float:left;padding-right:50px"/>
+    <div class="form-group row">
+        <label for="Title" class="col-xs-2 col-form-label"><strong>Title: </strong></label><span>@bookInfo.Title</span>
+    </div>
+    <div class="form-group row">
+        <label for="Author" class="col-xs-2 col-form-label"><strong>Author: </strong></label><span>@bookInfo.Author</span>
+    </div>
+    <div class="form-group row">
+        <label for="PublishedDate" class="col-xs-2 col-form-label"><strong>Published Date: </strong></label><span>@bookInfo.PublishedDate</span>
+    </div>
+    <div class="form-group row">
+        <label for="ISBN" class="col-xs-2 col-form-label"><strong>ISBN: </strong></label><span>@bookInfo.ISBN</span>
+    </div>
+    <div class="form-group row">
+        <label for="ContentDescription" class="col-xs-2 col-form-label"><strong>Content Description: </strong></label>
+        <div>
+            <p style="width:300px;height:100px; word-wrap:break-word; float:left;" >@bookInfo.ContentDescription</p>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div style="float:left;padding-top:50px;">
+            @Html.ActionLink("Back to Search Page", "Index", "Search")
+        </div>
+    </div>
+
+    
+</body>
+</html>

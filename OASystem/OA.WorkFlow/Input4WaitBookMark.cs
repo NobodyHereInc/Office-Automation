@@ -27,7 +27,7 @@ namespace OA.WorkFlow
             }
         }
 
-        protected override void Execute(NativeActivityContext context)
+        protected override void Execute(NativeActivityContext context) 
         {
             String bookMarkName = context.GetValue(BookMark);
             context.CreateBookmark(bookMarkName, ContinueExecuteWorkFlow);
@@ -40,13 +40,5 @@ namespace OA.WorkFlow
             context.SetValue(StepId, data.StepId);
             context.SetValue(Result, data.Result);
         }
-
-        //// If your activity returns a value, derive from CodeActivity<TResult>
-        //// and return the value from the Execute method.
-        //protected override void Execute(CodeActivityContext context)
-        //{
-        //    // Obtain the runtime value of the Text input argument
-        //    string text = context.GetValue(this.Text);
-        //}
     }
 }

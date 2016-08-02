@@ -12,7 +12,6 @@ D:\Co-op Project\OASystem\OA.WorkFlow\obj\Debug\OA.WorkFlow_FinancialActivity_Co
 D:\Co-op Project\OASystem\OA.WorkFlow\bin\Debug\OA.WorkFlow.dll
 D:\Co-op Project\OASystem\OA.WorkFlow\bin\Debug\OA.WorkFlow.pdb
 D:\Co-op Project\OASystem\OA.WorkFlow\obj\Debug\OA.WorkFlow.csprojResolveAssemblyReference.cache
-D:\Co-op Project\OASystem\OA.WorkFlow\obj\Debug\FincalActivity.g.xaml
-D:\Co-op Project\OASystem\OA.WorkFlow\obj\Debug\CZBK.HeiMaOA.WorkFlow_FincalActivity_BeforeInitializeComponentHelper.txt
-D:\Co-op Project\OASystem\OA.WorkFlow\obj\Debug\FincalActivity.g.cs
-D:\Co-op Project\OASystem\OA.WorkFlow\obj\Debug\CZBK.HeiMaOA.WorkFlow_FincalActivity_BeforeInitializeComponentHelper.cs
+D:\Co-op Project\OASystem\OA.WorkFlow\obj\Debug\InProcessTempFiles\FinancialActivity.g.cs
+D:\Co-op Project\OASystem\OA.WorkFlow\obj\Debug\InProcessTempFiles\FinancialActivity.g.xaml
+D:\Co-op Project\OASystem\OA.WorkFlow\obj\Debug\InProcessTempFiles\_OA.WorkFlow.g.cs

@@ -246,6 +246,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\ActionInfoController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\BookController.cs" />
     <Compile Include="Controllers\ExceptionTestController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LogInController.cs" />
@@ -273,6 +274,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Images\404.jpg" />
     <Content Include="Content\Images\applebg.jpg" />
+    <Content Include="Content\Images\Demo.jpg" />
     <Content Include="Content\jquery-LigerUI-V1.3.3\images\loading.gif" />
     <Content Include="Content\jquery-LigerUI-V1.3.3\images\top.jpg" />
     <Content Include="Content\jquery-LigerUI-V1.3.3\images\topicon.gif" />
@@ -834,6 +836,8 @@
     <Content Include="Views\WF_Instance\StartWorkFlow.cshtml" />
     <Content Include="Views\WF_Instance\GetMyWorkFlows.cshtml" />
     <Content Include="Views\WF_Instance\CheckWF.cshtml" />
+    <Content Include="Views\Book\Index.cshtml" />
+    <Content Include="Views\Book\ShowBookDetail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

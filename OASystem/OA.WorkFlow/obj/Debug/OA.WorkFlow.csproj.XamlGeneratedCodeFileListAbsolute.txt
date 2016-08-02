@@ -1,5 +1,4 @@
 obj\Debug\_OA.WorkFlow.g.cs
 obj\Debug\FinancialActivity.g.cs
-obj\Debug\FincalActivity.g.cs
 obj\Debug\OA.WorkFlow_FinancialActivity_BeforeInitializeComponentHelper.cs
-obj\Debug\CZBK.HeiMaOA.WorkFlow_FincalActivity_BeforeInitializeComponentHelper.cs
+D:\Co-op Project\OASystem\OA.WorkFlow\obj\Debug\OA.WorkFlow_FinancialActivity_CompiledExpressionRoot.cs

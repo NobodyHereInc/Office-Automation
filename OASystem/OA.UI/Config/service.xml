@@ -20,4 +20,6 @@
   </object>
   <object type="OA.Service.WF_StepInfoService, OA.Service" singleton="false" name="wF_StepInfoService" >
   </object>
+  <object type="OA.Service.bookService, OA.Service" singleton="false" name="booksService" >
+  </object>
 </objects>

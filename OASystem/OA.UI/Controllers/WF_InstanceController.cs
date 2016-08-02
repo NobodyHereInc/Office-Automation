@@ -50,7 +50,7 @@ namespace OA.UI.Controllers
                                };
 
             // if name of ViewData is the same name of DropDownList will auto fill in.
-            ViewData["FlowTo"] = userInfoList; 
+            ViewData["FlowTo"] = userInfoList;
 
             // return.
             return View();
@@ -182,6 +182,70 @@ namespace OA.UI.Controllers
 
             // return.
             return View();
+        }
+
+        [HttpPost]
+        [ValidateInput(false)]
+        public ActionResult CheckWF(int id, WF_StepInfo stepInfo)
+        {
+            // get instance of WorkFlow by id.
+            var instance = wF_InstanceService.GetList(w => w.ID == id).FirstOrDefault();
+
+            // get stepInfo.
+            var step = instance.WF_StepInfo.Where(s => s.IsProcessed == false).FirstOrDefault();
+
+            step.Comment = stepInfo.Comment;
+            step.IsProcessed = stepInfo.IsProcessed;
+            step.ProcessTime = DateTime.Now;
+            step.StepResult = stepInfo.StepResult;
+
+            // update steoInfo in database.
+            wF_StepInfoService.Edit(step);
+
+            // initial next step 
+            WF_StepInfo NextStep = new WF_StepInfo();
+            NextStep.ParentStepID = step.ID;
+            NextStep.ProcessBy = step.ProcessBy;
+
+            if ((stepInfo.StepResult == (short)OA.WorkFlow.Eeum.WorkFlowStateEunm.Reject)
+                || (stepInfo.StepResult == (short)OA.WorkFlow.Eeum.WorkFlowStateEunm.Refute))
+            {
+                // if Reject or Refute, the process by will pass to startedBY.
+                NextStep.ProcessBy = instance.StartedBy;
+            }
+
+            NextStep.IsStartStep = false;
+            NextStep.IsEndStep = false;
+            NextStep.ChildStepID = 0;
+            NextStep.DelFlag = (short)OA.Model.Enum.DeleteEnumType.Normal;
+            NextStep.IsProcessed = false;
+            NextStep.ProcessTime = DateTime.Now;
+            NextStep.Remark = String.Empty;
+            NextStep.SetpName = String.Empty;
+            NextStep.StepResult = (short)OA.WorkFlow.Eeum.WorkFlowStateEunm.untreated;
+            NextStep.SubTime = DateTime.Now;
+            NextStep.WF_InstanceID = instance.ID;
+
+            wF_StepInfoService.Add(NextStep);
+
+            //
+            step.ChildStepID = NextStep.ID;
+            wF_StepInfoService.Edit(step);
+
+            // Continue workflow.
+            var wfapp = WorkFlowApplicationHelper.LoadWorkflowApplication(new FinancialActivity(), instance.ApplicationId);
+
+            ResumeBookMarkObj<int> Data = new ResumeBookMarkObj<int>();
+
+            Data.BookMarkName = string.Empty;
+            Data.Result = step.StepResult;
+            Data.StepId = NextStep.ID;
+
+            // resume bookmark.
+            wfapp.ResumeBookmark(step.SetpName, Data);
+
+            // return.
+            return RedirectToAction("GetMyWorkFlows");
         }
         #endregion
 

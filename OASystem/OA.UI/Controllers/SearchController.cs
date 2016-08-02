@@ -86,6 +86,7 @@ namespace OA.UI.Controllers
             searchDetail.KeyWords = kw;
             searchDetail.SearchDateTime = DateTime.Now;
             searchDetailService.Add(searchDetail);
+
             return searchResultList;
         }
         #endregion
