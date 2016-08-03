@@ -245,6 +245,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\ActionInfoController.cs" />
+    <Compile Include="Controllers\ArticleFileUploadController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\BookController.cs" />
     <Compile Include="Controllers\ExceptionTestController.cs" />
@@ -838,6 +839,9 @@
     <Content Include="Views\WF_Instance\CheckWF.cshtml" />
     <Content Include="Views\Book\Index.cshtml" />
     <Content Include="Views\Book\ShowBookDetail.cshtml" />
+    <Content Include="Views\ArticleFileUpload\index.cshtml" />
+    <Content Include="Views\ArticleFileUpload\AddArticleFileUploadInfo.cshtml" />
+    <Content Include="Views\ArticleFileUpload\EditArticleFileUploadInfo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

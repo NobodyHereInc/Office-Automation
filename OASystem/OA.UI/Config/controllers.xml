@@ -42,7 +42,11 @@
     <property name="wF_StepInfoService" ref="wF_StepInfoService" />
   </object>
 
-  <object type="OA.UI.Controllers.bookController, OA.UI" singleton="false" >
+  <object type="OA.UI.Controllers.BookController, OA.UI" singleton="false" >
+    <property name="booksService" ref="bookService" />
+  </object>
+  
+    <object type="OA.UI.Controllers.ArticleFileUploadController, OA.UI" singleton="false" >
     <property name="booksService" ref="bookService" />
   </object>
 

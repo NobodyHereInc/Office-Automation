@@ -2,10 +2,12 @@
     Layout = null;
 }
 
-
-
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <title></title>
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
     <link href="~/Content/easyUI/themes/bootstrap/easyui.css" rel="stylesheet" />
@@ -14,49 +16,35 @@
     <script src="~/Content/easyUI/jquery.easyui.min.js"></script>
     <script src="~/Content/easyUI/locale/easyui-lang-en.js"></script>
     <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
-    <script src="~/Scripts/datapattern.js"></script> 
+    <script src="~/Scripts/datapattern.js"></script>
     <script>
         $(function () {
             $('#addDiv').css("display", "none");
             $('#editDiv').css("display", "none");
-            $('#setUserRoleDiv').css("display","none");
             loadData();
         });
 
         function loadData(pars) {
             $('#tt').datagrid({
-                url: '/RoleInfo/GetRoleInfo',
-                title: 'Role Info Table',
+                url: '/ArticleFileUpload/GetArticleFile',
+                title: 'Article Info Table',
                 fitColumns: true,
                 nowrap: false,
                 idField: 'ID',
-                loadMsg: 'Loading Role Information...', // Loading message.
+                loadMsg: 'Loading User Information...', // Loading message.
                 pagination: true, // whether speprate page.
                 singleSelect: false, // whether Select a single row.
                 pageSize: 10, // Page Size
                 pageNumber: 1, // Start Page
                 pageList: [10, 15, 20],
-                queryParams: {}, // send parameters to back-end.
+                queryParams: pars, // send parameters to back-end.
                 columns: [[
                     { field: 'ck', checkbox: true, align: 'left', width: 50 },
-					{ field: 'ID', title: 'ID', width: 80 },
-					{ field: 'RoleName', title: 'Role Name', width: 120 },
-                     { field: 'Sort', title: 'SortMark', width: 120 },
-                      { field: 'Remark', title: 'Remark', width: 120 },
-					{
-					    field: 'SubTime', title: 'SubTime', width: 80, align: 'right',
-					    formatter: function (value, row, index) {
-					        return (eval(value.replace(/\/Date\((\d+)\)\//gi, "new Date($1)"))).pattern("yyyy-M-d");
-					    }
-					},
-                    {
-                        field: 'Operator', title: 'Operation', width: 80, align: 'right',
-                        formatter: function (value, row, index) {
-                            var str = "<a href='javascript:void(0)' ids='" + row.id + "' class='deleteLink'>Delete</a>";
-                            str += "&nbsp;&nbsp;<a href='javascript:void(0)' ids='" + row.id + "' class='editLink'>Edit</a>";
-                            return str;
-                        }
-                    },
+					{ field: 'ID', title: 'Article Id', width: 80 },
+					{ field: 'Title', title: 'Title', width: 120 },
+                    { field: 'Author', title: 'Author', width: 120 },
+                    { field: 'ISBN', title: 'ISBN', width: 120 },
+					{ field: 'PublishDate', title: 'Publish Date', width: 120 }
                 ]],
                 toolbar: [{
                     id: 'btnDelete',
@@ -67,25 +55,19 @@
                     }
                 }, {
                     id: 'btnAdd',
-                    text: 'Add Role Information',
+                    text: 'Add Article',
                     iconCls: 'icon-add',
                     handler: function () {
                         addInfo();
                     }
                 }, {
                     id: 'btnEdit',
-                    text: 'Edit Role Information',
+                    text: 'Edit Article',
                     iconCls: 'icon-edit',
                     handler: function () {
                         editInfo();
                     }
-                },
-                ],
-                onLoadSuccess: function (e, field) {
-                    $(".deleteLink").click(function () {
-                        $.messager.alert("Error Message", $(this).attr("ids"), "error");
-                    });
-                },
+                }],
             });
         }
 
@@ -103,15 +85,15 @@
             $('#editDiv').css("display", "block");
 
             //
-            $("#editFrame").attr("src", "/RoleInfo/ShowEditRoleInfo/?id=" + rows[0].ID)
+            $("#editFrame").attr("src", "/ArticleFileUpload/EditArticleFileUploadInfo/?id=" + rows[0].ID)
 
             // dialog for editForm (easyUI)
             $('#editDiv').dialog({
-                title: "Edit Role Information",
+                title: "Edit User Information",
                 modal: true,
                 collapsible: true,
-                width: 400,
-                height: 500,
+                width: 600,
+                height: 700,
                 buttons: [{
                     text: 'Ok',
                     iconCls: 'icon-ok',
@@ -122,16 +104,12 @@
                         var chilidWindow = $("#editFrame")[0].contentWindow;
                         // use child window function called "subEditFrom".
                         chilidWindow.subEditForm();
-
-                        $('#editDiv').dialog('close');
                         $('#tt').datagrid('reload'); // reload info.
-                        $("#editForm input").val("");
                     }
                 }, {
                     text: 'Cancel',
                     handler: function () {
                         $('#editDiv').dialog('close');
-                        $('#tt').datagrid('reload'); // reload info.
                         $("#editForm input").val("");
                     }
                 }]
@@ -152,20 +130,27 @@
             // display form
             $('#addDiv').css("display", "block");
 
+            //
+            $("#addFrame").attr("src", "/ArticleFileUpload/AddArticleFileUploadInfo")
+
             // dialog for addForm (easyUI)
             $('#addDiv').dialog({
-                title: "Add User Information",
+                title: "Add Article or File Information",
                 modal: true,
                 collapsible: true,
-                width: 300,
-                height: 200,
+                width: 600,
+                height: 700,
                 buttons: [{
                     text: 'Ok',
                     iconCls: 'icon-ok',
                     handler: function () {
                         //check input data !----------------
 
-                        $("#addForm").submit();//Submit form
+                        //get child window object.
+                        var chilidWindow = $("#addFrame")[0].contentWindow;
+                        // use child window function called "subEditFrom".
+                        chilidWindow.subAddForm();
+                        $('#tt').datagrid('reload'); // reload info.
                     }
                 }, {
                     text: 'Cancel',
@@ -210,14 +195,13 @@
                     strId = strId.substr(0, strId.length - 1);
 
                     // request to server-side (post method)
-                    $.post("/RoleInfo/DeleteRoleInfo", { "strId": strId }, function (data) {
+                    $.post("/ArticleFileUpload/DeleteArticleInfo", { "strId": strId }, function (data) {
                             if (data = "Ok") {
-                                $.messager.confirm("Message", "The new RoelInfo has been Deleted successfully.")
                                 $('#tt').datagrid("reload");
                                 $('#tt').datagrid("clearSelections");
                             }
                             else{
-                                $.messager.confirm("Message", "This RoleInfo has been deleted Failly.")
+
                             }
                     });
                 }
@@ -226,33 +210,24 @@
     </script>
 </head>
 <body>
-    <!---------------------------------- START Display User Infromation ------------------------------>
-    <div>
-        <table id="tt" class="table-responsive col-md-2 col-md-8" title="" iconcls="icon-edit"></table>
+
+    <!---------------------------------- START Display User Infromation --------------------------->
+    <div class="container">
+        <div class="row">
+            <div>
+                <table id="tt" class="table-responsive col-md-2 col-md-8" title="" iconcls="icon-edit"></table>
+            </div>
+        </div>
     </div>
+
     <!---------------------------------- END Display User Infromation ------------------------------>
     <!---------------------------------- START Add User Information dialog ------------------------->
     <div id="addDiv">
-        <form action="/RoleInfo/AddRoleInfo" data-ajax="true" data-ajax-method="POST" data-ajax-success="afterAdd" id="addForm">
-            <table>
-                <tr>
-                    <td>Role Name</td>
-                    <td><input type="text" name="RoleName" /></td>
-                </tr>
-                <tr>
-                    <td>Sort Mark</td>
-                    <td><input type="text" name="Sort" /></td>
-                </tr>
-                <tr>
-                    <td>Remark</td>
-                    <td><input type="text" name="Remark" /></td>
-                </tr>
-            </table>
-        </form>
+        <iframe id="addFrame" frameborder="0" width="100%" height="100%"></iframe>
     </div>
     <!---------------------------------- END Add User Information dialog --------------------------->
     <!----------------------- START Update User Information -------------------------->
-    <div id="editDiv" style="overflow:hidden">
+    <div id="editDiv">
         <iframe id="editFrame" frameborder="0" width="100%" height="100%"></iframe>
     </div>
     <!----------------------- END Update User Information ---------------------------->

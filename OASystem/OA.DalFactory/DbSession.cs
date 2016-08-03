@@ -27,7 +27,15 @@ namespace OA.DalFactory
         /// <returns></returns>
         public bool SaveChanges()
         {
-            return Db.SaveChanges() > 0;
+            try
+            {
+                return Db.SaveChanges() > 0;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+           
         }
 
         /// <summary>

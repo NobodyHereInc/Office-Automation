@@ -1,0 +1,156 @@
+﻿@model OA.Model.book
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>EditArticleFileUploadInfo</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-3.1.0.min.js"></script>
+    <script src="../../Content/KinderEditor/kindeditor-min.js"></script>
+    <link rel="stylesheet" href="../../Content/KinderEditor/themes/default/default.css" />
+    <link rel="stylesheet" href="../../Content/KinderEditor/plugins/code/prettify.css" />
+    <script charset="utf-8" src="../../Content/KinderEditor/kindeditor.js"></script>
+    <script src="~/Content/KinderEditor/lang/en.js"></script>
+    <script charset="utf-8" src="../../Content/KinderEditor/plugins/code/prettify.js"></script>
+    <script>
+        KindEditor.ready(function (K) {
+            var editor1 = K.create('#ContentDescription', {
+                cssPath: '../../Content/KinderEditor/plugins/code/prettify.css',
+                uploadJson: '../../Content/KinderEditor/asp.net/upload_json.ashx',
+                fileManagerJson:
+
+'../../Content/KinderEditor/asp.net/file_manager_json.ashx',
+                allowFileManager: true,
+                afterCreate: function () {
+                    var self = this;
+                }
+            });
+            var editor2 = K.create('#AuthorDescription', {
+                cssPath: '../../Content/KinderEditor/plugins/code/prettify.css',
+                uploadJson: '../../Content/KinderEditor/asp.net/upload_json.ashx',
+                fileManagerJson:
+
+'../../Content/KinderEditor/asp.net/file_manager_json.ashx',
+                allowFileManager: true,
+                afterCreate: function () {
+                    var self = this;
+                }
+            });
+
+            prettyPrint();
+        });
+        function subEditForm() {
+            $('#Form1').submit();
+        }
+        function afterAdd() {
+            window.parent.afterEdit();
+        }
+    </script>
+</head>
+<body>
+    @{ 
+        var book = ViewData.Model;
+    }
+    @using (Ajax.BeginForm("EditArticleFileUploadInfo", new { }, new AjaxOptions() { OnSuccess = "afterEdit" }, new { id = "Form1" }))
+    {
+        @Html.AntiForgeryToken()
+        
+        <div class="form-horizontal">
+            <h4>book</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.Id)
+    
+            <div class="form-group">
+                @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+                </div>
+            </div>
+    
+            <div class="form-group">
+                @Html.LabelFor(model => model.Author, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Author, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Author, "", new { @class = "text-danger" })
+                </div>
+            </div>
+    
+            <div class="form-group">
+                @Html.LabelFor(model => model.PublishedDate, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.PublishedDate, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.PublishedDate, "", new { @class = "text-danger" })
+                </div>
+            </div>
+    
+            <div class="form-group">
+                @Html.LabelFor(model => model.ISBN, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.ISBN, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.ISBN, "", new { @class = "text-danger" })
+                </div>
+            </div>
+    
+            <div class="form-group">
+                @Html.LabelFor(model => model.WordsCount, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.WordsCount, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.WordsCount, "", new { @class = "text-danger" })
+                </div>
+            </div>
+    
+            <div class="form-group">
+                @Html.LabelFor(model => model.UnitPrice, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.UnitPrice, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.UnitPrice, "", new { @class = "text-danger" })
+                </div>
+            </div>
+    
+            <div class="form-group">
+                @Html.LabelFor(model => model.ContentDescription, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    <textarea id="ContentDescription" cols="100" rows="8"
+                              style="width:570px;height:200px;visibility:hidden;"
+                              name="ContentDescription">
+                    </textarea>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                @Html.LabelFor(model => model.AuthorDescription, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    <textarea id="AuthorDescription" cols="100" rows="8"
+                              style="width:570px;height:200px;visibility:hidden;"
+                              name="AuthorDescription">
+                    </textarea>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                @Html.LabelFor(model => model.EditorComment, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.EditorComment, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.EditorComment, "", new { @class = "text-danger" })
+                </div>
+            </div>
+    
+            <div class="form-group">
+                @Html.LabelFor(model => model.Clicks, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Clicks, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Clicks, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+    }
+</body>
+</html>

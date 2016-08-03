@@ -210,8 +210,8 @@
     }
 
     $(window).resize(onResize);
-    $.ligerui.win.removeTaskbar = function () { }; //不允许移除
-    $.ligerui.win.createTaskbar(); //页面加载时创建任务栏
+    $.ligerui.win.removeTaskbar = function () { }; //don't allow to remove.
+    $.ligerui.win.createTaskbar(); // upload taskbar.
 
     $.getJSON("/Home/GetMenuItmes", {}, function (data) {
         // get menu Items depend on user.

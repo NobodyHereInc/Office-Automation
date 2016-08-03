@@ -24,16 +24,16 @@ namespace OA.Service
             this.DbSession.UserInfoDal.Edit(userInfo);
             this.DbSession.SaveChanges();
             MailMessage mailMsg = new MailMessage();
-            mailMsg.From = new MailAddress("527768601@qq.com", "Linchen Meng");
-            mailMsg.To.Add(new MailAddress("527768601@qq.com", "Lingchen Meng"));
+            mailMsg.From = new MailAddress("menglingchen3019@gmail.com", "Linchen Meng");
+            mailMsg.To.Add(new MailAddress("menglingchen3019@gmail.com", "Lingchen Meng"));
             mailMsg.Subject = "New account Information:";
             StringBuilder sb = new StringBuilder();
             sb.Append("New User account:");
             sb.Append("User Name: " + userInfo.UName);
             sb.Append("PassWord: " + newPwd);
             mailMsg.Body = sb.ToString(); 
-            SmtpClient client = new SmtpClient("smtp.qq.com");
-            client.Credentials = new NetworkCredential("527768601", "198811032");
+            SmtpClient client = new SmtpClient("smtp.gmail.com");
+            client.Credentials = new NetworkCredential("menglingchen3019", "mlc883019");
             client.Send(mailMsg);
         }
         #endregion
